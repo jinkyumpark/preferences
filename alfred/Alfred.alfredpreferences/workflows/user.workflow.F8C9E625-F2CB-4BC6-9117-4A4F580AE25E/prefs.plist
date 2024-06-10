@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>movie_keyword</key>
+	<string>mv</string>
+	<key>omdb_api_key</key>
+	<string>e053c978</string>
+</dict>
+</plist>
