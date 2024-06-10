@@ -1,1 +1,4 @@
-# preferences
+- Intellij
+- VSCode
+- RayCast
+- Alfred
