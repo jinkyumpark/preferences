@@ -638,7 +638,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/Visual Studio Code.app</string>
+					<string>~/Applications/WebStorm.app</string>
 				</array>
 				<key>toggle</key>
 				<false/>
