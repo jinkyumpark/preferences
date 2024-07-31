@@ -1,0 +1,14 @@
+{
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.findmy",
+    "autoAssetEntries" : [
+      {
+        "assetSpecifier" : "com.apple.siri.findmy.primary_device_files"
+      }
+    ]
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "created",
+    "timestamp" : "2024-07-09T14:31:34.438Z"
+  }
+}

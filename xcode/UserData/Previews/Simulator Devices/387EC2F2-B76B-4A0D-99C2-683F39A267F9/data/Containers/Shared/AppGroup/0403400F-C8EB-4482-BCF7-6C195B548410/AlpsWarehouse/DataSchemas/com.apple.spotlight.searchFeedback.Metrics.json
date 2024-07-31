@@ -1,0 +1,374 @@
+{
+  "enums" : {
+    "com.apple.spotlight.searchFeedback.Metrics.enum_invocation_type" : {
+
+    }
+  },
+  "schemas" : {
+    "com.apple.spotlight.searchFeedback.Metrics" : {
+      "properties" : {
+        "active_sessions" : {
+          "tag" : 72,
+          "type" : "uint"
+        },
+        "app_or_store_engaged" : {
+          "tag" : 31,
+          "type" : "uint64"
+        },
+        "app_or_store_shown" : {
+          "tag" : 14,
+          "type" : "uint64"
+        },
+        "app_tophit_shortcut_engaged" : {
+          "tag" : 53,
+          "type" : "uint64"
+        },
+        "apple_result_engaged" : {
+          "tag" : 70,
+          "type" : "uint64"
+        },
+        "apple_result_shown" : {
+          "tag" : 46,
+          "type" : "uint64"
+        },
+        "committed_suggestion_engaged" : {
+          "tag" : 48,
+          "type" : "uint64"
+        },
+        "committed_suggestion_shown" : {
+          "tag" : 1,
+          "type" : "uint64"
+        },
+        "dictionary_engaged" : {
+          "tag" : 54,
+          "type" : "uint64"
+        },
+        "dictionary_shown" : {
+          "tag" : 17,
+          "type" : "uint64"
+        },
+        "engaged_with_scrolling" : {
+          "tag" : 77,
+          "type" : "uint64"
+        },
+        "entity_experience_engaged" : {
+          "tag" : 49,
+          "type" : "uint64"
+        },
+        "entity_experience_entrypoint_engaged" : {
+          "tag" : 7,
+          "type" : "uint64"
+        },
+        "entity_experience_entrypoint_shown" : {
+          "tag" : 60,
+          "type" : "uint64"
+        },
+        "entity_experience_shown" : {
+          "tag" : 10,
+          "type" : "uint64"
+        },
+        "invocation_type" : {
+          "tag" : 13,
+          "type" : "enum",
+          "typeName" : "com.apple.spotlight.searchFeedback.Metrics.enum_invocation_type"
+        },
+        "kg_engaged" : {
+          "tag" : 68,
+          "type" : "uint64"
+        },
+        "kg_shown" : {
+          "tag" : 4,
+          "type" : "uint64"
+        },
+        "local_contact_engaged" : {
+          "tag" : 33,
+          "type" : "uint64"
+        },
+        "local_contact_shown" : {
+          "tag" : 9,
+          "type" : "uint64"
+        },
+        "local_engaged" : {
+          "tag" : 82,
+          "type" : "uint64"
+        },
+        "local_photo_engaged" : {
+          "tag" : 59,
+          "type" : "uint64"
+        },
+        "local_photo_shown" : {
+          "tag" : 23,
+          "type" : "uint64"
+        },
+        "local_preference_engaged" : {
+          "tag" : 75,
+          "type" : "uint64"
+        },
+        "local_preference_shown" : {
+          "tag" : 30,
+          "type" : "uint64"
+        },
+        "local_shown" : {
+          "tag" : 83,
+          "type" : "uint64"
+        },
+        "local_top_hit_engaged" : {
+          "tag" : 35,
+          "type" : "uint64"
+        },
+        "local_top_hit_shown" : {
+          "tag" : 40,
+          "type" : "uint64"
+        },
+        "mail_engaged" : {
+          "tag" : 34,
+          "type" : "uint64"
+        },
+        "maps_engaged" : {
+          "tag" : 22,
+          "type" : "uint64"
+        },
+        "maps_shown" : {
+          "tag" : 25,
+          "type" : "uint64"
+        },
+        "message_engaged" : {
+          "tag" : 19,
+          "type" : "uint64"
+        },
+        "ods_engaged" : {
+          "tag" : 63,
+          "type" : "uint64"
+        },
+        "related_search_engaged" : {
+          "tag" : 6,
+          "type" : "uint64"
+        },
+        "related_search_shown" : {
+          "tag" : 32,
+          "type" : "uint64"
+        },
+        "safari_history_engaged" : {
+          "tag" : 42,
+          "type" : "uint64"
+        },
+        "search_any_result_engaged" : {
+          "tag" : 3,
+          "type" : "uint64"
+        },
+        "search_app_engaged" : {
+          "tag" : 5,
+          "type" : "uint64"
+        },
+        "search_appstore_engaged" : {
+          "tag" : 12,
+          "type" : "uint64"
+        },
+        "search_local_engaged" : {
+          "tag" : 57,
+          "type" : "uint64"
+        },
+        "search_or_zkw_any_result_engaged" : {
+          "tag" : 67,
+          "type" : "uint64"
+        },
+        "search_or_zkw_app_engaged" : {
+          "tag" : 55,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_local_photo_engaged" : {
+          "tag" : 47,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_mail_engaged" : {
+          "tag" : 66,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_messages_engaged" : {
+          "tag" : 28,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_notes_engaged" : {
+          "tag" : 65,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_result_engaged" : {
+          "tag" : 20,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_settings_engaged" : {
+          "tag" : 52,
+          "type" : "uint64"
+        },
+        "semantically_retrieved_tophit_engaged" : {
+          "tag" : 85,
+          "type" : "uint64"
+        },
+        "server_engaged" : {
+          "tag" : 15,
+          "type" : "uint64"
+        },
+        "server_shown" : {
+          "tag" : 44,
+          "type" : "uint64"
+        },
+        "server_top_hit_engaged" : {
+          "tag" : 11,
+          "type" : "uint64"
+        },
+        "server_top_hit_shown" : {
+          "tag" : 39,
+          "type" : "uint64"
+        },
+        "top_section_engaged" : {
+          "tag" : 87,
+          "type" : "uint64"
+        },
+        "top_section_skipped" : {
+          "tag" : 24,
+          "type" : "uint64"
+        },
+        "total_searches_performed" : {
+          "tag" : 64,
+          "type" : "uint64"
+        },
+        "total_sessions" : {
+          "tag" : 61,
+          "type" : "uint"
+        },
+        "web_answer_engaged" : {
+          "tag" : 62,
+          "type" : "uint64"
+        },
+        "web_image_engaged" : {
+          "tag" : 37,
+          "type" : "uint64"
+        },
+        "web_image_shown" : {
+          "tag" : 81,
+          "type" : "uint64"
+        },
+        "web_index_engaged" : {
+          "tag" : 16,
+          "type" : "uint64"
+        },
+        "web_index_or_safari_history_engaged" : {
+          "tag" : 90,
+          "type" : "uint64"
+        },
+        "web_index_or_safari_history_shown" : {
+          "tag" : 21,
+          "type" : "uint64"
+        },
+        "web_suggestion_astype_nonastyped_engaged" : {
+          "tag" : 71,
+          "type" : "uint64"
+        },
+        "web_suggestion_astyped_engaged" : {
+          "tag" : 56,
+          "type" : "uint64"
+        },
+        "web_suggestion_engaged" : {
+          "tag" : 74,
+          "type" : "uint64"
+        },
+        "web_suggestion_shown" : {
+          "tag" : 38,
+          "type" : "uint64"
+        },
+        "zkw_app_engaged" : {
+          "tag" : 73,
+          "type" : "uint64"
+        },
+        "zkw_app_shown" : {
+          "tag" : 27,
+          "type" : "uint64"
+        },
+        "zkw_contact_engaged" : {
+          "tag" : 2,
+          "type" : "uint64"
+        },
+        "zkw_contextual_appshortcut_engaged" : {
+          "tag" : 84,
+          "type" : "uint64"
+        },
+        "zkw_contextual_routine_engaged" : {
+          "tag" : 78,
+          "type" : "uint64"
+        },
+        "zkw_contextual_suggestion_engaged" : {
+          "tag" : 51,
+          "type" : "uint64"
+        },
+        "zkw_contextual_suggestion_shown" : {
+          "tag" : 29,
+          "type" : "uint64"
+        },
+        "zkw_documents_engaged" : {
+          "tag" : 58,
+          "type" : "uint64"
+        },
+        "zkw_engaged" : {
+          "tag" : 80,
+          "type" : "uint64"
+        },
+        "zkw_mail_engaged" : {
+          "tag" : 50,
+          "type" : "uint64"
+        },
+        "zkw_maps_engaged" : {
+          "tag" : 79,
+          "type" : "uint64"
+        },
+        "zkw_notes_engaged" : {
+          "tag" : 8,
+          "type" : "uint64"
+        },
+        "zkw_photos_engaged" : {
+          "tag" : 88,
+          "type" : "uint64"
+        },
+        "zkw_recent_engaged" : {
+          "tag" : 89,
+          "type" : "uint64"
+        },
+        "zkw_recent_shown" : {
+          "tag" : 36,
+          "type" : "uint64"
+        },
+        "zkw_reminder_engaged" : {
+          "tag" : 86,
+          "type" : "uint64"
+        },
+        "zkw_settings_engaged" : {
+          "tag" : 45,
+          "type" : "uint64"
+        },
+        "zkw_shown" : {
+          "tag" : 18,
+          "type" : "uint64"
+        },
+        "zkw_sms_engaged" : {
+          "tag" : 41,
+          "type" : "uint64"
+        },
+        "zkw_timer_engaged" : {
+          "tag" : 43,
+          "type" : "uint64"
+        },
+        "zkw_web_suggestion_engaged" : {
+          "tag" : 76,
+          "type" : "uint64"
+        },
+        "zkw_website_local_engaged" : {
+          "tag" : 69,
+          "type" : "uint64"
+        },
+        "zkw_website_server_engaged" : {
+          "tag" : 26,
+          "type" : "uint64"
+        }
+      }
+    }
+  }
+}

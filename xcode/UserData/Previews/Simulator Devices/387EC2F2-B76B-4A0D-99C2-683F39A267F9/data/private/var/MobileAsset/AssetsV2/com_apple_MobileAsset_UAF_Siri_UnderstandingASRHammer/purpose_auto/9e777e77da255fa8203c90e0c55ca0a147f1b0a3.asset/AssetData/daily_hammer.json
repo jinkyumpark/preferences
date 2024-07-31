@@ -1,0 +1,63 @@
+{
+    "version-major": 239,
+    "version-minor": 0,
+    "model-info": {
+        "version": "Hammer-eng-USA-server-10.0.1.0-20231122-675pe3qkxz-full-20240626063344-dfa07b5",
+        "language": "en_US",
+        "sampling-rates": [
+            8000,
+            16000
+        ],
+        "tasks": [
+            "SearchOrMessaging",
+            "Dictation",
+            "SiriDictation",
+            "DictationCC",
+            "SpellCC",
+            "VoiceMail",
+            "WebSearch",
+            "Captioning",
+            "SearchOrMessagingVision",
+            "DictationVision",
+            "SiriDictationVision",
+            "DictationCCVision",
+            "SpellCCVision",
+            "WebSearchVision",
+            "CaptioningVision",
+            "SearchOrMessagingWatch",
+            "DictationWatch",
+            "SiriDictationWatch",
+            "SearchOrMessagingATV",
+            "CaptioningATV"
+        ],
+        "phoneset-version": "ENU54",
+        "acoustic-profile-version": "qsr-DNN-NOADAPT-1.0",
+        "os-types": [
+            "*"
+        ],
+        "acoustic-model-version": "10.0.1.0"
+    },
+    "text-proc": {
+        "post-itn-hammer": {
+            "default": {
+                "rule-fst": [
+                    "./TP/postitn_hammer00.fst",
+                    "./TP/postitn_hammer02.fst",
+                    "./TP/postitn_hammer03.fst",
+                    "./TP/postitn_hammer04.fst",
+                    "./TP/daily_hammer00.fst"
+                ]
+            },
+            "en_CA": {
+                "rule-fst": [
+                    "./TP/postitn_hammer00.fst",
+                    "./TP/postitn_hammer01.fst",
+                    "./TP/postitn_hammer02.fst",
+                    "./TP/postitn_hammer03.fst",
+                    "./TP/postitn_hammer04.fst",
+                    "./TP/daily_hammer00.fst"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+0 cancel
+0 stop
+0 undo
+0 close
+0 no
+1 one
+1 first
+1 first one
+1 the first
+1 the first one
+1 number one
+1 option one
+2 two
+2 second
+2 second one
+2 the second
+2 the second one
+2 number two
+2 option two
+3 three
+3 third
+3 third one
+3 the third
+3 the third one
+3 number three
+3 option three
+4 four
+4 fourth
+4 fourth one
+4 the fourth
+4 the fourth one
+4 number four
+4 option four
+5 five
+5 fifth
+5 fifth one
+5 the fifth
+5 the fifth one
+5 number five
+5 option five
+6 six
+6 sixth
+6 sixth one
+6 the sixth
+6 the sixth one
+6 number six
+6 option six
+7 seven
+7 seventh
+7 seventh one
+7 the seventh
+7 the seventh one
+7 number seven
+7 option seven
+8 eight
+8 eighth
+8 eighth one
+8 the eighth
+8 the eighth one
+8 number eight
+8 option eight
+9 nine
+9 ninth
+9 ninth one
+9 the ninth
+9 the ninth one
+9 number nine
+9 option nine
+10 ten
+10 tenth
+10 tenth one
+10 the tenth
+10 the tenth one
+10 number ten
+10 option ten
+-1 last
+-1 last one
+-1 the last one

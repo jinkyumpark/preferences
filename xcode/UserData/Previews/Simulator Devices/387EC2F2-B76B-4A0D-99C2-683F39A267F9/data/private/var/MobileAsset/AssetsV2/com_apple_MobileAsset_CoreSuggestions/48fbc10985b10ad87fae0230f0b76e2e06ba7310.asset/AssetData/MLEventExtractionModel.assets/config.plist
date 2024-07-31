@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EMDE_SEPARATOR_TOKEN</key>
+	<integer>2</integer>
+	<key>EMDE_EVENT_SEPARATOR</key>
+	<string>~</string>
+	<key>EMDE_HOTEL_BOOKING_START_DATE_TOKEN</key>
+	<string>checkin</string>
+	<key>EMDE_HOTEL_BOOKING_END_DATE_TOKEN</key>
+	<string>checkout</string>
+	<key>EMDE_BEAM_WIDTH</key>
+	<integer>3</integer>
+	<key>EMDE_DEFAULT_TOKEN_THRESHOLD</key>
+	<integer>0</integer>
+	<key>EMDE_TITLE_THRESHOLD</key>
+	<real>0.93</real>
+	<key>EMDE_DATE_THRESHOLD</key>
+	<real>0.9399999999999999</real>
+	<key>EMDE_VOCAB_SIZE</key>
+	<integer>15000</integer>
+	<key>EMDE_NEW_LINE_SEPARATOR</key>
+	<string>• </string>
+	<key>EMDE_ALLOWED_KEYWORDS_SINGLE_EVENT</key>
+	<string>meeting bus train journey checkin checkout hotel reservation for at and with by appt appointment none na ~ | stay: movie: bus: train:</string>
+	<key>EMDE_ALLOWED_KEYWORDS_DUAL_EVENT</key>
+	<string>travel booking from to flight hrs flight: </string>
+	<key>EMDE_BEAM_VALIDATION_REQUIRED</key>
+	<true/>
+	<key>EMDE_UNILM_MODEL_FILE</key>
+	<string>unilm_sms_prod.espresso.net</string>
+	<key>EMDE_VOCAB_FILE</key>
+	<string>uniLM-Vocab.txt</string>
+	<key>EMDE_SPIECE_MODEL_FILE</key>
+	<string>spiece.model</string>
+	<key>EMDE_MAX_INPUT_LEN</key>
+	<integer>256</integer>
+	<key>EMDE_DATE_DECODER_LEN</key>
+	<integer>56</integer>
+	<key>EMDE_TITLE_DECODER_LEN</key>
+	<integer>32</integer>
+	<key>EMDE_DATE_LENGTH_PENALTY</key>
+	<integer>1</integer>
+	<key>EMDE_TITLE_LENGTH_PENALTY</key>
+	<real>1.07</real>
+	<key>EMDE_TITLE_TRIGGER_TOKEN_ID</key>
+	<integer>1222</integer>
+	<key>EMDE_DATE_TRIGGER_TOKEN_ID</key>
+	<integer>1567</integer>
+	<key>EMDE_COLON_TOKEN_ID</key>
+	<integer>34</integer>
+</dict>
+</plist>

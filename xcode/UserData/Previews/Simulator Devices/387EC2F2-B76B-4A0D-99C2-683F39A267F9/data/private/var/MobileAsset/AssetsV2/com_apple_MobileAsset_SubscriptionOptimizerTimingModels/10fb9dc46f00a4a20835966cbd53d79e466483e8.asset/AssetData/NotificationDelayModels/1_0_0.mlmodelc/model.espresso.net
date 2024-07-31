@@ -1,0 +1,723 @@
+{
+  "layers" : [
+    {
+      "begin_n" : 0,
+      "static_sizes_k" : 0,
+      "end_mask_h" : false,
+      "end_w" : 0,
+      "end_h" : 3,
+      "begin_h" : 2,
+      "stride_n" : 1,
+      "end_seq" : 1,
+      "attributes" : {
+        "basic_block_head" : 1
+      },
+      "begin_mask_seq" : false,
+      "begin_mask_h" : false,
+      "stride_k" : 1,
+      "squeeze_mask_h" : true,
+      "type" : "general_slice",
+      "begin_mask_k" : false,
+      "static_sizes_w" : 0,
+      "begin_w" : 0,
+      "end_mask_k" : false,
+      "use_static_sizes" : false,
+      "stride_h" : 1,
+      "static_sizes_n" : 0,
+      "begin_mask_n" : false,
+      "weights" : {
+
+      },
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice",
+      "stride_seq" : 1,
+      "end_k" : 1,
+      "static_sizes_seq" : 0,
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice",
+      "begin_seq" : 0,
+      "begin_k" : 0,
+      "squeeze_mask_k" : false,
+      "end_mask_w" : true,
+      "end_mask_seq" : false,
+      "end_mask_n" : false,
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice",
+      "stride_w" : 1,
+      "squeeze_mask_seq" : false,
+      "static_sizes_h" : 0,
+      "begin_mask_w" : true,
+      "bottom" : "featureArray",
+      "end_n" : 1,
+      "squeeze_mask_w" : false,
+      "squeeze_mask_n" : false
+    },
+    {
+      "begin_n" : 0,
+      "static_sizes_k" : 0,
+      "end_mask_h" : false,
+      "end_w" : 0,
+      "end_h" : 1,
+      "begin_h" : 0,
+      "stride_n" : 1,
+      "end_seq" : 1,
+      "begin_mask_seq" : false,
+      "begin_mask_h" : false,
+      "squeeze_mask_h" : true,
+      "stride_k" : 1,
+      "type" : "general_slice",
+      "begin_mask_k" : false,
+      "static_sizes_w" : 0,
+      "begin_w" : 0,
+      "end_mask_k" : false,
+      "use_static_sizes" : false,
+      "stride_h" : 1,
+      "static_sizes_n" : 0,
+      "begin_mask_n" : false,
+      "weights" : {
+
+      },
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1",
+      "stride_seq" : 1,
+      "end_k" : 1,
+      "static_sizes_seq" : 0,
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1",
+      "begin_seq" : 0,
+      "squeeze_mask_k" : false,
+      "begin_k" : 0,
+      "end_mask_w" : true,
+      "end_mask_seq" : false,
+      "end_mask_n" : false,
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1",
+      "stride_w" : 1,
+      "squeeze_mask_seq" : false,
+      "static_sizes_h" : 0,
+      "begin_mask_w" : true,
+      "bottom" : "featureArray",
+      "end_n" : 1,
+      "squeeze_mask_w" : false,
+      "squeeze_mask_n" : false
+    },
+    {
+      "begin_n" : 0,
+      "static_sizes_k" : 0,
+      "end_mask_h" : false,
+      "end_w" : 0,
+      "end_h" : 2,
+      "begin_h" : 1,
+      "stride_n" : 1,
+      "end_seq" : 1,
+      "begin_mask_seq" : false,
+      "begin_mask_h" : false,
+      "squeeze_mask_h" : true,
+      "stride_k" : 1,
+      "type" : "general_slice",
+      "begin_mask_k" : false,
+      "static_sizes_w" : 0,
+      "begin_w" : 0,
+      "end_mask_k" : false,
+      "use_static_sizes" : false,
+      "stride_h" : 1,
+      "static_sizes_n" : 0,
+      "begin_mask_n" : false,
+      "weights" : {
+
+      },
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_2",
+      "stride_seq" : 1,
+      "end_k" : 1,
+      "static_sizes_seq" : 0,
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_2",
+      "begin_seq" : 0,
+      "squeeze_mask_k" : false,
+      "begin_k" : 0,
+      "end_mask_w" : true,
+      "end_mask_seq" : false,
+      "end_mask_n" : false,
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_2",
+      "stride_w" : 1,
+      "squeeze_mask_seq" : false,
+      "static_sizes_h" : 0,
+      "begin_mask_w" : true,
+      "bottom" : "featureArray",
+      "end_n" : 1,
+      "squeeze_mask_w" : false,
+      "squeeze_mask_n" : false
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice",
+      "alpha" : 0.033333335071802139,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/truediv",
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/truediv",
+      "type" : "elementwise",
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/truediv",
+      "beta" : 0
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_2",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/add",
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/add",
+      "type" : "elementwise",
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/add",
+      "beta" : 0
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1",
+      "alpha" : 1,
+      "operation" : 117,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_2_floor",
+      "top" : "cast_2_floor",
+      "type" : "elementwise",
+      "name" : "cast_2_floor",
+      "beta" : 0
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1",
+      "alpha" : 1,
+      "operation" : 118,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_2_ceil",
+      "top" : "cast_2_ceil",
+      "type" : "elementwise",
+      "name" : "cast_2_ceil",
+      "beta" : 0
+    },
+    {
+      "bottom" : "",
+      "k" : 1,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1,
+      "debug_info" : "cast_2_cond",
+      "constant_blob" : 1,
+      "top" : "cast_2_cond_load_constant_8",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "cast_2_cond_load_constant_8"
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1,cast_2_cond_load_constant_8",
+      "alpha" : 1,
+      "operation" : 105,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_2_cond",
+      "top" : "cast_2_cond",
+      "type" : "elementwise",
+      "name" : "cast_2_cond",
+      "beta" : 0
+    },
+    {
+      "bottom" : "cast_2_cond,cast_2_floor,cast_2_ceil",
+      "alpha" : 1,
+      "operation" : 101,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_2",
+      "nd_mode" : true,
+      "top" : "cast_2",
+      "type" : "elementwise",
+      "name" : "cast_2",
+      "beta" : 0
+    },
+    {
+      "depth" : 24,
+      "bottom" : "cast_2",
+      "weights" : {
+
+      },
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_1",
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_1",
+      "type" : "one_hot",
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_1"
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/truediv",
+      "alpha" : 1,
+      "operation" : 117,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_1_floor",
+      "top" : "cast_1_floor",
+      "type" : "elementwise",
+      "name" : "cast_1_floor",
+      "beta" : 0
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/truediv",
+      "alpha" : 1,
+      "operation" : 118,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_1_ceil",
+      "top" : "cast_1_ceil",
+      "type" : "elementwise",
+      "name" : "cast_1_ceil",
+      "beta" : 0
+    },
+    {
+      "bottom" : "",
+      "k" : 1,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1,
+      "debug_info" : "cast_1_cond",
+      "constant_blob" : 3,
+      "top" : "cast_1_cond_load_constant_13",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "cast_1_cond_load_constant_13"
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/truediv,cast_1_cond_load_constant_13",
+      "alpha" : 1,
+      "operation" : 105,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_1_cond",
+      "top" : "cast_1_cond",
+      "type" : "elementwise",
+      "name" : "cast_1_cond",
+      "beta" : 0
+    },
+    {
+      "bottom" : "cast_1_cond,cast_1_floor,cast_1_ceil",
+      "alpha" : 1,
+      "operation" : 101,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_1",
+      "nd_mode" : true,
+      "top" : "cast_1",
+      "type" : "elementwise",
+      "name" : "cast_1",
+      "beta" : 0
+    },
+    {
+      "depth" : 24,
+      "bottom" : "cast_1",
+      "weights" : {
+
+      },
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot",
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot",
+      "type" : "one_hot",
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot"
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/add",
+      "alpha" : 1,
+      "operation" : 117,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_0_floor",
+      "top" : "cast_0_floor",
+      "type" : "elementwise",
+      "name" : "cast_0_floor",
+      "beta" : 0
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/add",
+      "alpha" : 1,
+      "operation" : 118,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_0_ceil",
+      "top" : "cast_0_ceil",
+      "type" : "elementwise",
+      "name" : "cast_0_ceil",
+      "beta" : 0
+    },
+    {
+      "bottom" : "",
+      "k" : 1,
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1,
+      "debug_info" : "cast_0_cond",
+      "constant_blob" : 5,
+      "top" : "cast_0_cond_load_constant_18",
+      "w" : 1,
+      "type" : "load_constant",
+      "name" : "cast_0_cond_load_constant_18"
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/add,cast_0_cond_load_constant_18",
+      "alpha" : 1,
+      "operation" : 105,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_0_cond",
+      "top" : "cast_0_cond",
+      "type" : "elementwise",
+      "name" : "cast_0_cond",
+      "beta" : 0
+    },
+    {
+      "bottom" : "cast_0_cond,cast_0_floor,cast_0_ceil",
+      "alpha" : 1,
+      "operation" : 101,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "cast_0",
+      "nd_mode" : true,
+      "top" : "cast_0",
+      "type" : "elementwise",
+      "name" : "cast_0",
+      "beta" : 0
+    },
+    {
+      "depth" : 25,
+      "bottom" : "cast_0",
+      "weights" : {
+
+      },
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_2",
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_2",
+      "type" : "one_hot",
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_2"
+    },
+    {
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/one_hot,model\/one_hot_encoding_with_feature_scale_layer\/one_hot_1,model\/one_hot_encoding_with_feature_scale_layer\/one_hot_2",
+      "weights" : {
+
+      },
+      "nd_mode" : true,
+      "axis" : 1,
+      "debug_info" : "model\/one_hot_encoding_with_feature_scale_layer\/concat",
+      "top" : "model\/one_hot_encoding_with_feature_scale_layer\/concat",
+      "type" : "general_concat",
+      "name" : "model\/one_hot_encoding_with_feature_scale_layer\/concat"
+    },
+    {
+      "nB" : 73,
+      "top" : "model\/dense\/Relu",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 30,
+      "blob_weights" : 9,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "model\/one_hot_encoding_with_feature_scale_layer\/concat",
+      "blob_biases" : 7,
+      "has_tanh" : 0,
+      "debug_info" : "model\/dense\/BiasAdd",
+      "name" : "model\/dense\/BiasAdd",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 30,
+      "top" : "model\/dense_1\/Relu",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 10,
+      "blob_weights" : 13,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "model\/dense\/Relu",
+      "blob_biases" : 11,
+      "has_tanh" : 0,
+      "debug_info" : "model\/dense_1\/BiasAdd",
+      "name" : "model\/dense_1\/BiasAdd",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 10,
+      "top" : "model\/dense_2\/BiasAdd",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 1,
+      "blob_weights" : 17,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "model\/dense_1\/Relu",
+      "blob_biases" : 15,
+      "has_tanh" : 0,
+      "debug_info" : "model\/dense_2\/BiasAdd",
+      "name" : "model\/dense_2\/BiasAdd",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "model\/dense_2\/BiasAdd",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "model\/dense_2\/Sigmoid",
+      "top" : "propensity",
+      "type" : "activation",
+      "name" : "model\/dense_2\/Sigmoid",
+      "attributes" : {
+        "is_output" : 1
+      }
+    }
+  ],
+  "storage" : "model.espresso.weights",
+  "metadata_in_weights" : [
+
+  ],
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 300,
+  "shape" : {
+    "layer_shapes" : {
+      "cast_0_cond_load_constant_18" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_2" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice_1" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "featureArray" : {
+        "k" : 1,
+        "w" : 3,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_1" : {
+        "k" : 1,
+        "w" : 24,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "cast_1_cond_load_constant_13" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "h" : 1
+      },
+      "model\/dense_2\/BiasAdd" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "cast_2_ceil" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_1_ceil" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_0_floor" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/one_hot" : {
+        "k" : 1,
+        "w" : 24,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "cast_0_ceil" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_1" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_2_cond_load_constant_8" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/strided_slice" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/concat" : {
+        "k" : 1,
+        "w" : 73,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "cast_1_floor" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/truediv" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_2_cond" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/dense_1\/Relu" : {
+        "k" : 1,
+        "w" : 10,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "propensity" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "cast_1_cond" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_2_floor" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_0_cond" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "cast_0" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/dense\/Relu" : {
+        "k" : 1,
+        "w" : 30,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/add" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "model\/one_hot_encoding_with_feature_scale_layer\/one_hot_2" : {
+        "k" : 1,
+        "w" : 25,
+        "n" : 1,
+        "_rank" : 2,
+        "h" : 1
+      },
+      "cast_2" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      }
+    },
+    "global_shapes" : {
+
+    }
+  },
+  "subnetworks" : {
+
+  }
+}

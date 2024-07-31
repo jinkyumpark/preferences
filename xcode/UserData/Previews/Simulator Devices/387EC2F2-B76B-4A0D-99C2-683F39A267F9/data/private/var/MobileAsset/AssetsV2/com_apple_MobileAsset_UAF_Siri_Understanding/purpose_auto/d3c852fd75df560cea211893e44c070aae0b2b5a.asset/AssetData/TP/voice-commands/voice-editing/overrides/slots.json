@@ -1,0 +1,80 @@
+{
+  ".": {
+    "is_meta_token": false,
+    "prefixes": [
+      "the",
+      "a",
+      "that"
+    ],
+    "phrases": [
+      "period",
+      "full stop",
+      "dot",
+      "point",
+      "."
+    ]
+  },
+  ",": {
+    "is_meta_token": false,
+    "prefixes": [
+      "the",
+      "a",
+      "that"
+    ],
+    "phrases": [
+      "comma",
+      ","
+    ]
+  },
+  "!": {
+    "is_meta_token": false,
+    "prefixes": [
+      "the",
+      "an",
+      "that"
+    ],
+    "phrases": [
+      "exclamation mark",
+      "exclamation point",
+      "!"
+    ]
+  },
+  "?": {
+    "is_meta_token": false,
+    "prefixes": [
+      "the",
+      "a",
+      "that"
+    ],
+    "phrases": [
+      "question mark",
+      "?"
+    ]
+  },
+  ":": {
+    "is_meta_token": false,
+    "prefixes": [
+      "the",
+      "a",
+      "that"
+    ],
+    "phrases": [
+      "colon",
+      "colon mark",
+      ":"
+    ]
+  },
+  "fullText": {
+    "is_meta_token": true,
+    "prefixes": [],
+    "applicable_intents": [
+      "delete"
+    ],
+    "phrases": [
+      "all",
+      "everything",
+      "the whole document",
+      "all the words"
+    ]
+  }
+}

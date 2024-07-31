@@ -1,0 +1,21 @@
+{
+  "atomicEntries" : [
+    {
+      "assetID" : "5af710a7743432d8168ffc72054f8d1dd9ebd035",
+      "fullAssetSelector" : {
+        "assetSpecifier" : "com.apple.siri.findmy.primary_device_files",
+        "assetVersion" : "0.2.3.11.4176,0"
+      },
+      "inhibitedFromEmergencyRemoval" : false,
+      "localContentURL" : "/Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator%20Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/private/var/MobileAsset/AssetsV2/com_apple_MobileAsset_UAF_Siri_FindMyConfigurationFiles/purpose_auto/5af710a7743432d8168ffc72054f8d1dd9ebd035.asset/AssetData"
+    }
+  ],
+  "atomicInstance" : "2BEA9371-DE53-4267-95F4-F901323B853D",
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.findmy"
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "locked",
+    "timestamp" : "2024-07-19T04:12:52.615Z"
+  }
+}

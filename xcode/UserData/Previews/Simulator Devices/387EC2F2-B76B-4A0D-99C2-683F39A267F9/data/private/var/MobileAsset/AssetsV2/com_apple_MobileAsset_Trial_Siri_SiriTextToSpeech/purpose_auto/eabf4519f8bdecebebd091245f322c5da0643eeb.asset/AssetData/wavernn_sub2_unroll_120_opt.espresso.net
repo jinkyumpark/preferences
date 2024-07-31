@@ -1,0 +1,131 @@
+{
+  "storage" : "wavernn_sub2_unroll_120.espresso.weights",
+  "analyses" : {
+    "N8Espresso34pass_constant_if_conditions_resultE" : {
+      "constant_blobs" : {
+        "i" : 10,
+        "i_@ssa_version_1" : 10,
+        "max_iter" : 10,
+        "i_@ssa_version_3" : 10,
+        "i_@ssa_version_2" : 10,
+        "loop_cond" : 10
+      }
+    }
+  },
+  "properties" : {
+    "anec_flags" : "EnableSingleChannelEWOpCopyRemoval,EnableAggressiveTensorCaching",
+    "experimental.ane.skip_network_transform_pre_allocation" : "1",
+    "experimental.ane.use_faux_dispatch" : "1",
+    "experimental.ane.use_high_precision_activations" : "1",
+    "experimental.ane.dev_op_override" : "wavernn_sub2_unroll_120.espresso.net",
+    "hint_no_mutable_weights" : "1"
+  },
+  "format_version" : 200,
+  "layers" : [
+    {
+      "alpha" : 1,
+      "bottom" : "",
+      "distribution" : 3,
+      "weights" : {
+
+      },
+      "nd_rank" : 2,
+      "out_h" : 120,
+      "out_w" : 256,
+      "top" : "O2__rand_v",
+      "type" : "load_random",
+      "name" : "gumbel_noise_2",
+      "beta" : 0.0099999997764825821
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "",
+      "distribution" : 3,
+      "weights" : {
+
+      },
+      "nd_rank" : 2,
+      "out_h" : 120,
+      "out_w" : 256,
+      "top" : "O4__rand_v",
+      "type" : "load_random",
+      "name" : "gumbel_noise_4",
+      "beta" : 0.0099999997764825821
+    },
+    {
+      "type" : "dev_op",
+      "name" : "ane_precompiled",
+      "id" : 0,
+      "platform" : 10007,
+      "bottom" : "fine_bit_scaled,in_coarse_bit_scaled,hidden_state,O4__rand_v,mel,O2__rand_v",
+      "top" : "out_fine_bit_scaled,out_coarse_bit_scaled,out_hidden_state",
+      "bottom_shapes" : [
+        {
+          "k" : 1,
+          "w" : 1,
+          "n" : 1,
+          "_rank" : 2,
+          "h" : 1
+        },
+        {
+          "k" : 1,
+          "w" : 1,
+          "n" : 1,
+          "_rank" : 1,
+          "h" : 1
+        },
+        {
+          "k" : 1,
+          "w" : 448,
+          "n" : 1,
+          "_rank" : 1,
+          "h" : 1
+        },
+        {
+          "k" : 1,
+          "w" : 256,
+          "n" : 1,
+          "_rank" : 2,
+          "h" : 120
+        },
+        {
+          "k" : 1,
+          "w" : 80,
+          "n" : 1,
+          "_rank" : 1,
+          "h" : 1
+        },
+        {
+          "k" : 1,
+          "w" : 256,
+          "n" : 1,
+          "_rank" : 2,
+          "h" : 120
+        }
+      ],
+      "top_shapes" : [
+        {
+          "k" : 120,
+          "w" : 1,
+          "n" : 1,
+          "_rank" : 3,
+          "h" : 1
+        },
+        {
+          "k" : 120,
+          "w" : 1,
+          "n" : 1,
+          "_rank" : 3,
+          "h" : 1
+        },
+        {
+          "k" : 1,
+          "w" : 448,
+          "n" : 1,
+          "_rank" : 2,
+          "h" : 1
+        }
+      ],
+    }
+  ]
+}

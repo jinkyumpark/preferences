@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.MobileAsset.Trial.Siri.SiriTextToSpeech</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6</string>
+	<key>CFBundleName</key>
+	<string>com.apple.siri.tts.voice.en_US.nora.neural.premium-en_US-iPhone</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1899.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1899.0.0</string>
+	<key>MobileAssetProperties</key>
+	<dict>
+		<key>AssetSpecifier</key>
+		<string>com.apple.siri.tts.voice.en_US.nora.neural.premium-en_US-iPhone</string>
+		<key>AssetVersion</key>
+		<string>1899.0.0.13.100140,0</string>
+		<key>AssetVersionInfo</key>
+		<dict>
+			<key>AssetVersionGroup</key>
+			<integer>0</integer>
+			<key>AssetVersionLong</key>
+			<string>1899.0.0.13.100140,0</string>
+			<key>AssetVersionTuple</key>
+			<string>1899.0.0.13.100140</string>
+			<key>BuildVersionTuple</key>
+			<string>13.13.100140</string>
+			<key>BundleVersionTuple</key>
+			<string>1899.0.0</string>
+		</dict>
+		<key>Build</key>
+		<string>13M100140</string>
+		<key>Factor</key>
+		<string>com.apple.siri.tts.voice.en_US.nora.neural.premium</string>
+		<key>_IsMAAutoAsset</key>
+		<true/>
+		<key>_OSVersionCompatibilities</key>
+		<dict>
+			<key>Apple TV</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>18.0</string>
+			</dict>
+			<key>Apple Vision</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>2.0</string>
+			</dict>
+			<key>Apple Watch</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>11.0</string>
+			</dict>
+			<key>HomePod</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>18.0</string>
+			</dict>
+			<key>Mac</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>15.0</string>
+			</dict>
+			<key>iPad</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>18.0</string>
+			</dict>
+			<key>iPad Simulator</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>18.0</string>
+			</dict>
+			<key>iPhone</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>18.0</string>
+			</dict>
+			<key>iPhone Simulator</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>18.0</string>
+			</dict>
+			<key>rProd Device</key>
+			<dict>
+				<key>_MinOSVersion</key>
+				<string>2.0</string>
+			</dict>
+		</dict>
+		<key>_PreSoftwareUpdateAssetStaging</key>
+		<true/>
+		<key>assetSize</key>
+		<string>83688889</string>
+		<key>gender</key>
+		<string>female</string>
+		<key>ttsCompatibilityVersion</key>
+		<string>68</string>
+		<key>ttsContentVersion</key>
+		<string>1899</string>
+		<key>version</key>
+		<string>1899.0.0</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,709 @@
+58071f15-68b6-31da-8c4d-2f602db33073	Apple	Apple
+31d17f6a-b263-3546-bf56-c714a55034b4	IPhone	iPhone
+152a7f13-8c9b-3796-b643-ddd4fd22a19f	Siri speak a Chinese	Siri speak Chinese
+48bd7f4e-018c-336c-b036-27b2d9e4f7ba	Speak a Chinese	Speak Chinese
+d88def86-df2f-32f6-84aa-cd96dde50cd0	Siri play 20 minutes by Lil Uzi Vert	Siri play 20 min by Lil Uzi Vert
+7cd2d031-60be-30eb-87f6-32b8510ef0c0	Play 20 minutes by Lil Uzi Vert	Play 20 min by Lil Uzi Vert
+532e9fd7-7ded-3de6-acb0-66bfa6f9c8b7	1 million dreams	a million dreams
+361fd923-7fe3-3e39-9625-303de46e5191	Siri add a living room speaker	Siri add the living room speaker
+38c8edd6-1a99-3456-9d88-dd06a73cb889	Add a living room speaker	Add the living room speaker
+5ba20d2f-e47c-34f1-ac18-458bf10439b8	Siri add a living room speakers	Siri add the living room speakers
+2e76bc8a-48b8-3e57-8631-e200d679e064	Add a living room speakers	Add the living room speakers
+eaa6fbe3-2745-3280-b6ca-0ae5f05a24da	Siri family Guy	Siri Family Guy
+f465580a-d7e0-34a5-90d7-eb9a1f5faaaa	Family Guy	Family Guy
+e370a4d9-77d4-31cf-b18b-b33959f9d90e	Siri drop the mic	Siri Drop the Mic
+91c7a50b-9e6a-3fd2-a070-b064eaea6312	Drop the mic	Drop the Mic
+77393b17-074c-3990-bd8b-6d5b03bf602a	Siri play the song everywhere	Siri play this song everywhere
+987f5d81-d04c-3d60-b150-b2ddff93ce8f	Play the song everywhere	Play this song everywhere
+a964bbee-904d-3d44-987f-1b9501e8e281	Siri play the song Everywhere	Siri play this song everywhere
+1b50c3d6-d8ad-3a7a-b81a-0d9c1801ae84	Play the song Everywhere	Play this song everywhere
+6a35a40d-0b53-3268-b486-395254b2ac11	Siri me emoji	Siri Memoji
+09151d59-6f71-383f-9dfc-13b332b429f4	Me emoji	Memoji
+28a270d2-4c65-3ea0-96b5-6463f86292ed	I phone	iPhone
+0b5a8783-8465-3556-91f8-f829552d0487	I Phone	iPhone
+21252166-ca14-37e3-b38b-616d21c76860	Siri my I phone	Siri my iPhone
+7c8239ef-a9e2-337b-a6e8-b4861a66b8b8	My I phone	My iPhone
+73ad706c-716c-3279-bb64-ee14b713ffde	Lonnie Walker the fourth	Lonnie Walker IV
+4f7df2dd-7948-3994-bdd3-12f479667148	Lonnie walker the fourth	Lonnie Walker IV
+1620264e-00e4-3bce-a51d-8e07243d2255	Siri play a fortnight song	Siri play a Fortnite song
+ed31ccc8-ab1d-32e4-8a6d-e6a90629ac04	Play a fortnight song	Play a Fortnite song
+9678d1a8-bab2-39e6-a979-43dede456147	$.99 store	99 Cents store
+9bd4f114-38ad-3e08-ab0d-bd4b9c6fb8fe	A 12 bionic chip	A12 Bionic chip
+a4057c99-f1aa-3901-b88d-d63cefb290b8	Stephen Spielberg	Steven Spielberg
+e76f777d-c1b2-3b57-85d9-1a60d91e5492	Siri the morning show	Siri The Morning Show
+13586a86-143b-3abb-a15f-96373ae3c1b0	The morning show	The Morning Show
+6e6ac8f0-6cf0-3a1e-9007-4f89b6e58da0	Siri how old is xylitol	Siri how old is Zilactole
+9f7c6b0b-6ae9-3da1-8182-5ce15d59802d	How old is xylitol	How old is Zilactole
+8863fc2f-9d0e-33b2-8602-44ecbd2e7a40	Tex	Text
+485ad2df-11c3-3adc-b74f-fdd014823152	Sand	Send
+10def038-2dbf-3f95-97bf-2860fc8bf5f5	Sunda	Send it
+72993764-312a-326a-9ff0-2c92edcc486b	Reedom	Read them
+2e219358-86b2-3194-8127-f3c700db551d	REIT	Read
+77ebf3ea-2b77-3485-96ec-06c65ccfb585	Raid	Read
+7797d564-d784-3370-851b-b24806d9dd89	Taint	Change
+ea3cd25c-c5fe-3864-bb84-b54b64f8be0c	Joytime three	Joytime III
+96ad7a9b-878d-3fa6-8996-36f6bb408da7	Siri play Trippie Redd!	Siri play Trippie Redd !
+bf560b65-fc55-361d-aa8e-2804935913b6	Play Trippie Redd!	Play Trippie Redd !
+9c35acc1-0e39-317d-b627-beede2324329	Siri play exclamation by Trippie Redd	Siri play ! by Trippie Redd
+6a8a848b-03a8-3bad-b8c6-fea9b725dab2	Play exclamation by Trippie Redd	Play ! by Trippie Redd
+db039ded-9882-3d65-b21d-adb6c7129438	Siri play! by Trippie Redd	Siri play ! by Trippie Redd
+eb851f86-884d-315e-9fe5-c0a44ef6cf18	Play! by Trippie Redd	Play ! by Trippie Redd
+ea55f74a-c9c0-38a2-bdce-3e112a9a1465	Siri play the song! by Trippie Redd	Siri play the song ! by Trippie Redd
+014d9f68-2543-367b-8f85-911203be460f	Play the song! by Trippie Redd	Play the song ! by Trippie Redd
+2c23e489-03ad-379b-afa9-d238e01cfd05	Siri a FK mean	Siri AFK mean
+7157c242-5a4b-38af-a427-e068a08bb181	A FK mean	AFK mean
+2a600130-7edc-36b5-92ab-24affb5f265e	Siri a FK Fishfarm	Siri AFK fishing farm
+dde4f5aa-f2ce-386f-b2f9-1798f037790f	A FK Fishfarm	AFK fishing farm
+84b97fa5-d298-3c4b-86a2-0837afb34926	Siri a FK stand for	Siri AFK stand for
+bcc1908a-7eb1-364b-b108-fde63e2529b7	A FK stand for	AFK stand for
+93c679ac-1786-37d0-ba32-ccba896d9ffa	Siri a FK arena	Siri AFK arena
+bd01f042-d36e-3f95-bfae-6bb387e7237c	A FK arena	AFK arena
+e7121b4e-74a3-3df4-b851-1f206c587df5	Siri www. apple .com	Siri www.apple.com
+c639a0f3-274c-349b-ac0b-b7978800f5d0	Www. apple .com	Www.apple.com
+f0dcaad3-78a1-33b4-aa21-a5ea95cd2fcd	Disney plus.com	disneyplus.com
+d78ab005-4c67-3f2d-b4f9-62e879f01979	Disney plus	Disney+
+d5d05795-2fc2-3cfe-8b91-425f348fd240	Disney Plus	Disney+
+8b946991-57d2-3171-bb0b-e63e4fe983d9	Siri disney+.com	Siri disneyplus.com
+d2430563-9b7c-395b-ba1e-018625157d2e	Disney+.com	Disneyplus.com
+9e8701f8-68fb-3749-8b9a-db53b2f67202	TV show Sea	TV show See
+5dea535c-ea09-3a8c-9982-47d5dfc09edd	AirPod pro	AirPod Pro
+8f451b58-6604-3afc-a6a0-7c103ca9f0ce	AirPods pro	AirPods Pro
+2044c28e-e9b8-3997-a346-41c9ffcec91d	Siri episode of C	Siri episode of See
+6ca62a20-25f3-33b2-9034-4d66c49973d1	Episode of C	Episode of See
+93b7f0ce-5c7e-3f00-b355-809e5f700ef8	Siri episode of sea	Siri episode of See
+26d7e230-b98c-30ec-b540-4b5514fd49e3	Episode of sea	Episode of See
+9847b5dc-3ef5-36c2-bc6e-8fb07278493a	Siri play C	Siri play See
+91745603-bfca-343a-bdaa-7103d24de8b2	Play C	Play See
+cefee7ac-008f-3b5b-b10b-be42a87df8c4	Siri play sea	Siri play See
+09d756d8-8943-3127-a328-a7def9d6f7b1	Play sea	Play See
+dd21837f-4286-3970-9858-c02ce724c641	C on Apple	See on Apple
+6142b101-8388-3748-8963-fe9867b17d7f	Siri sea on Apple	Siri See on Apple
+def74c09-016d-3151-bb9f-5bd8be1fa6d8	Sea on Apple	See on Apple
+3eb45599-71d7-399c-9829-9361fbe46e68	Siri play? by XXXTENTACION	Siri play ? by XXXTENTACION
+8fec54bc-8d86-3a15-94eb-948ef4fbcb48	Play? by XXXTENTACION	Play ? by XXXTENTACION
+6a187d50-14a4-33e2-975b-39627d38ebb4	Siri play? by XXXTENTACION	Siri play ? by XXXTENTACION
+f5b0d6d8-9c9b-3866-9583-7f874174e540	Play? by XXXTENTACION	Play ? by XXXTENTACION
+8d78aa29-79d7-3a22-80e6-32c3bc8009a4	Siri play Cupertino to	Siri play Cupertino 2
+54d5029b-ff92-3551-a180-476664704ddc	Play Cupertino to	Play Cupertino 2
+40c7c026-bd4f-3343-b4d5-3277daf97d92	Siri play Cupertino too	Siri play Cupertino 2
+31f05486-182e-3215-91b8-472307817112	Play Cupertino too	Play Cupertino 2
+6c0b714e-5321-334e-91f9-e674336a9e09	Siri play Cupertino two	Siri play Cupertino 2
+81f9a450-a45c-3a1b-a2b2-5ef574fdf7ce	Play Cupertino two	Play Cupertino 2
+99cac89e-0ef2-339d-926d-3c575bf17bf3	Siri bong Joon ho	Siri Bong Joon-ho
+bdbc384f-a631-3702-ba0c-605ef56d49d4	Bong Joon ho	Bong Joon-ho
+f442ecec-1edd-3d52-a7c1-71de217a1d58	Song is this	What song is this
+be1629be-0a59-3435-8ed8-aa35942ca3bf	What is pie	What is pi
+68981b2b-7aed-30ba-8ca7-3aaf16a9e179	What is Pie	What is pi
+129f8be6-d567-38a5-823c-95a2dc1cff3d	Daniel conn	Danielle Cohn
+dcfcae69-065a-35e2-afd5-3fb4a57c3a5a	Siri coccus	Siri caucus
+59d2f269-2c3c-383b-a30b-519f340cbd93	Coccus	Caucus
+3ff78c24-7a52-3efe-8f03-7aff1c0f83f7	102. seven	102.7
+b1dc379f-5a23-3915-a627-c4fffb5ce6b2	102. Seven	102.7
+5bc4f5be-a9fc-3e1f-9a62-c003ae72523f	102 seven	102.7
+b83441ff-7b5c-382f-93fc-1aaefd05e7ff	102 Seven	102.7
+91b03c81-4303-3e3d-aef4-017d98d0e80d	Siri one 02 .7	Siri 102.7
+19c51535-fe41-31f3-9cdc-2f76c6eae00d	One 02 .7	102.7
+b3d70574-fdd2-3f6d-a5b0-cb62c9b4699c	Siri one 02 .7	Siri 102.7
+5d714475-4733-38de-b4fe-4e8dea0dc4a7	One 02 .7	102.7
+c0ac1bca-fa83-37e4-a51f-485a65a8a818	Siri on Apple Music it's	Siri on Apple Music hits
+89dd5087-cb2c-34a3-b227-269b6b7eb34c	On Apple Music it's	On Apple Music hits
+9617a400-9c04-32a4-8043-b2ce821d59cf	Siri play Apple Music it's	Siri play Apple Music hits
+525580c3-7813-3b1c-b80e-f8e7dd4cac2f	Play Apple Music it's	Play Apple Music hits
+d0b9c6c6-ef9c-37b1-aae0-8fd85a9eb091	Siri on Apple Music one	Siri on Apple Music 1
+ccd39ebd-2719-3174-ba98-e534a73a9aad	On Apple Music one	On Apple Music 1
+bb11a8ce-27ee-3c30-9549-d49e091b2f93	Siri play Apple Music one	Siri play Apple Music 1
+bc3f5e18-38b6-396a-979e-61a783047e45	Play Apple Music one	Play Apple Music 1
+9a8526fe-6c0c-3adc-bc19-6aac493af74d	Cris Como	Chris Cuomo
+e672cbbd-c1b8-3358-af5a-34a9a41db43b	Sundae	Sunday
+0d5e4129-a331-3712-8a35-6c9f7f3b4f19	Siri play Mae Radio	Siri play my Radio
+29fac8b2-25d2-3fed-9eef-c791c823e93e	Play Mae Radio	Play my Radio
+427109d3-13cd-3c59-8186-e295342404d5	Siri cum cum	Siri come come
+34621aa4-17d8-316b-aca8-b92dcea56389	Cum cum	Come come
+5b7d981e-fbaa-37e7-9b17-e1fafa81bdfe	Siri black lives matter	Siri Black Lives Matter
+bcaccaad-f014-31d0-bc02-27cb3e253eb6	Black lives matter	Black Lives Matter
+4d05597f-3d32-373e-9c46-371f0f55067d	BLACK lives matter	Black Lives Matter
+bcaccaad-f014-31d0-bc02-27cb3e253eb6	Black lives matter	Black Lives Matter
+4e026b0e-240c-369a-9214-f4baf33b79db	Siri black people	Siri Black people
+0a2e8bc4-611a-39c5-b0aa-de6bd42399f1	Black people	Black people
+62577889-c1c3-37d8-ab4b-a8b6993d9ceb	BLACK people	Black people
+b499667d-9721-3736-aa4f-7a8af97a5821	Siri big Sur	Siri Big Sur
+66ad6a38-9185-3ddb-926f-cc81e495d17f	Big Sur	Big Sur
+7726604b-88d3-3af7-b824-0021cfb24104	Rosetta to	Rosetta 2
+4dd682f3-3ec2-3bb4-9f61-3ab533a4aa23	Rosetta two	Rosetta 2
+71ca302e-1a9b-32cd-907a-22a1c84b593c	Siri apple silicon	Siri Apple Silicon
+e323a842-9d08-3a39-af47-0355e899726e	Apple silicon	Apple Silicon
+e323a842-9d08-3a39-af47-0355e899726e	Apple silicon	Apple Silicon
+11ca614f-bdcd-3ff0-9dea-a6e5c52941f2	Siri apple silicone	Siri Apple Silicon
+ea753085-f66e-3c50-9c7d-a7b436bd4103	Apple silicone	Apple Silicon
+ea753085-f66e-3c50-9c7d-a7b436bd4103	Apple silicone	Apple Silicon
+edb6fa21-da5a-3e64-a251-cb5de2efa0a5	Siri black history month	Siri Black History Month
+a4ff05ac-4e9e-3cb0-8d0f-8a882abd28f9	Black history month	Black History Month
+4f3f54b8-ccfa-3eae-b2e2-29eaa2d169ea	BLACK history month	Black History Month
+ec49aa1b-bc19-3d9e-b9e0-f3ac99f148d9	I'm black	I'm Black
+65a6d49f-dee7-38fe-80c2-af22a5d915a8	I'm BLACK	I'm Black
+a2c079d7-19dd-3a67-8146-9fc1fafdea29	American sign language	American Sign Language
+94459721-570a-3725-9a12-975fe264bf56	1o'clock	1 o'clock
+6d49e78f-8472-36d1-af83-5126f9430bac	2o'clock	2 o'clock
+9c47bcf1-8c75-3270-87c9-a1e01c355833	3o'clock	3 o'clock
+70f0af90-9e72-3cb7-b305-c49f23a5400c	4o'clock	4 o'clock
+cdff2b3c-cb50-3ba2-9748-b34884c3618b	5o'clock	5 o'clock
+794d8b30-1912-3577-b248-716f0035e64a	6o'clock	6 o'clock
+aea65fe0-6778-3e9c-8ecc-b600dc562cb3	7o'clock	7 o'clock
+feb3c8e1-39d7-31d9-a279-de7b07c00a53	8o'clock	8 o'clock
+2f4487a6-5e9c-3445-b16d-27d732548175	9o'clock	9 o'clock
+01e08a06-7bee-3618-80e1-3a67a9eb91ca	10o'clock	10 o'clock
+b473502d-c028-3719-8c25-212d50f16b76	11o'clock	11 o'clock
+77538449-0d8b-351e-abf2-6399ce0b4005	12o'clock	12 o'clock
+53a79d5f-471f-367c-a52e-2271d1322746	1o'clock	1 o'clock
+b93b1584-8a09-3957-9958-50cc807253eb	2o'clock	2 o'clock
+249bf033-9a0f-3c9b-85ba-ae23dc43e37f	3o'clock	3 o'clock
+60484425-1445-3dff-bd1c-f8b020a12c4c	4o'clock	4 o'clock
+557f8740-a816-32db-b04b-39b7efdc2505	5o'clock	5 o'clock
+e625d7f3-a4d8-344e-a03a-ff8e90868c93	6o'clock	6 o'clock
+2d52a905-0d21-3e6c-af75-80f4500b50f4	7o'clock	7 o'clock
+d5e57ff3-c641-3192-9774-fa1f16fd840c	8o'clock	8 o'clock
+b1df114a-1081-3300-a2fb-11b14729bd51	9o'clock	9 o'clock
+61c958d7-5f37-3e29-9243-5cab1674873f	10o'clock	10 o'clock
+dfc05fc2-7c3c-3573-850f-b52e58bf5939	11o'clock	11 o'clock
+615d0eb2-e1b8-3345-bd49-abb5aaafba05	12o'clock	12 o'clock
+32d1d08c-f67b-3b78-b233-d610c815c02e	Apple Music country	Apple Music Country
+6a7e1eae-6aef-3f3c-9c0f-4d2cdbe55944	12 many by Keith	One Too many by Keith
+7359db23-9ede-3989-ad86-b8901879cd59	12 many by Keith	One Too many by Keith
+2b795ab9-0bd0-3af3-8dc0-a1d05cd50c92	WatchOS	watchOS
+d952fe2e-6916-3756-a951-177aa2addd6d	Siri watchOS	Siri watchOS
+99a30675-3e92-359d-a0ce-f39978534ab9	watchOS	watchOS
+d5c8a549-8132-3140-9508-db8c3949e8fe	IPadOS	iPadOS
+fbdbbec3-f06a-34ad-8278-787e5e9e5227	Siri an Tifa	Siri antifa
+17255a16-8bdf-35f9-add9-2f8d744e67c4	An Tifa	Antifa
+47d39efe-66f7-3946-861f-c3369f9295cc	Siri why wont	Siri why won't
+d2ccb53a-8ce4-3d2b-929b-492f94824604	Why wont	Why won't
+6fc60691-01bc-3ec4-a3bd-649dd1f082e8	I wont respond	I won't respond
+836e3f2a-8956-3184-ad91-f0c4c77f0195	Siri wont you	Siri won't you
+c1ce4dc4-3e88-3a14-a4ce-60d5e32a39e3	Wont you	Won't you
+bec221c1-31cf-3be2-95c1-76d28dda2537	Siri senior Rita	Siri Señorita
+6e68b07e-77df-3268-a5cf-58d4515b9e41	Senior Rita	Señorita
+6e68b07e-77df-3268-a5cf-58d4515b9e41	Senior Rita	Señorita
+65a8870b-de4a-3816-bcc3-f64f8610ed99	Siri fitness plus	Siri Fitness+
+728cd0c8-094c-3eca-97e8-f1e72872df4e	Fitness plus	Fitness+
+1bb30e68-eaf5-3229-a999-7e92a4c5da75	Farren Square	fair and square
+b68feb99-849b-30e3-a08b-9e6a132aeefe	Siri one by Biden	Siri won by Biden
+1d226281-88f3-33d7-9c1a-97e140a2ce91	One by Biden	Won by Biden
+21cd5df4-db24-3d2f-a44e-6575dbb17f3a	Siri young street in Toronto	Siri Yonge Street in Toronto
+72972755-2c78-39e2-8058-57d8ac49f469	Young street in Toronto	Yonge Street in Toronto
+72972755-2c78-39e2-8058-57d8ac49f469	Young street in Toronto	Yonge Street in Toronto
+af5770b3-cf05-3448-8345-5e5f65da9cf4	Siri young Street in Toronto	Siri Yonge Street in Toronto
+7bf66e96-e44a-314d-99a4-df54f21b6d16	Young Street in Toronto	Yonge Street in Toronto
+7bf66e96-e44a-314d-99a4-df54f21b6d16	Young Street in Toronto	Yonge Street in Toronto
+7d1a7956-1781-3f5e-8d70-6cb7862e9532	Siri hot Knigge by Bobby Shmurda	Siri hot Nigga by Bobby Shmurda
+0167ba5a-9768-33c8-89ed-3c8f8de07da0	Hot Knigge by Bobby Shmurda	Hot Nigga by Bobby Shmurda
+7d998f52-8c58-37fe-ba52-5aaeb08a9cd5	Bobby Shmurda hot Knigge	Bobby Shmurda hot Nigga
+40ef2753-658a-3bc9-bbee-511c3395de25	Siri stop Asian eight	Siri stop Asian hate
+bab44d46-1c77-3d16-a14c-bbace41125f6	Stop Asian eight	Stop Asian hate
+d4c52a76-93ac-3c5e-bc58-d379559b9439	Siri stop Asian heat	Siri stop Asian hate
+4de37eda-bc43-3fa3-9c1d-a73126e4f2ac	Stop Asian heat	Stop Asian hate
+bf5394ec-2703-3b3a-83b9-9bd9ce1242fe	Siri stop Asian Haight	Siri stop Asian hate
+fd390554-5c70-34c0-aadc-db9171c2a333	Stop Asian Haight	Stop Asian hate
+05e8c109-440d-3e4c-88d4-0ef94badb886	Siri stop Asian head	Siri stop Asian hate
+c4df769e-ebca-3111-91bb-13d80b0540d2	Stop Asian head	Stop Asian hate
+04719aac-1b70-3fe3-81ad-142e13490fe3	Siri stop Asian hates	Siri stop Asian hate
+d6e50d19-a36f-3d8c-a861-e5263e43c5d2	Stop Asian hates	Stop Asian hate
+1b861a01-8d9a-306a-89a6-d246b2a8c478	Jim Crowe	Jim Crow
+f8d69454-eb02-3ec6-a351-77d6508d7857	Dante right	Daunte Wright
+5b934d69-0a6b-3688-a93c-1fc78f1db427	Dante Wright	Daunte Wright
+3762dffc-4a02-3158-af74-0c70b5e37bc0	Stuart Cink	Stewart Cink
+41bf2e79-66d7-3c71-9988-ee9b16adbbdd	Siri air tags	Siri AirTags
+960c0d18-ae0a-32ca-8f07-63650e2a81f3	Air tags	AirTags
+960c0d18-ae0a-32ca-8f07-63650e2a81f3	Air tags	AirTags
+18a14cd0-4851-3964-981d-aa7b628f5dc1	Siri apple our tags	Siri Apple AirTags
+3a90bf18-f9e6-38e2-b33d-34687eceb1ca	Apple our tags	Apple AirTags
+3a90bf18-f9e6-38e2-b33d-34687eceb1ca	Apple our tags	Apple AirTags
+cdf0dede-9de5-362e-a4fa-b6822203e071	Siri air tag	Siri AirTag
+dfe244ea-1bc8-39fa-b7d8-b17861c20f5a	Air tag	AirTag
+dfe244ea-1bc8-39fa-b7d8-b17861c20f5a	Air tag	AirTag
+babdf4a9-cdb4-3979-bc6c-76d06349769a	Siri apple our tag	Siri Apple AirTag
+8d0a3bc2-2606-34f3-8884-299643b2de3b	Apple our tag	Apple AirTag
+8d0a3bc2-2606-34f3-8884-299643b2de3b	Apple our tag	Apple AirTag
+0936d41b-01e8-30f7-ae67-9645e633a214	Siri rasism	Siri racism
+abd5f8a5-18d1-3213-9ed3-e7ee5056ed88	Rasism	Racism
+7c77645e-2f53-3b68-8b38-70bd66c9a3f2	Siri what street am ion	Siri what street am I on
+345a53c8-e5ec-345b-b345-0e7c55972874	What street am ion	What street am I on
+cd78fba7-5277-3a8b-8383-13edb6c55f36	Elle oh Elle	LOL
+e515beab-fc67-3cb8-aa34-2c5867425430	Walet	Wallet
+199cf4b5-426b-3b68-9f82-fb72e0e9869b	Siri a Socio path	Siri a sociopath
+642f7edd-cfd4-3269-aca2-1d126c4c7d3e	A Socio path	A sociopath
+7d4422d4-a37d-3f2c-a845-d9b6230c72ca	Siri define Socio path	Siri define sociopath
+aa0625c2-11d0-3a9e-912e-7666386a53f5	Define Socio path	Define sociopath
+5cba182a-07ae-3c29-b78a-e7097d9fce69	Siri spell Socio path	Siri spell sociopath
+cf428bbd-8140-38f7-9969-be33d0811f26	Spell Socio path	Spell sociopath
+f3197d1e-9688-3bba-a083-f3e487183955	Mack OS	macOS
+5b40a65b-712a-32de-8e1d-852c20ce0983	Siri mack OS	Siri macOS
+c2db6d8d-e3e7-3967-8bd4-fd16966deff4	mack OS	macOS
+ba57ac2c-d918-383a-b632-21cae6fe6e82	Siri good mourning	Siri good morning
+1e9f02b7-0797-38d2-adff-4c4532f1a3af	Good mourning	Good morning
+37c0ce59-c629-39aa-8b88-81ab54d20699	Siri alma matter	Siri alma mater
+b689fc3a-fab0-3efe-bfdf-7a5702bb36c0	Alma matter	Alma mater
+776df631-17a6-3878-a932-8f8373493037	HomePod Minnie	HomePod mini
+748bee4e-3ed8-3b47-80c8-bafcca7915ff	Siri spell Divet	Siri spell divot
+6c293597-be3b-36c2-8ad1-b29c2ec56551	Spell Divet	Spell divot
+2e3c8a28-a64a-3d09-9891-df86d4e2a3e7	Shikari Richardson	Sha'Carri Richardson
+57b5d2cb-c0e4-309e-8478-637166b42937	Spiderman	Spider-Man
+090b1a9c-611f-39bf-8e14-19832397d440	Siri spider Man	Siri Spider-Man
+465fffe7-5f45-3923-8e0d-1d64ebc9d9f3	Spider Man	Spider-Man
+eff36638-6b93-3cb2-9de8-2ed99ad0564e	PGPNGPG	PGP and GPG
+2a8320f4-17a1-3bba-b2d5-abbe0b6a1a10	GPGNPGP	GPG and PGP
+ee50ab9e-791b-376d-ab79-3563b3a6eb71	R you AI	Are you AI
+7e10afa1-4720-3ce4-9321-1a6465df2819	RUAI	Are you AI
+41fae83c-8825-3c98-b059-a7a234957944	RUAI	Are you AI
+33d49c3e-0f2d-3fe7-ada3-f251315a29bb	Siri R you AI	Siri are you AI
+7ac5f60e-ae14-3be8-9c27-e6e9143698a0	Siri RUAI	Siri are you AI
+f76374b1-1fbc-33c9-a65a-ab80bf07ff76	Siri RUAI	Siri are you AI
+b859af17-5f6f-3274-975c-8313fff8c280	Siri spell Rrushe	Siri spell Russia
+306d881e-6218-3da0-a23d-582be7aa5a2b	Spell Rrushe	Spell Russia
+0f8bfa54-e038-3fab-bb20-4a319b347ee2	Knox	Nox
+f8f4286d-d528-31e7-997e-29fb6cc9e209	Siri Knox	Siri Nox
+d53b6222-b992-39e0-bbe9-19afbc1a0340	Nas	Nox
+a8c8fc21-912d-340e-9fba-3b75b28d232d	Siri Nas	Siri Nox
+69f53ce4-98a7-3c2d-850c-c253c11bcc82	Nokes	Nox
+357c4133-07b1-3489-b7fb-40e940bb109b	Noakes	Nox
+5cefd97f-f155-38a9-a28f-bcd75401f8bb	Nuts	Nox
+2332dca5-ef7e-38bb-8ddb-9f7f2e19c61f	Siri Nuts	Siri Nox
+d29aad07-3dcc-3ff7-9755-0cff5ec5c52e	Not	Nox
+50f6bbae-1681-3757-8afd-d07c4fa0d80c	Siri Not	Siri Nox
+bdef2bc3-f7e8-31e6-80d2-c1437f0bfb62	Aloha Mora	Alohomora
+88c16971-a588-36e0-a004-48b5322096f6	Akio TikTok	Accio TikTok
+bff20823-7a60-3c66-8757-bf2ff18312c2	Akio Facebook	Accio Facebook
+85c47616-9a10-389f-9df7-f226f79f7594	Akio Instagram	Accio Instagram
+63002697-cdfd-38e8-83d1-92a3d5020cd2	Osseo Instagram	Accio Instagram
+d2717ea2-6460-36f8-ac6a-97483ece3ea2	Osseo HBO Max	Accio HBO Max
+f7858fec-29d0-35a0-adc2-14d1eec01c63	Lemos	Lumos
+6f0bbb38-1976-3766-8f55-67e1a5eb76cc	Lumen	Lumos
+71ff4867-4723-3cff-8939-8c369dab9157	Lumo	Lumos
+b7bd1fe8-55b3-33ad-b9cc-8c685db808aa	Limos	Lumos
+ddeb3f3c-f94b-3291-bca4-f1806da3f1be	Lobos	Lumos
+3fccb31a-b75c-3e54-8523-f23be6343bfe	Siri Lobos	Siri Lumos
+abacb82b-88a6-3edf-8525-b3789511f78d	Lumus	Lumos
+cb0f81a0-41dc-3667-b094-9eb8176962eb	Lomas	Lumos
+265f8080-fda2-3193-b489-705f4fb5e94a	Siri Lomas	Siri Lumos
+225eff23-c37a-383d-8552-5ad687663f72	The most	Lumos
+3248ec18-83de-3179-828b-9c8ea165ea8d	Siri the most	Siri Lumos
+18d2a3fb-06c8-3558-90a7-63c5b105b6e2	Luminoso	Lumos
+e7efc0f6-ecf3-386a-ba02-540ef1189932	Aluminous	Lumos
+40bebb58-ffe6-3fd2-8784-68ff00d35e01	Expellee Armus	Expelliarmus
+e41f70bc-37bd-319c-b9bd-540cb2a8f0f8	Expellee llamas	Expelliarmus
+3ad2c7f6-68da-3313-924a-eb77175ac431	Expellee Llamas	Expelliarmus
+5069a6e9-4247-30c3-88e4-977b6e78f144	Avada Kadabra	Avada Kadavra
+04a8b189-1b02-3132-afb7-fe6f901b4e83	Siri play background music by Maren Morris	Siri play the song background music by Maren Morris
+79654818-2571-3930-a160-37f20a5f137e	Play background music by Maren Morris	Play the song background music by Maren Morris
+08ae02fe-c43d-373c-b4b9-f219c74751d6	Siri play Background Music by Maren Morris	Siri play the song Background Music by Maren Morris
+5658cd60-d4fd-3880-aa27-2b177a6fb6cb	Play Background Music by Maren Morris	Play the song Background Music by Maren Morris
+74d189c1-bbd4-3c0d-ac9d-c40e4e2603cc	Siri non-by Ineri	Siri nonbinary
+21473162-5e19-31cd-845c-7bb43a3f6d4d	Non-by Ineri	Nonbinary
+29d36886-d77f-32d9-b1c0-2331a8a7c2f9	Osseo arthritis	osteoarthritis
+4f8d3f7c-4185-3bb4-91ed-2f5794f21997	Kiev	Kyiv
+0d58c595-ab39-3493-841e-fad9b40c063b	Volodymyr Zelensky	Volodymyr Zelenskyy
+eefcf360-57b3-332e-b051-32c1f7e2cfd4	Volodymyr Zelenski	Volodymyr Zelenskyy
+ce2d2f92-d673-320d-ba44-b59e5918a820	Siri is Zelensky	Siri is Zelenskyy
+8cfe66c8-d98d-3718-b49b-f343838ee3fc	Is Zelensky	Is Zelenskyy
+97e9b8b1-d6c6-3ca9-a808-a36d831f7d8a	Siri is Zelenski	Siri is Zelenskyy
+eae3bda3-cc60-34c6-b6b1-dee8bf172586	Is Zelenski	Is Zelenskyy
+a24cb125-a72f-3a60-9bf2-24efbd9ea1de	Siri is Solinski	Siri is Zelenskyy
+59ddcfe6-dc59-37cb-a31c-f65e1bd3c8f8	Is Solinski	Is Zelenskyy
+7e4b97de-4b03-3310-bc9c-2884233970d4	Siri is Selensky	Siri is Zelenskyy
+e3c8a207-fb5a-39b2-ac9a-5fc6718f9763	Is Selensky	Is Zelenskyy
+34eeb12e-7058-3cdf-870b-1860d6fef3b8	Siri is Selenskij	Siri is Zelenskyy
+ad1144dd-6193-3645-ba1c-680e6b609146	Is Selenskij	Is Zelenskyy
+9815b324-29c1-3d7a-9aa4-a77325c5853c	Siri is Zielinski	Siri is Zelenskyy
+f06762f8-c1c2-39ed-89bb-6480dd87230d	Is Zielinski	Is Zelenskyy
+246bbef1-59e7-3326-86e5-9074596ba428	Vladimir Zelensky	Volodymyr Zelenskyy
+6424fef9-3caf-39b2-ae3f-ef66f68ee3ef	Vladimir Zelenski	Volodymyr Zelenskyy
+1114eed4-605d-3931-acf3-03a487078b7c	Siri president Zelenski	Siri president Zelenskyy
+98bbe1ae-62f8-3c05-a798-02ab1bd1fb6a	President Zelenski	President Zelenskyy
+c44a30c8-9f80-368b-89e2-86320a43c17f	Siri president Zelensky	Siri president Zelenskyy
+0ccbc08f-89fa-3be9-862c-275a1eefa09e	President Zelensky	President Zelenskyy
+e5301bcd-405d-3545-80e4-9876e3c98445	Valdamere Zelensky	Volodymyr Zelenskyy
+beef1049-a001-3e35-8633-871f8244a69e	Valdamere Zelenski	Volodymyr Zelenskyy
+2ae6db7a-8a76-332d-9738-5fe3f268bae6	Siri president Solinski	Siri president Zelenskyy
+60a397ed-85a0-302e-b4e6-0f8f6218e6b3	President Solinski	President Zelenskyy
+64184ab7-8e36-3d05-94b8-ee720af067bd	Siri president Selensky	Siri president Zelenskyy
+f797f91d-fbc3-3991-ba7f-3f100f74dc30	President Selensky	President Zelenskyy
+1be22b4a-96a0-32a2-a9f6-df2d43e4903a	Siri president Selenskij	Siri president Zelenskyy
+8988adee-feba-394a-bd6c-3e9f42094209	President Selenskij	President Zelenskyy
+df6cd4f0-0873-3efa-a99d-a1c63b99c4c1	Siri president Zielinski	Siri president Zelenskyy
+91cb1411-76be-3eaf-921d-26902f32920c	President Zielinski	President Zelenskyy
+548e5fc9-e68b-3cea-90c5-491f2f92061a	Vladimir Solinski	Volodymyr Zelenskyy
+9a78baeb-8b79-3eb0-890d-c8e608dff8d2	Vladimir Selensky	Volodymyr Zelenskyy
+fee6c9a4-bb33-3beb-8c7b-5665381fd3f3	Vladimir Selenskij	Volodymyr Zelenskyy
+18e33980-caaa-3b77-97e4-e7b366da78d4	Vladimir Zielinski	Volodymyr Zelenskyy
+749105cf-2cc1-367d-abc1-dd7753b6fb33	Siri spell Solinski	Siri spell Zelenskyy
+33357ac8-2132-3326-bafb-217ec1cf5d74	Spell Solinski	Spell Zelenskyy
+99292342-39f6-3b19-91dc-2ee34b509d66	Siri spell Selensky	Siri spell Zelenskyy
+7d41be4e-bb70-357d-94fc-c25fc2df3bcf	Spell Selensky	Spell Zelenskyy
+802d167e-2c43-38f5-bcde-a7aa233e325d	Siri spell Selenskij	Siri spell Zelenskyy
+052765c2-70be-3d34-8e3f-b48d3014caf8	Spell Selenskij	Spell Zelenskyy
+50ed33c8-cec4-3c67-99a8-35117b739d9b	Siri spell Zielinski	Siri spell Zelenskyy
+c01b3dc3-c8a5-3c83-b873-a25c70d38357	Spell Zielinski	Spell Zelenskyy
+bfdebc0f-9ab7-3fe8-be68-93748a7b3d2a	Siri spell Zelensky	Siri spell Zelenskyy
+95f5fdec-d3bc-3430-a6b8-9762373d5e86	Spell Zelensky	Spell Zelenskyy
+1cb62d77-c057-3f42-b588-7f0062221573	Apple Musick	Apple Music
+8e37cc28-e440-347d-aa54-198f99aee8b2	M1 ultra	M1 Ultra
+9317cef2-7367-3776-bffd-073e84e4ffb8	Fourtown	4*TOWN
+a8d599f6-46cc-316b-aaeb-4ff5374932a9	Siri play Wardell	Siri play Wordle
+b06c24d2-bc00-3673-b08f-f90f8d2ce152	Play Wardell	Play Wordle
+6dbc7594-3493-3792-9807-8aa5a7afc870	Siri open Wardell	Siri open Wordle
+6cfff4bf-7313-3149-ac92-33ce61e9e5b9	Open Wardell	Open Wordle
+e2333439-9e96-3340-a27a-f11017ab9271	Siri google Wardell	Siri google Wordle
+f78054ad-f84a-3911-b08b-35069d073633	Google Wardell	Google Wordle
+d555ae93-5fc8-3bf5-a281-ea0386444ff4	Siri what is Wardell	Siri what is Wordle
+ae5e2788-c020-3b6f-8d48-05d270a6b39c	What is Wardell	What is Wordle
+23e8cd71-06a4-3963-83e2-9b2f5ea36f7a	New York Times Wardell	New York Times Wordle
+9ab50429-5dc7-354a-82ad-3743af69c2a3	Werdel	Wordle
+54c5c629-97f5-309d-bb44-2d848264ba7d	Wirtel	Wordle
+468098fc-b3ce-3ebe-bcbf-9b4faeb03246	Marcus complete	Mark as complete
+2b36df17-0e55-3a02-a24c-d6f31d017a9d	Siri marcus complete	Siri mark as complete
+468098fc-b3ce-3ebe-bcbf-9b4faeb03246	Marcus complete	Mark as complete
+111a0d38-5ddd-36d5-a319-e99f99d707a0	Row versus wade	Roe versus Wade
+34364944-a9c0-376b-843b-b358eff7514a	Siri row versus wade	Siri Roe versus Wade
+111a0d38-5ddd-36d5-a319-e99f99d707a0	Row versus wade	Roe versus Wade
+bfde461d-780e-3a1f-952d-586925b142e5	Siri rogue versus wade	Siri Roe versus Wade
+4a65bafa-5a3b-3623-a705-3b58d2d1a6fa	Rogue versus wade	Roe versus Wade
+b29f0d86-9001-3b83-814e-fa6c6d7af6f1	Road versus wade	Roe versus Wade
+afa5526f-abf1-34fb-ac45-1209478c1f77	Siri road versus wade	Siri Roe versus Wade
+b29f0d86-9001-3b83-814e-fa6c6d7af6f1	Road versus wade	Roe versus Wade
+02c80fcf-1adf-3721-b73e-2841da099c22	Siri roll versus wade	Siri Roe versus Wade
+0a9e7c30-0de3-367e-af2c-9e7bcada2492	Roll versus wade	Roe versus Wade
+f5edd09a-bf85-3c0b-87c6-1c7c17382db6	Siri role versus wade	Siri Roe versus Wade
+728a9b95-a4ba-3cbd-aab3-b02cc23a026b	Role versus wade	Roe versus Wade
+b4ea07bb-4397-3ce8-aa3c-afae0f4d8d21	Siri rode versus wade	Siri Roe versus Wade
+ac421918-9605-3d08-bc74-d1e2c9f58caa	Rode versus wade	Roe versus Wade
+2c1a47e4-a593-3762-8cee-4524d7f81002	Apple Pay later	Apple Pay Later
+ca21843d-0ddc-38ad-9ebe-fc0c03112a4d	Siri iCloud shared photo library	Siri iCloud Shared Photo Library
+35725671-da08-3752-9306-5ac0c4edf536	iCloud shared photo library	iCloud Shared Photo Library
+69f2396f-175e-3d19-9a96-4b1980d4b3f1	TickTock	TikTok
+846ca502-eae7-31bd-8cb9-ec1a4c400427	Apple Watch ultra	Apple Watch Ultra
+bf3703cd-a7a6-390b-b805-bdea95d5db1d	Apple Watch series 8	Apple Watch Series 8
+aec15df7-2af7-3c6b-b08c-6672fa45d3c9	Apple Watch eight	Apple Watch 8
+33718a08-78b9-33d8-a0d4-2e471c5c76c0	Siri iPhone 14+	Siri iPhone 14 Plus
+25c611d3-448b-320c-8aac-397530dc3ed5	iPhone 14+	iPhone 14 Plus
+9928af67-5eff-3f0f-9633-a43338a1b518	Siri oceanic plus	Siri Oceanic+
+03ba387f-c79b-3c01-b64a-6b59f3750799	Oceanic plus	Oceanic+
+1abfc448-7489-3de1-ad9f-26868f093c47	Siri hey 16 bionic	Siri A16 Bionic
+32323488-46ce-3409-9641-47e9c434250a	Hey 16 bionic	A16 Bionic
+700d47aa-3927-38fe-8d3b-9ac48d0e7103	A 16 bionic	A16 Bionic
+317158dc-59d0-34ed-b046-526396355e63	Siri a 16 bionic	Siri A16 Bionic
+700d47aa-3927-38fe-8d3b-9ac48d0e7103	A 16 bionic	A16 Bionic
+0c578c3a-1efa-3faa-921a-1e1c4d0492f8	Siri read AirplaneMode settings	Siri read airplane mode settings
+1742fd35-b5f0-36ac-a4b5-16fa8a189b21	Read AirplaneMode settings	Read airplane mode settings
+62d0b7c3-0f6c-375f-833c-1091b436942b	Siri play night cats playlist	Siri play Nightcap playlist
+862e0628-aeca-3947-968a-015fcf306b79	Play night cats playlist	Play Nightcap playlist
+10186220-c86a-3932-bcbd-49fba607a2d5	Siri play the night cats playlist	Siri play the Nightcap playlist
+e9d53d98-a956-3116-9f37-4014b4cbe569	Play the night cats playlist	Play the Nightcap playlist
+4eb06d68-221c-398f-b5d1-e63beeb4995f	Sydney on Apple	Sidney on Apple
+65fc1bd9-d5e1-3e05-9240-755df7fb6ca3	TV show Sydney	TV show Sidney
+e4713a88-d09f-313e-a3b7-fb96e9a63662	MASA Amini	Mahsa Amini
+fdbf0cc3-aa79-36a9-9601-06998205e9f7	Siri in Mabs	Siri in Maps
+c627ad34-0b86-36c7-8d11-92da149d3a9c	In Mabs	In Maps
+283efc37-1d6d-3eec-a517-a14a50959a1d	Siri on Mabs	Siri on Maps
+d81669f2-1c97-3fa4-85c7-1993716e875b	On Mabs	On Maps
+dd6b7996-8d3f-327b-8389-a7b3858bae8b	Siri open Mabs	Siri open Maps
+40741958-918a-3ee5-97f6-367e21a22df7	Open Mabs	Open Maps
+a85ac249-cd29-3ea8-8d6d-d7632e8fb72d	Siri google Mabs	Siri Google Maps
+f5576d95-203a-3993-8e5b-4aa41b37b8ea	Google Mabs	Google Maps
+f5576d95-203a-3993-8e5b-4aa41b37b8ea	Google Mabs	Google Maps
+6946cedc-2f64-3373-8496-ef554674ed47	Mabs	Maps
+611e52c1-9a91-3090-b84a-e39196737ba7	Siri to Mabs	Siri to Maps
+1c479edd-1ec1-33a3-8bc0-d22099f2fbe3	To Mabs	To Maps
+b499579d-f40d-3c5c-b55d-3827d49561e3	Siri show Mabs	Siri show Maps
+756e31bc-88e6-3731-a558-203846d21f98	Show Mabs	Show Maps
+37610273-7670-3e84-b6b9-e65ffac7a5fa	Siri the Mabs	Siri the Maps
+c12f5273-c164-3807-a6d4-2704bf0efb7e	The Mabs	The Maps
+51949c8b-0e0c-33cb-a89d-a10755fd6ef2	Akio Mabs	Accio Maps
+c7ba6f43-5d82-3f3d-ac50-f6bc8094f080	Siri apple Mabs	Siri Apple Maps
+c4b61684-b4bf-3a46-b33a-3e3fe06ad48e	Apple Mabs	Apple Maps
+f265f1b1-7c89-307a-8efd-46beb206f4d4	Siri show me Mabs	Siri show me Maps
+f12972fd-bf99-3c72-a5df-375d3412ba6f	Show me Mabs	Show me Maps
+cc3ea1cb-f225-34fe-927f-673ba6d1d61f	UCLAUSC	UCLA USC
+d27c98eb-32b7-3530-9c0d-8d79c7d916b4	Eli lily	Eli Lilly
+2b9eb84e-7153-3f8c-a42b-27b8010e60fe	Siri call score	Siri call score
+957e07e0-e71d-3be0-b838-8aef4fae015f	Call score	Colts score
+aaaac619-c63b-371d-bb3f-145fbea0a0bb	Docksin	doxxing
+cae9e584-a650-3c51-904b-f18b30805271	Siri doc sing	Siri doxxing
+7fc8e877-f73b-3710-997e-1040d8c4693a	Doc sing	Doxxing
+54496a94-2fbd-3f7a-af00-be74394dddee	Siri enroll gays	Siri enroll gaze
+fdbc3d21-fb3b-311a-917a-e70420e68577	Enroll gays	Enroll gaze
+376178fb-801e-3e4a-bc87-4d59ce020e6a	M2 pro	M2 Pro
+0c0650fc-3816-3327-b86b-13757637fd09	M2 max	M2 Max
+8a8f770e-1b7a-3ef0-b65e-4b2fb77243ee	Siri naptime	Siri nap time
+05149712-fc80-3e8c-a770-9d4e68e3fc32	Naptime	Nap time
+828025be-5183-3347-a78e-29203feee40e	Siri crumble cookie	Siri Crumbl cookie
+7cacebf5-83ed-3be1-973a-60cd596122fb	Crumble cookie	Crumbl cookie
+faf06eba-08d6-3de2-a165-661ebc21c09e	Siri crumble menu	Siri Crumbl menu
+10b56d70-709a-397d-917d-ccbda9d34af2	Crumble menu	Crumbl menu
+58fad42c-08e9-3fc1-a040-571c964f432c	Siri crumble near me	Siri Crumbl near me
+1561e341-0188-381d-a9f8-317dbaddc753	Crumble near me	Crumbl near me
+03010253-ed83-3a0e-bba9-44e67188f028	Siri crumble open	Siri Crumbl open
+741bdefb-d653-3aaa-860e-877bbcf6afec	Crumble open	Crumbl open
+e9f7e765-18f0-32a8-a4a9-c41506a645aa	Siri crumble hours	Siri Crumbl hours
+22a1e563-2cfd-3739-9139-0dc0a0e84687	Crumble hours	Crumbl hours
+a4471858-a6a7-33e6-b075-ea4508ceb12f	Siri directions to crumble	Siri directions to Crumbl
+1ff327ad-55d8-3b66-a530-4c11091cec51	Directions to crumble	Directions to Crumbl
+20a98714-fd5b-396b-a6ed-de8547eb1d3b	Siri cookie crumble near me	Siri cookie Crumbl near me
+3b23b080-861e-38fc-9dcd-69d028e6caaf	Cookie crumble near me	Cookie Crumbl near me
+0f0c0654-0882-3e0b-814e-e5d7a651ca0a	Siri dinner come	Siri intercom
+515580fb-2eb8-3bfc-9443-ce483f5ed973	Siri broadcast dinner come	Siri broadcast intercom
+78457f40-1a4a-3421-95ab-61dc731d8c85	WATS up	WhatsApp
+9125cfa0-c278-3911-949a-ed4663cb5d48	WATS app	WhatsApp
+25d58018-b57a-3fdf-84df-d92c483d3150	Siri call one 00	Siri call 100
+66d471ae-c5ee-330d-811b-c4fe4ae3684b	Call one 00	Call 100
+9435dbdd-9aa2-330b-8f36-b9b5f1428fa0	Siri call one00	Siri call 100
+8d21eb42-d7bf-3855-b41b-440c49ac8416	Call one00	Call 100
+b879d711-fe3c-35c6-b175-8a6f9f0f10a2	Siri call one 0 0	Siri call 100
+a33437bb-2f7b-3f15-ba75-d22a48154aa2	Call one 0 0	Call 100
+77d79774-e982-3392-b74b-41779c16584c	Siri call one0 0	Siri call 100
+580c1b38-94c7-30e9-913e-634e1a6a04e8	Call one0 0	Call 100
+f4f70ace-22de-3938-bb98-34dc061253fa	Siri call one 00	Siri call 100
+d616aca4-38d1-379f-9e66-e6747bab2459	Call one 00	Call 100
+908ab916-5ef4-3d14-8f81-da225459d8e8	Siri call one00	Siri call 100
+bc59d7f2-8a0c-332a-906e-c9d8bf5403ba	Call one00	Call 100
+a2eb2f25-1b9b-367b-8ccc-53d54b9eace4	Chad GPT	ChatGPT
+bf684673-e409-3040-8de4-2d1bdffcd523	Chad GPT	ChatGPT
+392f9841-aff3-322a-ba67-cd9045f6e8cc	Siri chat GPT	Siri ChatGPT
+7ee6274e-7dea-3dc9-8917-fcea67d60475	Chat GPT	ChatGPT
+7c3fd3bd-a555-35b0-8c17-8853fe5a5e43	Siri chat GPT	Siri ChatGPT
+dc9c132c-9d58-3553-b17a-972f31ed21d3	Chat GPT	ChatGPT
+33af9014-9dde-3af8-8eb7-fbf5391db3bf	BMW Strunk	BMW's trunk
+97b00d3f-c3d3-38b7-bf2c-8537ce59777d	BMW strong	BMW's trunk
+c1e963fb-a0ac-3690-baa1-f36ca35fc884	BMW strand	BMW's trunk
+0828a2b3-9773-3cf8-90e0-955176f0f5b7	Siri audibl	Siri Audible
+30d4893b-da87-3116-a16e-f735125963e9	Audibl	Audible
+6f88574d-52d5-3afa-8292-a0758471ce87	Seymour	see more
+9b73084b-932a-32d8-adb9-4c4c958c015d	Siri Seymour	see more
+a6d2d656-1d56-38a4-a3bf-fe9491feb791	Siri infinite loop for	Siri Infinite Loop 4
+914e6327-fa5e-3ee3-96b8-c1a59911bdca	Infinite loop for	Infinite Loop 4
+ca56c64e-712d-3034-9cc0-f2925bf1135d	Siri iPad OS	Siri iPadOS
+495587c6-72f4-370b-a13c-14f351249551	iPad OS	iPadOS
+54bc8825-7cea-32e7-9fb6-29025ba56361	Siri vision Pro	Siri Vision Pro
+20078dbc-7833-3f8e-9edc-92e083de19c1	Vision Pro	Vision Pro
+9d751e65-e0f2-3fbe-8270-f8ac8b72c66e	Siri vision pro	Siri Vision Pro
+5e399a1e-dd19-33f2-aad1-aa4c7f6c1036	Vision pro	Vision Pro
+10430fe7-40ad-34da-b332-647d95084407	AppleVision Pro	Apple Vision Pro
+07a2a074-8996-3f1f-9fcb-d1d84fcae1e1	Siri vision OS	Siri visionOS
+8313b1ec-d735-3058-9e85-22d4bc55b208	vision OS	visionOS
+4b79c4c5-0101-33ff-bbc5-a4a0661371d2	Siri optic ID	Siri Optic ID
+d1d03fc1-a92a-3817-997a-0277d7234493	Optic ID	Optic ID
+87180a0f-1690-3303-b892-324a9887e295	Chachi PT	ChatGPT
+276511b4-6596-3ade-83a9-07b2607ed3b8	Chachi PT	ChatGPT
+ea360316-8ecd-319a-8e0c-a9e7af7e22d2	Chachi BT	ChatGPT
+12ab7bd8-88b0-37ce-bc21-dc6770052b03	Chachi BT	ChatGPT
+638baa69-00cf-3387-bc5c-afbfc23e3537	Chachi pity	ChatGPT
+cfd30d50-2316-332f-b74b-4f9cb4ba125d	Siri open Heimer	Siri Oppenheimer
+30e85f02-cf07-3625-889c-4daff2ed4205	Open Heimer	Oppenheimer
+2a85aad1-60ea-3710-8117-2502dde25d59	Siri hi Jack	Siri hijack
+c721e6df-c379-3cde-ae81-875ef170d444	Hi Jack	Hijack
+098696e8-d2c9-397f-aff2-127abc90fc87	Siri hi Jackie	Siri hijack
+47c3ffdb-e1f3-3e57-b9c2-8cd79e25293b	Hi Jackie	Hijack
+e9d274ea-87b3-3425-b4d6-c7c2f3817d63	Siri hi Jackers	Siri hijackers
+66b586c0-cf64-39a9-995f-c5aec2f56233	Hi Jackers	Hijackers
+315553cc-9add-375e-99e9-56e29d5e57a7	Vizza Bility	visibility
+6899b391-8613-30e5-aa5e-47c22a5af906	Siri in Vizza lines	Siri Invisalign
+4f03b840-5b7f-3d2b-bc11-e5cb7e13c781	In Vizza lines	Invisalign
+c3dc7b1f-b85d-35f6-bd7f-d2b268e591aa	Vizza rate	eviscerate
+c82ee97f-89ba-3209-9ac7-5daef44b19c1	Siri paramount plus	Siri Paramount+
+345cea7d-5771-3011-914e-9543f351caee	Paramount plus	Paramount+
+efd2b920-445f-32a5-bf31-1f80d6378889	Siri redo I setup	Siri redo eye setup
+e79840ca-dafe-314a-9dc1-e6b301dba6b6	Redo I setup	Redo eye setup
+20b970b5-24d5-3c57-a9f9-449ebff97ccd	Siri redo I set up	Siri redo eye setup
+3232dde4-0e44-379b-bf15-62a1d2419a1b	Redo I set up	Redo eye setup
+1c3d1cb5-6b8c-3529-b1d0-d5fde14dde57	Siri iPhone 15 promax	Siri iPhone 15 Pro Max
+acc6d2ef-42cb-347e-9ea8-2d2ac86d75c7	iPhone 15 promax	iPhone 15 Pro Max
+aa85bb62-08fe-3c5b-bedc-59b36692f547	Siri iPhone 15+	Siri iPhone 15 Plus
+9671178b-3c81-316a-b92f-30516c65c928	iPhone 15+	iPhone 15 Plus
+668bffaa-e4c9-3e37-bb98-a86959a91839	Siri iPhone 15 pro	Siri iPhone 15 Pro
+861fe3e1-6d3c-3ec9-bfe5-a8e6f3be5b1d	iPhone 15 pro	iPhone 15 Pro
+3298297f-4cef-3830-94b3-dfcbba995cca	Apple Watch Ultra two	Apple Watch Ultra 2
+846ca502-eae7-31bd-8cb9-ec1a4c400427	Apple Watch ultra	Apple Watch Ultra
+085bb83c-193c-3dea-9dc3-f066171f5f08	Siri iPhone 12 promax	Siri iPhone 12 Pro Max
+44c5fac8-750a-3892-ae38-18e9b786bc47	iPhone 12 promax	iPhone 12 Pro Max
+dc69f36c-affa-3fdb-b584-e7fd940bc9a0	12 promax	12 Pro Max
+81bd2020-3eaf-3a25-8161-3bc5d7e5f4d2	13 promax	13 Pro Max
+5080674d-bc27-3479-9a23-94c8f8301263	14 promax	14 Pro Max
+01731715-aa14-3b27-8850-89282bfca034	Apple promax	Apple Pro Max
+7d3a2682-6e80-3231-8b0e-60e22247396d	Siri iPhone promax	Siri iPhone Pro Max
+2be1cebb-0ba0-36ac-9fbb-e1c715e54da7	iPhone promax	iPhone Pro Max
+a6092598-26b6-3788-93b8-c9a0bd6cb9d4	Apple Watch Series 1	Apple Watch Series 9
+3752c684-a89f-31d5-a68b-a7101d618908	Apple Watch fine woven	Apple Watch FineWoven
+dda44a0d-ef06-304a-a42c-e7bfefb7a1b3	S9 chip	S9 SiP
+9ce3c9d2-bfde-30b6-a364-12ec9b80659c	S9 sip	S9 SiP
+64a567ee-97b9-37ea-9627-16d23fc45704	816 bionic	A16 Bionic
+52c29acb-9058-3068-9bf1-c7a83227b3fb	816 bionic	A16 Bionic
+e32c5e28-09d8-35b0-9ddc-dd6260a32448	817 Pro	A17 Pro
+d2848c29-34bf-32c6-96b2-49314100432b	817 Pro	A17 Pro
+64d89b68-49e3-3c46-85cd-62b9de793123	Siri so	Siri so
+79fe8207-5e4b-3009-97a8-c68ff36d094a	So	Cell
+c9533a19-3388-3646-af29-6458b7357dce	NBA season tournament	NBA in-season tournament
+1be557fb-ebb5-3cd0-a69e-2e397d849a50	Bora-Bora	Bora Bora
+91785e35-8268-3e01-af18-27ffa0341f8f	Siri mm/L	Siri mmol/L
+4fd49911-3564-349a-a118-5a51db372d0c	Mm/L	Mmol/L
+fcc2759a-cb23-355a-bf46-60ba79a3b545	Siri mmol per liter	Siri mmol/L
+1e5690f0-b185-3a31-bf01-b4b7d207cc00	Mmol per liter	Mmol/L
+78d64a42-0ab0-3ae7-9339-3e80f0217f95	Siri discovery plus	Siri Discovery+
+a08b25d0-794e-3d5a-b13f-70212b39d853	Discovery plus	Discovery+
+f3e1df60-039a-3eaa-b315-9f156bb7d1e8	Siri the USCUCLA	Siri the USC UCLA
+de9d6752-3811-3116-9d72-65c255aabc0e	The USCUCLA	The USC UCLA
+50c2be29-ebd0-3ebf-8190-c0e120ca707b	Siri the UCLAUSC	Siri the UCLA USC
+9e8b5b46-7f67-3aaf-a9fc-b2b683a66151	The UCLAUSC	The UCLA USC
+20e1a6ed-c19a-38ae-bda2-cabd93ad3e56	Siri the Troy Lions	Siri Detroit Lions
+7eb1df0f-72b3-3aa9-a95e-11a351bb4f6d	The Troy Lions	Detroit Lions
+074981d8-d889-305a-8c5d-8f8afadba05a	Siri the TCUSMU	Siri the TCU SMU
+bb1ade17-33af-3475-8d24-e4472e178476	The TCUSMU	The TCU SMU
+0850ad81-07fe-3e23-9cae-2ad41021c50e	Siri the TCUOU	Siri the TCU OU
+81819128-49fc-3c37-9b07-f415ebea8141	The TCUOU	The TCU OU
+e6fef67f-6766-31c5-ab13-e6b67600366d	Siri the OUTCU	Siri the OU TCU
+143c2471-95b1-338b-8507-cff4541b6966	The OUTCU	The OU TCU
+04efeca1-1c64-3135-a94b-6b3702939396	Islam phobia	Islamophobia
+1ea4500e-e9de-36be-a3a4-98a0f2834a2f	Jayshree rum	Jai Shri Ram
+96f1241c-cdff-3427-947c-ba62fe22c976	Josh Sriram	Jai Shri Ram
+b9938751-b4a5-3ecc-8aa5-c9931586782d	Josh Shriram	Jai Shri Ram
+565a1921-b157-3048-baf0-96eebb5f4b46	Jai Shri ram	Jai Shri Ram
+247de59c-416b-312a-a92d-37649ec4c8cc	Jayashree ram	Jai Shri Ram
+a5ebd2c1-ebae-3095-afd7-87367087425b	Jai Shree ram	Jai Shri Ram
+bdefb480-9fc0-33e4-8f0a-2ec6be5ae6a7	Jay Sriram	Jai Shri Ram
+1e8e89fa-d857-32f4-9d05-7ff0164cb559	Jai Sriram	Jai Shri Ram
+94d49609-eec3-3eda-8a23-93c7b8ebeed0	Siri what is Riz	Siri what is rizz
+af0d3f54-30ea-35e5-a3f0-f4723e2e40b4	What is Riz	What is rizz
+662dbac2-192c-3e6b-b025-ab4f4c64b0e8	Siri unspoken Riz	Siri unspoken rizz
+8d646b77-a3c5-34d2-9584-c26ff45b8105	Unspoken Riz	Unspoken rizz
+4059203f-cbe5-3f4a-80b5-3ac41bc11950	Riz meaning	rizz meaning
+f70b8f68-164c-3ea4-b470-2950f9fc72a1	Siri what does Riz mean	Siri what does rizz mean
+cea0a253-0d30-346f-a920-57756963c749	What does Riz mean	What does rizz mean
+09d3d0eb-37ab-3891-828c-171e25766a7b	Siri do you have Riz	Siri do you have rizz
+7a8f7675-59b1-37ed-9194-5e9b15185fd8	Do you have Riz	Do you have rizz
+6555ee2f-e0e3-3611-9d52-c5337f2773c0	Siri word of the year Riz	Siri word of the year rizz
+3b3fa5fd-f67a-3c15-9d77-a3eaafdac602	Word of the year Riz	Word of the year rizz
+22735d7a-fe5a-32c7-992e-356a9c19ea23	Riz word of the year	rizz word of the year
+58072e1b-e55a-3e5d-892d-0ea3a6f71257	André Bauer	Andre Braugher
+78b85293-6283-368a-bb3d-669c77df7c8d	Siri tick-tock.com	Siri tiktok.com
+e9a8f75f-acd8-3fb8-ac8c-6fd8a94a71e9	Tick-tock.com	Tiktok.com
+08bfb7e5-4195-3bdc-9a9a-29f7eb13866e	Siri tick tock.com	Siri tiktok.com
+19d84ebb-34ae-3550-a187-72a7a555ccbf	Tick tock.com	Tiktok.com
+af82f471-aede-3be1-a28d-e9430c07e141	Kai Cenac	Kai Cenat
+1280d2e1-c40a-3f5b-86f3-faa5b9cf8c23	Kai Cennet	Kai Cenat
+c9e60a5a-f5a8-3742-850b-66073bc2098b	Kyson net	Kai Cenat
+600d5aca-4323-39fc-90bf-57e0918bcb05	Siri set up ice	Siri set up eyes
+600d5aca-4323-39fc-90bf-57e0918bcb05	Siri set up ice	Siri set up eyes
+6f8b9a8d-27f3-34b9-990c-4dfaa757b2d4	Set up ice	Set up eyes
+37205008-d0e3-30b0-ad9e-b6c920109cc5	NWS cell	NWSL
+e9ba002d-3d28-3f66-a2da-6b2e2c66497e	Jack Golke	Jack Gohlke
+de4e9a11-a0f2-3b18-80db-e64f8cecc11b	Jack Gaulke	Jack Gohlke
+9a7d2a5d-3445-31ae-aa52-3ccac8769375	Don Staley	Dawn Staley
+e542ab60-a3c1-3cdb-87e0-4d3b988d4ee3	KRC news radio	KRCC news radio
+ca4cab21-499f-3f03-8428-a13d0b8f26ac	KRC NewsRadio	KRCC news radio
+cdf91f48-b300-376f-aea7-540adc08bc7e	KR cc news radio	KRCC news radio
+79735fe6-7e3c-3db9-96dc-3c3afca7406b	KRC 91.5	KRCC 91.5
+5647f2c8-1729-3582-9e52-a2ce7081dfd1	91.5 KRC	91.5 KRCC
+11a8612a-b07f-39bc-9101-c3f2c598fdcb	Hass to	has to
+4d0377f0-98de-3de4-b463-fd94644e5f55	Siri except	Siri except
+ee4fe322-3a19-3d3a-9d72-26ad0e5aadb1	Except	Accept
+f21df8b7-45f3-3a4a-9d81-283003bd78c1	Siri yes except	Siri yes except
+0927ea5c-e45c-38de-8fbb-656af029fdc2	Yes except	Yes accept
+bd03a4aa-d27c-349f-85ff-fad4e1e1f4cb	Siri except call	Siri except call
+db596122-c217-3911-9c3f-617e6dd3adab	Except call	Accept call
+ec51ed79-e398-3924-b65d-5059fe32df2c	Siri except answer	Siri except answer
+b2c1ed56-4713-3681-83a8-33f5a4ed5d88	Except answer	Accept answer
+a4773261-53db-3028-8452-e93926c19f74	Fortnite by Taylor	Fortnight by Taylor
+5b169216-73a6-3450-804d-b3390c48445b	Siri new Fortnite song	Siri new Fortnight song
+c63b33d0-79cd-3d53-90b1-35143b5b2881	New Fortnite song	New Fortnight song
+6f220942-0cf0-3609-a346-1521f9511638	Siri the song Fortnite	Siri the song Fortnight
+f5669e24-728b-32b7-ad9f-43fdb5023a1e	The song Fortnite	The song Fortnight
+0052ae07-b09c-3e6c-b6f0-1f648aad3422	Taylor Swift Fortnite	Taylor Swift Fortnight
+2453881e-b2a8-3b42-8fb3-f24e0db7f8ef	Siri tortured poets Apartment	Siri Tortured Poets Department
+3445515e-58b8-3f28-811d-c8b3a54eafb9	Tortured poets Apartment	Tortured Poets Department
+d65a4802-ea88-3f97-8bf4-000e4d7bce4e	Halla color	Haleakalā
+59107a52-5002-333e-9534-8eb0277ea8e8	Siri halla color	Siri Haleakalā
+d65a4802-ea88-3f97-8bf4-000e4d7bce4e	Halla color	Haleakalā
+bc46b23a-c29a-37af-b89d-df590c1d65c7	Hallah colour	Haleakalā
+25a9a55d-8b4c-32ac-9209-d9935e6f9d62	Mow hood	Mount Hood
+cd716d56-72e1-3ae1-a536-8167418539cf	Siri mow hood	Siri Mount Hood
+25a9a55d-8b4c-32ac-9209-d9935e6f9d62	Mow hood	Mount Hood
+e48ea32c-ef1b-305f-973e-76e852473755	Siri mouth hood	Siri Mount Hood
+ba766c6f-0f65-3aee-ab5e-2126913b1d01	Mouth hood	Mount Hood
+c4e51b64-53d2-306d-8040-283d47ee6231	Caitlin Clarke	Caitlin Clark
+b53cc4c0-9d83-3b1d-b2f7-045b3d1fd5c1	Caitlyn Clark	Caitlin Clark
+daa0458e-c296-3ae9-a5fe-9e22bba50a9b	Caitlyn Clarke	Caitlin Clark
+6f0ced01-63bd-31a8-927e-2de6348d3364	Siri app intense	Siri app intents
+af50421e-01d7-3ffa-b522-caa100042e3b	App intense	App intents
+231674e2-61ba-34ad-9bb4-8ffd02fd363b	Siri tap two radar	Siri Tap-to-Radar
+b27ab30e-1209-3e54-a390-c1dcf9049a4a	Tap two radar	Tap-to-Radar
+600554fe-813a-3b7e-a00b-0b4344a51cc2	Paige Beckers	Paige Bueckers
+2afc16bb-e9c6-3436-847c-28cb35568703	Paige buckers	Paige Bueckers
+8050606f-f1bd-3699-a6ef-c1203955da44	Paige Booker	Paige Bueckers
+46e87979-916c-3002-b458-3315540a2316	Paige Becker	Paige Bueckers
+8d0d4e6d-73ba-32f1-a516-d1e147ce395b	Paige Buckner	Paige Bueckers
+62dc741f-b572-359e-b7b9-c90bdf2db098	Paige Becker's	Paige Bueckers's
+185ec68e-3217-3d57-80c6-ce5102352da0	Siri meta-stock	Siri Meta stock
+e0bdce71-dbf2-3e5f-8ea9-da56b8fce3ca	Meta-stock	Meta stock
+f58e1aba-b9d0-3e4a-8836-eab3f6422fa4	Siri meta-platform	Siri Meta platform
+2bc2813c-fd44-3ddd-878e-50c3fc6e486a	Meta-platform	Meta platform
+c92777aa-c4a8-3511-bcd6-48490d912fe5	Siri meta-platforms	Siri Meta platforms
+5ea300ad-906f-392b-93bd-76ff98624a81	Meta-platforms	Meta platforms
+e6f646b5-e42c-3791-99d5-ba81c4cdca12	Siri stock price for meta-	Siri stock price for Meta
+731f8f4d-b140-3b95-8787-66df28c13bdd	Stock price for meta-	Stock price for Meta
+8e9d67ed-2931-3874-85e9-88d0504c32d3	Mehta stock	Meta stock
+c51e2736-90c5-329b-a1a6-f5deb383821c	Siri mirror woods	Siri Muir Woods
+348c14e4-09d9-3538-acf1-dc917be14947	Mirror woods	Muir Woods
+8762078a-8838-3822-9ae2-130072caf4cc	Siri mirror beach	Siri Muir Beach
+22badef3-79c6-3dbb-89eb-7a7017bae765	Mirror beach	Muir Beach
+fb2ab2e0-f85f-3460-9199-03900425ed7f	Jen Moji	Genmoji
+ec96446a-8fb0-375c-8e17-78d5f539ef56	Zhen Moji	Genmoji
+abd532a1-7b01-3e6e-b3bd-62d99c8f37f5	Gen Moji	Genmoji
+bb01b886-4f46-3b19-9d67-c1a5c5f90f53	Siri start an ounce	Siri start Announce
+7926d803-03e3-3486-b792-a039f8bedd97	Start an ounce	Start Announce
+7b7a8a0d-e07e-3824-b05c-973d4888e169	Siri an ounce	Siri Announce
+f5322ba9-2a39-3503-9abb-cd2300c12cdc	Siri enable an ounce	Siri enable Announce
+a6b72de7-0329-38c8-8343-72279db3ef21	Enable an ounce	Enable Announce
+c60806cf-a4d2-391d-be33-21482eeb4c66	Siri disable an ounce	Siri disable Announce
+7970321e-794c-328f-bdfa-0c04a2b68034	Disable an ounce	Disable Announce
+902e1329-9494-387f-b8dc-a733614a9f35	Siri turn on an ounce	Siri turn on Announce
+14f8add1-dde2-3944-8eec-379f83abf529	Turn on an ounce	Turn on Announce
+c8572d87-128c-3aee-928d-7f53030ad68b	Siri turn off an ounce	Siri turn off Announce
+bcc5d0fb-7d68-3f0f-aa6a-2547c6ecef66	Turn off an ounce	Turn off Announce
+6ecf03af-2f20-3299-86af-06367cb245cb	Siri climate sink	Siri climate sync
+8d4a27c1-b0e0-3f3d-bc27-2b0613f9c19b	Climate sink	Climate sync
+eef148fa-0b8d-3b98-b9f8-460a0c54668f	Mexico selection	Mexico's election
+e07da3d7-93ec-3306-a262-8cf2a25e512e	€ 2024	Euro 2024
+ebf3873a-5e90-3dba-91cd-9b8cd115d7d8	€ 2024	Euro 2024
+feddefc7-bc23-3671-8423-f550280841ad	€ 2024	Euro 2024
+e7de5847-bfed-398f-b927-42109dbd42f9	Siri motion Q	Siri Motion Cues
+b3455246-1b75-3a78-a17c-80553d2df886	Motion Q	Motion Cues
+2a108bb2-c7a1-3211-9c31-b8af85efe3be	Skibadee	skibidi
+88dd4a9d-bf55-3012-82e3-38d9c48b393b	Scooby Doo toilet	Skibidi Toilet
+b00c2393-f30b-3949-8718-d1e164cf8bdf	Skippy toilet	Skibidi Toilet
+813dca04-d003-3a0a-8a47-1be6e693a218	Siri skip the toilet	Siri Skibidi Toilet
+782d6cd5-a345-3ef6-8605-83e35b227953	Skip the toilet	Skibidi Toilet
+81a4de6b-f302-3d31-aa2a-031d64a51efc	Scooby toilet	Skibidi Toilet
+667607b4-b160-3c5a-8a71-79059c287d0d	Siri iPhone 6 out	Siri iPhone 16 out
+4abdfec2-8e34-3fb9-9ed1-108c138f25db	iPhone 6 out	iPhone 16 out
+26b38ba1-fae4-3fb0-8383-c8ca0516074b	Siri iPhone 6 going to come out	Siri iPhone 16 going to come out
+883fd116-e085-3a20-80a9-e36e04a28cad	iPhone 6 going to come out	iPhone 16 going to come out
+16e1d193-76bb-3017-83d1-8e7e45ac5332	Siri iPhone 6 already	Siri iPhone 16 already
+e4e52ce3-09e5-335f-baba-10ede01e9eaa	iPhone 6 already	iPhone 16 already
+9c8b3637-2e96-3177-bcff-6fa50a59a777	Siri when does the iPhone 6	Siri when does the iPhone 16
+69968e9f-eca1-385f-bfee-a1c199bd1e0c	When does the iPhone 6	When does the iPhone 16
+dd983f2a-f0a1-36a2-9619-bc265b6a3dfb	Siri iPhone 6 coming	Siri iPhone 16 coming
+82515238-a301-3a42-a3ac-19805329755a	iPhone 6 coming	iPhone 16 coming
+84471e9b-9fb7-3fc3-bc4e-6c74b5d61244	Siri iPhone 6 release	Siri iPhone 16 release
+c0676a13-fbf2-3701-821f-1f0d71ac7952	iPhone 6 release	iPhone 16 release
+bd3e9632-7990-3e5a-b3d5-d4008d738bfc	Siri iPhone 6 released	Siri iPhone 16 released
+1a15b6e5-2c35-3727-89cd-5cbc6cfa637a	iPhone 6 released	iPhone 16 released
+96439327-b04d-36b6-b5ed-616135505696	Siri iPhone 6 be released	Siri iPhone 16 be released
+5eaed176-b582-3aa6-a9bf-aa844e10bd8b	iPhone 6 be released	iPhone 16 be released
+f0aefac9-b787-30da-bf5b-3f994d576e9c	Siri iPhone 6 get released	Siri iPhone 16 get released
+197572a2-1870-3fa7-bad5-99e4fc4d6697	iPhone 6 get released	iPhone 16 get released
+d61914b4-4d88-39f9-a2d1-da0f17fbfa8f	Siri will iPhone 6	Siri will iPhone 16
+917a4970-4187-35b6-b1aa-5c2cec48e17d	Will iPhone 6	Will iPhone 16
+b930bb79-ba6d-39de-b239-772b050c581f	Siri will the iPhone 6	Siri will the iPhone 16
+25fe3c90-e7fb-3998-ad9e-bde0a1f5d940	Will the iPhone 6	Will the iPhone 16
+70c00cd5-5228-3b9c-b2b5-e1e06eb41ee6	Siri new iPhone 6	Siri new iPhone 16
+d8fce3ce-9192-359c-a971-9e40ae451496	New iPhone 6	New iPhone 16
+b40b85d9-463a-3fa1-9c27-d9d6b3ed6516	Genzie	Gen Z
+4b468044-95fd-387c-8ef7-a7438f3ffadf	F1 trillion	F-1 Trillion
+96a2082c-735d-3fc6-8a1b-76b0be579c85	F1 trillion	F-1 Trillion

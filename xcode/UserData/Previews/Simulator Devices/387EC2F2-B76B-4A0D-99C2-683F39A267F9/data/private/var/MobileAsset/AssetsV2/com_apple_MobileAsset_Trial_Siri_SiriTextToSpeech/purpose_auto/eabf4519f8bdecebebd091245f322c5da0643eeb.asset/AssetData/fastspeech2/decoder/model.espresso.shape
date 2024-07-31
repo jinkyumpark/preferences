@@ -1,0 +1,217 @@
+{
+  "layer_shapes" : {
+    "transpose_19" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/conv_decoder\/conv_block\/weight_normalization\/dialted_conv\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1536
+    },
+    "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1536
+    },
+    "transpose_17" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1536
+    },
+    "input_decoder_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "transpose_15" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "Identity_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/conv_decoder\/conv1d_17\/conv1dx" : {
+      "k" : 80,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/conv_decoder\/conv1d_17\/BiasAdd" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1536
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "transpose_13" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_25" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_11" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Max_2\/Max_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "transpose_7" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_5" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Max_2\/Max_2_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "transpose_3" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input_decoder_input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1536
+    },
+    "transpose_1" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_21" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_9" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_23" : {
+      "k" : 256,
+      "w" : 1536,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/conv_decoder\/conv1d_17\/conv1d" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1536
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_20\/strided_slice_20_begin_0" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    }
+  },
+  "global_shapes" : {
+
+  }
+}

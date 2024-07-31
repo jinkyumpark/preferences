@@ -1,0 +1,1 @@
+(function(){return function(t,r,n,e){var u=r.getSpan();if(!t)return!1;if(/subject/i.test(n)){var i=!1;for(var f in t)if(i=!!t[f].test(e))return i;return!1}return t.some(function(t){return u.next(t).exists()})}}).call();

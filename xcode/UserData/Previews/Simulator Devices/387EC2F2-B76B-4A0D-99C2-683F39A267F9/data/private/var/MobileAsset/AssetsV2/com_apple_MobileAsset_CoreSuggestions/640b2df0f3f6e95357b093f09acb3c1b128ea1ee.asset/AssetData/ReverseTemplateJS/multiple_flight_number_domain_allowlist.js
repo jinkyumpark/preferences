@@ -1,0 +1,1 @@
+(function(){return["t.delta.com","emirates.email","ixigo.com"]}).call();

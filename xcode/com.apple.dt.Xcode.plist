@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDELastBetaLicenseAgreedTo</key>
+	<string>EA1879</string>
+	<key>IDELastGMLicenseAgreedTo</key>
+	<string>EA1863</string>
+	<key>IDELastPTRLicenseAgreedTo</key>
+	<string>EA1863</string>
+	<key>IDEXcodeVersionForAgreedToBetaLicense</key>
+	<string>16.0</string>
+	<key>IDEXcodeVersionForAgreedToGMLicense</key>
+	<string>15.4</string>
+	<key>IDEXcodeVersionForAgreedToPTRLicense</key>
+	<string>15.4</string>
+</dict>
+</plist>

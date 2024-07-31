@@ -1,0 +1,4508 @@
+{
+  "storage": "unilm_sms_prod.espresso.weights",
+  "analyses": {},
+  "properties": {
+    "fast_reshape": "1"
+  },
+  "format_version": 200,
+  "metadata_in_weights": [],
+  "layers": [
+    {
+      "nB": 15000,
+      "top": "embed_out",
+      "has_biases": 1,
+      "weights": {
+        "Q": 3,
+        "W_t_int8": 5
+      },
+      "nC": 512,
+      "is_lookup": 1,
+      "quantization_mode": 2,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "input",
+      "debug_info": "",
+      "has_tanh": 0,
+      "blob_biases": 1,
+      "name": "embed",
+      "has_prelu": 0
+    },
+    {
+      "nB": 256,
+      "top": "embed_position_out",
+      "has_biases": 1,
+      "weights": {
+        "Q": 7,
+        "W_t_int8": 9
+      },
+      "nC": 512,
+      "is_lookup": 1,
+      "quantization_mode": 2,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "position",
+      "debug_info": "",
+      "has_tanh": 0,
+      "blob_biases": 1,
+      "name": "embed_position",
+      "has_prelu": 0
+    },
+    {
+      "nB": 2,
+      "top": "embed_segment_out",
+      "has_biases": 1,
+      "weights": {
+        "Q": 11,
+        "W_t_int8": 13
+      },
+      "nC": 512,
+      "is_lookup": 1,
+      "quantization_mode": 2,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "segment",
+      "debug_info": "",
+      "has_tanh": 0,
+      "blob_biases": 1,
+      "name": "embed_segment",
+      "has_prelu": 0
+    },
+    {
+      "bottom": "embed_position_out,embed_segment_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "embed_pos_seg_out",
+      "type": "elementwise",
+      "name": "embed_pos_seg",
+      "beta": 0
+    },
+    {
+      "bottom": "embed_out,embed_pos_seg_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "add_out",
+      "type": "elementwise",
+      "name": "add",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "add_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 15,
+        "wGamma": 17
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_8,quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_8_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_0:query_fc_8",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_0:query_fc_8",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 19
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_8",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_0:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_0:query_fc_8,quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_8_Qscale",
+      "weights": {
+        "biases": 21
+      },
+      "w_quantization_scale": 150.16302490234375,
+      "debug_info": "",
+      "top": "self_attention_0:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_0:query_fc_8",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_9,quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_9_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_0:key_fc_9",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_0:key_fc_9",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 23
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_9",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_0:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_0:key_fc_9,quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_9_Qscale",
+      "weights": {
+        "biases": 25
+      },
+      "w_quantization_scale": 132.4236602783203,
+      "debug_info": "",
+      "top": "self_attention_0:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_0:key_fc_9",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_10,quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_10_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_0:value_fc_10",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_0:value_fc_10",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 27
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_10",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_0:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_0:value_fc_10,quant_ane_gpt2_transformer_layer_3d/ln_pre_attn_out_10_Qscale",
+      "weights": {
+        "biases": 29
+      },
+      "w_quantization_scale": 506.47381591796875,
+      "debug_info": "",
+      "top": "self_attention_0:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_0:value_fc_10",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_0:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_0:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_0:query_reshaped"
+    },
+    {
+      "name": "self_attention_0:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_0:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_0:key_reshaped"
+    },
+    {
+      "name": "self_attention_0:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_0:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_0:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_0:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_0:query_t",
+      "type": "transpose",
+      "name": "self_attention_0:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_0:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_0:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_0:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_0:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/attn_k_s_in,ane_gpt2_transformer_layer_3d/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_0:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_0:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/attn_v_s_in,ane_gpt2_transformer_layer_3d/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_0:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_0:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_0:query_t,self_attention_0:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_0:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_0:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_0:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_0:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_0:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_0:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_0:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_0:softmax"
+    },
+    {
+      "bottom": "self_attention_0:softmax,self_attention_0:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_0:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_0:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_0:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_0:context_t",
+      "type": "transpose",
+      "name": "self_attention_0:context_t"
+    },
+    {
+      "name": "self_attention_0:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_0:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d/attn_out_25,quant_ane_gpt2_transformer_layer_3d/attn_out_25_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d/attn_fc_25",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d/attn_fc_out_25",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 31
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/attn_out_25",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/attn_fc_out_25,quant_ane_gpt2_transformer_layer_3d/attn_out_25_Qscale",
+      "weights": {
+        "biases": 33
+      },
+      "w_quantization_scale": 181.6418914794922,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d/attn_fc_25",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "add_out,ane_gpt2_transformer_layer_3d/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 35,
+        "wGamma": 37
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_30,quant_ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_30_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d/ffn_30",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d/ffn_out_30",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 39
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_30",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/ffn_out_30,quant_ane_gpt2_transformer_layer_3d/ln_pre_ffn_out_30_Qscale",
+      "weights": {
+        "biases": 41
+      },
+      "w_quantization_scale": 134.11505126953125,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d/ffn_30",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d/act_out_32,quant_ane_gpt2_transformer_layer_3d/act_out_32_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d/ffn_1_32",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d/ffn_1_out_32",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 43
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/act_out_32",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d/ffn_1_out_32,quant_ane_gpt2_transformer_layer_3d/act_out_32_Qscale",
+      "weights": {
+        "biases": 45
+      },
+      "w_quantization_scale": 147.71348571777344,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d/ffn_1_32",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/ffn_1_out,ane_gpt2_transformer_layer_3d/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 47,
+        "wGamma": 49
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_37,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_37_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_1:query_fc_37",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_1:query_fc_37",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 51
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_37",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_1:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_1:query_fc_37,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_37_Qscale",
+      "weights": {
+        "biases": 53
+      },
+      "w_quantization_scale": 191.19993591308594,
+      "debug_info": "",
+      "top": "self_attention_1:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_1:query_fc_37",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_38,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_38_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_1:key_fc_38",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_1:key_fc_38",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 55
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_38",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_1:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_1:key_fc_38,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_38_Qscale",
+      "weights": {
+        "biases": 57
+      },
+      "w_quantization_scale": 139.4486083984375,
+      "debug_info": "",
+      "top": "self_attention_1:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_1:key_fc_38",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_39,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_39_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_1:value_fc_39",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_1:value_fc_39",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 59
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_39",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_1:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_1:value_fc_39,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_attn_out_39_Qscale",
+      "weights": {
+        "biases": 61
+      },
+      "w_quantization_scale": 584.4085693359375,
+      "debug_info": "",
+      "top": "self_attention_1:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_1:value_fc_39",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_1:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_1:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_1:query_reshaped"
+    },
+    {
+      "name": "self_attention_1:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_1:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_1:key_reshaped"
+    },
+    {
+      "name": "self_attention_1:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_1:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_1:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_1:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_1:query_t",
+      "type": "transpose",
+      "name": "self_attention_1:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_1:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_1:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_1:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_1:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/attn_k_s_in,ane_gpt2_transformer_layer_3d_1/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_1:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_1:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/attn_v_s_in,ane_gpt2_transformer_layer_3d_1/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_1:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_1:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_1:query_t,self_attention_1:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_1:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_1:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_1:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_1:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_1:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_1:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_1:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_1:softmax"
+    },
+    {
+      "bottom": "self_attention_1:softmax,self_attention_1:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_1:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_1:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_1:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_1:context_t",
+      "type": "transpose",
+      "name": "self_attention_1:context_t"
+    },
+    {
+      "name": "self_attention_1:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_1:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_1/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/attn_out_54,quant_ane_gpt2_transformer_layer_3d_1/attn_out_54_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_1/attn_fc_54",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/attn_fc_out_54",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 63
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/attn_out_54",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_1/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/attn_fc_out_54,quant_ane_gpt2_transformer_layer_3d_1/attn_out_54_Qscale",
+      "weights": {
+        "biases": 65
+      },
+      "w_quantization_scale": 237.21885681152344,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_1/attn_fc_54",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d/residual_ffn_out,ane_gpt2_transformer_layer_3d_1/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_1/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 67,
+        "wGamma": 69
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_59,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_59_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_1/ffn_59",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/ffn_out_59",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 71
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_59",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_1/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/ffn_out_59,quant_ane_gpt2_transformer_layer_3d_1/ln_pre_ffn_out_59_Qscale",
+      "weights": {
+        "biases": 73
+      },
+      "w_quantization_scale": 143.07398986816406,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_1/ffn_59",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_1/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/act_out_61,quant_ane_gpt2_transformer_layer_3d_1/act_out_61_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_1/ffn_1_61",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_1/ffn_1_out_61",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 75
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/act_out_61",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_1/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_1/ffn_1_out_61,quant_ane_gpt2_transformer_layer_3d_1/act_out_61_Qscale",
+      "weights": {
+        "biases": 77
+      },
+      "w_quantization_scale": 88.9736328125,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_1/ffn_1_61",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/ffn_1_out,ane_gpt2_transformer_layer_3d_1/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_1/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_1/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_1/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 79,
+        "wGamma": 81
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_66,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_66_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_2:query_fc_66",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_2:query_fc_66",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 83
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_66",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_2:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_2:query_fc_66,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_66_Qscale",
+      "weights": {
+        "biases": 85
+      },
+      "w_quantization_scale": 244.0647735595703,
+      "debug_info": "",
+      "top": "self_attention_2:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_2:query_fc_66",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_67,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_67_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_2:key_fc_67",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_2:key_fc_67",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 87
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_67",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_2:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_2:key_fc_67,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_67_Qscale",
+      "weights": {
+        "biases": 89
+      },
+      "w_quantization_scale": 201.7747344970703,
+      "debug_info": "",
+      "top": "self_attention_2:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_2:key_fc_67",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_68,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_68_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_2:value_fc_68",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_2:value_fc_68",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 91
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_68",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_2:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_2:value_fc_68,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_attn_out_68_Qscale",
+      "weights": {
+        "biases": 93
+      },
+      "w_quantization_scale": 520.5089111328125,
+      "debug_info": "",
+      "top": "self_attention_2:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_2:value_fc_68",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_2:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_2:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_2:query_reshaped"
+    },
+    {
+      "name": "self_attention_2:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_2:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_2:key_reshaped"
+    },
+    {
+      "name": "self_attention_2:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_2:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_2:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_2:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_2:query_t",
+      "type": "transpose",
+      "name": "self_attention_2:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_2:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_2:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_2:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_2:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/attn_k_s_in,ane_gpt2_transformer_layer_3d_2/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_2:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_2:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/attn_v_s_in,ane_gpt2_transformer_layer_3d_2/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_2:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_2:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_2:query_t,self_attention_2:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_2:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_2:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_2:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_2:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_2:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_2:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_2:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_2:softmax"
+    },
+    {
+      "bottom": "self_attention_2:softmax,self_attention_2:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_2:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_2:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_2:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_2:context_t",
+      "type": "transpose",
+      "name": "self_attention_2:context_t"
+    },
+    {
+      "name": "self_attention_2:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_2:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_2/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/attn_out_83,quant_ane_gpt2_transformer_layer_3d_2/attn_out_83_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_2/attn_fc_83",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/attn_fc_out_83",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 95
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/attn_out_83",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_2/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/attn_fc_out_83,quant_ane_gpt2_transformer_layer_3d_2/attn_out_83_Qscale",
+      "weights": {
+        "biases": 97
+      },
+      "w_quantization_scale": 435.2503356933594,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_2/attn_fc_83",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_1/residual_ffn_out,ane_gpt2_transformer_layer_3d_2/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_2/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 99,
+        "wGamma": 101
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_88,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_88_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_2/ffn_88",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/ffn_out_88",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 103
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_88",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_2/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/ffn_out_88,quant_ane_gpt2_transformer_layer_3d_2/ln_pre_ffn_out_88_Qscale",
+      "weights": {
+        "biases": 105
+      },
+      "w_quantization_scale": 185.97207641601562,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_2/ffn_88",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_2/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/act_out_90,quant_ane_gpt2_transformer_layer_3d_2/act_out_90_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_2/ffn_1_90",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_2/ffn_1_out_90",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 107
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/act_out_90",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_2/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_2/ffn_1_out_90,quant_ane_gpt2_transformer_layer_3d_2/act_out_90_Qscale",
+      "weights": {
+        "biases": 109
+      },
+      "w_quantization_scale": 113.15267944335938,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_2/ffn_1_90",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/ffn_1_out,ane_gpt2_transformer_layer_3d_2/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_2/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_2/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_2/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 111,
+        "wGamma": 113
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_95,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_95_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_3:query_fc_95",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_3:query_fc_95",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 115
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_95",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_3:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_3:query_fc_95,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_95_Qscale",
+      "weights": {
+        "biases": 117
+      },
+      "w_quantization_scale": 270.00140380859375,
+      "debug_info": "",
+      "top": "self_attention_3:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_3:query_fc_95",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_96,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_96_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_3:key_fc_96",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_3:key_fc_96",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 119
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_96",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_3:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_3:key_fc_96,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_96_Qscale",
+      "weights": {
+        "biases": 121
+      },
+      "w_quantization_scale": 214.0423126220703,
+      "debug_info": "",
+      "top": "self_attention_3:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_3:key_fc_96",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_97,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_97_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_3:value_fc_97",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_3:value_fc_97",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 123
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_97",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_3:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_3:value_fc_97,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_attn_out_97_Qscale",
+      "weights": {
+        "biases": 125
+      },
+      "w_quantization_scale": 498.98870849609375,
+      "debug_info": "",
+      "top": "self_attention_3:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_3:value_fc_97",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_3:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_3:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_3:query_reshaped"
+    },
+    {
+      "name": "self_attention_3:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_3:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_3:key_reshaped"
+    },
+    {
+      "name": "self_attention_3:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_3:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_3:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_3:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_3:query_t",
+      "type": "transpose",
+      "name": "self_attention_3:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_3:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_3:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_3:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_3:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/attn_k_s_in,ane_gpt2_transformer_layer_3d_3/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_3:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_3:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/attn_v_s_in,ane_gpt2_transformer_layer_3d_3/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_3:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_3:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_3:query_t,self_attention_3:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_3:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_3:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_3:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_3:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_3:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_3:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_3:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_3:softmax"
+    },
+    {
+      "bottom": "self_attention_3:softmax,self_attention_3:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_3:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_3:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_3:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_3:context_t",
+      "type": "transpose",
+      "name": "self_attention_3:context_t"
+    },
+    {
+      "name": "self_attention_3:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_3:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_3/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/attn_out_112,quant_ane_gpt2_transformer_layer_3d_3/attn_out_112_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_3/attn_fc_112",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/attn_fc_out_112",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 127
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/attn_out_112",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_3/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/attn_fc_out_112,quant_ane_gpt2_transformer_layer_3d_3/attn_out_112_Qscale",
+      "weights": {
+        "biases": 129
+      },
+      "w_quantization_scale": 500.923095703125,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_3/attn_fc_112",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_2/residual_ffn_out,ane_gpt2_transformer_layer_3d_3/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_3/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 131,
+        "wGamma": 133
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_117,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_117_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_3/ffn_117",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/ffn_out_117",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 135
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_117",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_3/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/ffn_out_117,quant_ane_gpt2_transformer_layer_3d_3/ln_pre_ffn_out_117_Qscale",
+      "weights": {
+        "biases": 137
+      },
+      "w_quantization_scale": 206.74716186523438,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_3/ffn_117",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_3/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/act_out_119,quant_ane_gpt2_transformer_layer_3d_3/act_out_119_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_3/ffn_1_119",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_3/ffn_1_out_119",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 139
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/act_out_119",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_3/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_3/ffn_1_out_119,quant_ane_gpt2_transformer_layer_3d_3/act_out_119_Qscale",
+      "weights": {
+        "biases": 141
+      },
+      "w_quantization_scale": 171.79930114746094,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_3/ffn_1_119",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/ffn_1_out,ane_gpt2_transformer_layer_3d_3/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_3/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_3/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_3/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 143,
+        "wGamma": 145
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_124,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_124_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_4:query_fc_124",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_4:query_fc_124",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 147
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_124",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_4:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_4:query_fc_124,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_124_Qscale",
+      "weights": {
+        "biases": 149
+      },
+      "w_quantization_scale": 236.76039123535156,
+      "debug_info": "",
+      "top": "self_attention_4:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_4:query_fc_124",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_125,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_125_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_4:key_fc_125",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_4:key_fc_125",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 151
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_125",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_4:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_4:key_fc_125,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_125_Qscale",
+      "weights": {
+        "biases": 153
+      },
+      "w_quantization_scale": 218.80929565429688,
+      "debug_info": "",
+      "top": "self_attention_4:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_4:key_fc_125",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_126,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_126_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_4:value_fc_126",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_4:value_fc_126",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 155
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_126",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_4:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_4:value_fc_126,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_attn_out_126_Qscale",
+      "weights": {
+        "biases": 157
+      },
+      "w_quantization_scale": 497.0019836425781,
+      "debug_info": "",
+      "top": "self_attention_4:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_4:value_fc_126",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_4:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_4:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_4:query_reshaped"
+    },
+    {
+      "name": "self_attention_4:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_4:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_4:key_reshaped"
+    },
+    {
+      "name": "self_attention_4:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_4:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_4:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_4:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_4:query_t",
+      "type": "transpose",
+      "name": "self_attention_4:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_4:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_4:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_4:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_4:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/attn_k_s_in,ane_gpt2_transformer_layer_3d_4/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_4:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_4:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/attn_v_s_in,ane_gpt2_transformer_layer_3d_4/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_4:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_4:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_4:query_t,self_attention_4:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_4:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_4:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_4:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_4:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_4:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_4:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_4:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_4:softmax"
+    },
+    {
+      "bottom": "self_attention_4:softmax,self_attention_4:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_4:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_4:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_4:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_4:context_t",
+      "type": "transpose",
+      "name": "self_attention_4:context_t"
+    },
+    {
+      "name": "self_attention_4:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_4:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_4/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/attn_out_141,quant_ane_gpt2_transformer_layer_3d_4/attn_out_141_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_4/attn_fc_141",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/attn_fc_out_141",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 159
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/attn_out_141",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_4/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/attn_fc_out_141,quant_ane_gpt2_transformer_layer_3d_4/attn_out_141_Qscale",
+      "weights": {
+        "biases": 161
+      },
+      "w_quantization_scale": 461.0710144042969,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_4/attn_fc_141",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_3/residual_ffn_out,ane_gpt2_transformer_layer_3d_4/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_4/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 163,
+        "wGamma": 165
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_146,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_146_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_4/ffn_146",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/ffn_out_146",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 167
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_146",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_4/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/ffn_out_146,quant_ane_gpt2_transformer_layer_3d_4/ln_pre_ffn_out_146_Qscale",
+      "weights": {
+        "biases": 169
+      },
+      "w_quantization_scale": 275.9055480957031,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_4/ffn_146",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_4/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/act_out_148,quant_ane_gpt2_transformer_layer_3d_4/act_out_148_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_4/ffn_1_148",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_4/ffn_1_out_148",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 171
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/act_out_148",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_4/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_4/ffn_1_out_148,quant_ane_gpt2_transformer_layer_3d_4/act_out_148_Qscale",
+      "weights": {
+        "biases": 173
+      },
+      "w_quantization_scale": 163.2064208984375,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_4/ffn_1_148",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/ffn_1_out,ane_gpt2_transformer_layer_3d_4/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_4/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_4/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_4/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 175,
+        "wGamma": 177
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_153,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_153_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_5:query_fc_153",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_5:query_fc_153",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 179
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_153",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_5:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_5:query_fc_153,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_153_Qscale",
+      "weights": {
+        "biases": 181
+      },
+      "w_quantization_scale": 260.5167236328125,
+      "debug_info": "",
+      "top": "self_attention_5:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_5:query_fc_153",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_154,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_154_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_5:key_fc_154",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_5:key_fc_154",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 183
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_154",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_5:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_5:key_fc_154,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_154_Qscale",
+      "weights": {
+        "biases": 185
+      },
+      "w_quantization_scale": 192.36424255371094,
+      "debug_info": "",
+      "top": "self_attention_5:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_5:key_fc_154",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_155,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_155_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_5:value_fc_155",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_5:value_fc_155",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 187
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_155",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_5:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_5:value_fc_155,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_attn_out_155_Qscale",
+      "weights": {
+        "biases": 189
+      },
+      "w_quantization_scale": 419.888427734375,
+      "debug_info": "",
+      "top": "self_attention_5:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_5:value_fc_155",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_5:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_5:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_5:query_reshaped"
+    },
+    {
+      "name": "self_attention_5:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_5:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_5:key_reshaped"
+    },
+    {
+      "name": "self_attention_5:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_5:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_5:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_5:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_5:query_t",
+      "type": "transpose",
+      "name": "self_attention_5:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_5:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_5:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_5:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_5:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/attn_k_s_in,ane_gpt2_transformer_layer_3d_5/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_5:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_5:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/attn_v_s_in,ane_gpt2_transformer_layer_3d_5/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_5:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_5:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_5:query_t,self_attention_5:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_5:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_5:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_5:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_5:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_5:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_5:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_5:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_5:softmax"
+    },
+    {
+      "bottom": "self_attention_5:softmax,self_attention_5:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_5:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_5:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_5:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_5:context_t",
+      "type": "transpose",
+      "name": "self_attention_5:context_t"
+    },
+    {
+      "name": "self_attention_5:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_5:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_5/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/attn_out_170,quant_ane_gpt2_transformer_layer_3d_5/attn_out_170_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_5/attn_fc_170",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/attn_fc_out_170",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 191
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/attn_out_170",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_5/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/attn_fc_out_170,quant_ane_gpt2_transformer_layer_3d_5/attn_out_170_Qscale",
+      "weights": {
+        "biases": 193
+      },
+      "w_quantization_scale": 342.5454406738281,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_5/attn_fc_170",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_4/residual_ffn_out,ane_gpt2_transformer_layer_3d_5/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_5/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 195,
+        "wGamma": 197
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_175,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_175_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_5/ffn_175",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/ffn_out_175",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 199
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_175",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_5/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/ffn_out_175,quant_ane_gpt2_transformer_layer_3d_5/ln_pre_ffn_out_175_Qscale",
+      "weights": {
+        "biases": 201
+      },
+      "w_quantization_scale": 286.903076171875,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_5/ffn_175",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_5/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/act_out_177,quant_ane_gpt2_transformer_layer_3d_5/act_out_177_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_5/ffn_1_177",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_5/ffn_1_out_177",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 203
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/act_out_177",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_5/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_5/ffn_1_out_177,quant_ane_gpt2_transformer_layer_3d_5/act_out_177_Qscale",
+      "weights": {
+        "biases": 205
+      },
+      "w_quantization_scale": 173.7639923095703,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_5/ffn_1_177",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/ffn_1_out,ane_gpt2_transformer_layer_3d_5/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_5/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_5/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_5/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 207,
+        "wGamma": 209
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_182,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_182_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_6:query_fc_182",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_6:query_fc_182",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 211
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_182",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_6:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_6:query_fc_182,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_182_Qscale",
+      "weights": {
+        "biases": 213
+      },
+      "w_quantization_scale": 337.3966064453125,
+      "debug_info": "",
+      "top": "self_attention_6:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_6:query_fc_182",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_183,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_183_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_6:key_fc_183",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_6:key_fc_183",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 215
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_183",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_6:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_6:key_fc_183,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_183_Qscale",
+      "weights": {
+        "biases": 217
+      },
+      "w_quantization_scale": 317.5933532714844,
+      "debug_info": "",
+      "top": "self_attention_6:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_6:key_fc_183",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_184,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_184_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_6:value_fc_184",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_6:value_fc_184",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 219
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_184",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_6:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_6:value_fc_184,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_attn_out_184_Qscale",
+      "weights": {
+        "biases": 221
+      },
+      "w_quantization_scale": 395.52099609375,
+      "debug_info": "",
+      "top": "self_attention_6:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_6:value_fc_184",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_6:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_6:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_6:query_reshaped"
+    },
+    {
+      "name": "self_attention_6:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_6:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_6:key_reshaped"
+    },
+    {
+      "name": "self_attention_6:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_6:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_6:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_6:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_6:query_t",
+      "type": "transpose",
+      "name": "self_attention_6:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_6:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_6:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_6:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_6:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/attn_k_s_in,ane_gpt2_transformer_layer_3d_6/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_6:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_6:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/attn_v_s_in,ane_gpt2_transformer_layer_3d_6/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_6:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_6:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_6:query_t,self_attention_6:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_6:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_6:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_6:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_6:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_6:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_6:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_6:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_6:softmax"
+    },
+    {
+      "bottom": "self_attention_6:softmax,self_attention_6:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_6:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_6:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_6:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_6:context_t",
+      "type": "transpose",
+      "name": "self_attention_6:context_t"
+    },
+    {
+      "name": "self_attention_6:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_6:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_6/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/attn_out_199,quant_ane_gpt2_transformer_layer_3d_6/attn_out_199_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_6/attn_fc_199",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/attn_fc_out_199",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 223
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/attn_out_199",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_6/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/attn_fc_out_199,quant_ane_gpt2_transformer_layer_3d_6/attn_out_199_Qscale",
+      "weights": {
+        "biases": 225
+      },
+      "w_quantization_scale": 168.3719024658203,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_6/attn_fc_199",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_5/residual_ffn_out,ane_gpt2_transformer_layer_3d_6/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_6/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 227,
+        "wGamma": 229
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_204,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_204_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_6/ffn_204",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/ffn_out_204",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 231
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_204",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_6/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/ffn_out_204,quant_ane_gpt2_transformer_layer_3d_6/ln_pre_ffn_out_204_Qscale",
+      "weights": {
+        "biases": 233
+      },
+      "w_quantization_scale": 274.7162780761719,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_6/ffn_204",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_6/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/act_out_206,quant_ane_gpt2_transformer_layer_3d_6/act_out_206_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_6/ffn_1_206",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_6/ffn_1_out_206",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 235
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/act_out_206",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_6/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_6/ffn_1_out_206,quant_ane_gpt2_transformer_layer_3d_6/act_out_206_Qscale",
+      "weights": {
+        "biases": 237
+      },
+      "w_quantization_scale": 124.16571044921875,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_6/ffn_1_206",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/ffn_1_out,ane_gpt2_transformer_layer_3d_6/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_6/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_6/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_6/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 239,
+        "wGamma": 241
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_211,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_211_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_7:query_fc_211",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_7:query_fc_211",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 243
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_211",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_7:query_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_7:query_fc_211,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_211_Qscale",
+      "weights": {
+        "biases": 245
+      },
+      "w_quantization_scale": 201.17164611816406,
+      "debug_info": "",
+      "top": "self_attention_7:query_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_7:query_fc_211",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_212,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_212_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_7:key_fc_212",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_7:key_fc_212",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 247
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_212",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_7:key_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_7:key_fc_212,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_212_Qscale",
+      "weights": {
+        "biases": 249
+      },
+      "w_quantization_scale": 215.1175994873047,
+      "debug_info": "",
+      "top": "self_attention_7:key_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_7:key_fc_212",
+      "simple_mode": 1
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_213,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_213_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_self_attention_7:value_fc_213",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_self_attention_7:value_fc_213",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 251
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_213",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "self_attention_7:value_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_self_attention_7:value_fc_213,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_attn_out_213_Qscale",
+      "weights": {
+        "biases": 253
+      },
+      "w_quantization_scale": 287.5697937011719,
+      "debug_info": "",
+      "top": "self_attention_7:value_fc",
+      "type": "dynamic_dequantize",
+      "name": "dequant_self_attention_7:value_fc_213",
+      "simple_mode": 1
+    },
+    {
+      "name": "self_attention_7:query_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_7:query_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_7:query_reshaped"
+    },
+    {
+      "name": "self_attention_7:key_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_7:key_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_7:key_reshaped"
+    },
+    {
+      "name": "self_attention_7:value_reshape",
+      "weights": {},
+      "dst_w": 64,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_7:value_fc",
+      "debug_info": "",
+      "dst_seq": 0,
+      "dst_k": 8,
+      "top": "self_attention_7:value_reshaped"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_7:query_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_7:query_t",
+      "type": "transpose",
+      "name": "self_attention_7:query_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_7:key_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/attn_k_s_out",
+      "type": "transpose",
+      "name": "self_attention_7:key_t"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_7:value_reshaped",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/attn_v_s_out",
+      "type": "transpose",
+      "name": "self_attention_7:value_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_7/attn_k_s_in,ane_gpt2_transformer_layer_3d_7/attn_k_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_7:key_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_7:key_state_concat"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_7/attn_v_s_in,ane_gpt2_transformer_layer_3d_7/attn_v_s_out",
+      "weights": {},
+      "axis": 1,
+      "debug_info": "",
+      "top": "self_attention_7:value_state_concat",
+      "type": "general_concat",
+      "name": "self_attention_7:value_state_concat"
+    },
+    {
+      "bottom": "self_attention_7:query_t,self_attention_7:key_state_concat",
+      "weights": {},
+      "transpose_y": true,
+      "debug_info": "",
+      "top": "self_attention_7:raw_score",
+      "type": "batch_matmul",
+      "name": "self_attention_7:raw_score",
+      "channel_mode": false
+    },
+    {
+      "bottom": "self_attention_7:raw_score",
+      "alpha": 0.125,
+      "operation": 3,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "self_attention_7:scaled_raw_score",
+      "type": "elementwise",
+      "name": "self_attention_7:scaled_raw_score",
+      "beta": 0
+    },
+    {
+      "bottom": "self_attention_7:scaled_raw_score",
+      "weights": {},
+      "nd_mode": true,
+      "debug_info": "",
+      "top": "self_attention_7:softmax",
+      "C": 2,
+      "type": "softmax",
+      "name": "self_attention_7:softmax"
+    },
+    {
+      "bottom": "self_attention_7:softmax,self_attention_7:value_state_concat",
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_7:weighted_avg",
+      "type": "batch_matmul",
+      "name": "self_attention_7:weighted_avg",
+      "channel_mode": false
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 0,
+      "bottom": "self_attention_7:weighted_avg",
+      "axis_k": 2,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "self_attention_7:context_t",
+      "type": "transpose",
+      "name": "self_attention_7:context_t"
+    },
+    {
+      "name": "self_attention_7:context",
+      "weights": {},
+      "dst_w": 1,
+      "version": 1,
+      "dst_n": 0,
+      "dst_nd_rank": 5,
+      "type": "reshape",
+      "dst_h": 1,
+      "mode": 0,
+      "bottom": "self_attention_7:context_t",
+      "debug_info": "",
+      "dst_seq": -1,
+      "dst_k": 512,
+      "top": "ane_gpt2_transformer_layer_3d_7/attn_out"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/attn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/attn_out_228,quant_ane_gpt2_transformer_layer_3d_7/attn_out_228_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_7/attn_fc_228",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/attn_fc_out_228",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 255
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/attn_out_228",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_7/attn_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/attn_fc_out_228,quant_ane_gpt2_transformer_layer_3d_7/attn_out_228_Qscale",
+      "weights": {
+        "biases": 257
+      },
+      "w_quantization_scale": 141.68711853027344,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/attn_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_7/attn_fc_228",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_6/residual_ffn_out,ane_gpt2_transformer_layer_3d_7/attn_fc_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/residual_attn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_7/residual_attn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/residual_attn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_after_input_transpose",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_input_t"
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_after_input_transpose",
+      "weights": {
+        "wBeta": 259,
+        "wGamma": 261
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out",
+      "type": "transpose",
+      "name": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_233,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_233_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_7/ffn_233",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/ffn_out_233",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 263
+      },
+      "nC": 2048,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_233",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_7/ffn",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/ffn_out_233,quant_ane_gpt2_transformer_layer_3d_7/ln_pre_ffn_out_233_Qscale",
+      "weights": {
+        "biases": 265
+      },
+      "w_quantization_scale": 273.78887939453125,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ffn_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_7/ffn_233",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ffn_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/act_out",
+      "type": "activation",
+      "name": "ane_gpt2_transformer_layer_3d_7/act"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/act_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/act_out_235,quant_ane_gpt2_transformer_layer_3d_7/act_out_235_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_ane_gpt2_transformer_layer_3d_7/ffn_1_235",
+      "simple_mode": 1
+    },
+    {
+      "nB": 2048,
+      "top": "quant_ane_gpt2_transformer_layer_3d_7/ffn_1_out_235",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 267
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/act_out_235",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "ane_gpt2_transformer_layer_3d_7/ffn_1",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_ane_gpt2_transformer_layer_3d_7/ffn_1_out_235,quant_ane_gpt2_transformer_layer_3d_7/act_out_235_Qscale",
+      "weights": {
+        "biases": 269
+      },
+      "w_quantization_scale": 208.1042022705078,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/ffn_1_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_ane_gpt2_transformer_layer_3d_7/ffn_1_235",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "ane_gpt2_transformer_layer_3d_7/ffn_1_out,ane_gpt2_transformer_layer_3d_7/residual_attn_out",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "top": "ane_gpt2_transformer_layer_3d_7/residual_ffn_out",
+      "type": "elementwise",
+      "name": "ane_gpt2_transformer_layer_3d_7/residual_ffn",
+      "beta": 0
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "ane_gpt2_transformer_layer_3d_7/residual_ffn_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "decoder/ln_final_out_after_input_transpose",
+      "type": "transpose",
+      "name": "decoder/ln_final_input_t"
+    },
+    {
+      "bottom": "decoder/ln_final_out_after_input_transpose",
+      "weights": {
+        "wBeta": 271,
+        "wGamma": 273
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "decoder/ln_final_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "decoder/ln_final",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "decoder/ln_final_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "decoder/ln_final_out",
+      "type": "transpose",
+      "name": "decoder/ln_final_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "decoder/ln_final_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_decoder/ln_final_out_240,quant_decoder/ln_final_out_240_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_lm_head/transform_240",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_lm_head/transform_out_240",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 275
+      },
+      "nC": 512,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_decoder/ln_final_out_240",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "lm_head/transform",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_lm_head/transform_out_240,quant_decoder/ln_final_out_240_Qscale",
+      "weights": {
+        "biases": 277
+      },
+      "w_quantization_scale": 142.70220947265625,
+      "debug_info": "",
+      "top": "lm_head/transform_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_lm_head/transform_240",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "lm_head/transform_out",
+      "weights": {},
+      "mode": 22,
+      "debug_info": "",
+      "top": "lm_head/act_out",
+      "type": "activation",
+      "name": "lm_head/act"
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "lm_head/act_out",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "lm_head/lnorm_out_after_input_transpose",
+      "type": "transpose",
+      "name": "lm_head/lnorm_input_t"
+    },
+    {
+      "bottom": "lm_head/lnorm_out_after_input_transpose",
+      "weights": {
+        "wBeta": 279,
+        "wGamma": 281
+      },
+      "eps": 9.999999747378752e-06,
+      "tf_layernorm": 1,
+      "debug_info": "",
+      "top": "lm_head/lnorm_out_after_output_transpose",
+      "type": "instancenorm_1d",
+      "name": "lm_head/lnorm",
+      "eps_in_square_root": 1
+    },
+    {
+      "axis_h": 4,
+      "axis_w": 2,
+      "bottom": "lm_head/lnorm_out_after_output_transpose",
+      "axis_k": 0,
+      "axis_n": 3,
+      "axis_seq": 1,
+      "weights": {},
+      "debug_info": "",
+      "top": "lm_head/lnorm_out",
+      "type": "transpose",
+      "name": "lm_head/lnorm_output_t"
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "lm_head/lnorm_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "quant_lm_head/lnorm_out_245,quant_lm_head/lnorm_out_245_Qscale",
+      "type": "dynamic_quantize",
+      "name": "quant_final_fc_245",
+      "simple_mode": 1
+    },
+    {
+      "nB": 512,
+      "top": "quant_final_fc_out_245",
+      "has_biases": 0,
+      "weights": {
+        "W_int8": 5
+      },
+      "nC": 15000,
+      "quantization_mode": 5,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "quant_lm_head/lnorm_out_245",
+      "debug_info": "",
+      "has_tanh": 0,
+      "name": "final_fc",
+      "has_prelu": 0
+    },
+    {
+      "dst_cp": -1,
+      "bottom": "quant_final_fc_out_245,quant_lm_head/lnorm_out_245_Qscale",
+      "weights": {},
+      "w_quantization_scale": 227.53173828125,
+      "debug_info": "",
+      "top": "final_fc_out",
+      "type": "dynamic_dequantize",
+      "name": "dequant_final_fc_245",
+      "simple_mode": 1
+    },
+    {
+      "bottom": "final_fc_out,temperature",
+      "alpha": 1,
+      "operation": 1,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "nd_mode": true,
+      "top": "final_fc_scale_out",
+      "type": "elementwise",
+      "name": "final_fc_scale",
+      "beta": 0
+    },
+    {
+      "bottom": "final_fc_scale_out",
+      "weights": {},
+      "debug_info": "",
+      "top": "output",
+      "C": 2,
+      "type": "softmax",
+      "name": "final_fc_softmax"
+    }
+  ]
+}

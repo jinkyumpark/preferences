@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>20A241133</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.MobileAsset.CoreSuggestions</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>CFBundleName</key>
+	<string>Core Suggestions en</string>
+	<key>CFBundleShortVersionString</key>
+	<string>49</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>49</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>19A327</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>15.0</string>
+	<key>DTSDKBuild</key>
+	<string>19A327</string>
+	<key>DTSDKName</key>
+	<string>iphoneos15.0.internal</string>
+	<key>DTXcode</key>
+	<string>1300</string>
+	<key>DTXcodeBuild</key>
+	<string>13A191</string>
+	<key>MinimumOSVersion</key>
+	<string>15.0</string>
+	<key>MobileAssetProperties</key>
+	<dict>
+		<key>RolloutPercentile</key>
+		<integer>0</integer>
+		<key>SGAssetIdentifier</key>
+		<string>en</string>
+		<key>_CompatibilityVersion</key>
+		<integer>31</integer>
+		<key>_ContentVersion</key>
+		<integer>49</integer>
+	</dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+</dict>
+</plist>

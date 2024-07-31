@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.MobileAsset.VoiceServices.GryphonVoice</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6</string>
+	<key>CFBundleName</key>
+	<string>nora_1899</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>MobileAssetProperties</key>
+	<dict>
+		<key>Footprint</key>
+		<string>premium</string>
+		<key>Gender</key>
+		<string>female</string>
+		<key>IsDialogCapable</key>
+		<string>false</string>
+		<key>LanguagesCompatibility</key>
+		<array>
+			<string>en_US</string>
+		</array>
+		<key>Name</key>
+		<string>nora</string>
+		<key>Type</key>
+		<string>neural</string>
+		<key>_CompatibilityVersion</key>
+		<integer>68</integer>
+		<key>_ContentVersion</key>
+		<integer>1899</integer>
+	</dict>
+	<key>TtsAssetMetaInfo</key>
+	<dict>
+		<key>AssetPlatform</key>
+		<string>device</string>
+		<key>BERTAssetPath</key>
+		<string></string>
+		<key>BaseAssetPath</key>
+		<string>s3://tts-voice-build/neural_voices/nora_1743/assets/device</string>
+		<key>BoltTaskId</key>
+		<string>2twxpzxuwg</string>
+		<key>DialogAssetPath</key>
+		<string></string>
+		<key>DialogTextClassifierAssetPath</key>
+		<string></string>
+		<key>EngineConfigTemplateType</key>
+		<string>pausev2</string>
+		<key>FS2Path</key>
+		<string>s3://neural_voices_mara_maldonadorangel/nora_1685662678/fs2_device</string>
+		<key>OrchestratorAssetPath</key>
+		<string></string>
+		<key>ProsodyTransferAssetPath</key>
+		<string></string>
+		<key>WaveRNNPath</key>
+		<string>s3://neural_voices_mara_maldonadorangel/nora_1685662678/wavernn_device</string>
+	</dict>
+</dict>
+</plist>

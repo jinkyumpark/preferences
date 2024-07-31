@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>FileType</key>
+    <string>AssetSetConfiguration</string>
+    <key>FileVersion</key>
+    <string>1.0.0</string>
+    <key>AssetSetName</key>
+    <string>com.apple.siri.findmy</string>
+    <key>TrialProject</key>
+    <string>SIRI_FIND_MY</string>
+    <key>Assets</key>
+    <array>
+      <dict>
+        <key>AssetName</key>
+        <string>com.apple.siri.findmy.primary_device_files</string>
+        <key>TrialNamespace</key>
+        <string>SIRI_FIND_MY_CONFIGURATION_FILES</string>
+        <key>TrialMAAssetType</key>
+        <string>com.apple.MobileAsset.Trial.Siri.SiriFindMyConfigurationFiles</string>
+        <key>Expansions</key>
+        <array>
+          <dict>
+            <key>TrialFactorTemplate</key>
+            <string>com.apple.siri.findmy.primary_device_files</string>
+          </dict>
+        </array>
+      </dict>
+    </array>
+  </dict>
+</plist>

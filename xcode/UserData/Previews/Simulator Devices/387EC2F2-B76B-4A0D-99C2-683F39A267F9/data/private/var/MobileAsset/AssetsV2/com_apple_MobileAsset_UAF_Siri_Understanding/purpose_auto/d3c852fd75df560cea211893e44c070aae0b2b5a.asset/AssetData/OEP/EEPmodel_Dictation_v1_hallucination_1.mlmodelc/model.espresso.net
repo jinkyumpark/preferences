@@ -1,0 +1,1473 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "top" : "53",
+      "w" : 10,
+      "h" : 1,
+      "name" : "53",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "53",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 1
+    },
+    {
+      "bottom" : "53,x_1",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.1",
+      "nd_mode" : true,
+      "top" : "input.1",
+      "type" : "elementwise",
+      "name" : "input.1",
+      "beta" : 0
+    },
+    {
+      "nB" : 10,
+      "top" : "x.3",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 12,
+      "blob_weights" : 5,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.1",
+      "blob_biases" : 3,
+      "has_tanh" : 0,
+      "debug_info" : "x.3",
+      "name" : "x.3",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "x.3",
+      "end" : 6,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "debug_info" : "x.5",
+      "top" : "x.5",
+      "type" : "slice",
+      "name" : "x.5"
+    },
+    {
+      "bottom" : "x.3",
+      "end" : 12,
+      "start" : 6,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "debug_info" : "x",
+      "top" : "x",
+      "type" : "slice",
+      "name" : "x"
+    },
+    {
+      "top" : "85",
+      "w" : 6,
+      "h" : 1,
+      "name" : "85",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "85",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 7
+    },
+    {
+      "bottom" : "x.5,85",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "96",
+      "nd_mode" : true,
+      "top" : "96",
+      "type" : "elementwise",
+      "name" : "96",
+      "beta" : 0
+    },
+    {
+      "top" : "93",
+      "w" : 6,
+      "h" : 1,
+      "name" : "93",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "93",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 9
+    },
+    {
+      "bottom" : "96,93",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.3",
+      "nd_mode" : true,
+      "top" : "input.3",
+      "type" : "elementwise",
+      "name" : "input.3",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.5",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 13,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.3",
+      "blob_biases" : 11,
+      "has_tanh" : 0,
+      "debug_info" : "input.5",
+      "name" : "input.5",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.5",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.7",
+      "top" : "input.7",
+      "type" : "activation",
+      "name" : "input.7"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.9",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 17,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.7",
+      "blob_biases" : 15,
+      "has_tanh" : 0,
+      "debug_info" : "input.9",
+      "name" : "input.9",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.9",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.11",
+      "top" : "input.11",
+      "type" : "activation",
+      "name" : "input.11"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.13",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 21,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.11",
+      "blob_biases" : 19,
+      "has_tanh" : 0,
+      "debug_info" : "input.13",
+      "name" : "input.13",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.13",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x11",
+      "top" : "x11",
+      "type" : "softmax_nd",
+      "name" : "x11"
+    },
+    {
+      "top" : "118",
+      "w" : 6,
+      "h" : 1,
+      "name" : "118",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "118",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 23
+    },
+    {
+      "bottom" : "x.5,118",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "129",
+      "nd_mode" : true,
+      "top" : "129",
+      "type" : "elementwise",
+      "name" : "129",
+      "beta" : 0
+    },
+    {
+      "top" : "126",
+      "w" : 6,
+      "h" : 1,
+      "name" : "126",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "126",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 25
+    },
+    {
+      "bottom" : "129,126",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.15",
+      "nd_mode" : true,
+      "top" : "input.15",
+      "type" : "elementwise",
+      "name" : "input.15",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.17",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 29,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.15",
+      "blob_biases" : 27,
+      "has_tanh" : 0,
+      "debug_info" : "input.17",
+      "name" : "input.17",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.17",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.19",
+      "top" : "input.19",
+      "type" : "activation",
+      "name" : "input.19"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.21",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 33,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.19",
+      "blob_biases" : 31,
+      "has_tanh" : 0,
+      "debug_info" : "input.21",
+      "name" : "input.21",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.21",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.23",
+      "top" : "input.23",
+      "type" : "activation",
+      "name" : "input.23"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.25",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 37,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.23",
+      "blob_biases" : 35,
+      "has_tanh" : 0,
+      "debug_info" : "input.25",
+      "name" : "input.25",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.25",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.27",
+      "top" : "input.27",
+      "type" : "activation",
+      "name" : "input.27"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.29",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 41,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.27",
+      "blob_biases" : 39,
+      "has_tanh" : 0,
+      "debug_info" : "input.29",
+      "name" : "input.29",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.29",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x12",
+      "top" : "x12",
+      "type" : "softmax_nd",
+      "name" : "x12"
+    },
+    {
+      "top" : "155",
+      "w" : 6,
+      "h" : 1,
+      "name" : "155",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "155",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 43
+    },
+    {
+      "bottom" : "x.5,155",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "166",
+      "nd_mode" : true,
+      "top" : "166",
+      "type" : "elementwise",
+      "name" : "166",
+      "beta" : 0
+    },
+    {
+      "top" : "163",
+      "w" : 6,
+      "h" : 1,
+      "name" : "163",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "163",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 45
+    },
+    {
+      "bottom" : "166,163",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.31",
+      "nd_mode" : true,
+      "top" : "input.31",
+      "type" : "elementwise",
+      "name" : "input.31",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.33",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 49,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.31",
+      "blob_biases" : 47,
+      "has_tanh" : 0,
+      "debug_info" : "input.33",
+      "name" : "input.33",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.33",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.35",
+      "top" : "input.35",
+      "type" : "activation",
+      "name" : "input.35"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.37",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 53,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.35",
+      "blob_biases" : 51,
+      "has_tanh" : 0,
+      "debug_info" : "input.37",
+      "name" : "input.37",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.37",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.39",
+      "top" : "input.39",
+      "type" : "activation",
+      "name" : "input.39"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.41",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 57,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.39",
+      "blob_biases" : 55,
+      "has_tanh" : 0,
+      "debug_info" : "input.41",
+      "name" : "input.41",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.41",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x13",
+      "top" : "x13",
+      "type" : "softmax_nd",
+      "name" : "x13"
+    },
+    {
+      "top" : "188",
+      "w" : 6,
+      "h" : 1,
+      "name" : "188",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "188",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 59
+    },
+    {
+      "bottom" : "x.5,188",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "199",
+      "nd_mode" : true,
+      "top" : "199",
+      "type" : "elementwise",
+      "name" : "199",
+      "beta" : 0
+    },
+    {
+      "top" : "196",
+      "w" : 6,
+      "h" : 1,
+      "name" : "196",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "196",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 61
+    },
+    {
+      "bottom" : "199,196",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.43",
+      "nd_mode" : true,
+      "top" : "input.43",
+      "type" : "elementwise",
+      "name" : "input.43",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.45",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 65,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.43",
+      "blob_biases" : 63,
+      "has_tanh" : 0,
+      "debug_info" : "input.45",
+      "name" : "input.45",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.45",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.47",
+      "top" : "input.47",
+      "type" : "activation",
+      "name" : "input.47"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.49",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 69,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.47",
+      "blob_biases" : 67,
+      "has_tanh" : 0,
+      "debug_info" : "input.49",
+      "name" : "input.49",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.49",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.51",
+      "top" : "input.51",
+      "type" : "activation",
+      "name" : "input.51"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.53",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 73,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.51",
+      "blob_biases" : 71,
+      "has_tanh" : 0,
+      "debug_info" : "input.53",
+      "name" : "input.53",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.53",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.55",
+      "top" : "input.55",
+      "type" : "activation",
+      "name" : "input.55"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.57",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 77,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.55",
+      "blob_biases" : 75,
+      "has_tanh" : 0,
+      "debug_info" : "input.57",
+      "name" : "input.57",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.57",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x14",
+      "top" : "x14",
+      "type" : "softmax_nd",
+      "name" : "x14"
+    },
+    {
+      "bottom" : "x11,x12,x13,x14",
+      "weights" : {
+
+      },
+      "nd_mode" : true,
+      "axis" : 1,
+      "debug_info" : "input.59",
+      "top" : "input.59",
+      "type" : "general_concat",
+      "name" : "input.59"
+    },
+    {
+      "nB" : 8,
+      "top" : "partial_EP_scores",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 1,
+      "blob_weights" : 81,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.59",
+      "blob_biases" : 79,
+      "has_tanh" : 0,
+      "debug_info" : "partial_EP_scores",
+      "name" : "partial_EP_scores",
+      "has_prelu" : 0
+    },
+    {
+      "top" : "231",
+      "w" : 6,
+      "h" : 1,
+      "name" : "231",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "231",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 83
+    },
+    {
+      "bottom" : "x,231",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "242",
+      "nd_mode" : true,
+      "top" : "242",
+      "type" : "elementwise",
+      "name" : "242",
+      "beta" : 0
+    },
+    {
+      "top" : "239",
+      "w" : 6,
+      "h" : 1,
+      "name" : "239",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "239",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 85
+    },
+    {
+      "bottom" : "242,239",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.61",
+      "nd_mode" : true,
+      "top" : "input.61",
+      "type" : "elementwise",
+      "name" : "input.61",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.63",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 89,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.61",
+      "blob_biases" : 87,
+      "has_tanh" : 0,
+      "debug_info" : "input.63",
+      "name" : "input.63",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.63",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.65",
+      "top" : "input.65",
+      "type" : "activation",
+      "name" : "input.65"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.67",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 93,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.65",
+      "blob_biases" : 91,
+      "has_tanh" : 0,
+      "debug_info" : "input.67",
+      "name" : "input.67",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.67",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.69",
+      "top" : "input.69",
+      "type" : "activation",
+      "name" : "input.69"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.71",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 97,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.69",
+      "blob_biases" : 95,
+      "has_tanh" : 0,
+      "debug_info" : "input.71",
+      "name" : "input.71",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.71",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x21",
+      "top" : "x21",
+      "type" : "softmax_nd",
+      "name" : "x21"
+    },
+    {
+      "top" : "264",
+      "w" : 6,
+      "h" : 1,
+      "name" : "264",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "264",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 99
+    },
+    {
+      "bottom" : "x,264",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "275",
+      "nd_mode" : true,
+      "top" : "275",
+      "type" : "elementwise",
+      "name" : "275",
+      "beta" : 0
+    },
+    {
+      "top" : "272",
+      "w" : 6,
+      "h" : 1,
+      "name" : "272",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "272",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 101
+    },
+    {
+      "bottom" : "275,272",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.73",
+      "nd_mode" : true,
+      "top" : "input.73",
+      "type" : "elementwise",
+      "name" : "input.73",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.75",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 105,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.73",
+      "blob_biases" : 103,
+      "has_tanh" : 0,
+      "debug_info" : "input.75",
+      "name" : "input.75",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.75",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.77",
+      "top" : "input.77",
+      "type" : "activation",
+      "name" : "input.77"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.79",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 109,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.77",
+      "blob_biases" : 107,
+      "has_tanh" : 0,
+      "debug_info" : "input.79",
+      "name" : "input.79",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.79",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.81",
+      "top" : "input.81",
+      "type" : "activation",
+      "name" : "input.81"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.83",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 113,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.81",
+      "blob_biases" : 111,
+      "has_tanh" : 0,
+      "debug_info" : "input.83",
+      "name" : "input.83",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.83",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.85",
+      "top" : "input.85",
+      "type" : "activation",
+      "name" : "input.85"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.87",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 117,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.85",
+      "blob_biases" : 115,
+      "has_tanh" : 0,
+      "debug_info" : "input.87",
+      "name" : "input.87",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.87",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x22",
+      "top" : "x22",
+      "type" : "softmax_nd",
+      "name" : "x22"
+    },
+    {
+      "top" : "301",
+      "w" : 6,
+      "h" : 1,
+      "name" : "301",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "301",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 119
+    },
+    {
+      "bottom" : "x,301",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "312",
+      "nd_mode" : true,
+      "top" : "312",
+      "type" : "elementwise",
+      "name" : "312",
+      "beta" : 0
+    },
+    {
+      "top" : "309",
+      "w" : 6,
+      "h" : 1,
+      "name" : "309",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "309",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 121
+    },
+    {
+      "bottom" : "312,309",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.89",
+      "nd_mode" : true,
+      "top" : "input.89",
+      "type" : "elementwise",
+      "name" : "input.89",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.91",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 125,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.89",
+      "blob_biases" : 123,
+      "has_tanh" : 0,
+      "debug_info" : "input.91",
+      "name" : "input.91",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.91",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.93",
+      "top" : "input.93",
+      "type" : "activation",
+      "name" : "input.93"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.95",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 129,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.93",
+      "blob_biases" : 127,
+      "has_tanh" : 0,
+      "debug_info" : "input.95",
+      "name" : "input.95",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.95",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.97",
+      "top" : "input.97",
+      "type" : "activation",
+      "name" : "input.97"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.99",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 133,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.97",
+      "blob_biases" : 131,
+      "has_tanh" : 0,
+      "debug_info" : "input.99",
+      "name" : "input.99",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.99",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x23",
+      "top" : "x23",
+      "type" : "softmax_nd",
+      "name" : "x23"
+    },
+    {
+      "top" : "334",
+      "w" : 6,
+      "h" : 1,
+      "name" : "334",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "334",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 135
+    },
+    {
+      "bottom" : "x,334",
+      "alpha" : 1,
+      "operation" : 33,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "345",
+      "nd_mode" : true,
+      "top" : "345",
+      "type" : "elementwise",
+      "name" : "345",
+      "beta" : 0
+    },
+    {
+      "top" : "342",
+      "w" : 6,
+      "h" : 1,
+      "name" : "342",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "342",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 137
+    },
+    {
+      "bottom" : "345,342",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "input.101",
+      "nd_mode" : true,
+      "top" : "input.101",
+      "type" : "elementwise",
+      "name" : "input.101",
+      "beta" : 0
+    },
+    {
+      "nB" : 6,
+      "top" : "input.103",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 141,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.101",
+      "blob_biases" : 139,
+      "has_tanh" : 0,
+      "debug_info" : "input.103",
+      "name" : "input.103",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.103",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.105",
+      "top" : "input.105",
+      "type" : "activation",
+      "name" : "input.105"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.107",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 145,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.105",
+      "blob_biases" : 143,
+      "has_tanh" : 0,
+      "debug_info" : "input.107",
+      "name" : "input.107",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.107",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.109",
+      "top" : "input.109",
+      "type" : "activation",
+      "name" : "input.109"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.111",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 7,
+      "blob_weights" : 149,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.109",
+      "blob_biases" : 147,
+      "has_tanh" : 0,
+      "debug_info" : "input.111",
+      "name" : "input.111",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.111",
+      "weights" : {
+
+      },
+      "mode" : 3,
+      "debug_info" : "input.113",
+      "top" : "input.113",
+      "type" : "activation",
+      "name" : "input.113"
+    },
+    {
+      "nB" : 7,
+      "top" : "input.115",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 2,
+      "blob_weights" : 153,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input.113",
+      "blob_biases" : 151,
+      "has_tanh" : 0,
+      "debug_info" : "input.115",
+      "name" : "input.115",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "input.115",
+      "weights" : {
+
+      },
+      "nd_axis" : 1,
+      "debug_info" : "x24",
+      "top" : "x24",
+      "type" : "softmax_nd",
+      "name" : "x24"
+    },
+    {
+      "bottom" : "x21,x22,x23,x24",
+      "weights" : {
+
+      },
+      "nd_mode" : true,
+      "axis" : 1,
+      "debug_info" : "input",
+      "top" : "input",
+      "type" : "general_concat",
+      "name" : "input"
+    },
+    {
+      "nB" : 8,
+      "top" : "eager_EP_scores",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 1,
+      "blob_weights" : 157,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "input",
+      "blob_biases" : 155,
+      "has_tanh" : 0,
+      "debug_info" : "eager_EP_scores",
+      "name" : "eager_EP_scores",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "partial_EP_scores,eager_EP_scores",
+      "weights" : {
+
+      },
+      "nd_mode" : true,
+      "debug_info" : "373",
+      "axis" : 1,
+      "top" : "var_127",
+      "type" : "general_concat",
+      "name" : "373",
+      "attributes" : {
+        "is_output" : 1
+      }
+    }
+  ]
+}

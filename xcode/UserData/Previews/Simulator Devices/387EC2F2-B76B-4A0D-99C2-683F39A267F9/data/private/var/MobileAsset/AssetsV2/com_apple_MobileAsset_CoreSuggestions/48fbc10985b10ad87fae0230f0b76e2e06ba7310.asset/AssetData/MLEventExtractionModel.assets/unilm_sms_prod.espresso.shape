@@ -1,0 +1,3173 @@
+{
+  "layer_shapes" : {
+    "self_attention_3:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "embed_position_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_ffn_out_204" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/act_out_32" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_0:query_fc_8" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/act_out_235_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_3:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_0:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_1:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "decoder\/ln_final_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_3:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_1:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/act_out_90_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_4:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_95_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/attn_out_112_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_5:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_183" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ffn_out_175" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_212_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_1:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_self_attention_2:query_fc_66" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "output" : {
+      "k" : 15000,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "decoder\/ln_final_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_7:query_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "decoder\/ln_final_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_10_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_1:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_self_attention_1:value_fc_39" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/act_out_206_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_68_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_7:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "self_attention_7:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_2:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_ffn_out_175_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_final_fc_out_245" : {
+      "k" : 15000,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_decoder\/ln_final_out_240" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_4:query_fc_124" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "lm_head\/lnorm_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "self_attention_0:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_self_attention_5:query_fc_153" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_3:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_0:value_fc_10" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_decoder\/ln_final_out_240_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_3:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_lm_head\/lnorm_out_245" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_6:query_fc_182" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "input" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_self_attention_2:key_fc_67" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_7:value_fc_213" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_6:key_fc_183" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_8_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_4:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_9_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_self_attention_5:key_fc_154" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/act_out_206" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/attn_fc_out_228" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/act_out_90" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_ffn_out_146" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_182" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_39" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "quant_self_attention_4:key_fc_125" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_ffn_out_30_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_1:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_7:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_1:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_37_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_2:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "temperature" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_7\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/attn_out_228_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_3:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_1:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_9" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/act_out_61" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_lm_head\/transform_out_240" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_ffn_out_233_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ffn_1_out_148" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_3:query_fc_95" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_ffn_out_117_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "segment" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_126_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "final_fc_out" : {
+      "k" : 15000,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_lm_head\/lnorm_out_245_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_126" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_97" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_211_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_96_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/act_out_235" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ffn_out_204" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_7:key_fc_212" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/attn_out_112" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_2:value_fc_68" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_67" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/attn_fc_out_170" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ffn_1_out_235" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_4:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_0:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_37" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_3:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_self_attention_4:value_fc_126" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_155_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_5:value_fc_155" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_213" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/act_out_177_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_3:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/attn_out_199" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ffn_1_out_32" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_1:key_fc_38" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_ffn_out_59_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_1:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_6:value_fc_184" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_ffn_out_30" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_3:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/attn_fc_out_25" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "embed_pos_seg_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "lm_head\/act_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_3:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ffn_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_184_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_95" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_125" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/attn_out_228" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "position" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "self_attention_4:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/act_out_148_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/attn_out_25_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_38_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/attn_out_141" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ffn_1_out_61" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_6:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/attn_out_25" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_155" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/act_out_119" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_0:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "lm_head\/lnorm_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_ffn_out_233" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/attn_fc_out_54" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_212" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_125_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_0:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_2:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_self_attention_3:value_fc_97" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_97_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_10" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/act_out_119_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/attn_out_199_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_0:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ffn_out_233" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_0:key_fc_9" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "lm_head\/transform_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:key_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "final_fc_scale_out" : {
+      "k" : 15000,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_2:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ffn_out_59" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_124" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/act_out_32_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_154_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_3:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ffn_1_out_119" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/act_out_148" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_ffn_out_117" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/attn_out_170" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_3\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ffn_1_out_90" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_154" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_5\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_5:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ffn_out_88" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ffn_1_out_206" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/attn_out_54" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_1:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_0:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_211" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_1:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_66_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_2:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_3:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/attn_fc_out_141" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_183_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/act_out" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_ffn_out_88" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "embed_segment_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_5:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_1:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "self_attention_1:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_ffn_out_59" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_ffn_out_175" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:value_fc" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_3:key_fc_96" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_68" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_7:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/act_out_177" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/ln_pre_ffn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_39_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_ffn_out_88_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_ffn_out_146_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ffn_1_out_177" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out_38" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/attn_out_83_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_7:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_7\/ln_pre_attn_out_213_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_ffn_out_204_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_4:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/act_out_61_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_124_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ffn_out_117" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/attn_out_83" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ln_pre_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "embed_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/attn_out_170_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_5:softmax" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_7\/residual_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_67_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/attn_k_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_153" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ln_pre_ffn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_5:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_2\/attn_k_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "self_attention_7:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_7:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_4:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/attn_fc_out_83" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_0:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_5:raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_1:query_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_after_input_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_2:query_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/ln_pre_attn_out_96" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_1\/attn_out_54_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_5\/ln_pre_attn_out_153_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ffn_out_30" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_2\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_184" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_7:query_fc_211" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_7\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_1:key_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "lm_head\/lnorm_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_2:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ln_pre_attn_out_after_output_transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_2\/ln_pre_attn_out_66" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_3:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_2\/attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/attn_out_141_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "add_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_4\/ffn_out_146" : {
+      "k" : 2048,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/attn_v_s_in" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 0
+    },
+    "ane_gpt2_transformer_layer_3d_5\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:key_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:weighted_avg" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "self_attention_3:context_t" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ln_pre_ffn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_3\/attn_fc_out_112" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_6\/residual_attn_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_2:value_state_concat" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_2\/attn_fc_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "self_attention_6:scaled_raw_score" : {
+      "k" : 8,
+      "w" : 255,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "ane_gpt2_transformer_layer_3d_4\/ffn_1_out" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_self_attention_1:query_fc_37" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "ane_gpt2_transformer_layer_3d_1\/attn_v_s_out" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 255
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/attn_fc_out_199" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d\/ln_pre_attn_out_8" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "quant_ane_gpt2_transformer_layer_3d_6\/ln_pre_attn_out_182_Qscale" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "self_attention_5:value_reshaped" : {
+      "k" : 8,
+      "w" : 64,
+      "n" : 1,
+      "seq" : 255,
+      "_rank" : 5,
+      "h" : 1
+    }
+  }
+}

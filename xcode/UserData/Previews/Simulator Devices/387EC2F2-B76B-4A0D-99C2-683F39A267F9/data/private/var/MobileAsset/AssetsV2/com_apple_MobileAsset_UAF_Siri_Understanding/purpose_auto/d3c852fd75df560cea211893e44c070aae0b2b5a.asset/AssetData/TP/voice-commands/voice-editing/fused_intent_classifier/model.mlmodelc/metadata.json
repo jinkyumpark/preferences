@@ -1,0 +1,78 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "isOptional" : "0",
+        "formattedType" : "Int64",
+        "type" : "Int64",
+        "name" : "edit_intent_probability",
+        "shortDescription" : ""
+      },
+      {
+        "isOptional" : "0",
+        "keyType" : "Int64",
+        "formattedType" : "Dictionary (Int64 → Double)",
+        "type" : "Dictionary",
+        "name" : "classProbability",
+        "shortDescription" : ""
+      }
+    ],
+    "modelParameters" : [
+
+    ],
+    "specificationVersion" : 1,
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.13",
+      "tvOS" : "11.0",
+      "visionOS" : "1.0",
+      "watchOS" : "4.0",
+      "iOS" : "11.0",
+      "macCatalyst" : "11.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_treeEnsembleClassifier"
+    },
+    "userDefinedMetadata" : {
+      "com.github.apple.coremltools.version" : "7.0",
+      "com.github.apple.coremltools.source" : "xgboost==1.4.2"
+    },
+    "classLabels" : [
+      0,
+      1
+    ],
+    "generatedClassName" : "model",
+    "inputSchema" : [
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "i0",
+        "shortDescription" : ""
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "i1",
+        "shortDescription" : ""
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "i2",
+        "shortDescription" : ""
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "i3",
+        "shortDescription" : ""
+      }
+    ],
+    "method" : "predict"
+  }
+]

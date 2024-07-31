@@ -1,0 +1,2849 @@
+{
+  "layer_shapes" : {
+    "dense_4\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "h" : 1
+    },
+    "while_1:2_reduce_any_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense_2\/BiasAdd\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Sigmoid_5" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/split:3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/ReverseV2_1" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_is_growing" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Tile" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "while_0:2_reduce_any_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Sigmoid_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_extra_length1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Less" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_alloc" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_@ssa_version_2" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/split_1:3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/split:1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/transpose" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_0:2_new" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/split:2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fake_exit_0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_elem_shape_not_equal" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_re_initialize" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_@ssa_version_2" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_2" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_re_initialize" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "embedding\/embedding_lookup" : {
+      "k" : 1,
+      "w" : 64,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "dropout\/cond\/Merge_5d" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_alloc" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_value_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros_2\/packed" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_@ssa_version_7" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/zeros_3\/packed" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/split:2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_3\/range_max" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "embedding\/embedding_lookup_expand_dims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/backward_lstm\/bias" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_value_elem_shape" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_is_growing" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/add_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/TensorArrayReadV3_1_gathered" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/transpose_1" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_1\/range" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_alloc_shape" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_1:2" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_1_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/TensorArrayWrite\/TensorArrayWriteV3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack\/range_max" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/LogicalAnd" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "reduce_prod_0_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while\/Select_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Shape_2" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/mul_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "dense\/BiasAdd" : {
+      "k" : 1,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/Sigmoid_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_7" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/MatMul" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/BiasAdd_1" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_extra_length1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/Merge_5d_constant_in_scale" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_new" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/random_uniform\/RandomUniform" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "leaky_re_lu\/LeakyRelu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_0:2_re_initialize" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_7_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_4_@ssa_version_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "concatenate\/All" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fake_exit_1_@ssa_version_5" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "embedding\/NotEqual_load_constant_11" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/MatMul_1" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_raw_value_elem_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Sigmoid_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_re_initialize_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_alloc" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_new" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/zeros_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros_1\/packed" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/mul" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while\/MatMul" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "lambda\/Cast_ceil" : {
+      "k" : 1,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "fake_exit_5_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_4\/BiasAdd\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_@ssa_version_5" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/while\/Less_1_load_constant_203" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/mul_4" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "lambda\/Cast_cond" : {
+      "k" : 1,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/add_3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_full_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_7" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "shape_0" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_alloc" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/BiasAdd" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/mul_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_1\/TensorArrayScatter\/TensorArrayScatterV3" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_re_initialize_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_3_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_0_@ssa_version_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Select" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense\/Tensordot" : {
+      "k" : 1,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while_1\/Tile_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/iteration_counter" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Sigmoid_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "embedding\/Cast_cond_load_constant_9" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_value_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "input_1" : {
+      "k" : 1,
+      "w" : 32,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/Tanh_3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/Tanh" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_@ssa_version_5" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_5_@ssa_version_4" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "cast_0_cond_load_constant_30" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_reduce_any_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_elem_shape_not_equal" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_full_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_alloc" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Tile_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "while_1:2_value_elem_shape" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_is_growing" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_extra_length0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_1\/BiasAdd\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_5" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_1:2_re_initialize" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense_4\/Tensordot\/transpose" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Less_load_constant_265" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_reduce_any" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "lambda_1\/Sum_presqueeze" : {
+      "k" : 53,
+      "w" : 100,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/MatMul_2" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "while_0:2_bidirectional\/while\/Select_expanded" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_ls_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_reduce_any" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_@ssa_version_4" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/while\/split:0" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Tanh" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack\/range_max_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/concat" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArray_2_reduce_any_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/split:3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fake_exit_6" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "shape_1" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_elem_shape_not_equal" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "embedding\/Cast_cond" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/add_1" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "punc_label\/Reshape_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/mul_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Sigmoid_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "while_1:2_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/Merge" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense_1\/Tanh" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_0:2_@ssa_version_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_1" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/TensorArrayWrite\/TensorArrayWriteV3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "identity_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_0:2_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_full_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_3\/TensorArrayScatter\/TensorArrayScatterV3" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "concatenate\/ones_like" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/split_1:0" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while\/Select_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/TensorArrayReadV3_1_gathered" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "concatenate\/concat" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArray_3_reduce_any_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/Merge_5d_mul_out" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_extra_length0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/split:0" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_alloc" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_1_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "identity_0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_@ssa_version_2" : {
+      "k" : 54,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/while\/split:3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "while_1:2_extra_length0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Tanh" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_elem_shape_not_equal" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_1\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 53
+    },
+    "bidirectional\/while_1\/Sigmoid" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/Sigmoid" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while\/mul_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "keras_learning_phase" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_6_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros_like" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_5" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_new" : {
+      "k" : 54,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/add" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Less_load_constant_202" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/add_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "lambda_1\/Sum" : {
+      "k" : 1,
+      "w" : 100,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/transpose_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArrayUnstack_2\/range" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_2\/Tensordot" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while\/iteration_counter" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_4" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_4_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_@ssa_version_4" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_1_@ssa_version_4" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Sigmoid_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_2\/range_max" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Less_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/TensorArrayReadV3_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/Cast" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_2\/range_max_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/BiasAdd" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_value_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Less_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/split:2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Tile_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_raw_value_elem_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/mul" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "feature_layer\/strided_slice" : {
+      "k" : 1,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_0:2_extra_length1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_re_initialize_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayStack_1\/range" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_3\/range_max_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_reduce_any" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_2_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_new" : {
+      "k" : 54,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "dense_2\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 53
+    },
+    "bidirectional\/TensorArray_5_full_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Less" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/split:0" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "cast_0_floor" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "dense\/Tensordot\/transpose" : {
+      "k" : 1,
+      "w" : 100,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/mul_5" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/add" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_extra_length0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_alloc_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/ExpandDims_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "dropout\/cond\/Merge_mvn" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/GreaterEqual" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_1\/Tensordot\/transpose" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while\/TensorArrayReadV3_gathered" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "reduce_prod_0" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fake_exit_0_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/mul_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "concatenate\/All_load_constant_33" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "token_layer\/strided_slice" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/add_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_reduce_any" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Sigmoid_3" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while\/TensorArrayReadV3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fake_exit_4" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/BiasAdd_1\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Tile" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/BiasAdd" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "punc_label\/Softmax" : {
+      "k" : 1,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/zeros_like_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "lambda\/one_hot" : {
+      "k" : 53,
+      "w" : 100,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 31
+    },
+    "fake_exit_5_@ssa_version_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "cast_0_cond" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/zeros_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense_1\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 53
+    },
+    "bidirectional\/time_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/split_1:1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "layer_normalization\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/mul_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayStack_1\/TensorArrayGatherV3" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/while\/Tile_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/Tanh_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_extra_length0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_alloc_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "concatenate\/ones_like\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/add_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_1\/range_max_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/transpose_4" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_0:2_@ssa_version_6" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_0:2_ls_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_reduce_any_presqueeze" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_5_@ssa_version_6" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "lambda\/Cast" : {
+      "k" : 1,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_1:2_extra_length1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros_1\/packed\/1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_re_initialize_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_@ssa_version_5" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_0:2_is_growing" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros\/packed" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_alloc_shape" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_alloc_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "embedding\/NotEqual" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_is_growing" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_extra_length0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_alloc_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros_3\/packed\/1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_ls_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/split:1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "while_0:2_reduce_any" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/mul" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack\/TensorArrayScatter\/TensorArrayScatterV3" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "punc_label\/BiasAdd" : {
+      "k" : 1,
+      "w" : 28,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Less_1_load_constant_266" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/MatMul_1" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_elem_shape_not_equal" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/TensorArrayReadV3_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/add_2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "dense_4\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_@ssa_version_4" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/add" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense_4\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_@ssa_version_5" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_6" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/split:1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/strided_slice_6" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_extra_length1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_is_growing" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/strided_slice" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 0,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "dense_1\/Tensordot" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while\/LogicalAnd" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros_2\/packed\/1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "lambda\/Cast_floor" : {
+      "k" : 1,
+      "w" : 31,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArray_value_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2_full_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "cast_0_ceil" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArray" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack_1\/range_max" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 53
+    },
+    "bidirectional\/strided_slice_4" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 0,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/mul_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayStack\/TensorArrayGatherV3" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_6_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Tanh_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "dense\/BiasAdd\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 16,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_1:2_ls_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_4\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/zeros\/packed\/1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Sigmoid_4" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/add_1" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_reduce_any" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/Merge_5d_constant_in_bias" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "embedding\/Cast_floor" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/transpose_3" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_0:2_@ssa_version_4" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "while_1:2_bidirectional\/while_1\/Select_expanded" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "bidirectional\/while\/MatMul_1" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/strided_slice_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fake_exit_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_4_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_ls_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_re_initialize" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_1_@ssa_version_3" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_full_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_2\/Tensordot\/transpose" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/split_1:2" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "while_1:2_elem_shape_not_equal" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/mul" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArrayUnstack_2\/TensorArrayScatter\/TensorArrayScatterV3" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_ls_elem_shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_raw_value_elem_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dropout\/cond\/Merge_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "dropout\/cond\/Merge_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 100,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 53
+    },
+    "bidirectional\/TensorArray_2_@ssa_version_2" : {
+      "k" : 54,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_2_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/ReverseV2_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/TensorArrayUnstack_3\/range" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "lambda\/Cast_cond_load_constant_5" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5" : {
+      "k" : 53,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "dense_1\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "fake_exit_7_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/MatMul" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fake_exit_1_@ssa_version_6" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_@ssa_version_5" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "concatenate\/concat_1" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "fake_exit_0_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "while_0:2" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/forward_lstm\/bias" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "embedding\/Cast" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "while_1:2_@ssa_version_4" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "cast_0" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_1:2_new" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/mul_3" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_extra_length1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "embedding\/Cast_ceil" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/add_2" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_2_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_5_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_2\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/zeros_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "while_0:2_re_initialize_shape" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_raw_value_elem_shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/ReverseV2" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fake_exit_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_5_re_initialize" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Select_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "dense_2\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 53
+    },
+    "bidirectional\/MatMul_3" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayStack\/range" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/TensorArray_3_@ssa_version_4" : {
+      "k" : 53,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/TensorArrayUnstack\/range" : {
+      "k" : 1,
+      "w" : 53,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fake_exit_3_@ssa_version_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "punc_label\/Reshape" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/TensorArrayReadV3_gathered" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "bidirectional\/time" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/transpose_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "while_0:2_@ssa_version_2" : {
+      "k" : 54,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "concatenate\/ExpandDims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while_1\/Select_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "while_1:2_re_initialize_shape" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while\/Sigmoid" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "dropout\/cond\/dropout\/GreaterEqual_load_constant_338" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fake_exit_5_@ssa_version_5" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "dense_4\/Tensordot" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/BiasAdd\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "bidirectional\/Tanh_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/Tanh_1" : {
+      "k" : 0,
+      "w" : 1024,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "dropout\/cond\/Merge_reshape" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bidirectional\/while_1\/TensorArrayReadV3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "bidirectional\/ExpandDims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 53
+    },
+    "bidirectional\/while_1\/Select" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    }
+  },
+  "global_shapes" : {
+
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.asr.hammer",
+    "autoAssetEntries" : [
+      {
+        "assetSpecifier" : "com.apple.siri.asr.hammer.en_US"
+      }
+    ]
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "created",
+    "timestamp" : "2024-07-19T03:05:45.736Z"
+  }
+}

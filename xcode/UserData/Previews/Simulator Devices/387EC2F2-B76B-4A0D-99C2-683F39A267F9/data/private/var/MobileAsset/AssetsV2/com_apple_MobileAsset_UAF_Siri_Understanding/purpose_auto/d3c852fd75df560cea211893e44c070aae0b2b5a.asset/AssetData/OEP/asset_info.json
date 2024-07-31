@@ -1,0 +1,16 @@
+{
+    "version": "oepv4.11",
+    "supported_locales": [
+        "eng-USA",
+        "eng-AUS",
+        "eng-GBR",
+        "eng-IND",
+        "spa-USA",
+        "spa-ESP",
+        "yue-HKG",
+        "fra-FRA",
+        "deu-DEU",
+        "cmn-CHN",
+        "jpn-JPN"
+    ]
+}

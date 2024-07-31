@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Library</key>
+	<dict>
+		<key>Identifier</key>
+		<dict>
+			<key>ContainerIdentifier</key>
+			<string>com.apple.photos</string>
+			<key>Name</key>
+			<string>Syndication</string>
+			<key>Path</key>
+			<string>/Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/Library/Photos/Libraries/Syndication.photoslibrary</string>
+			<key>UUID</key>
+			<string>66834278-C644-4231-A03A-CD05B48C92CE</string>
+			<key>UserDescription</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>PLDeferredCriticalMaintenanceTask</key>
+	<date>2024-07-21T03:17:13Z</date>
+	<key>PLModelMigrator.CreateOptions</key>
+	<dict>
+		<key>PLPhotoLibraryCreateOptions</key>
+		<integer>3</integer>
+	</dict>
+</dict>
+</plist>

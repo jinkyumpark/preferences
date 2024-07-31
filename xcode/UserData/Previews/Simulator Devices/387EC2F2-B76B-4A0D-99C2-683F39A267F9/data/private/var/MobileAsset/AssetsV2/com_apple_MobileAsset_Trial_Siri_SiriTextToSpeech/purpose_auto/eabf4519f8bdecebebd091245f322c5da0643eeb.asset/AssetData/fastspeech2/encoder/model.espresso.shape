@@ -1,0 +1,2755 @@
+{
+  "layer_shapes" : {
+    "fastspeech2\/variance_adaptor_3\/conv1d_15\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/layer_normalization_3\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/BiasAdd\/ReadVariableOp" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_14\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/Squeeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split_2:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/concat_1" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_19\/strided_slice_19" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 0,
+      "h" : 1
+    },
+    "transpose_27" : {
+      "k" : 257,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/MatMul_2" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_13\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Transpose\/Transpose" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_AddV2_7\/AddV2_7" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Floor_1\/Floor_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/batch_normalization\/batchnorm\/mul" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_16\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Slice\/size\/Slice\/size\/0" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/concat" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/strided_slice_1\/stack_1" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/batch_normalization\/batchnorm\/sub" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/layer_normalization_13\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_18\/strided_slice_18" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/Squeeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_31" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/BiasAdd" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/conv1d_8\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/MatMul_3" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mean\/Mean" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_12\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_2\/Cast_2_ceil" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "Identity" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_17\/strided_slice_17" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Mean_2\/Mean_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/conv1d_8\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_AddV2\/AddV2" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_15\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/concat" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/conv1d_6\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split_3:1" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_10\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_4\/Cast_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/strided_slice_1\/stack_1\/1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/conv1d_4\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_7\/strided_slice_7" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/layer_normalization_11\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split_3:0" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/Squeeze_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/conv1d\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_1\/Cast_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/strided_slice_1\/input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split_3:1" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Maximum_1\/Maximum_1\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/size\/Slice\/size" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/MatMul_4" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_is_not_end_mask" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/ExpandDims_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input_length" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_AddV2_8\/AddV2_8" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/MatMul_1" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/Const_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/strided_slice" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 0,
+      "h" : 1
+    },
+    "input" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/conv1d_6\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_3\/Cast_3_cond" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "_neg_y_fastspeech2\/tf_op_layer_Sub\/Sub" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/size\/Slice\/size\/1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_13\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 258,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_10\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Maximum\/Maximum" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/Squeeze_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_5" : {
+      "k" : 1024,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/ExpandDims_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split_3:0" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Less\/Less" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Maximum_2\/Maximum_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_RealDiv_1\/RealDiv_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/MatMul" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/concat_1" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Floor\/Floor" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split_1:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/MatMul_2" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/layer_normalization_1\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_concat_1\/concat_1" : {
+      "k" : 1,
+      "w" : 258,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_2\/strided_slice_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Shape_2\/Shape_2" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/embedding\/embedding_lookup" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Minimum_1\/Minimum_1\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_AddV2_1\/AddV2_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/ExpandDims_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/conv1d_4\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/GatherV2" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_12\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/concat_1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/ExpandDims_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/concat_2" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split_2:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/concat_1" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/concat_3" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/concat_1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "Identity__reduction_axis__1_@ssa_version_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split_2:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split_3:0" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_16\/strided_slice_16" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_5\/strided_slice_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_end_ids" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Log\/Log" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_end_index_with_mask" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/MatMul_3" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "transpose_13" : {
+      "k" : 1024,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_10\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/transpose_4" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 2
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/Squeeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/truediv" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/GatherV2" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cumsum\/Cumsum" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/ExpandDims_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "input_feature_variance_scale_switch" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/strided_slice_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_15\/strided_slice_15" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/ExpandDims_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/MatMul" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/conv1d_7\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split_3:1" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/concat_2" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/batch_normalization\/batchnorm\/mul_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split_1:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/MatMul_4" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Shape\/Shape" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_14\/strided_slice_14" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_final_index" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/truediv" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "transpose_17" : {
+      "k" : 1024,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/embedding_2\/embedding_lookup_expand_dims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/ExpandDims_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "Identity_3" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_3\/Cast_3_cond_load_constant_602" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "590_fastspeech2\/tf_op_layer_Cumsum\/Cumsum_axis" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/ExpandDims_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_concat\/concat" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_concat_2\/concat_2" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_15\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_AddV2_2\/AddV2_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Range\/Range" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_13\/strided_slice_13" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/concat_3" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split_3:1" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_14\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split_1:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_21" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/truediv" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_2\/Cast_2_cond" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_4\/Cast_4_floor" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/split_1:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/Const_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_9\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/MatMul" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/layer_normalization\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/ExpandDims_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "Identity_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "transpose_3" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Minimum_1\/Minimum_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Maximum_2\/Maximum_2\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split_1:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/Softmax" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_13\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_3\/Cast_3_floor" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_13\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_is_end_mask" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_9\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/layer_normalization_6\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "Identity_2_presqueeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_4\/Cast_4_ceil" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_8\/strided_slice_8" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/embedding_1\/embedding_lookup_expand_dims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/concat_1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/ExpandDims_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "transpose_25" : {
+      "k" : 258,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Sub\/Sub" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_2\/Cast_2_cond_load_constant_598" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/ExpandDims_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/Softmax" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/concat" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/GatherV2" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_AddV2_3\/AddV2_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_4\/Cast_4_cond_load_constant_594" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split_1:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_9\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_concat_3\/concat_3" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/BiasAdd" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/MatMul_1" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/BiasAdd" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_11\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/concat_2" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/conv1d_2\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_ExpandDims\/ExpandDims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_15\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/embedding_1\/embedding_lookup" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/Softmax" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/free" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/ExpandDims_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_29" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Squeeze\/Squeeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split_1:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/Shape" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice\/begin" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/transpose_4" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 2
+    },
+    "fastspeech2\/tf_op_layer_Max\/Max" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_12\/strided_slice_12" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/MatMul_2" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_ExpandDims_1\/ExpandDims_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_3\/strided_slice_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Maximum\/Maximum\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/concat_3" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_33" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Mul_1\/Mul_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split_2:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_14\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_11\/strided_slice_11" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/ExpandDims_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mul_2\/Mul_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/MatMul" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/MatMul_1" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/MatMul_2" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/MatMul_3" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_6\/strided_slice_6" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split_1:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_strided_slice\/strided_slice" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 0,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/MatMul_4" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mul_3\/Mul_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/MatMul_3" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_AddV2_4\/AddV2_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_10\/strided_slice_10" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Mul_4\/Mul_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/transpose_4" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 2
+    },
+    "fastspeech2\/tf_op_layer_Cast_2\/Cast_2_floor" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/Const_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "transpose_1" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/layer_normalization_4\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/free" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Mul_5\/Mul_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_3\/layer_normalization_14\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/ExpandDims_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/concat_1" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mul_6\/Mul_6" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Squeeze_1\/Squeeze_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/conv1d_2\/BiasAdd" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/Const_2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_10\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/truediv" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_11\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/ExpandDims_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mul_7\/Mul_7" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/MatMul_4" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/layer_normalization_2\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_41" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mul_8\/Mul_8" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split_2:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mul_9\/Mul_9" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/ExpandDims_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot\/Reshape" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 256
+    },
+    "transpose_9" : {
+      "k" : 1024,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/concat_2" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "transpose_11" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/layer_normalization_12\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_12\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/ExpandDims_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/conv1d_1\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/conv1d_3\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_6\/Cast_6" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Mean_1\/Mean_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_AddV2_5\/AddV2_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Tensordot" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Less_1\/Less_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_3\/Cast_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/dense_1\/Relu" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/layer_normalization_8\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "_neg_y_fastspeech2\/tf_op_layer_Sub_2\/Sub_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/embedding_2\/embedding_lookup" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/Softmax" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Cast_4\/Cast_4_cond" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Minimum\/Minimum" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Sub_1\/Sub_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_2\/conv1d_14\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/conv1d_8\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/concat_3" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/add" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_2\/dense_2\/Tensordot\/free" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Sub_2\/Sub_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/strided_slice_1_begin_0" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_11\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/ExpandDims_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/MatMul" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/GatherV2" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_9\/strided_slice_9" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_15" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split_2:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_12\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Sub_3\/Sub_3" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_1\/layer_normalization_10\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/BiasAdd" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_const_name" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block\/multi_head_attention_add_on\/Squeeze_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Sub_4\/Sub_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Cast_3\/Cast_3_ceil" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Maximum_1\/Maximum_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Sub_5\/Sub_5" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Range_1\/Range_1" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/ExpandDims_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/conv1d_6\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "input_feature_scale" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Squeeze_2\/Squeeze_2" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/transpose_4" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 2
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/split_2:0" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "transpose_19" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_AddV2_6\/AddV2_6" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/concat" : {
+      "k" : 2,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_1\/conv1d_11\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_end_index_without_mask" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/Squeeze_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input_sentence_prosody" : {
+      "k" : 1,
+      "w" : 5,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Minimum\/Minimum\/y" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/layer_normalization_7\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_16\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/batch_normalization\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/conv1d\/conv1d" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/conv1d\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/ExpandDims_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_16\/Relu" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "Identity__reduction_axis__1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_strided_slice_4\/strided_slice_4" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/conv1d\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_RealDiv\/RealDiv" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "transpose_23" : {
+      "k" : 257,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/multi_head_attention_add_on_2\/split_2:1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/dense\/Tensordot\/concat_1" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Pad\/Pad" : {
+      "k" : 1,
+      "w" : 257,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "transpose_40" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 257
+    },
+    "fastspeech2\/tf_op_layer_Max\/Max_presqueeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/multi_head_attention_add_on_1\/Squeeze" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/conv1d_16\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor\/layer_normalization_9\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/embedding\/embedding_lookup_expand_dims" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_Slice\/Slice_end_index" : {
+      "k" : 1,
+      "w" : 4,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/tf_op_layer_Mul\/Mul" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor_3\/dense_3\/Tensordot\/free" : {
+      "k" : 1,
+      "w" : 2,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/layer_normalization_5\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_1\/conv1d_4\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/MatMul_1" : {
+      "k" : 1,
+      "w" : 512,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "input_feature_bias" : {
+      "k" : 1,
+      "w" : 3,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "fastspeech2\/encoder\/ffn_block_2\/conv1d_5\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/variance_adaptor_3\/layer_normalization_15\/batchnorm\/add_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 256
+    },
+    "_neg_y_fastspeech2\/tf_op_layer_Sub_1\/Sub_1" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "transpose_7" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/variance_adaptor\/conv1d_9\/conv1d\/ExpandDims" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 256
+    },
+    "fastspeech2\/tf_op_layer_BatchMatMulV2\/BatchMatMulV2" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 257
+    },
+    "fastspeech2\/encoder\/ffn_block\/conv1d_2\/conv1dx" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    },
+    "fastspeech2\/encoder\/ffn_block_3\/multi_head_attention_add_on_3\/split_3:0" : {
+      "k" : 256,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 4,
+      "h" : 1
+    }
+  },
+  "global_shapes" : {
+
+  }
+}

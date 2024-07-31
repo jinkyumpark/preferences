@@ -1,0 +1,894 @@
+{
+  "layers" : [
+    {
+      "bottom" : "input_decoder_input",
+      "size_of_axes" : 1,
+      "axes_0" : -3,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "",
+      "top" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization\/dialted_conv\/conv1d\/ExpandDims",
+      "type" : "expand_dims",
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization\/dialted_conv\/conv1d\/ExpandDims",
+      "attributes" : {
+        "basic_block_head" : 1
+      }
+    },
+    {
+      "axis_mode" : 31,
+      "bottom" : "input_decoder_length",
+      "weights" : {
+
+      },
+      "mode" : 9,
+      "debug_info" : "",
+      "use_version" : 1,
+      "top" : "fastspeech2\/tf_op_layer_Max_2\/Max_2_presqueeze",
+      "type" : "reduce",
+      "name" : "fastspeech2\/tf_op_layer_Max_2\/Max_2_presqueeze"
+    },
+    {
+      "size_of_axes" : 1,
+      "bottom" : "fastspeech2\/tf_op_layer_Max_2\/Max_2_presqueeze",
+      "axes_0" : 0,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "",
+      "version" : 1,
+      "top" : "fastspeech2\/tf_op_layer_Max_2\/Max_2",
+      "type" : "squeeze",
+      "name" : "fastspeech2\/tf_op_layer_Max_2\/Max_2"
+    },
+    {
+      "axis_h" : 2,
+      "axis_w" : 1,
+      "bottom" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization\/dialted_conv\/conv1d\/ExpandDims",
+      "axis_k" : 0,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "transpose_1",
+      "type" : "transpose",
+      "name" : "transpose_1"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_3",
+      "K" : 257,
+      "blob_biases" : 1,
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_1",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 3,
+      "fused_activation_mode" : 0
+    },
+    {
+      "top" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_0",
+      "w" : 1,
+      "h" : 1,
+      "name" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_0",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 5
+    },
+    {
+      "top" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_2",
+      "w" : 1,
+      "h" : 1,
+      "name" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_2",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 7
+    },
+    {
+      "bottom" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_0,fastspeech2\/tf_op_layer_Max_2\/Max_2,fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_2",
+      "weights" : {
+
+      },
+      "nd_mode" : true,
+      "axis" : 0,
+      "debug_info" : "",
+      "top" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack",
+      "type" : "general_concat",
+      "name" : "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack"
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_5",
+      "K" : 256,
+      "blob_biases" : 9,
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization_1\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_3",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 2,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 11,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_7",
+      "K" : 256,
+      "blob_biases" : 13,
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization_2\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_5",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 4,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 15,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_9",
+      "K" : 256,
+      "blob_biases" : 17,
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization_3\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_7",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 8,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 19,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_11",
+      "K" : 256,
+      "blob_biases" : 21,
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization_4\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_9",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 16,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 23,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_13",
+      "K" : 256,
+      "blob_biases" : 25,
+      "name" : "fastspeech2\/conv_decoder\/conv_block\/weight_normalization_5\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_11",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 32,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 27,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_15",
+      "K" : 256,
+      "blob_biases" : 29,
+      "name" : "fastspeech2\/conv_decoder\/conv_block_1\/weight_normalization_6\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_13",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 31,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_17",
+      "K" : 256,
+      "blob_biases" : 33,
+      "name" : "fastspeech2\/conv_decoder\/conv_block_1\/weight_normalization_7\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_15",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 2,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 35,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_19",
+      "K" : 256,
+      "blob_biases" : 37,
+      "name" : "fastspeech2\/conv_decoder\/conv_block_1\/weight_normalization_8\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_17",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 4,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 39,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_21",
+      "K" : 256,
+      "blob_biases" : 41,
+      "name" : "fastspeech2\/conv_decoder\/conv_block_1\/weight_normalization_9\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_19",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 8,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 43,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_23",
+      "K" : 256,
+      "blob_biases" : 45,
+      "name" : "fastspeech2\/conv_decoder\/conv_block_1\/weight_normalization_10\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_21",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 16,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 47,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "transpose_25",
+      "K" : 256,
+      "blob_biases" : 49,
+      "name" : "fastspeech2\/conv_decoder\/conv_block_1\/weight_normalization_11\/dialted_conv\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 256,
+      "bottom" : "transpose_23",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "dilation_x" : 32,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 51,
+      "fused_activation_mode" : 0
+    },
+    {
+      "pad_r" : 0,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 0,
+      "top" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1dx",
+      "K" : 256,
+      "blob_biases" : 53,
+      "name" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1dx",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 80,
+      "bottom" : "transpose_25",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 1,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1,
+      "blob_weights_f16" : 55
+    },
+    {
+      "axis_h" : 0,
+      "axis_w" : 2,
+      "bottom" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1dx",
+      "axis_k" : 1,
+      "axis_n" : 3,
+      "axis_seq" : 4,
+      "weights" : {
+
+      },
+      "debug_info" : "",
+      "top" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1d",
+      "type" : "transpose",
+      "name" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1d"
+    },
+    {
+      "size_of_axes" : 1,
+      "bottom" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1d",
+      "axes_0" : -3,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "",
+      "version" : 1,
+      "top" : "fastspeech2\/conv_decoder\/conv1d_17\/BiasAdd",
+      "type" : "squeeze",
+      "name" : "fastspeech2\/conv_decoder\/conv1d_17\/conv1d\/Squeeze"
+    },
+    {
+      "top" : "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2\/y",
+      "w" : 1,
+      "h" : 1,
+      "name" : "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2\/y",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 57
+    },
+    {
+      "bottom" : "fastspeech2\/conv_decoder\/conv1d_17\/BiasAdd,fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2\/y",
+      "alpha" : 1,
+      "operation" : 22,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "",
+      "nd_mode" : true,
+      "top" : "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2",
+      "type" : "elementwise",
+      "name" : "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2",
+      "beta" : 0
+    },
+    {
+      "top" : "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3\/y",
+      "w" : 1,
+      "h" : 1,
+      "name" : "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3\/y",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 59
+    },
+    {
+      "bottom" : "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2,fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3\/y",
+      "alpha" : 1,
+      "operation" : 23,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "",
+      "nd_mode" : true,
+      "top" : "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3",
+      "type" : "elementwise",
+      "name" : "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3",
+      "beta" : 0
+    },
+    {
+      "top" : "fastspeech2\/tf_op_layer_strided_slice_20\/strided_slice_20_begin_0",
+      "w" : 3,
+      "h" : 1,
+      "name" : "fastspeech2\/tf_op_layer_strided_slice_20\/strided_slice_20_begin_0",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 61
+    },
+    {
+      "begin_n" : 0,
+      "static_sizes_k" : 0,
+      "end_mask_h" : false,
+      "end_w" : 1,
+      "end_h" : 1,
+      "begin_h" : 0,
+      "stride_n" : 1,
+      "end_seq" : 1,
+      "attributes" : {
+        "is_output" : 1
+      },
+      "begin_mask_seq" : false,
+      "begin_mask_h" : true,
+      "stride_k" : 1,
+      "squeeze_mask_h" : false,
+      "type" : "general_slice",
+      "begin_mask_k" : true,
+      "static_sizes_w" : 0,
+      "begin_w" : 0,
+      "end_mask_k" : true,
+      "use_static_sizes" : false,
+      "stride_h" : 1,
+      "static_sizes_n" : 0,
+      "begin_mask_n" : false,
+      "weights" : {
+
+      },
+      "name" : "fastspeech2\/tf_op_layer_strided_slice_20\/strided_slice_20",
+      "stride_seq" : 1,
+      "end_k" : 1,
+      "static_sizes_seq" : 0,
+      "top" : "Identity_1",
+      "begin_seq" : 0,
+      "begin_k" : 0,
+      "squeeze_mask_k" : false,
+      "end_mask_w" : true,
+      "end_mask_seq" : false,
+      "end_mask_n" : false,
+      "debug_info" : "",
+      "stride_w" : 1,
+      "squeeze_mask_seq" : false,
+      "static_sizes_h" : 0,
+      "begin_mask_w" : true,
+      "bottom" : "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3,fastspeech2\/tf_op_layer_strided_slice_20\/strided_slice_20_begin_0,fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack",
+      "end_n" : 1,
+      "squeeze_mask_w" : false,
+      "squeeze_mask_n" : false
+    }
+  ],
+  "storage" : "model.espresso.weights",
+  "metadata_in_weights" : [
+
+  ],
+  "analyses" : {
+
+  },
+  "properties" : {
+    "disable_all_tracepoints" : "1",
+    "fast_reshape" : "1",
+    "pass_graph_coloring" : "1"
+  },
+  "format_version" : 300,
+  "shape" : {
+    "layer_shapes" : {
+      "transpose_19" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "fastspeech2\/conv_decoder\/conv_block\/weight_normalization\/dialted_conv\/conv1d\/ExpandDims" : {
+        "k" : 1,
+        "w" : 256,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1536
+      },
+      "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2\/y" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_Minimum_2\/Minimum_2" : {
+        "k" : 1,
+        "w" : 80,
+        "n" : 1,
+        "_rank" : 3,
+        "h" : 1536
+      },
+      "transpose_17" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3\/y" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_Maximum_3\/Maximum_3" : {
+        "k" : 1,
+        "w" : 80,
+        "n" : 1,
+        "_rank" : 3,
+        "h" : 1536
+      },
+      "input_decoder_length" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "transpose_15" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "Identity_1" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 3,
+        "h" : 1
+      },
+      "fastspeech2\/conv_decoder\/conv1d_17\/conv1dx" : {
+        "k" : 80,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "fastspeech2\/conv_decoder\/conv1d_17\/BiasAdd" : {
+        "k" : 1,
+        "w" : 80,
+        "n" : 1,
+        "_rank" : 3,
+        "h" : 1536
+      },
+      "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack" : {
+        "k" : 1,
+        "w" : 3,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_2" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "transpose_13" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "transpose_25" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "transpose_11" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_Max_2\/Max_2" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_strided_slice_20\/Pack\/strided_slice_20\/Pack\/values_0" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "transpose_7" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "transpose_5" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "fastspeech2\/tf_op_layer_Max_2\/Max_2_presqueeze" : {
+        "k" : 1,
+        "w" : 1,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      },
+      "transpose_3" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "input_decoder_input" : {
+        "k" : 1,
+        "w" : 256,
+        "n" : 1,
+        "_rank" : 3,
+        "h" : 1536
+      },
+      "transpose_1" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "transpose_21" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "transpose_9" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "transpose_23" : {
+        "k" : 256,
+        "w" : 1536,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1
+      },
+      "fastspeech2\/conv_decoder\/conv1d_17\/conv1d" : {
+        "k" : 1,
+        "w" : 80,
+        "n" : 1,
+        "_rank" : 4,
+        "h" : 1536
+      },
+      "fastspeech2\/tf_op_layer_strided_slice_20\/strided_slice_20_begin_0" : {
+        "k" : 1,
+        "w" : 3,
+        "n" : 1,
+        "_rank" : 1,
+        "h" : 1
+      }
+    },
+    "global_shapes" : {
+
+    }
+  },
+  "subnetworks" : {
+
+  }
+}

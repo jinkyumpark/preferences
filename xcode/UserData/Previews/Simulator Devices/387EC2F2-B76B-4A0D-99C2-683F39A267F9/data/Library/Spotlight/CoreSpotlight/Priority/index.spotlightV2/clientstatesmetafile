@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>clientStates</key>
+	<dict>
+		<key>com.apple.MobileAddressBook</key>
+		<dict>
+			<key>_kMDItemStateInfo_contacts</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGBxBYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
+			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctQICQoL
+			DA0OD1EzUTFRNFEyEBwQBBAGCaERVSRudWxsCBEaJCkyN0lSVFZY
+			WlxeYGFjAAAAAAAAAQEAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAGk=
+			</data>
+		</dict>
+	</dict>
+	<key>deferSyncCount</key>
+	<integer>1</integer>
+	<key>journalSerialNumber</key>
+	<integer>42</integer>
+	<key>syncCount</key>
+	<integer>7</integer>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

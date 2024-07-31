@@ -1,0 +1,244 @@
+{
+  "layer_shapes" : {
+    "pack_polarity_h_in" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bi_lstm_0_c_out_rev" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "pack_polarity_h_out" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "L" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "pack_polarity_c_out_rev" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "bi_lstm_0_c_out" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bi_lstm_0_c_in_rev" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bi_lstm_0_h_out" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "trigger" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "bi_lstm_0_output" : {
+      "k" : 512,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "pack_polarity_output" : {
+      "k" : 64,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "bi_lstm_0_h_out_rev" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "R" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "title_output" : {
+      "k" : 3,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "pack_polarity_h_in_rev" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "embedding_2_output" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "add_1_output_tmp_1" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "pack_polarity_h_out_rev" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "trigger_output" : {
+      "k" : 8,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "embedding_4_output" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "pack_polarity_c_in_rev" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "pack_polarity_c_out" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "polarity_output" : {
+      "k" : 5,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "add_1_output_tmp_2" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "A" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bi_lstm_0_h_in_rev" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "pack_polarity_c_in" : {
+      "k" : 32,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bi_lstm_0_c_in" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "D" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "bi_lstm_0_h_in" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "add_1_output_tmp_3" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "add_1_output" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "embedding_3_output" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "title" : {
+      "k" : 3,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "I" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "polarity" : {
+      "k" : 5,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "embedding_1_output" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    },
+    "embedding_5_output" : {
+      "k" : 256,
+      "w" : 1,
+      "n" : 1,
+      "h" : 1
+    }
+  }
+}

@@ -1,0 +1,3247 @@
+HEADER_BEGIN
+VERSION 1
+FILE_TYPE TknGrammar
+FILE_VERSION 2
+CODEPAGE UTF-8
+HEADER_END
+
+
+
+/**
+
+CARDINAL NUMBERS
+
+The thousands separator in American English is the comma (230,000,000).  It is frequently omitted in four-digit numbers and may be omitted in larger numbers (1400).
+We follow the standard American convention that 1 billion = 1,000,000,000 (a thousand million) and 1 trillion = 1,000,000,000,000 (a thousand billion).
+The word "billion" in UK English is equal to a million million (1,000,000,000,000) not a thousand million (1,000,000,000), as it is in US English.  What Americans call "billion" is called "thousand million" by the British.  Similarly, “trillion” in the UK is a million of their billions (10 to the eighteen).  In the US, we call this “quintillion”.
+Numbers between 20 and 99 are written by joining the tens word and the ones word with a hyphen (twenty-two, forty-seven, ninety-nine). The hyphen can be omitted.
+The word 'a' often replaces one before magnitude words in numbers larger than 99 (a hundred, a thousand {and} two, a hundred thousand four hundred fifty-two).
+The word 'and' may be inserted between the word hundred and the words one to ninety-nine (hundred {and} one, hundred {and} forty).  It may also be inserted after any other magnitude word if the magnitude word is pronounced immediately before the last two digits of the number (one thousand and two, one million and forty but not \*one million and one thousand).
+English cardinal number words do not vary in gender.  Cardinal numbers do have grammatically plural forms (e.g., count by tens; the eighties; hundreds of monkeys), but these are not used when pronouncing a written digit unless the plural marker –s appears at the end of the digit.
+
+Four-digit counting numbers can be spoken in a second way in which the first two digits and last two digits are read as the numbers they represent separated by the word ‘hundred’, as illustrated by the following examples:
+
+============ ==================================
+Written form Extra spoken form
+============ ==================================
+1995         nineteen hundred {and} ninety-five
+1703         seventeen hundred {and} three
+1800         eighteen hundred
+============ ==================================
+
+This pronunciation is dispreferred, though possible, when the thousands separator is used.  Note that four-digit numbers whose second digit is zero cannot be spoken in this way (e.g., 2045 != \*twenty hundred forty-five).
+
+When three and four digit numbers are used to count a unspecified set of objects or to suggest a logical sequence  (e.g., radio station frequencies, years in dates, flight numbers, room numbers, street numbers, product names, or other amounts where the counted object is not named), they may be parsed and read as two sequences of numbers.
+
+============ ====================
+Written form Extra spoken form
+============ ====================
+123          one twenty-three
+915          nine fifteen
+1705         seventeen oh five
+1835         eighteen thirty-five
+2012         twenty twelve
+============ ====================
+
+If the number has three digits, the first digit is read as the number it represents and the remaining two digits are read as they number they represent.  If the number has four digits, the sequence is split into two pairs and each pair is read as the number it represents.  When the second to last digit is 0 (zero), it is read as ‘oh’.
+
+When a number appears in a context where it is not used to count a set of objects, it can be rendered simply as a digit sequence in which each digit is spoken individually as the number it represents:
+
+============ ======================
+Written form Extra spoken form
+============ ======================
+123          one two three
+975          nine seven five
+1805         one eight oh/zero five
+4006         | four oh oh six
+| four zero zero six
+============ ======================
+
+The digit 0 can be spoken ‘oh’ or ‘zero’, and adjacent zeros must be spoken both as ‘zero’ or both as ‘oh’.
+
+Double and triple digits can be spoken with 'double' and 'treble'.
+
+============ =====================
+Written form Extra spoken form
+============ =====================
+007          double oh seven
+A-4405       A double four oh five
+============ =====================
+
+The lexicon contains all spelled-out forms up to 19 (oh, zero, nineteen), all multiples of ten (twenty, thirty), the magnitude words (hundred, thousand, million), and the words 'and', 'a', 'double' and 'treble'.  The tokenizer spells out digit forms and normalizes spelled-out forms according to this set of tokens. We don't use hyphens in numbers between 21 and 99. The tokenizer does not generate forms with 'double' or 'treble'.
+The tokenizer supports numbers up to 21 digits long.  Over 21 digits, the number is tokenized as a series of 3-digit numbers and commas.
+Note that we try to distinguish between one pronoun (one\\pronoun) and one number (one\\number).
+
+In spoken English, the choice of which cardinal number form to use is determined by a set of complex syntactic and pragmatic features.  Because of its limited ability to process meaning, the tokenizer applies one simple rule when choosing among the available cardinal number forms.  When a cardinal number is isolated (i.e., not part of a larger pattern), the tokenizer generates the first form described above if the number is smaller than 100.  It generates all forms otherwise:
+
+============ ====================================================
+Written form Tokenization
+============ ====================================================
+0            zero
+7            seven
+25           twenty five
+104          | one\\number hundred {and} four
+| one\\number oh/zero four
+1000         | a\\determiner thousand
+| one\\number thousand
+| one\\number oh oh oh
+| one\\number zero zero zero
+1905         | one\\number thousand nine hundred {and} five
+| nineteen hundred {and} five
+| nineteen oh five
+| one\\number nine oh/zero five
+1845         | one\\number thousand eight hundred {and} forty five
+| eighteen hundred {and} forty five
+| eighteen forty five
+| one eight four five
+1,845        one\\number thousand eight hundred {and} forty five
+============ ====================================================
+
+**/
+// Cardinal numbers (spoken as cardinal numbers)
+// Cardinal numbers (spoken as cardinal numbers)
+//  up to 5 digits without thousand separator
+Cardinal = `0|[1-9]\d{0,4}`
+{
+value = RHS.symbol;
+length = $GetLength( value );
+counting = $CountingCardinal( value );
+if( value > 100 )
+{
+// Create it here in case we need it later in some other rule
+digits = $DigitDefault( value );
+}
+if( length == 4 )
+{
+if( (value / 100) % 10 != 0 )
+{
+countingAlt = $CountingAltCardinal( value );
+}
+}
+if( length == 3 || length == 4 )
+{
+mod = value % 100;
+if( mod != 0 )
+{
+if( mod < 10 )
+{
+under = $Seq( 'oh', $DigitDefault( mod ) );
+}
+else
+{
+under = $Seq( $CountingCardinal( mod ) );
+}
+underspecified = $Seq( $CountingCardinal( value / 100 ), under );
+}
+}
+spoken = $Alt( counting, countingAlt, underspecified );
+}
+EndCardinal = ',' `\d{3}` EndCardinal?
+{
+value = RHS[1].symbol ^ EndCardinal.value;
+}
+// 4+ digits with a thousand separator
+Cardinal = `[1-9]\d?\d?` EndCardinal
+{
+value = RHS[0].symbol ^ EndCardinal.value;
+separator = 1;
+counting = $CountingCardinal( value );
+if( counting eq '' ) fail;
+spoken = counting;
+}
+TopSymbol = Cardinal
+{
+spoken = Cardinal.spoken;
+name = 'Cardinal';
+}
+TopSymbol = "'" `\d\d`
+{
+if( RHS[1].symbol < 10 )
+{
+spoken = $DigitDefault( RHS[1].symbol );
+}
+else
+{
+spoken = $CountingCardinal( RHS[1].symbol );
+}
+}
+// Digit sequences:
+// - starting with a 0
+// - 3+ digits
+TopSymbol = `0\d+`
+{
+spoken = $DigitDefault( RHS.symbol );
+name = 'DigitSequence';
+}
+TopSymbol = `[1-9]\d\d+`
+{
+if( RHS.symbol == 100 ) fail;
+spoken = $DigitDefault( RHS.symbol );
+name = 'DigitSequence';
+}
+/**
+
+ORDINAL NUMBERS
+
+In English, ordinal numbers are formed by attaching the ordinal suffix ‘th’ to the cardinal stem (fourth, tenth, hundredth).  When the stem ends in a vowel, this suffixation triggers a predictable modification to the stem (twentieth, fifth, ninth).  The cardinal numbers one, two, and three have associated ordinals that cannot be formed by a rule: first, second, and third.
+Ordinal numbers are usually written as a digit or sequence of digits followed by a clinging extension consisting of the last two letters of the word that the ordinal number represents, which is normally –th.  The ordinals for 1, 2, and 3, however, do not make their ordinals with -th, and hence have extensions corresponding to their idiosyncratic ordinal words (–st, -nd/-d, and –rd/-d, respectively).  Note that this clinging extension may sometimes be rendered in superscript.
+
+Four-digit ordinal numbers can be spoken in a second way in which the first two digits and last two digits are read as the numbers they represent separated by the word ‘hundred’, as illustrated by the following examples:
+
+============ ===================================
+Written form Extra spoken form
+============ ===================================
+1995th       nineteen hundred {and} ninety-fifth
+1703th       seventeen hundred {and} third
+1800th       eighteen hundredth
+============ ===================================
+
+This pronunciation is dispreferred, though possible, when the thousands separator is used.  Note that four-digit numbers whose second digit is zero cannot be spoken in this way (e.g., 2045th != \*twenty hundred forty-fifth).
+
+The lexicon contains all spelled-out ordinal forms up to 19, all words for ordinal multiples of ten (twentieth, thirtieth), and ordinals for the magnitude words (hundredth, thousandth, millionth).  The tokenizer spells out digit forms and normalizes spelled-out forms according to this set of tokens.
+The tokenizer recognizes and normalizes incorrect extensions and incorrectly formatted extensions (2th, 4rd, 2 nd, 2ND).
+
+============ ===============================
+Written form Tokenization
+============ ===============================
+7th          seventh
+25th         twenty fifth
+104th        one\\number hundred {and} fourth
+1000th       | a\\determiner thousandth
+| one\\number thousandth
+1,000th      | a\\determiner thousandth
+| one\\number thousandth
+============ ===============================
+
+**/
+// Ordinal numbers
+OrdinalExtension = `i:(st|nd|th|rd)` | 'd' {}
+TopSymbol = Cardinal OrdinalExtension
+{
+counting = $CountingOrdinal( RHS.value );
+if( RHS.separator == 0 && $GetLength( RHS.value ) == 4 )
+{
+if( (RHS.value / 100) % 10 != 0 )
+{
+countingAlt = $CountingAltOrdinal( RHS.value );
+}
+}
+spoken = $Alt( counting, countingAlt );
+name = 'Ordinal';
+}
+/**
+
+DECIMAL NUMBERS
+
+A decimal number is a digit sequence (the ‘whole part’) followed by the decimal separator (point) and a digit sequence (the ‘decimal part’).  Although thousand separators can be present in the whole part, they are never used in the decimal part.  The whole part sometimes does not appear in text or speech when it is 0.
+The whole part is spoken as a cardinal counting number (forms 1 and 2, above).  The decimal separator is always spoken as ‘point’ and never as ‘period’ or ‘dot’.  The decimal part is normally spoken as a digit sequence, but can also be spoken in one of the following ways:
+- as a counting cardinal (form 1) when it has two digits and is not a multiple of 10
+- as an unspecified counting cardinal (form 3) when it has three digits and is not a multiple of 10
+
+The lexicon contains .\\point to allow tokenization of decimal numbers.  The tokenizer does not generate form 3 for the decimal part.
+
+============ ==============================================
+Written form Tokenization
+============ ==============================================
+.5           .\\point five
+0.02         zero .\\point oh/zero/nought two
+7.0          seven .\\point oh/zero/nought
+104.20       one\\number hundred {and} four .\\point two zero
+2.123        two .\point one\\number two three
+1.3445       one\\number .\\point three four four five
+============ ==============================================
+
+**/
+// Decimal numbers
+Decimal = Cardinal? '.' `\d+`
+{
+value = RHS[2].symbol;
+spokenRight = $DigitDefault( value );
+if( $GetLength( value ) == 2 && value > 10 && value % 10 != 0 )
+{
+spokenRight = $Alt( spokenRight, $CountingCardinal( value ) );
+}
+spoken = $Seq( $Alt( Cardinal.counting, Cardinal.countingAlt ),
+$Sync( RHS[1].start ), '.\point', $Sync( RHS[2].start ), spokenRight );
+floor = Cardinal.value;
+fractional = value != 0;
+}
+TopSymbol = Decimal { spoken = RHS.spoken; name = 'Decimal'; }
+/**
+
+NEGATIVE NUMBERS
+
+A negative number is a cardinal or decimal number preceded by a clinging minus sign. In speech, this minus sign is spoken as the word minus or negative immediately before the number itself.
+
+There is no specific implementation for negative numbers in the tokenizer.
+
+**/
+/**
+
+FRACTIONS
+
+followed by a second digit or digit sequence (the denominator) (1/2, 2/3, 14/20, 37/1001).  Sometimes, the denominator includes an ordinal extension (1/100th).  When fractions are spelled out, they are frequently hyphenated (one-third, two-fifths).
+In English, fractions can be spoken in two ways.  When the denominator is greater than 5, an English speaker can pronounce both the numerator and the denominator as cardinal numbers and separate them with the word ‘over’ (3/13 three over thirteen, 34/77 thirty-four over seventy-seven, 27/895 twenty-seven over eight hundred ninety-five).  This is especially common when the numbers in the denominator is very large.
+When the denominator is a number between 2 and 20 or a multiple of 5, speakers tend to pronounce the fraction as a cardinal representing the numerator followed by an ordinal representing the denominator (3/13 three thirteenths, 34/77 thirty-four seventy-sevenths, 27/895 twenty-seven eight hundred ninety-fifths).  This pronunciation of fractions is preferred when the fraction precedes a measurement word (e.g. inch, mile, percent) or the word ‘of’.
+There are a number of restrictions on this type of fraction pronunciation.  When the numerator is 1, it can be spoken either as ‘one’ or ‘a’, and the denominator must be the singular ordinal.  When the numerator is greater or less than one, the denominator must be plural.
+Note that the 2 and 4 have special written forms when they appear in the denominator of a fraction.  A 2 in the denominator must be spoken as half or halves (one half, three halves).  The number 4 in the denominator can be spoken as fourth(s), as predicted, or quarter(s) (one fourth, one quarter, three quarters).
+Finally, when the numerator is a magnitude word, the one in the spoken form may be dropped from the pronunciation of the denominator (1/100 -> one {one} hundredth).
+
+The lexicon contains the token over, the cardinal numbers, the singular and plural ordinals, and the special cases for 2 and 4 (half, halves, quarter, quarters).
+"one" is not optional yet in "one {one} hundredth".
+
+============ ========================================================
+Written form Tokenization
+============ ========================================================
+1/3          | a\\determiner third
+| one\\number third
+3/2          three halves
+1/100        | one\\number over one\\number hundredth
+| a\\determiner one\\number hundredth
+| one\\number one\\number hundredth
+1/100th      | a\\determiner one\\number hundredth
+| one\\number one\\number hundredth
+17/19        | seventeen nineteenths
+| seventeen over nineteen
+142/10000    | one\\number {hundred {and}} forty two ten thousandths
+| one\\number {hundred {and}} forty two over ten thousand
+============ ========================================================
+
+**/
+// Fractions
+Fraction = Cardinal '/' Cardinal
+{
+nvalue = Cardinal[0].value;
+dvalue = Cardinal[1].value;
+if( dvalue <= 1 || nvalue == 0 || nvalue == dvalue ) fail;
+if( dvalue > 20 && dvalue % 5 || dvalue > 100 && dvalue % 100 || dvalue > 1000 && dvalue % 1000 ) fail;
+floor = nvalue / dvalue;
+fractional = nvalue != dvalue;
+numerator = $Alt( Cardinal[0].counting, Cardinal[0].countingAlt );
+if( nvalue == 1 )
+{
+denominator = $CountingSingularDenominator( dvalue );
+}
+else
+{
+denominator = $CountingPluralDenominator( dvalue );
+}
+if( denominator eq '' || numerator eq '' ) fail;
+spoken = $Seq( numerator, denominator );
+}
+VulgarFraction = '¼' { spoken = $Seq( $Alt( 'a\determiner', 'one\number' ), 'quarter' ); }
+VulgarFraction = '½' { spoken = $Seq( $Alt( 'a\determiner', 'one\number' ), 'half' ); }
+VulgarFraction = '¾' { spoken = $Seq( 'three', 'quarters' ); }
+FractionExtension = `i:ths?` {}
+FractionTh = Fraction FractionExtension
+{
+spoken = Fraction.spoken;
+}
+FractionPlus = Cardinal `[- ]` Fraction
+{
+if( Fraction.nvalue >= Fraction.dvalue ) fail;
+if( Cardinal.value > 999 ) fail;
+whole = $Alt( Cardinal.counting, Cardinal.countingAlt );
+numerator = Fraction.numerator;
+if( Fraction.nvalue == 1 ) numerator = $Alt( numerator, 'a\determiner' );
+spoken = $Seq( whole, 'and', numerator, Fraction.denominator );
+floor = Cardinal.value;
+fractional = Fraction.fractional;
+}
+FractionPlus = Cardinal ' '? VulgarFraction
+{
+if( Cardinal.value > 999 ) fail;
+whole = $Alt( Cardinal.counting, Cardinal.countingAlt );
+spoken = $Seq( whole, 'and', VulgarFraction.spoken );
+floor = Cardinal.value;
+fractional = 1;
+}
+FractionPlusTh = FractionPlus FractionExtension
+{
+spoken = FractionPlus.spoken;
+}
+TopSymbol = Fraction
+{
+spoken = RHS.spoken;
+name = 'Fraction';
+// fail if context is a slash
+leftContext = '[^/]';
+rightContext = '[^/]';
+}
+TopSymbol = Cardinal '/' Cardinal
+{
+nvalue = Cardinal[0].value;
+dvalue = Cardinal[1].value;
+// slash
+slash = $Lookup( '/' );
+// over
+over = 'over';
+spoken = $Seq( Cardinal[0].spoken, $Sync( RHS[1].start ), $Alt( slash, over ), $Sync( RHS[2].start ), Cardinal[1].spoken );
+// fail if context is a slash
+leftContext = '[^/]';
+rightContext = '[^/]';
+}
+TopSymbol = FractionTh | FractionPlus | FractionPlusTh
+{
+spoken = RHS.spoken;
+name = 'Fraction';
+}
+// Hard to tell if <number>/<number> is indeed a fraction. Allow more
+// spoken forms.
+// Number
+Number = Cardinal
+{
+spoken = $Alt( Cardinal.counting, Cardinal.countingAlt );
+floor = Cardinal.value;
+}
+Number = Decimal | FractionPlus
+{
+spoken = RHS.spoken;
+floor = RHS.floor;
+fractional = RHS.fractional;
+}
+Number = Fraction
+{
+spoken = Fraction.spoken;
+floor = Fraction.floor;
+fractional = Fraction.fractional;
+badInRange = Fraction.nvalue > Fraction.dvalue;
+}
+NumberRange = Number '-' Number
+{
+// This >100 condition cuts down on the number of false positives, but
+// could certainly be improved.
+notInIsolation = Number[1].floor > 100;
+if( Number[0].badInRange ) fail;
+if( Number[1].badInRange ) fail;
+if( Number[0].floor > Number[1].floor ) fail;
+if( Number[0].floor == Number[1].floor && Number[1].fractional == 0 ) fail;
+spoken = $Seq( Number[0].spoken, $Sync( RHS[1].start ), 'to', $Sync( RHS[2].start ), Number[1].spoken );
+}
+TopSymbol = NumberRange
+{
+if( NumberRange.notInIsolation ) fail;
+spoken = RHS.spoken;
+}
+/**
+
+ROMAN NUMERALS
+
+Roman numerals consist of the following characters: I=1, V=5, X=10, L=50, C=100, D=500, M=1000.  Roman numerals cannot be negative and there is no Roman numeral for zero.  These characters can be combined to make all other numbers (IV=4, CMLXI=961).  There are multiple ways to represent the some numbers (IV=IIII=4), but we support only the standard format.
+A Roman numeral is spoken as ‘the’ plus the corresponding ordinal number after a proper name (Louis XIV: Louis the fourteenth).  It is spoken as a cardinal number otherwise (Ch. XII: chapter twelve).
+
+Because NatSpeak is a dictation product, it is important that the user be able specify what format he wants to see when dictating a number (4 or IV).  Users can force the product to write a Roman numeral by dictating the words Roman numeral before the number.
+Occasionally, the intended spoken form of a Roman numeral can be determined from context; specifically, the tokenizer knows how Roman numerals should be pronounced after certain proper names and other words (Louis XVI, Henry IV).  The tokenizer does not output Roman numeral in those situations.  The list of triggering tokens currently includes Alexander, Charles, Edward, Louis, William, James, Henry, Pius and George.
+Users should be able to dictate arbitrary Roman numerals up to 3000 (MMM).
+Roman numerals often conflict with lexicalized tokens (I, CD). When that happens, the tokenizer prefers the lexicalized token over the Roman numeral.
+
+============ =================================================================
+Written form Tokenization
+============ =================================================================
+I            I
+II           \roman-numeral two
+MCMLXXXIV    \roman-numeral nineteen eighty four
+\roman-numeral nineteen hundred {and} eighty four
+\roman-numeral one\\number thousand nine hundred {and} eighty four
+Henry I      Henry the first
+============ =================================================================
+
+**/
+// Roman numerals
+Roman = `i:m{0,3}(c[md]|d?c{0,3})(x[cl]|l?x{0,3})(i[xv]|v?i{0,3})`
+{
+match = RHS.symbol;
+value = $RomanToDigit( match );
+//  letters = $RomanDefault( value );
+counting = $CountingCardinal( value );
+if( value < 10000 && value > 1000 && (value / 100) % 10 != 0 )
+{
+countingAlt = $CountingAltCardinal( value );
+}
+mod = value % 100;
+if( value >= 100 && value <= 9999 && mod != 0 )
+{
+underspecified = $CountingCardinal( value / 100 );
+if( mod < 10 )
+{
+underspecified = $Seq( underspecified, 'oh', $DigitDefault( mod ) );
+}
+else
+{
+underspecified = $Seq( underspecified, $CountingCardinal( mod ) );
+}
+}
+}
+BeforeRoman = 'Alexander' | 'Charles' | 'Edward' | 'Louis'
+| 'William' | 'James' | 'Henry' | 'George' | 'Pius' | 'John' | 'John' 'Paul' | 'Benedict' | 'Francis'
+{
+name = RHS[0].symbol;
+}
+TopSymbol = BeforeRoman ' ' Roman
+{
+spoken = $Seq( BeforeRoman.name, $Sync( RHS[1].start ), 'the', $CountingOrdinal( Roman.value ) );
+}
+TopSymbol = Roman '.'?
+{
+if( $Lookup( Roman.match ) ne '' ) fail;
+spoken = $Seq( '\roman-numeral', $Alt( Roman.counting, Roman.countingAlt, Roman.underspecified ) );
+//spoken = $Seq( '\roman-numeral', $Alt( Roman.letters, Roman.counting,
+//                                       Roman.countingAlt, Roman.underspecified ) );
+name = 'Roman';
+}
+/**
+
+DATES
+
+The day and month names (Monday, June) are capitalized in English and can be abbreviated in a number of ways including those shown above with or without a trailing period.
+When dates are written with digits, the month comes first rather than the day.  An optional 0 may be added in front of single-digit months and days (05/01, 5/1 not 05/1, 5/01), and when a 0 is included in one portion of a date, it is usually included in the other portions. These optional zeros can be spoken.
+The year has two or four digits. Two-digit years can be spoken as if two or four digits were present.  Speakers use context to determine the century (1900 or 2000) intended.
+When the month name is present, the digit representing the day can include an ordinal extension (-th, -st, -nd, -rd).
+Dates may be spoken in a variety of ways:
+
+============ ======================
+Written form Spoken forms
+============ ======================
+5 Jan.       | the fifth of January
+| January five/fifth
+| January the fifth
+July 1st     | the first of July
+| July one\\number
+| July first
+| July the first
+============ ======================
+
+Days may be spelled out as ordinal or cardinal numbers.
+Years are almost always spelled out using underspecified counting numbers (form 3).  If the year is 2000 or greater, however, regular counting cardinals (form 1) can be used.
+
+The lexicon contains all spelled-out days and months as shown above.  If the year is expressed only with two digits, it is assumed to be in the 21st century when below 20 and the 20th century when above 20.
+
+================== ===================================================
+Written form       Tokenization
+================== ===================================================
+2/1/2002           | February first two thousand {and} two
+| February one\\number two thousand {and} two
+| the first of February two thousand {and} two
+| February the first two thousand {and} two
+Feb 1st, 2002      | February first two thousand {and} two
+| February one\\number two thousand {and} two
+| the first of February two thousand {and} two
+| February the first two thousand {and} two
+1 February 2002    | February first two thousand {and} two
+| February one\\number two thousand {and} two
+| the first of February two thousand {and} two
+| February the first two thousand {and} two
+3-25-1998          | March twenty fifth/five nineteen ninety eight
+| the twenty fifth of March nineteen ninety eight
+| March the twenty fifth nineteen ninety eight
+March 25, 1998     | March twenty fifth/five nineteen ninety eight
+| the twenty fifth of March nineteen ninety eight
+| March the twenty fifth nineteen ninety eight
+3/25/98            | March twenty fifth/five {nineteen} ninety eight
+| the twenty fifth of March {nineteen} ninety eight
+| March the twenty fifth {nineteen} ninety eight
+May 20             | May twentieth/twenty
+| May the twentieth
+May 20th           | May twentieth/twenty
+| May the twentieth
+20 May             | May twentieth/twenty
+| May the twentieth
+Dec. 2010          | December two thousand {and} ten
+| December twenty ten
+================== ===================================================
+
+**/
+// Date
+Day = `0?[1-9]|[12]\d|3[01]`
+{
+value = RHS.symbol;
+ordinal = $CountingOrdinal( value );
+cardinal = $CountingCardinal( value );
+}
+DayExt = Day
+{
+value = Day.value;
+ordinal = Day.ordinal;
+cardinal = Day.cardinal;
+spoken = $Alt( ordinal, cardinal );
+}
+DayExt = Day OrdinalExtension
+{
+value = Day.value;
+ordinal = Day.ordinal;
+spoken = ordinal;
+}
+Month = `0?[1-9]|1[0-2]`
+{
+value = RHS.symbol;
+name = $ArrayMonth( value );
+}
+MonthAbb = `i:Jan\.?` | `i:January` { name = 'January'; value = 1; }
+MonthAbb = `i:Feb\.?` | `i:February` { name = 'February'; value = 2; }
+MonthAbb = `i:Mar\.?` | `i:March` { name = 'March'; value = 3; }
+MonthAbb = `i:Apr\.?` | `i:April` { name = 'April'; value = 4; }
+MonthAbb = `i:May` { name = 'May'; value = 5; }
+MonthAbb = `i:Jun\.?` | `i:June` { name = 'June'; value = 6; }
+MonthAbb = `i:Jul\.?` | `i:July` { name = 'July'; value = 7; }
+MonthAbb = `i:Aug\.?` | `i:August` { name = 'August'; value = 8; }
+MonthAbb = `i:Sept?\.?` | `i:September` { name = 'September'; value = 9; }
+MonthAbb = `i:Oct\.?` | `i:October` { name = 'October'; value = 10; }
+MonthAbb = `i:Nov\.?` | `i:November` { name = 'November'; value = 11; }
+MonthAbb = `i:Dec\.?` | `i:December` { name = 'December'; value = 12; }
+MonthExt = Month | MonthAbb
+{
+value = RHS.value;
+name = RHS[0].name;
+}
+DayAbb = `i:Mon\.?` | `i:Monday` { name = 'Monday'; }
+DayAbb = `i:Tues?\.?` | `i:Tuesday` { name = 'Tuesday'; }
+DayAbb = `i:Wed\.?` | `i:Wednesday` { name = 'Wednesday'; }
+DayAbb = `i:Thu\.?` | `i:Thursday` { name = 'Thursday'; }
+DayAbb = `i:Fri\.?` | `i:Friday` { name = 'Friday'; }
+DayAbb = `i:Sat\.?` | `i:Saturday` { name = 'Saturday'; }
+DayAbb = `i:Sun\.?` | `i:Sunday` { name = 'Sunday'; }
+Year4 = `(1[1-9]|20)\d\d`
+{
+value = RHS.symbol;
+mvalue = value % 100;
+dvalue = value / 100;
+if( mvalue != 0 && (value < 2000 || value > 2009) )
+{
+if( mvalue < 10 )
+{
+year2 = $Seq( 'oh', $CountingCardinal( mvalue ) );
+}
+else
+{
+year2 = $CountingCardinal( mvalue );
+}
+year41 = $Seq( $CountingCardinal( dvalue ), year2 );
+}
+if( value >= 2000 )
+{
+year42 = $CountingCardinal( value );
+}
+if( mvalue == 0 && value != 2000 )
+{
+year43 = $CountingAltCardinal( value );
+}
+spoken = $Alt( year41, year42, year43 );
+}
+Year2 = `\d\d`
+{
+value = RHS.symbol;
+if( value != 0 )
+{
+if( value < 10 )
+{
+year2 = $Seq( 'oh', $CountingCardinal( value ) );
+}
+else
+{
+year2 = $CountingCardinal( value );
+}
+century = 19;
+if( value < 20 ) century = 20;
+year41 = $Seq( $CountingCardinal( century ), year2 );
+}
+if( value < 20 )
+{
+year42 = $CountingCardinal( 2000 + value );
+}
+spoken = $Alt( year2, year41, year42 );
+}
+Year = Year2 | Year4
+{
+spoken = RHS.spoken;
+}
+The = `i:the ` { token = 'the'; }
+Date = The? DayExt ' ' MonthAbb
+{
+if( The.token ne '' ) sync = $Sync( RHS[1].start );
+form1 = $Seq( MonthAbb.name, DayExt.spoken );
+form2 = $Seq( MonthAbb.name, The.spoken, DayExt.ordinal );
+form3 = $Seq( 'the', sync, DayExt.ordinal, 'of', MonthAbb.name );
+spoken = $Alt( form1, form2, form3 );
+}
+Date = The? MonthAbb ' ' DayExt
+{
+if( The.token ne '' ) sync = $Sync( RHS[1].start );
+form1 = $Seq( MonthAbb.name, $Sync( RHS[3].start ), DayExt.spoken );
+form2 = $Seq( MonthAbb.name, 'the', DayExt.ordinal );
+form3 = $Seq( 'the', sync, DayExt.ordinal, 'of', MonthAbb.name );
+spoken = $Alt( form1, form2, form3, form4 );
+}
+DateWithYear = The? MonthExt `[-.\\/]` Day `[-.\\/]` Year
+{
+if( RHS[2].symbol ne RHS[4].symbol ) fail;
+if( The.token ne '' ) sync = $Sync( RHS[1].start );
+form1 = $Seq( MonthExt.name, $Alt( Day.ordinal, Day.cardinal ) );
+form2 = $Seq( MonthExt.name, 'the', Day.ordinal );
+form3 = $Seq( 'the', sync, Day.ordinal, 'of', MonthExt.name );
+form4 = $Seq( $CountingCardinal( MonthExt.value ), $CountingCardinal( Day.value ) );
+spoken = $Seq( $Alt( form1, form2, form3, form4 ), Year.spoken );
+}
+DateWithYear = The? Day `[-.\\/]` MonthAbb `[-.\\/]` Year
+{
+if( RHS[2].symbol ne RHS[4].symbol ) fail;
+if( The.token ne '' ) sync = $Sync( RHS[1].start );
+form1 = $Seq( MonthAbb.name, $Alt( Day.ordinal, Day.cardinal ) );
+form2 = $Seq( MonthAbb.name, 'the', Day.ordinal );
+form3 = $Seq( 'the', sync, Day.ordinal, 'of', MonthAbb.name );
+spoken = $Seq( $Alt( form1, form2, form3 ), Year.spoken );
+}
+DateWithYear = MonthAbb ' ' Year4
+{
+spoken = $Seq( MonthAbb.name, $Sync( RHS[1].start ), Year4.spoken );
+}
+DateWithYear = Date `,? ` Year4
+{
+if( RHS[1].symbol eq ' ' ) sync = $Sync( RHS[1].start );
+spoken = $Seq( Date.spoken, sync, Year4.spoken );
+}
+DateWithDay = DayAbb `,? ` Date | DayAbb `,? ` DateWithYear
+{
+if( RHS[1].symbol eq ' ' ) sync = $Sync( RHS[1].start );
+spoken = $Seq( DayAbb.name, sync, RHS[2].spoken );
+}
+DateRange = The? MonthAbb ' ' DayExt '-' DayExt
+{
+if( DayExt[0].value >= DayExt[1].value ) fail;
+through = $Alt( 'through', 'to' );
+spoken = $Seq( The.token, $Sync( RHS[1].start ), MonthAbb.name, $Sync( RHS[2].start ), DayExt[0].spoken, $Sync( RHS[4].start ),
+through, $Sync( RHS[5].start ), DayExt[1].spoken );
+}
+DateRange = The? MonthAbb ` ?- ?` MonthAbb | The? DayAbb ` ?- ?` DayAbb
+{
+through = $Alt( 'through', 'to' );
+spoken = $Seq( The.token, RHS[1].name, $Sync( RHS[2].start ), through, $Sync( RHS[3].start ), RHS[3].name );
+}
+TopSymbol = Date | DateWithYear | DateRange | DateWithDay
+{
+spoken = RHS.spoken;
+name = 'Date';
+}
+/**
+
+TIMES
+
+In general, English uses the 12-hour clock.  The time separator is a colon, and a zero can appear before single digit hours (04:00).
+The following time modifiers can appear after a time expression:
+a.m. (ante meridiem ‘before noon’): used for times between midnight and noon
+p.m. (post meridiem ‘after noon’): used for times between noon and midnight
+o’clock: used for times that are on the hour (i.e., whose minutes value is 00)
+Note that the minutes portion of a time expression may be omitted when a qualifier is specified (1 a.m.).
+The usual way of pronouncing a time expression is to say the hour value as a cardinal number followed by the minutes value as a cardinal number.  Single-digit minute values must be preceded by oh, and a minutes value of zero is spoken as o’clock.  (1:05 one oh five a.m., 2:00 two o’clock, 12:56 twelve fifty-six p.m.).
+When the minutes value is divisible by 5, there are other ways of expressing the time, as illustrated in the table below:
+
+============ ==========================
+Written form Additional spoken forms
+============ ==========================
+1:05         five past/after one
+1:10         ten past/after one
+1:15         {a} quarter past/after one
+1:20         twenty past/after one
+1:25         twenty-five past/after one
+1:30         half past one
+1:35         twenty-five of/to two
+1:40         twenty of/to two
+1:45         fifteen of/to two
+1:50         ten of/to two
+1:55         five of/to two
+============ ==========================
+
+The lexicon contains the tokens o’clock, a.m.\AM and p.m.\PM as well as the prepositions used to construct the additional spoken forms.  The tokenizer supports all formats and generates all possible spoken forms.  The tokenizer also recognizes the alternate modifier formats such as AM, am, PM or pm and converts them to the preferred formats a.m. and p.m.
+
+The United States military has developed its own way of writing and speaking time expressions.  In US and GB English, military times are supported for the general and legal topics. A written military time consists of a four-digit number where the first two digits represent the hour value and range between 00 and 23, and the second two digits represent the minutes value and range between 00 and 59.  Although it is not sanctioned by the military itself, written military times can be followed by the word hours, which may be abbreviated as hrs. or hrs (0700 hrs, 1000 hours).
+Military times are pronounced by saying the first two digits (the hour value) as a cardinal number followed by the second two digits (the minutes value) as a cardinal number followed by the word hours.  Single-digit minutes and hour values must be preceded by oh or zero. When the final two digits are 00, the minutes value is replaced by the word hundred (1000 ten hundred hours, 0700 oh seven hundred hours).
+
+============ ============================
+Written form Tokenization
+============ ============================
+0700 hrs     oh/zero seven hundred hours
+1705 hrs.    seventeen oh/zero five hours
+1345 hours   thirteen forty five hours
+============ ============================
+
+**/
+// Military times
+Military = `([01]\d|2[0-4])[0-5]\d` `i: (hrs\.?|hours)`
+{
+hourValue = RHS.symbol / 100;
+minuteValue = RHS.symbol % 100;
+if( hourValue < 10 )
+{
+hours = $DigitDefault( hourValue:2 );
+}
+else
+{
+hours = $CountingCardinal( hourValue );
+}
+if( minuteValue == 0 )
+{
+minutes = 'hundred';
+}
+else if( minuteValue < 10 )
+{
+minutes = $DigitDefault( minuteValue:2 );
+}
+else
+{
+minutes = $CountingCardinal( minuteValue );
+}
+spoken = $Seq( hours, minutes, $Sync( RHS[1].start ), 'hours' );
+}
+TopSymbol = Military
+{
+spoken = RHS.spoken;
+}
+Hour = `0?[1-9]|1[0-2]`
+{
+value = RHS.symbol;
+}
+Minute = `[0-5]\d`
+{
+value = RHS.symbol;
+}
+Second = Minute { value = RHS.value; }
+AmPm = `A ?M` | `a ?m` | `a\. ?m\.` | `A\. ?M\.` { token = 'a.m.'; }
+AmPm = `P ?M` | `p ?m` | `p\. ?m\.` | `P\. ?M\.` { token = 'p.m.'; }
+Time = Hour ':' Minute
+{
+hour1 = $CountingCardinal( Hour.value );
+if( Minute.value == 0 )
+{
+minute1 = "o'clock";
+}
+else if( Minute.value < 10 )
+{
+minute1 = $Seq( 'oh', $CountingCardinal( Minute.value ) );
+}
+else if( Minute.value == 15 )
+{
+minute1 = $Alt( $Seq( 'and', 'a\determiner', 'quarter' ), 'fifteen' );
+}
+else
+{
+minute1 = $CountingCardinal( Minute.value );
+}
+time1 = $Seq( hour1, minute1 );
+if( Minute.value <= 30 && Minute.value > 0 && Minute.value % 5 == 0 )
+{
+if( Minute.value == 15 )
+{
+time2 = $Seq( $Alt( 'quarter', $Seq( 'a\determiner', 'quarter' ) ),
+$Alt( 'past', 'after' ), hour1 );
+}
+else if( Minute.value == 30 )
+{
+time2 = $Seq( 'half', 'past', hour1 );
+}
+else
+{
+time2 = $Seq( $CountingCardinal( Minute.value ), $Alt( 'past', 'after' ), hour1 );
+}
+}
+if( Minute.value > 30 && Minute.value % 5 == 0 )
+{
+if( Hour.value == 12 ) hour3 = 1; else hour3 = Hour.value + 1;
+hour3 = $CountingCardinal( hour3 );
+if( Minute.value == 45 )
+{
+time3 = $Seq( $Alt( 'quarter', $Seq( 'a\determiner', 'quarter' ) ),
+$Alt( 'of', 'to' ), hour3 );
+}
+else
+{
+time3 = $Seq( $CountingCardinal( 60 - Minute.value ), $Alt( 'of', 'to' ), hour3 );
+}
+}
+spoken = $Alt( time1, time2, time3 );
+}
+TimeAmPm = Time ' '? AmPm
+{
+spoken = $Seq( Time.spoken, $Sync( RHS[2].start ), AmPm.token );
+}
+TimeAmPm = Hour ' '? AmPm
+{
+spoken = $Seq( $CountingCardinal( Hour.value ), $Sync( RHS[2].start ), AmPm.token );
+}
+TimeSecond = Time ':' Second
+{
+spoken = $Seq( Time.spoken, 'and', $CountingCardinal( Second.value ), 'seconds' );
+}
+TimeSecondAmPm = TimeSecond ' '? AmPm
+{
+spoken = $Seq( TimeSecond.spoken, $Sync( RHS[2].start ), AmPm.token );
+}
+TopSymbol = Time | TimeAmPm | TimeSecond | TimeSecondAmPm
+{
+spoken = RHS.spoken;
+name = 'Time';
+}
+/**
+
+PHONE NUMBERS
+
+American phone numbers can be written in a variety of ways.  They can contain seven, ten or eleven digits that are usually divided into groups by spaces, parentheses, hyphens, or, very rarely, dots.  The basic format for a phone number is 10 digits consisting of an initial group of 3 digits (the area code), a second group of 3 digits (the exchange), and a final group of 4 digits.  An additional group of 1 digit consisting of the digit 1 can appear at the beginning of a phone number, creating an 11-digit phone number.  The area code may be omitted, leaving the final sequence of 7 digits.
+A phone number may be followed by a phone extension: the letter x or the abbreviation ext. followed by a multi-digit number (x123).
+Phone numbers are normally dictated as digit sequences without the punctuation that might appear in the written form.  The only exceptions to this rule are area codes divisible by 100; 800, for instance, is usually spoken as eight hundred, but the tokenizer also supports the pronunciation eight zero zero.
+The multi-digit number in the extension is spoken as a digit sequence after the word extension (extension one two three).
+The final four digits of a phone number and the multi-digit extension can also be spoken as underspecified counting numbers (form 3).  The tokenization, however, is not supported.
+
+The lexicon contains the word extension, allowing tokenization of phone numbers.  Note that the tokenizer does not support extensions longer than three digits.
+
+============== ============================================================================
+Written form       Tokenization
+============== ============================================================================
+(781) 684-4817 seven eight one\\number six eight four four eight one\\number seven
+781-684-4817   seven eight one\\number six eight four four eight one\\number seven
+1-781-684-4817 one\\number seven eight one\\number six eight four four eight one\\number seven
+684-4007 x123  | six eight four four zero zero seven extension one\\number two three
+| six eight four four oh oh seven extension one\\number two three
+800-648-4017   | eight hundred six four eight four zero/oh one\\number seven
+| eight zero zero six four eight four zero/oh one\\number seven
+800.648.4017   | eight hundred six four eight four zero/oh one\\number seven
+| eight zero zero  six four eight four zero/oh one\\number seven
+1-800-684-4817 | one\\number eight hundred six eight four four eight one\\number seven
+| one\\number eight zero zero six eight four four eight one\\number seven
+============== ============================================================================
+
+**/
+// Phone numbers
+PhoneSep = `c:[-–—]` { value = '-'; } // hyphen, en dash, or em dash
+PhoneSep = `c:\.` { value = '.'; }
+HouseCode = `\d{4}`
+{
+part1 = RHS.symbol / 100;
+part2 = RHS.symbol % 100;
+house1 = $DigitDefault( RHS.symbol );
+if( part1 >= 10 )
+{
+if( part2 == 0 )
+{
+if( part1 % 10 == 0 )
+{
+house2 = $CountingCardinal( RHS.symbol );
+}
+else
+{
+house2 = $CountingAltCardinal( RHS.symbol );
+}
+}
+else if( part2 >= 10 )
+{
+house2 = $Seq( $CountingCardinal( part1 ), $CountingCardinal( part2 ) );
+}
+}
+spoken = $Alt( house1, house2 );
+}
+ExchangeCode = `\d{3}`
+{
+spoken = $DigitDefault( RHS.symbol );
+}
+AreaCode = `\d{3}`
+{
+if( RHS.symbol >= 100 && RHS.symbol % 100 == 0 )
+{
+spoken = $Alt( $CountingCardinal( RHS.symbol ), $DigitDefault( RHS.symbol ));
+}
+else
+{
+// generate readings of area codes like "812"
+// as cardinals like "eight twelve"
+// do not generate cardinal readings for
+// area codes with a medial "0" like "206"
+mod = RHS.symbol % 100;
+if( mod >= 10 )
+{
+hundreds = ( RHS.symbol - mod ) / 100;
+spoken = $Seq( $CountingCardinal( hundreds ),
+$CountingCardinal( mod ) );
+}
+spoken = $Alt( $DigitDefault( RHS.symbol ),
+spoken );
+}
+}
+PhoneEH = ExchangeCode PhoneSep HouseCode
+{
+sep = PhoneSep.value;
+spoken = $Seq( ExchangeCode.spoken, HouseCode.spoken );
+}
+PhoneAEH1 = AreaCode PhoneSep PhoneEH
+{
+sep = PhoneSep.value;
+if( PhoneEH.sep ne '' && PhoneSep.value ne PhoneEH.sep ) fail;
+spoken = $Seq( AreaCode.spoken, PhoneEH.spoken );
+}
+PhoneAEH2 = '(' AreaCode ')' ' '? PhoneEH
+{
+spoken = $Seq( AreaCode.spoken, PhoneEH.spoken );
+}
+PhoneAEH3 = AreaCode '/' PhoneEH
+{
+spoken = $Seq( AreaCode.spoken, PhoneEH.spoken );
+}
+PhoneAEHAll = PhoneAEH1 | PhoneAEH2 | PhoneAEH3
+{
+spoken = RHS.spoken;
+}
+Phone = '1' PhoneSep PhoneAEH1
+{
+if( PhoneSep.value ne PhoneAEH1.sep ) fail;
+spoken = $Seq( 'one\number', PhoneAEH1.spoken );
+}
+Phone = '1 ' PhoneAEH2
+{
+spoken = $Seq( 'one\number', PhoneAEH2.spoken );
+}
+Phone = PhoneEH | PhoneAEHAll
+{
+spoken = RHS.spoken;
+}
+Phone = '+1 ' PhoneAEHAll
+{
+spoken = $Seq( $Alt( 'plus', '+\plus-sign' ), 'one\number', PhoneAEHAll.spoken );
+}
+TopSymbol = Phone
+{
+spoken = RHS.spoken;
+name = 'Phone';
+}
+/**
+SOCIAL SECURITY NUMBERS
+
+- http://en.wikipedia.org/wiki/Social_Security_number
+
+In the United States, a Social Security number (SSN) is a 9-digit number issued to citizens, permanent residents, and temporary (working) residents under section 205(c)(2) of the Social Security Act, codified as 42 U.S.C. § 405(c)(2). The number is issued to an individual by the Social Security Administration, an agency of the U.S. Federal Government. Its primary purpose is to track individuals for taxation purposes.
+
+Currently, a valid SSN cannot have an area number above 772, the highest area number which the Social Security Administration has allocated. This should not be confused with Tax Identification Numbers which include additional area numbers.
+
+There are also special numbers which will never be allocated:
+
+Numbers with all zeros in any digit group (000-xx-####, ###-00-####, ###-xx-0000).
+Numbers of the form 666-xx-####, probably due to the potential controversy.
+Numbers from 987-65-4320 to 987-65-4329 are reserved for use in advertisements.
+The Administration publishes the last group number used for each area number. Since group numbers are allocated in a regular (if unusual) pattern, it is possible to identify an unissued SSN that contains an invalid group number.
+
+Currently, the tokenizer tokenizes all ###-##-#### sequences in the corresponding digit units.
+
+**/
+// SSN
+TopSymbol = `\d\d\d` '-' `\d\d` '-' `\d\d\d\d`
+{
+spoken = $Seq( $DigitDefault( RHS.symbol ), $DigitDefault( RHS[2].symbol ), $DigitDefault( RHS[4].symbol ) );
+name = 'SSN';
+// Unlikely a SSN if preceded/followed by a hyphen
+leftContext = '[^-]';
+rightContext = '[^-]';
+}
+/**
+
+PRICES
+
+In English, the currency symbol appears before the number ($3, €5.30) and can be separated from the number by a space.  The digit appearing after the currency symbol can be followed by a spelled-out magnitude word.  In this case, the decimal part of the number is a digit sequence of variable length ($1.5 million, $12.564 billion, AUD1.5 million).
+We support only the following subset of the world’s hundreds of currency symbols:
+
+======= ======== ===================== ====================
+Symbol  ISO code Major currency words  Minor currency words
+======= ======== ===================== ====================
+$       none     dollar(s)             cent(s)
+US$     USD      US dollar(s)          cent(s)
+€       EUR      euro(s)               cent(s)
+¥       JPY      yen                   cent(s)
+£       GBP      pound(s) sterling     penny/pence
+NZ$     NZD      New Zealand dollar(s) cent(s)
+A$/Aus$ AUD      Australian dollar(s)  cent(s)
+C$      CAD      Canadian dollar(s)    cent(s)
+HK$     HKD      Hong Kong dollar(s)   cent(s)
+======= ======== ===================== ====================
+
+The whole part of the number is spoken first, followed by the major currency word, optionally the word and, the decimal part, and the minor currency word ($3.50 three dollars {and} fifty cents).  When the whole part or the decimal part is missing, the corresponding number and currency word are not usually spoken ($.12 twelve cents). Note also that when the whole part is 1, it can be spoken as ‘a’ (a dollar).  The currency words must agree in grammatical number with the number expressed.
+When a currency expression precedes a magnitude word, the entire number is understood to be modifying the major currency word and is spoken like any other decimal number.  The minor currency is understood to be null and is thus not pronounced at all.  The magnitude word is spoken immediately after the decimal number and is followed by the major currency word ($.12 million .\\point twelve million dollars or .\\point one two million dollars).  In these cases, the major currency word is always plural.
+
+The lexicon contains all minor and major currency words from the above table (dollar, dollars, New_Zealand, US). We don't
+support 'a' for 1.
+
+The relevant currency units in the UK are “pound” and “pence/p”.  In the time I have spent in the UK and with English people, I have found that they always say “p” (pronounced “pee”), but I’ve heard that “pence” is preferred by southerners.  I will try to find some UK’ers to ask about this.
+
+Regardless of how it is pronounced, “pence/p” is abbreviated as a “p” clinging to the right of a number (e.g., 99p, 27p).  Note that both “p” and “pence” are singular and plural (i.e., 1p = “one p” or “one pence”; 99p = “ninety nine p” or “ninety nine pence”).
+
+In Ireland, they now use euros and euro cents. Previously, they use the “punt” which is divided into 100 “pence”.  The abbreviation is for the punt is IR£.
+
+You can do tokenization for euros/eurocents, pounds/p(ence), and punts/pence pretty much the same way you do dollar/cents.  The only noteable exception is this: the British often don’t pluralize “pound”, especially if it’s followed by a number of pence.
+
+The lexicon contains all minor and major currency words from the above table. We don't support 'a' for 1.
+
+
+============== ============================================================
+Written form   Tokenization
+============== ============================================================
+$1             one\\number dollar
+$2.00          two dollars
+$ 2.00         two dollars
+$142.08        one\\number hundred {and} forty two dollars {and} eight cents
+$.30           thirty cents
+$1,000,000.00  | a\\determiner million dollars
+| one\\number million dollars
+$3.503 million three .\\point five zero/oh three million dollars
+US$10          ten US dollars
+USD10          ten US dollars
+USD 10         ten US dollars
+HK$24          twenty four Hong_Kong dollars
+HKD 24         twenty four Hong_Kong dollars
+============== ============================================================
+
+**/
+// Currencies
+Currency = '$'
+{
+majorSingular = 'dollar';
+majorPlural = 'dollars';
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = 'US$' | 'USD'
+{
+majorSingular = $Seq( 'US', 'dollar' );
+majorPlural = $Seq( 'US', 'dollars' );
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = '£' | 'GBP'
+{
+majorSingular = 'pound';
+majorPlural = 'pounds';
+minorSingular = 'penny';
+minorPlural = 'pence';
+}
+Currency = '€' | 'EUR'
+{
+majorSingular = 'euro';
+majorPlural = 'euros';
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = 'NZ$' | 'NZD'
+{
+majorSingular = $Seq( 'New Zealand', 'dollar' );
+majorPlural = $Seq( 'New Zealand', 'dollars' );
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = 'A$' | 'AU$' | 'Aus$' | 'AUD'
+{
+majorSingular = $Seq( 'Australian', 'dollar' );
+majorPlural = $Seq( 'Australian', 'dollars' );
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = 'C$' | 'CAD'
+{
+majorSingular = $Seq( 'Canadian', 'dollar' );
+majorPlural = $Seq( 'Canadian', 'dollars' );
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = 'HK$' | 'HKD'
+{
+majorSingular = $Seq( 'Hong Kong', 'dollar' );
+majorPlural = $Seq( 'Hong Kong', 'dollars' );
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Currency = '¥' | 'JPY'
+{
+majorSingular = 'yen';
+majorPlural = 'yen';
+minorSingular = 'cent';
+minorPlural = 'cents';
+}
+Price = Currency ` ?0?\.` `\d\d`
+{
+if( RHS[2].symbol == 0 )
+{
+spoken = $Seq( 'zero', $Alt( Currency.majorPlural, Currency.minorPlural ) );
+}
+else if( RHS[2].symbol == 1 )
+{
+spoken = $Seq( 'one\number', Currency.minorSingular );
+}
+else
+{
+spoken = $Seq( $CountingCardinal( RHS[2].symbol ), Currency.minorPlural );
+}
+}
+Price = Currency ' '? Cardinal '.' `\d\d`
+{
+whole = $Alt( Cardinal.counting, Cardinal.countingAlt );
+major = Currency.majorPlural;
+if( Cardinal.value == 1 ) major = Currency.majorSingular;
+minor = Currency.minorPlural;
+if( RHS[4].symbol == 1 ) minor = Currency.minorSingular;
+decimal = $CountingCardinal( RHS[4].symbol );
+decimal1 = $Seq( decimal, minor );
+decimal2 = $Seq( 'and', decimal, minor );
+if( RHS[4].symbol == 0 )
+{
+spoken = $Seq( whole, $Alt( major, $Seq( major, $Alt( decimal1, decimal2 ) ) ) );
+}
+else
+{
+spoken = $Seq( whole, major, $Alt( decimal1, decimal2, decimal ) );
+}
+}
+Price = Currency ' '? Cardinal
+{
+whole = $Alt( Cardinal.counting, Cardinal.countingAlt );
+major = Currency.majorPlural;
+if( Cardinal.value == 1 ) major = Currency.majorSingular;
+spoken = $Seq( whole, major );
+}
+Magnitude = 'thousand' | 'million' | 'billion' | 'trillion' | 'quadrillion' | 'quintillion'
+{
+token = RHS.symbol;
+}
+Price = Currency ' '? Decimal ' ' Magnitude
+{
+spoken = $Seq( Decimal.spoken, Magnitude.token, Currency.majorPlural );
+}
+Price = Currency ' '? Cardinal ' ' Magnitude
+{
+whole = $Alt( Cardinal.counting, Cardinal.countingAlt );
+spoken = $Seq( whole, Magnitude.token, Currency.majorPlural );
+}
+TopSymbol = Price
+{
+spoken = RHS.spoken;
+name = 'Price';
+}
+/**
+
+MEASURES
+
+A measurement is a digit or digit sequence followed by a measurement unit abbreviation, which is separated from the digit or digit sequence by a space (2,5 km, 25 %).  For American English, we recognize all of the abbreviations used for units in the English system of measurement (inch, ounce, gallon, mile, etc.) and the set of abbreviations for units defined by the Système international d'unités (SI) (metres, litres, gram, etc.).  The SI standards include strict rules banning the use of periods and plural marking in measurement abbreviations.  Authors, however, rarely follow the conventions of the SI.  Abbreviations appear adjacent to digits, with trailing periods, and sometimes with plural marks.  The following table includes both the abbreviations that people tend to use and the officially sanctioned SI abbreviation.  In cases where more than one abbreviation exists, the SI abbreviation appears first.
+
+================== ======================= =========================
+Unit               Singular                Plural
+================== ======================= =========================
+A{.}               ampere/amp              amperes/amps
+Å{.}               angstrom                angstroms
+atm{.}             atmosphere              atmospheres
+B{.}               bel                     bels
+Bd{.}              baud                    bauds
+Bq{.}              becquerel               becquerels
+C{.}               coulomb                 coulombs
+c\.                cup                     cups
+cal{s}{.}          calorie                 calories
+cbar{.}            centibar                centibars
+cc{s}{.}           cc                      cc
+cd{.}              candela                 candelas
+cg{.}              centigram               centigrams
+cGy{.}             centigray               centigrays
+Ci{.}              curie                   curies
+cL{.}/cl{.}        centiliter              centiliters
+cM{.}              centimorgan             centimorgans
+cm{s}{.}           centimeter              centimeters
+cm{.}²/cm{.}2      square centimeter       square centimeters
+cm{.}³/cm{.}3      cubic centimeter        cubic centimeters
+cps{.}/CPS{.}      cycle per second        cycles per second
+cs{.}              centisecond             centiseconds
+csec{.}            centisecond             centiseconds
+c/s{.}             cycle per second        cycles per second
+cSt{.}             centistoke              centistokes
+ct{.}              carat                   carats
+cu{.} ft{.}        cubic foot              cubic feet
+cu{.} in{.}        cubic inch              cubic inches
+cwt{.}             hundredweight           hundredweight
+Da{.}              dalton                  daltons
+dag{.}             decagram                decagrams
+daL{.}             decaliter               decaliters
+dam{.}             decameter               decameters
+dathm{.}           decatherm               decatherms
+dB{.}              decibel                 decibels
+deg{.}             degree                  degrees
+dg{.}              decigram                decigrams
+dL{.}/dl{.}        deciliter               deciliters
+dm{.}              decimeter               decimeters
+dN{.}              decinewton              decinewtons
+doz{.}             dozen                   dozens
+dpt{.}             diopter                 diopters
+dyn{.}             dyne                    dynes
+dz{.}              dozen                   dozens
+EB{s}{.}           exabyte                 exabytes
+F{.}               farad                   farads
+Fd{.}              faraday                 faradays
+fL{.}              footlambert             footlamberts
+fl. oz.            fluid ounce             fluid ounces
+fm{.}              femtometer              femtometers
+fm{.}              fermi                   fermis
+fmol{.}            femtomole               femtomoles
+fsec{s}{.}         femtosecond             femtoseconds
+ft{.}              foot                    feet
+ft{.}²/ft{.}2      square foot             square feet
+ft{.}³/ft{.}3      cubic foot              cubic feet
+ft{.}-lb{.}        foot-pound              foot-pounds
+G{.}               gauge                   gauge
+g{.}               gram                    grams
+gal{s}{.}          gallon                  gallons
+GB{s}{.}           gigabyte                gigabytes
+Gb{.}              gigabit/Gbit            gigabits/Gbits
+GBps{.}            gigabyte per second     gigabytes per second
+Gflop{.}           gigaflop                gigaflops
+GHz{.}             gigahertz               gigahertz
+GJ{.}              gigajoule               gigajoules
+gm{.}              gram                    grams
+gr.                grain                   grains
+Gt                 gigaton                 gigatons
+GW{.}              gigawatt                gigawatts
+Gy{.}              gray                    grays
+H{.}               henry                   henries
+h{.}               hour                    hours
+ha{.}              hectare                 hectares
+hg{.}              hectogram               hectograms
+hL{.}              hectoliter              hectoliters
+hm{.}              hectometer              hectometers
+hp{.}              horsepower              horsepower
+hr{s}{.}           hour                    hours
+Hz{.}              hertz                   hertz
+in{.}              inch                    inches
+in{.}²/in{.}2      square inch             square inches
+in{.}³/in{.}3      cubic inch              cubic inches
+ips                inch per second         inches per second
+J{.}               joule                   joules
+K{.}               Kelvin                  Kelvin
+kA{.}/KA{.}        kiloampere/kiloamp      kiloamperes/kiloamps
+kB{.}/KB{.}        kilobyte                kilobytes
+kb{.}/Kb{.}        kilobit/kbit            kilobits/kbits
+kb{.}/Kb{.}        kilobase                kilobases
+kbar{.}/Kbar{.}    kilobar                 kilobars
+kBd{.}/KBd{.}      kilobaud                kilobauds
+kBps/KBps{.}       kilobyte per second     kilobytes per second
+kbps{.}/Kbps{.}    kilobit per second      kilobits per second
+kc{.}/Kc{.}        kilocycle               kilocycles
+kcal{.}/Kcal{.}    kilocalorie             kilocalorie
+kCi{.}/KCi{.}      kilocurie               kilocuries
+kDa{.}/KDa{.}      kilodalton              kilodaltons
+kg{.}/Kg{.}        kilogram/kilo           kilograms/kilos
+kHz{.}/KHz{.}      kilohertz               kilohertz
+kJ{.}/KJ{.}        kilojoule               kilojoules
+kL{.}/KL{.}        kiloliter               kiloliters
+km{s}{.}/Km{s}{.}  kilometer               kilometers
+km{.}²/km{.}2      square kilometer        square kilometers
+km{.}³/km{.}3      cubic kilometer         cubic kilometers
+kN{.}/KN{.}        kilonewton              kilonewtons
+kn{.}/Kn{.}        knot                    knots
+kPa{.}/KPa{.}      kilopascal              kilopascals
+kph{.}/Kph{.}      kilometer per hour      kilometers per hour
+kR{.}/KR{.}        kiloroentgen            kiloroentgens
+kt                 kiloton                 kilotons
+kt{.}              carat                   carats
+kV{.}/KV{.}        kilovolt                kilovolts
+kVp{.}/KVp{.}      kilovolt peak           kilovolts peak
+kW{.}/KW{.}        kilowatt                kilowatts
+kWh                kilowatt-hour           kilowatt-hours
+L{.}/l{.}          liter                   liters
+L{.}               lambert                 lamberts
+lbs{.}             pound                   pounds
+lm{.}              lumen                   lumens
+lpm{.}             line per minute         lines per minute
+lx{.}              lux                     lux
+ly{.}              light-year              light-years
+M{.}               morgan                  morgans
+m{.}               meter                   meters
+m{.}²/m{.}2        square meter            square meters
+m{.}³/m{.}3        cubic meter             cubic meters
+mA{.}              milliampere/milliamp    milliamperes/milliamps
+MB{s}{.}           megabyte                megabytes
+Mb{.}              megabit/Mbit            megabits/Mbits
+mbar{.}            millibar                millibars
+MBps{.}            megabytes per second    megabytes per second
+Mbps{.}            megabit per second      megabits per second
+MBq{.}             megabecquerel           megabecquerels
+Mc{.}              megacycle               megacycles
+mcg{.}             microgram               micrograms
+mCi{.}             millicurie              millicuries
+MDa{.}             megadalton              megadaltons
+Mdyn{.}            megadyne                megadynes
+mEq{.}             milliequivalent         milliequivalents
+mF{.}              millifarad              millifarads
+mG{.}              milligauss              milligauss
+mg{.}/Mg{.}        milligram               milligrams
+mg{.}%             milligram percent       milligrams percent
+mH{.}              millihenry              millihenries
+MHz{.}             megahertz               megahertz
+mHz{.}             millihertz              millihertz
+mi{.}              mile                    miles
+mi{.}²/mi{.}2      square mile             square miles
+mi{.}³/mi{.}3      cubic mile              cubic miles
+min{s}{.}          minute                  minutes
+MJ{.}              megajoule               megajoules
+mJ{.}              millijoule              millijoules
+mK{.}              millikelvin             millikelvin
+mL{.}              millilambert            millilamberts
+mL{.}/ml{.}        milliliter              milliliters
+mM{.}              millimolar              millimolars
+mm{.}Hg{.}         millimeter {of} mercury millimeters {of} mercury
+mm{s}{.}           millimeter              millimeters
+mm{.}²/mm{.}2      square millimeter       square millimeters
+mm{.}³/mm{.}3      cubic millimeter        cubic millimeters
+mmol{.}            millimole               millimoles
+mo{.}              month                   months
+mol{.}             mole                    moles
+mOsm{.}            milliosmole             milliosmoles
+Mpc{.}             megaparsec              megaparsecs
+mpg{.}             mile per/a gallon       miles per/a gallon
+mph{.}/m.p.h.      mile per/an hour        miles per/an hour
+mR{.}              milliroentgen           milliroentgens
+Mrad{.}            megarad                 megarads
+mrad{.}            milliradian             milliradians
+Mrd{.}             megarad                 megarads
+mrd{.}             millirad                millirads
+mrem{.}            millirem                millirems
+ms{.}              millisecond             milliseconds
+msec{.}            millisecond             milliseconds
+Mt                 megaton                 megatons
+mV{.}              millivolt               millivolts
+MW{.}              megawatt                megawatts
+mW{.}              milliwatt               milliwatts
+Mx{.}              maxwell                 maxwells
+mµ                 millimicron             millimicrons
+N{.}               newton                  newtons
+nCi{.}             nanocurie               nanocuries
+nF{.}              nanofarad               nanofarads
+ng{.}              nanogram                nanograms
+nL{.}              nanoliter               nanoliters
+nm{.}              nanometer               nanometers
+nmol{.}            nanomole                nanomoles
+nN{.}              nanonewton              nanonewtons
+Np{.}              neper                   nepers
+ns{.}              nanosecond              nanoseconds
+nsec{.}            nanosecond              nanoseconds
+nV{.}              nanovolt                nanovolts
+nWb{.}             nanoweber               nanowebers
+Oe{.}              oersted                 oersteds
+Osm{.}             osmole                  osmoles
+oz{s}{.}           ounce                   ounces
+Pa{.}              pascal                  pascals
+pA{.}              picoampere/picoamp      picoamperes/picoamps
+PB{s}{.}           petabyte                petabytes
+pc                 percent                 percent
+pc{.}              parsec                  parsecs
+pCi{.}             picocurie               picocuries
+pct                percent                 percent
+pF{.}              picofarad               picofarads
+pg{.}              picogram                picograms
+pmol{.}            picomole                picomoles
+pps                packet per second       packets per second
+ps{.}              picosecond              picoseconds
+psec{.}            picosecond              picoseconds
+pt{s}{.}           pint                    pints
+PWT                pennyweight             pennyweight
+qt{s}{.}           quart                   quarts
+R{.}               roentgen                roentgens
+rad{.}             radian                  radians
+rd{.}              rad                     rads
+sec{s}{.}          second                  seconds
+spt{.}		   sector per track	   sectors per track
+sq{.} cm{.}        square centimeter       square centimeters
+sq{.} ft{.}        square foot             square feet
+sq{.} in{.}        square inch             square inches
+sq{.} km{.}        square kilometer        square kilometers
+sq{.} m{.}         square meter            square meters
+sq{.} mi{.}        square mile             square miles
+sq{.} mm{.}        square millimeter       square millimeters
+Sv{.}              sievert                 sieverts
+T{.}               tesla                   teslas
+TB{s}{.}           terabyte                terabytes
+Tb{.}              terabit/Tbit            terabits/Tbits
+TBps{.}	           terabyte per second     terabytes per second
+tbsp.              tablespoon              tablespoons
+Tflop{.}           teraflop                teraflops
+thm{.}             therm                   therms
+THz{.}             terahertz               terahertz
+tn{.}              ton                     tons
+tsp.               teaspoon                teaspoons
+TW{.}              terawatt                terawatts
+V{.}               volt                    volts
+W{.}               watt                    watts
+Wb{.}              weber                   webers
+wk{s}{.}           week                    weeks
+wpm{.}             word per minute         words per minute
+YB{s}{.}           yottabyte               yottabytes
+yd{s}{.}           yard                    yards
+yr{s}{.}           year                    years
+ZB{s}{.}           zettabyte               zettabytes
+µ{.}               micron                  microns
+µA{.}              microampere/microamp    microamperes/microamps
+µC{.}              microcoulomb            microcoulombs
+µCi{.}             microcurie              microcuries
+µF{.}              microfarad              microfarads
+µg{.}              microgram               micrograms
+µin{.}             microinch               microinches
+µK{.}              microkelvin             microkelvin
+µL{.}              microliter              microliters
+µm{.}              micrometer              micrometers
+µmol{.}            micromole               micromoles
+µrad{.}            microradian             microradians
+µs{.}              microsecond             microseconds
+µsec{.}            microsecond             microseconds
+µSv{.}             microsievert            microsieverts
+µV{.}              microvolt               microvolts
+µW{.}              microwatt               microwatts
+°/o                degree                  degrees
+°C/oC              | degree Celsius        | degrees Celsius
+| degree centigrade     | degrees centigrade
+°F/oF              degree Fahrenheit       degrees Fahrenheit
+°Fahr{.}/oFahr{.}  degree Fahrenheit       degrees Fahrenheit
+%                  percent                 percent
+================== ======================= =========================
+
+Medical only:
+
+=========== ======================= ========================
+Unit        Singular                Plural
+=========== ======================= ========================
+cm{.}H20    centimeter water        centimeters water
+mL{.}/ml{.} cc                      cc
+U{.}        unit                    units
+=========== ======================= ========================
+
+The number preceding the measurement abbreviation can be spoken in any one of the counting cardinal formats (forms 1-3).  The spoken form of the measurement unit depends on the decimal number and the character separator.  When the character separator is a hyphen or when the number is exactly 1, the spoken form is always singular  (1 ft.: one foot, 35-mm film: thirty five millimeter film); otherwise it is plural (2 ft.: two feet).
+
+
+The lexicon contains all written-out pieces as shown above (singular and plural words).
+
+**/
+// Measures
+// Any 3-or-more-letter word
+Unit = `\a{3,}`
+{
+singular = $Lookup( RHS.symbol );
+if( singular eq '' ) fail;
+plural = singular;
+reject = 1;
+}
+// Weights
+Unit = `Gt\.?`
+{
+singular = 'gigaton';
+plural = 'gigatons';
+}
+Unit = `Mt\.?`
+{
+singular = 'megaton';
+plural = 'megatons';
+}
+Unit = `[Kk]t\.?`
+{
+singular = $Alt( 'kiloton', 'kilotonne' );
+plural = $Alt( 'kilotons', 'kilotonnes' );
+}
+Unit = `tn\.?`
+{
+singular = 'ton';
+plural = 'tons';
+}
+Unit = `[Kk]g\.?`
+{
+singular = $Alt( 'kilogram', 'kilo' );
+plural = $Alt( 'kilograms', 'kilos' );
+}
+Unit = `hg\.?`
+{
+singular = 'hectogram';
+plural = 'hectograms';
+}
+Unit = `dag\.?`
+{
+singular = 'decagram';
+plural = 'decagrams';
+}
+Unit = `gm?\.?`
+{
+singular = 'gram';
+plural = 'grams';
+}
+Unit = `dg\.?`
+{
+singular = 'decigram';
+plural = 'decigrams';
+}
+Unit = `cg\.?`
+{
+singular = 'centigram';
+plural = 'centigrams';
+}
+Unit = `[mM]g\.?`
+{
+singular = 'milligram';
+plural = 'milligrams';
+}
+Unit = `µg\.?` | `mcg\.?` | `ug\.?`
+{
+singular = 'microgram';
+plural = 'micrograms';
+}
+Unit = `ng\.?`
+{
+singular = 'nanogram';
+plural = 'nanograms';
+}
+Unit = `pg\.?`
+{
+singular = 'picogram';
+plural = 'picograms';
+}
+Unit = `lbs?\.?`
+{
+singular = 'pound';
+plural = 'pounds';
+}
+Unit = `ozs?\.?`
+{
+singular = 'ounce';
+plural = 'ounces';
+}
+Unit = 'PWT'
+{
+singular = 'pennyweight';
+plural = 'pennyweight';
+}
+// Volumes
+Unit = `[Kk]L\.?`
+{
+singular = 'kiloliter';
+plural = 'kiloliters';
+}
+Unit = `hL\.?`
+{
+singular = 'hectoliter';
+plural = 'hectoliters';
+}
+Unit = `daL\.?`
+{
+singular = 'decaliter';
+plural = 'decaliters';
+}
+Unit = `[Ll]\.?`
+{
+singular = 'liter';
+plural = 'liters';
+}
+Unit = `d[Ll]\.?`
+{
+singular = 'deciliter';
+plural = 'deciliters';
+}
+Unit = `c[Ll]\.?`
+{
+singular = 'centiliter';
+plural = 'centiliters';
+}
+Unit = `m[Ll]\.?`
+{
+singular = 'milliliter';
+plural = 'milliliters';
+}
+Unit = `µL\.?`
+{
+singular = 'microliter';
+plural = 'microliters';
+}
+Unit = `nL\.?`
+{
+singular = 'nanoliter';
+plural = 'nanoliters';
+}
+Unit = `gals?\.?`
+{
+singular = 'gallon';
+plural = 'gallons';
+}
+Unit = `pts?\.?`
+{
+singular = 'pint';
+plural = 'pints';
+}
+Unit = `qts?\.?`
+{
+singular = 'quart';
+plural = 'quarts';
+}
+Unit = 'c.'
+{
+singular = 'cup';
+plural = 'cups';
+}
+Unit = `tbsp\.?`
+{
+singular = 'tablespoon';
+plural = 'tablespoons';
+}
+Unit = `tsp\.?`
+{
+singular = 'teaspoon';
+plural = 'teaspoons';
+}
+Unit = `fl\.? oz\.?`
+{
+singular = 'fluid ounce';
+plural = 'fluid ounces';
+}
+Unit = `[Kk]m[3³]\.?`
+{
+singular = $Seq( 'cubic', 'kilometer' );
+plural = $Seq( 'cubic', 'kilometers' );
+}
+Unit = `m\.?[3³]`
+{
+singular = $Seq( 'cubic', 'meter' );
+plural = $Seq( 'cubic', 'meters' );
+}
+Unit = `cm\.?[3³]`
+{
+singular = $Seq( 'cubic', 'centimeter' );
+plural = $Seq( 'cubic', 'centimeters' );
+}
+Unit = `mm\.?[3³]`
+{
+singular = $Seq( 'cubic', 'millimeter' );
+plural = $Seq( 'cubic', 'millimeters' );
+}
+Unit = `mi\.?[3³]`
+{
+singular = $Seq( 'cubic', 'mile' );
+plural = $Seq( 'cubic', 'miles' );
+}
+Unit = `cu\.? ft\.?` | `ft\.?[3³]`
+{
+singular = $Seq( 'cubic', 'foot' );
+plural = $Seq( 'cubic', 'feet' );
+}
+Unit = `cu\.? in\.?` | `in\.?[3³]`
+{
+singular = $Seq( 'cubic', 'inch' );
+plural = $Seq( 'cubic', 'inches' );
+}
+Unit = `i:ccs?\.?`
+{
+singular = 'cc\cc';
+plural = 'cc\cc';
+}
+// Watt
+Unit = `TW\.?`
+{
+singular = 'terawatt';
+plural = 'terawatts';
+}
+Unit = `GW\.?`
+{
+singular = 'gigawatt';
+plural = 'gigawatts';
+}
+Unit = `MW\.?`
+{
+singular = 'megawatt';
+plural = 'megawatts';
+}
+// 'megawatt hour' is in ItnRule
+Unit = `MW[hH]\.?`
+{
+singular = 'megawatt hour';
+plural = 'megawatt hours';
+}
+Unit = `[Kk]W\.?`
+{
+singular = 'kilowatt';
+plural = 'kilowatts';
+}
+// 'kilowatt hour' is in ItnRule
+Unit = `[Kk]Wh\.?`
+{
+singular = 'kilowatt hour';
+plural = 'kilowatt hours';
+}
+Unit = `W\.?`
+{
+singular = 'watt';
+plural = 'watts';
+reject = 1;
+}
+Unit = `mW\.?`
+{
+singular = 'milliwatt';
+plural = 'milliwatts';
+}
+Unit = `µW\.?`
+{
+singular = 'microwatt';
+plural = 'microwatts';
+}
+// Volts
+Unit = `[Kk]V\.?`
+{
+singular = 'kilovolt';
+plural = 'kilovolts';
+}
+Unit = `V\.?`
+{
+singular = 'volt';
+plural = 'volts';
+reject = '1';
+}
+Unit = `mV\.?`
+{
+singular = 'millivolt';
+plural = 'millivolts';
+}
+Unit = `µV\.?`
+{
+singular = 'microvolt';
+plural = 'microvolts';
+}
+Unit = `nV\.?`
+{
+singular = 'nanovolt';
+plural = 'nanovolts';
+}
+// bits, bits per seond
+Unit = `Tb\.?`
+{
+singular = $Alt( 'terabit', 'Tbit' );
+plural = $Alt( 'terabits', 'Tbits' );
+}
+Unit = `Gb\.?`
+{
+singular = $Alt( 'gigabit', 'Gbit' );
+plural = $Alt( 'gigabits', 'Gbits' );
+}
+Unit = `Mb\.?`
+{
+singular = $Alt( 'megabit', 'Mbit' );
+plural = $Alt( 'megabits', 'Mbits' );
+}
+Unit = 'pps'
+{
+singluar = $Seq( 'packet', 'per', 'second' );
+plural = $Seq( 'packets', 'per', 'second' );
+}
+Unit = `Mbps\.?`
+{
+singular = $Seq( 'megabit', 'per', 'second' );
+plural = $Seq( 'megabits', 'per', 'second' );
+}
+Unit = 'Gbps'
+{
+singular = $Seq( 'gigabit', 'per', 'second' );
+plural = $Seq( 'gigabits', 'per', 'second' );
+}
+Unit = `[Kk]b\.?`
+{
+singular = $Alt( 'kilobit', 'kbit' );
+plural = $Alt( 'kilobits', 'kbits' );
+}
+Unit = `[Kk]-?bps\.?`
+{
+singular = $Seq( 'kilobit', 'per', 'second' );
+plural = $Seq( 'kilobits', 'per', 'second' );
+}
+// bytes, bytes per seond
+Unit = `YBs?\.?`
+{
+singular = 'yottabyte';
+plural = 'yottabytes';
+}
+Unit = `ZBs?\.?`
+{
+singular = 'zettabyte';
+plural = 'zettabytes';
+}
+Unit = `EBs?\.?`
+{
+singular = 'exabyte';
+plural = 'exabytes';
+}
+Unit = `PBs?\.?`
+{
+singular = $Alt( 'petabyte', 'Pbyte' );
+plural = $Alt( 'petabytes', 'Pbytes' );
+}
+Unit = `TBs?\.?`
+{
+singular = $Alt( 'terabyte', 'Tbyte' );
+plural = $Alt( 'terabytes', 'Tbytes' );
+}
+Unit = `TBps\.?`
+{
+singular = $Seq( 'terabyte', 'per', 'second' );
+plural = $Seq( 'terabytes', 'per', 'second' );
+}
+Unit = `GBs?\.?`
+{
+singular = $Alt( 'gigabyte', 'Gbyte' );
+plural = $Alt( 'gigabytes', 'Gbytes' );
+}
+Unit = `GBps\.?`
+{
+singular = $Seq( 'gigabyte', 'per', 'second' );
+plural = $Seq( 'gigabytes', 'per', 'second' );
+}
+Unit = `MBs?\.?`
+{
+singular = $Alt( 'megabyte', 'Mbyte' );
+plural = $Alt( 'megabytes', 'Mbytes' );
+}
+Unit = `MBps\.?`
+{
+singular = $Seq( 'megabyte', 'per', 'second' );
+plural = $Seq( 'megabytes', 'per', 'second' );
+}
+Unit = `[Kk]B\.?`
+{
+singular = $Alt( 'kilobyte', 'kbyte' );
+plural = $Alt( 'kilobytes', 'kbytes' );
+}
+Unit = `[Kk]Bps\.?`
+{
+singular = $Seq( 'kilobyte', 'per', 'second' );
+plural = $Seq( 'kilobytes', 'per', 'second' );
+}
+// Time
+Unit = `yrs?\.?`
+{
+singular = 'year';
+plural = 'years';
+}
+Unit = `mo\.?`
+{
+singular = 'month';
+plural = 'months';
+}
+Unit = `wks?\.?`
+{
+singular = 'week';
+plural = 'weeks';
+}
+Unit = `h(rs?)?\.?`
+{
+singular = 'hour';
+plural = 'hours';
+}
+Unit = `min\.?`
+{
+singular = 'minute';
+plural = 'minutes';
+}
+Unit = `secs?\.?`
+{
+singular = 'second';
+plural = 'seconds';
+}
+Unit = `cs(ec)?\.?`
+{
+singular = 'centisecond';
+plural = 'centiseconds';
+}
+Unit = `ms(ec)?\.?` | `m sec\.?`
+{
+singular = 'millisecond';
+plural = 'milliseconds';
+}
+Unit = `µs(ec)?\.?`
+{
+singular = 'microsecond';
+plural = 'microseconds';
+}
+Unit = `ns(ec)?\.?`
+{
+singular = 'nanosecond';
+plural = 'nanoseconds';
+}
+Unit = `ps(ec)?\.?`
+{
+singular = 'picosecond';
+plural = 'picoseconds';
+}
+Unit = `fsec\.?`
+{
+singular = 'femtosecond';
+plural = 'femtoseconds';
+}
+// Surface
+Unit = `sq\.? ([Kk]m\.?|kilometers?)` | `[Kk]m\.?[2²]`
+{
+singular = $Seq( 'square', 'kilometer' );
+plural = $Seq( 'square', 'kilometers' );
+}
+Unit = `sq\.? (m\.?|meters?)` | `m\.?[2²]`
+{
+singular = $Seq( 'square', 'meter' );
+plural = $Seq( 'square', 'meters' );
+}
+Unit = `sq\.? (cm\.?|centimeters?)` | `cm\.?[2²]`
+{
+singular = $Seq( 'square', 'centimeter' );
+plural = $Seq( 'square', 'centimeters' );
+}
+Unit = `sq\.? (mm\.?|millimeters?)` | `mm\.?[2²]`
+{
+singular = $Seq( 'square', 'millimeter' );
+plural = $Seq( 'square', 'millimeters' );
+}
+Unit = `sq\.? (mi\.?|miles?)` | `mi\.?[2²]`
+{
+singular = $Seq( 'square', 'mile' );
+plural = $Seq( 'square', 'miles' );
+}
+Unit = `sq\.? (ft\.?|feet|foot)` | `ft\.?[2²]`
+{
+singular = $Seq( 'square', 'foot' );
+plural = $Seq( 'square', 'feet' );
+}
+Unit = `sq\.? (in\.?|inch|inches)` | `in\.?[2²]`
+{
+singular = $Seq( 'square', 'inch' );
+plural = $Seq( 'square', 'inches' );
+}
+Unit = `ha\.?`
+{
+singular = 'hectare';
+plural = 'hectares';
+}
+// Distance, speed, consumption
+Unit = `[Kk]ms?\.?`
+{
+singular = 'kilometer';
+plural = 'kilometers';
+}
+Unit = `hm\.?`
+{
+singular = 'hectometer';
+plural = 'hectometers';
+}
+Unit = `dam\.?`
+{
+singular = 'decameter';
+plural = 'decameters';
+}
+Unit = `m\.?`
+{
+singular = 'meter';
+plural = 'meters';
+}
+Unit = `dm\.?`
+{
+singular = 'decimeter';
+plural = 'decimeters';
+}
+Unit = `cms?\.?`
+{
+singular = 'centimeter';
+plural = 'centimeters';
+}
+Unit = `mms?\.?`
+{
+singular = 'millimeter';
+plural = 'millimeters';
+}
+Unit = `µm\.?`
+{
+singular = 'micrometer';
+plural = 'micrometers';
+}
+Unit = `nm\.?`
+{
+singular = 'nanometer';
+plural = 'nanometers';
+}
+Unit = `µ\.?`
+{
+singular = 'micron';
+plural = 'microns';
+}
+Unit = `mµ\.?`
+{
+singular = 'millimicron';
+plural = 'millimicrons';
+}
+Unit = `Å\.?`
+{
+singular = 'Ångström';
+plural = 'Ångströms';
+}
+Unit = `fm\.?`
+{
+singular = 'femtometer';
+plural = 'fentometers';
+}
+Unit = `mi\.?`
+{
+singular = 'mile';
+plural = 'miles';
+}
+Unit = `yds?\.?`
+{
+singular = 'yard';
+plural = 'yards';
+}
+Unit = `ft\.?`
+{
+singular = 'foot';
+plural = 'feet';
+}
+Unit = 'in.' // not an optional dot on purpose!!
+{
+singular = 'inch';
+plural = 'inches';
+}
+Unit = 'gr.'
+{
+singular = 'grain';
+plural = 'grains';
+}
+Unit = 'in'
+{
+singular = 'inch';
+plural = 'inches';
+noSpace = '1';
+}
+Unit = `µin\.?`
+{
+singular = 'microinch';
+plural = 'microinches';
+}
+Unit = `[Kk]ph\.?`
+{
+singular = $Seq( 'kilometer', 'per', 'hour' );
+plural = $Seq( 'kilometers', 'per', 'hour' );
+}
+Unit = 'm.p.h.' | `mph\.?`
+{
+peranHour = $Seq( $Alt( 'per', 'an' ), 'hour' );
+singular = $Alt( $Seq( 'mile', peranHour ), 'mph' );
+plural = $Alt( $Seq( 'miles', peranHour ), 'mph' );
+}
+Unit = `mpg\.?`
+{
+peranHour = $Seq( $Alt( 'per', 'a' ), 'gallon' );
+singular = $Alt( $Seq( 'mile', peranHour ), 'mpg' );
+plural = $Alt( $Seq( 'miles', peranHour ), 'mpg' );
+}
+// Temperature
+DegreeSign = `[°o]` | `deg(rees?)?\.?` {}
+Unit = DegreeSign
+{
+singular = 'degree';
+plural = 'degrees';
+}
+Unit = DegreeSign ` ?F(ahr\.?)?`
+{
+singular = $Seq( 'degree', 'Fahrenheit' );
+plural = $Seq( 'degrees', 'Fahrenheit' );
+}
+Unit = DegreeSign ` ?C`
+{
+unit = $Alt( 'Celsius', 'centigrade' );
+singular = $Seq( 'degree', unit );
+plural = $Seq( 'degrees', unit );
+}
+Unit = `K\.?`
+{
+singular = 'Kelvin';
+plural = 'Kelvin';
+reject = 1;
+}
+Unit = `mK\.?`
+{
+singular = 'millikelvin';
+plural = 'millikelvin';
+}
+Unit = `µK\.?`
+{
+singular = 'microkelvin';
+plural = 'microkelvin';
+}
+// Hertz
+Unit = `THz\.?`
+{
+singular = 'terahertz';
+plural = 'terahertz';
+}
+Unit = `GHz\.?`
+{
+singular = 'gigahertz';
+plural = 'gigahertz';
+}
+Unit = `MHz\.?`
+{
+singular = 'megahertz';
+plural = 'megahertz';
+}
+Unit = `[Kk]Hz\.?`
+{
+singular = 'kilohertz';
+plural = 'kilohertz';
+}
+Unit = `Hz\.?`
+{
+singular = 'hertz';
+plural = 'hertz';
+}
+Unit = `mHz\.?`
+{
+singular = 'millihertz';
+plural = 'millihertz';
+}
+// Baud
+Unit = `[Kk]Bd\.?`
+{
+singular = 'kilobaud';
+plural = 'kilobauds';
+}
+Unit = `Bd\.?`
+{
+singular = 'baud';
+plural = 'bauds';
+}
+// Ampere
+Unit = `[Kk]A\.?`
+{
+singular = $Alt( 'kiloamp', 'kiloampere' );
+plural = $Alt( 'kiloamps', 'kiloamperes' );
+}
+Unit = `A\.?`
+{
+singular = $Alt( 'amp', 'ampere' );
+plural = $Alt( 'amps', 'amperes' );
+reject = '1';
+}
+Unit = `mA\.?`
+{
+singular = $Alt( 'milliamp', 'milliampere' );
+plural = $Alt( 'milliamps', 'milliamperes' );
+}
+Unit = `µA\.?`
+{
+singular = $Alt( 'microamp', 'microampere' );
+plural = $Alt( 'microamps', 'microamperes' );
+}
+Unit = `pA\.?`
+{
+singular = $Alt( 'picoamp', 'picoampere' );
+plural = $Alt( 'picoamps', 'picoamperes' );
+}
+// Pascal
+Unit = `[Kk]Pa\.?`
+{
+singular = 'kilopascal';
+plural = 'kilopascals';
+}
+Unit = `Pa\.?`
+{
+singular = 'pascal';
+plural = 'pascals';
+}
+// Calories
+Unit = `[Kk][ /]?cal\.?`
+{
+singular = 'kilocalorie';
+plural = 'kilocalories';
+}
+Unit = `cals?\.?`
+{
+singular = 'calorie';
+plural = 'calories';
+}
+// Becquerel
+Unit = `MBq\.?`
+{
+singular = 'megabecquerel';
+plural = 'megabecquerels';
+}
+Unit = `Bq\.?`
+{
+singular = 'becquerel';
+plural = 'becquerels';
+}
+Unit = `B\.?`
+{
+singular = 'bel';
+plural = 'bels';
+reject = 1;
+}
+// Curie
+Unit = `[Kk]Ci\.?`
+{
+singular = 'kilocurie';
+plural = 'kilocuries';
+}
+Unit = `Ci\.?`
+{
+singular = 'curie';
+plural = 'curies';
+}
+Unit = `mCi\.?`
+{
+singular = 'millicurie';
+plural = 'millicuries';
+}
+Unit = `µCi\.?`
+{
+singular = 'microcurie';
+plural = 'microcuries';
+}
+Unit = `nCi\.?`
+{
+singular = 'nanocurie';
+plural = 'nanocuries';
+}
+Unit = `pCi\.?`
+{
+singular = 'picocurie';
+plural = 'picocuries';
+}
+// Morgan
+Unit = `M\.?`
+{
+singular = 'morgan';
+plural = 'morgans';
+reject = 1;
+}
+Unit = `cM\.?`
+{
+singular = 'centimorgan';
+plural = 'centimorgans';
+}
+// Bar
+Unit = `[Kk]bar\.?`
+{
+singular = 'kilobar';
+plural = 'kilobars';
+}
+Unit = `cbar\.?`
+{
+singular = 'centibar';
+plural = 'centibars';
+}
+Unit = `mbar\.?`
+{
+singular = 'millibar';
+plural = 'millibars';
+}
+// Coulomb
+Unit = `C\.?`
+{
+singular = 'coulomb';
+plural = 'coulombs';
+reject = 1;
+}
+Unit = 'mC'
+{
+singular = 'millicoulomb';
+plural = 'millicoulombs';
+}
+Unit = `µC\.?`
+{
+singular = 'microcoulomb';
+plural = 'microcoulombs';
+}
+// Dalton
+Unit = `MDa\.?`
+{
+singular = 'megadalton';
+plural = 'megadaltons';
+}
+Unit = `[Kk]Da\.?`
+{
+singular = 'kilodalton';
+plural = 'kilodaltons';
+}
+Unit = `Da\.?`
+{
+singular = 'dalton';
+plural = 'daltons';
+}
+// Newton
+Unit = `[Kk]N\.?`
+{
+singular = 'kilonewton';
+plural = 'kilonewtons';
+}
+Unit = `N\.?`
+{
+singular = 'newton';
+plural = 'newtons';
+reject = 1;
+}
+Unit = `dN\.?`
+{
+singular = 'decinewton';
+plural = 'decinewtons';
+}
+Unit = `nN\.?`
+{
+singular = 'nanonewton';
+plural = 'nanonewtons';
+}
+// Farad
+Unit = `F\.?`
+{
+singular = 'farad';
+plural = 'farads';
+reject = 1;
+}
+Unit = `mF\.?`
+{
+singular = 'millifarad';
+plural = 'millifarads';
+}
+Unit = `µF\.?`
+{
+singular = 'microfarad';
+plural = 'microfarads';
+}
+Unit = `nF\.?`
+{
+singular = 'nanofarad';
+plural = 'nanofarads';
+}
+Unit = `pF\.?`
+{
+singular = 'picofarad';
+plural = 'picofarads';
+}
+// Therm
+Unit = `dathm\.?`
+{
+singular = 'decatherm';
+plural = 'decatherms';
+}
+Unit = `thm\.?`
+{
+singular = 'therm';
+plural = 'therms';
+}
+// Mole
+Unit = `mol\.?`
+{
+singular = 'mole';
+plural = 'moles';
+}
+Unit = `mmol\.?`
+{
+singular = 'millimole';
+plural = 'millimoles';
+}
+Unit = `µmol\.?`
+{
+singular = 'micromole';
+plural = 'micromoles';
+}
+Unit = `nmol\.?`
+{
+singular = 'nanomole';
+plural = 'nanomoles';
+}
+Unit = `pmol\.?`
+{
+singular = 'picomole';
+plural = 'picomoles';
+}
+Unit = `fmol\.?`
+{
+singular = 'femtomole';
+plural = 'femtomoles';
+}
+Unit = `mM\.?`
+{
+singular = 'millimolar';
+plural = 'millimolars';
+}
+// Lambert
+Unit = `L\.?`
+{
+singular = 'lambert';
+plural = 'lamberts';
+reject = 1;
+}
+Unit = `mL\.?`
+{
+singular = 'millilambert';
+plural = 'millilamberts';
+}
+Unit = `fL\.?`
+{
+singular = 'footlambert';
+plural = 'footlamberts';
+}
+// Flop
+Unit = `Tflop\.?`
+{
+singular = 'teraflop';
+plural = 'teraflops';
+}
+Unit = `Gflop\.?`
+{
+singular = 'gigaflop';
+plural = 'gigaflops';
+}
+// Joule
+Unit = `MJ\.?`
+{
+singular = 'megajoule';
+plural = 'megajoules';
+}
+Unit = `GJ\.?`
+{
+singular = 'gigajoule';
+plural = 'gigajoules';
+}
+Unit = `[Kk]J\.?`
+{
+singular = 'kilojoule';
+plural = 'kilojoules';
+}
+Unit = `J\.?`
+{
+singular = 'joule';
+plural = 'joules';
+reject = 1;
+}
+Unit = `mJ\.?`
+{
+singular = 'millijoule';
+plural = 'millijoules';
+}
+// Henry
+Unit = `H\.?`
+{
+singular = 'henry';
+plural = 'henries';
+reject = 1;
+}
+Unit = `mH\.?`
+{
+singular = 'millihenry';
+plural = 'millihenries';
+}
+// Cycle
+Unit = `Mc\.?`
+{
+singular = 'megacycle';
+plural = 'megacycle';
+}
+Unit = `[Kk]c\.?`
+{
+singular = 'kilocycle';
+plural = 'kilocycle';
+}
+Unit = `[Cc][/pP][Ss]\.?`
+{
+singular = $Seq( 'cycle', 'per', 'second' );
+plural = $Seq( 'cycles', 'per', 'second' );
+}
+Unit = 'ips'
+{
+singluar = $Seq( 'inch', 'per', 'second' );
+plural = $Seq( 'inches', 'per', 'second' );
+}
+// Oentgen
+Unit = `[Kk]R\.?`
+{
+singular = 'kiloroentgen';
+plural = 'kiloroentgens';
+}
+Unit = `R\.?`
+{
+singular = 'roentgen';
+plural = 'roentgens';
+reject = 1;
+}
+Unit = `mR\.?`
+{
+singular = 'milliroentgen';
+plural = 'milliroentgens';
+}
+// Rad
+Unit = `Mrd\.?` | `Mrad\.?`
+{
+singular = 'megarad';
+plural = 'megarads';
+}
+Unit = `rd\.?`
+{
+singular = 'rad';
+plural = 'rads';
+// Interferes with ordinal extension
+reject = 1;
+}
+Unit = `mrd\.?`
+{
+singular = 'millirad';
+plural = 'millirads';
+}
+// Radian
+Unit = `rad\.?`
+{
+singular = 'radian';
+plural = 'radians';
+}
+Unit = `mrad\.?`
+{
+singular = 'milliradian';
+plural = 'milliradians';
+}
+Unit = `µrad\.?`
+{
+singular = 'microradian';
+plural = 'microradians';
+}
+// Parsec
+Unit = `Mpc\.?`
+{
+singular = 'megaparsec';
+plural = 'megaparsecs';
+}
+Unit = `pc\.?`
+{
+singular = 'parsec';
+plural = 'parsecs';
+}
+// Weber
+Unit = `Wb\.?`
+{
+singular = 'weber';
+plural = 'weber';
+}
+Unit = `nWb\.?`
+{
+singular = 'nanoweber';
+plural = 'nanoweber';
+}
+// Sievert
+Unit = `Sv\.?`
+{
+singular = 'sievert';
+plural = 'sieverts';
+}
+Unit = `mSv\.?`
+{
+singular = 'millisievert';
+plural = 'millisieverts';
+}
+Unit = `µSv\.?`
+{
+singular = 'microsievert';
+plural = 'microsieverts';
+}
+// Osmole
+Unit = `Osm\.?`
+{
+singular = 'osmole';
+plural = 'osmoles';
+}
+Unit = `mOsm\.?`
+{
+singular = 'milliosmole';
+plural = 'milliosmoles';
+}
+// Dyne
+Unit = `Mdyn\.?`
+{
+singular = 'megadyne';
+plural = 'megadynes';
+}
+Unit = `dyn\.?`
+{
+singular = 'dyne';
+plural = 'dynes';
+}
+// Other
+Unit = `atm\.?`
+{
+singular = 'atmosphere';
+plural = 'atmospheres';
+}
+Unit = `do?z\.?`
+{
+singular = 'dozen';
+plural = 'dozens';
+}
+Unit = `[kc]t\.?`
+{
+singular = 'carat';
+plural = 'carats';
+}
+Unit = `dB\.?`
+{
+singular = 'decibel';
+plural = 'decibels';
+}
+Unit = `wpm\.?`
+{
+singular = $Seq( 'word', 'per', 'minute' );
+plural = $Seq( 'words', 'per', 'minute' );
+}
+Unit = 'lpm'
+{
+singular = $Seq( 'line', 'per', 'minute' );
+plural = $Seq( 'lines', 'per', 'minute' );
+}
+Unit = 'rpm'
+{
+singular = $Seq( 'revolution', 'per', 'minute' );
+plural = $Seq( 'revolutions', 'per', 'minute' );
+}
+Unit = 'spt'
+{
+singular = $Seq( 'sector', 'per', 'track' );
+plural = $Seq( 'sectors', 'per', 'track' );
+}
+Unit = `pct\.?` | '%'
+{
+singular = 'percent';
+plural = 'percent';
+}
+Unit = '‰'
+{
+singular = $Seq( 'per', 'mille' );
+plural = $Seq( 'per', 'mille' );
+}
+Unit = `cd\.?`
+{
+singular = 'candela';
+plural = 'candelas';
+}
+Unit = `cGy\.?`
+{
+singular = 'centigray';
+plural = 'centigrays';
+}
+Unit = 'Gy'
+{
+singular = 'gray';
+plural = 'grays';
+}
+Unit = `cSt\.?`
+{
+singular = 'centistoke';
+plural = 'centistokes';
+}
+Unit = `G\.?`
+{
+singular = 'gauge';
+plural = 'gauge';
+reject = 1;
+}
+Unit = `mEq\.?`
+{
+singular = 'milliequivalent';
+plural = 'milliequivalents';
+}
+Unit = `dpt\.?`
+{
+singular = 'diopter';
+plural = 'diopters';
+}
+Unit = `Fd\.?`
+{
+singular = 'faraday';
+plural = 'faradays';
+}
+Unit = `fm\.?`
+{
+singular = 'fermi';
+plural = 'fermis';
+}
+Unit = `ft\.?-lb\.?`
+{
+singular = 'foot-pound';
+plural = 'foot-pounds';
+}
+Unit = `hp\.?`
+{
+singular = 'horsepower';
+plural = 'horsepower';
+}
+Unit = `cwt\.?`
+{
+singular = 'hundredweight';
+plural = 'hundredweight';
+}
+Unit = `[Kk]b\.?`
+{
+singular = 'kilobase';
+plural = 'kilobases';
+}
+Unit = `[Kk]n\.?`
+{
+singular = 'knot';
+plural = 'knots';
+}
+Unit = `ly\.?`
+{
+singular = 'light-year';
+plural = 'light-years';
+}
+Unit = `lm\.?`
+{
+singular = 'lumen';
+plural = 'lumens';
+}
+Unit = `lx\.?`
+{
+singular = 'lux';
+plural = 'lux';
+}
+Unit = `Mx\.?`
+{
+singular = 'maxwell';
+plural = 'maxwells';
+}
+Unit = `mG\.?`
+{
+singular = 'milligauss';
+plural = 'milligauss';
+}
+Unit = `mrem\.?`
+{
+singular = 'millirem';
+plural = 'millirems';
+}
+Unit = `Np\.?`
+{
+singular = 'neper';
+plural = 'nepers';
+}
+Unit = `Oe\.?`
+{
+singular = 'oersted';
+plural = 'oersteds';
+}
+Unit = `[Kk]Vp\.?`
+{
+singular = $Seq( 'kilovolt', 'peak' );
+plural = $Seq( 'kilovolts', 'peak' );
+}
+Unit = `mg\.?%`
+{
+singular = $Seq( 'milligram', 'percent' );
+plural = $Seq( 'milligrams', 'percent' );
+}
+Unit = `T\.?`
+{
+singular = 'tesla';
+plural = 'teslas';
+}
+UnitList = Unit '/' UnitList
+{
+noSpace = Unit.noSpace;
+singular = $Seq( Unit.singular, $Sync( RHS[1].start ), 'per', $Sync( RHS[2].start ), UnitList.singular );
+plural = $Seq( Unit.plural, $Sync( RHS[1].start ), 'per', $Sync( RHS[2].start ), UnitList.singular );
+}
+UnitList = Unit '/' 's'
+{
+noSpace = Unit.noSpace;
+singular = $Seq( Unit.singular, $Sync( RHS[1].start ), 'per', $Sync( RHS[2].start ), 'second' );
+plural = $Seq( Unit.plural, $Sync( RHS[1].start ), 'per', $Sync( RHS[2].start ), 'second' );
+}
+UnitList = Unit
+{
+noSpace = Unit.noSpace;
+singular = Unit.singular;
+plural = Unit.plural;
+reject = Unit.reject;
+}
+Measure = Number ' '? UnitList
+{
+if( RHS[1].symbol eq ' ' && UnitList.noSpace ) fail;
+if( UnitList.reject ) fail;
+unit = UnitList.plural;
+if( Number.floor == 1 && Number.fractional == 0 ) unit = UnitList.singular;
+spoken = $Seq( Number.spoken, $Sync( RHS[2].start ), unit );
+}
+Measure = NumberRange ' '? UnitList
+{
+if( RHS[1].symbol eq ' ' && UnitList.noSpace ) fail;
+if( UnitList.reject ) fail;
+spoken = $Seq( NumberRange.spoken, $Sync( RHS[2].start ), UnitList.plural );
+}
+// '33-mm film' -> 'thirty three millimeter film'
+Measure = Number '-' Unit
+{
+spoken = $Seq( Number.spoken, Unit.singular );
+}
+TopSymbol = Measure
+{
+spoken = RHS.spoken;
+name = 'Measure';
+}
+/**
+
+REFERENCES
+
+A reference is an abbreviation followed by an optional space and a cardinal number or a Roman numeral (p. 23, Ch. VI).
+There are hundreds of abbreviations for references.  We support the most common ones.
+
+The tokenizer attempts to expand reference abbreviations.  Some reference abbreviations, however, are ambiguous, and it can be hard even for humans to know what they mean (v. 5, verse or version?).  What happens in these cases?  A cardinal number following a reference abbreviation is spoken in any one of the counting cardinal formats (forms 1-3).  Roman numerals are spoken as usual with the prefix words Roman numeral (page \roman-numeral one {hundred} twenty three).
+
+The lexicon contains all the words that are necessary to expand the abbreviations to allow tokenization of references.
+
+================== =======================
+Written form       Tokenization
+================== =======================
+p. 23              page twenty three
+No. 100            number one hundred
+Ch. VI             chapter \roman-numeral six
+v. 5               verse/version five
+================== =======================
+
+**/
+// Reference
+Reference = ReferenceWord ' '? Cardinal
+{
+if( Cardinal.value > 5000 ) fail;
+spoken = $Seq( ReferenceWord.spoken, $Sync( RHS[2].start ),
+$Alt( Cardinal.spoken, Cardinal.digits ) );
+}
+Reference = ReferenceWord ' '? Roman
+{
+if( Roman.value > 5000 || ReferenceWord.noroman ) fail;
+spoken = $Seq( ReferenceWord.spoken, $Sync( RHS[2].start ),
+$Alt( Roman.counting, Roman.countingAlt ) );
+}
+ReferenceWord = `l\.?` { spoken = 'line'; }
+ReferenceWord = `pp\.?` { spoken = 'pages'; }
+ReferenceWord = `pg\.?` { spoken = 'page'; }
+ReferenceWord = `[cC]h(ap)?\.?` { spoken = 'chapter'; }
+ReferenceWord = `[fF]ig\.?` { spoken = 'figure'; }
+ReferenceWord = `[nN]um\.?` { spoken = 'number'; }
+ReferenceWord = `[vV]ol\.?` { spoken = 'volume'; }
+ReferenceWord = `pt\.?` { spoken = 'part'; }
+ReferenceWord = `tit\.?` { spoken = 'title'; }
+ReferenceWord = `Ste\.?` { spoken = 'suite'; }
+ReferenceWord = `col\.?` { spoken = 'column'; }
+ReferenceWord = `[vV]ols\.?` { spoken = 'volumes'; }
+ReferenceWord = `[sS]ec\.?` | '§' { spoken = 'section'; }
+ReferenceWord = `[sS]ecs\.?` { spoken = 'sections'; }
+ReferenceWord = `Stat\.?` { spoken = 'statute'; }
+ReferenceWord = `vss\.?` { spoken = 'verses'; }
+ReferenceWord = `[fF]igs\.?` { spoken = 'figures'; }
+ReferenceWord = `[cC]ols\.?` { spoken = 'columns'; }
+ReferenceWord = `fol\.?` { spoken = 'folio'; }
+ReferenceWord = `fols\.?` { spoken = 'folios'; }
+ReferenceWord = `ll\.?` { spoken = 'lines'; }
+ReferenceWord = `Rte?\.?` { spoken = 'route'; }
+ReferenceWord = `[nN]o\.?` { spoken = 'number'; noroman = 1; }
+ReferenceWord = `[vV](er)?\.?` { spoken = $Alt( 'version', 'verse' ); }
+ReferenceWord = `[pP]ara\.?` { spoken = 'paragraph'; }
+ReferenceWord = `[pP]aras\.?` { spoken = 'paragraphs'; }
+ReferenceWord = `Rts\.?` { spoken = 'routes'; }
+ReferenceWord = `pts\.?` { spoken = 'parts'; }
+ReferenceWord = `subd\.?` { spoken = 'subdivision'; }
+ReferenceWord = `subds\.?` { spoken = 'subdivisions'; }
+ReferenceWord = `tits\.?` { spoken = 'titles'; }
+ReferenceWord = `cls\.?` { spoken = 'clauses'; }
+ReferenceWord = `amend\.?` { spoken = 'amendment'; }
+ReferenceWord = `amends\.?` { spoken = 'amendments'; }
+ReferenceWord = `bk\.?` { spoken = 'book'; }
+ReferenceWord = `bks\.?` { spoken = 'books'; }
+ReferenceWord = `tbl\.?` { spoken = 'table'; }
+ReferenceWord = `tbls\.?` { spoken = 'tables'; }
+TopSymbol = Reference
+{
+spoken = RHS.spoken;
+name = 'Reference';
+}
+// ZIP codes
+TopSymbol = State ' ' `\d{5}` | State ' ' `\d{5}` '-' `\d{4}`
+{
+spoken = $Seq( State.spoken, $Sync( RHS[1].start ), $DigitDefault( RHS[2].symbol ), $DigitDefault( RHS[4].symbol ) );
+name = 'ZipCode';
+}
+State = 'AL' | `Ala\.?` | 'Alabama'
+{
+spoken = 'Alabama';
+}
+State = 'AK' | `Alas\.?` | 'Alaska'
+{
+spoken = 'Alaska';
+}
+State = 'AS' | 'American Samoa'
+{
+spoken = 'American Samoa';
+}
+State = 'AZ' | `Ariz\.?` | 'Arizona'
+{
+spoken = 'Arizona';
+}
+State = 'AR' | `Ark\.?` | 'Arkansas'
+{
+spoken = 'Arkansas';
+}
+State = 'CA' | `Ca(l|lif)?\.?` | 'California'
+{
+spoken = 'California';
+}
+State = 'CO' | `Colo\.?` | 'Colorado'
+{
+spoken = 'Colorado';
+}
+State = 'CT' | `Conn\.?` | 'Connecticut'
+{
+spoken = 'Connecticut';
+}
+State = 'DC' | 'D.C.' | 'District of Columbia'
+{
+spoken = $Alt( 'DC', 'District of Columbia' );
+}
+State = 'DE' | `Del\.?` | 'Delaware'
+{
+spoken = 'Delaware';
+}
+State = 'FL' | `Fla?\.?` | 'Florida'
+{
+spoken = 'Florida';
+}
+State = 'GA' | `Ga\.?` | 'Georgia'
+{
+spoken = 'Georgia';
+}
+State = 'GU' | 'Guam'
+{
+spoken = 'Guam';
+}
+State = 'HI' | `Haw\.?` | `Hi\.?` | 'Hawaii'
+{
+spoken = 'Hawaii';
+}
+State = 'ID' | 'Idaho'
+{
+spoken = 'Idaho';
+}
+State = 'IL' | `Ill\.?` | 'Illinois'
+{
+spoken = 'Illinois';
+}
+State = 'IN' | `Ind\.?` | 'Indiana'
+{
+spoken = 'Indiana';
+}
+State = 'IA' | 'Iowa'
+{
+spoken = 'Iowa';
+}
+State = 'KS' | `Kans?\.?` | 'Kansas'
+{
+spoken = 'Kansas';
+}
+State = `Ky\.?` | 'Kentucky'
+{
+spoken = 'Kentucky';
+}
+State = 'LA' | `La\.?` | 'Louisiana'
+{
+spoken = 'Louisiana';
+}
+State = 'ME' | `Me\.?` | 'Maine'
+{
+spoken = 'Maine';
+}
+State = 'MD' | `Md\.?` | 'Maryland'
+{
+spoken = 'Maryland';
+}
+State = 'MA' | `Mass\.?` | 'Massachusetts'
+{
+spoken = $Alt( 'Mass.\state', 'Massachusetts' );
+}
+State = 'MH' | 'Marshall Islands'
+{
+spoken = 'Marshall Islands';
+}
+State = 'MI' | `Mich\.?` | 'Michigan'
+{
+spoken = 'Michigan';
+}
+State = 'MN' | `Minn\.?` | 'Minnesota'
+{
+spoken = 'Minnesota';
+}
+State = 'MS' | `Miss\.?` | 'Mississippi'
+{
+spoken = 'Mississippi';
+}
+State = 'MO' | `Mo\.?` | 'Missouri'
+{
+spoken = 'Missouri';
+}
+State = 'MT' | `Mont\.?` | 'Montana'
+{
+spoken = 'Montana';
+}
+State = 'NE' | `Nebr?\.?` | 'Nebraska'
+{
+spoken = 'Nebraska';
+}
+State = 'NV' | `Nev\.?` | 'Nevada'
+{
+spoken = 'Nevada';
+}
+State = 'NH' | 'N.H.' | 'New Hampshire'
+{
+spoken = 'New Hampshire';
+}
+State = 'NJ' | 'N.J.' | 'New Jersey'
+{
+spoken = 'New Jersey';
+}
+State = 'NM' | 'N.M(ex)?\.?' | 'New Mexico'
+{
+spoken = 'New Mexico';
+}
+State = 'NY' | 'N.Y.' | 'New York'
+{
+spoken = 'New York';
+}
+State = 'NC' | 'N.C.' | 'North Carolina'
+{
+spoken = 'North Carolina';
+}
+State = 'ND' | `N.D(ak)?\.?` | 'North Dakota'
+{
+spoken = 'North Dakota';
+}
+State = 'OH' | 'Ohio'
+{
+spoken = 'Ohio';
+}
+State = 'OK' | `Okla.` | 'Oklahoma'
+{
+spoken = 'Oklahoma';
+}
+State = 'OR' | `Or(eg?)?\.` | 'Oregon'
+{
+spoken = 'Oregon';
+}
+State = 'PA' | 'Pa.' | 'Penn.' | 'Pennsylvania'
+{
+spoken = 'Pennsylvania';
+}
+State = 'PR' | 'P.R.' | 'Puerto Rico'
+{
+spoken = 'Puerto Rico';
+}
+State = 'PW' | 'Palau'
+{
+spoken = 'Palau';
+}
+State = 'RI' | 'R.I.' | 'Rhode Island'
+{
+spoken = 'Rhode Island';
+}
+State = 'SC' | 'S.C.' | 'South Carolina'
+{
+spoken = 'South Carolina';
+}
+State = 'SD' | 'S.D.' | 'South Dakota'
+{
+spoken = 'South Dakota';
+}
+State = 'TN' | `Tenn\.?` | 'Tennessee'
+{
+spoken = 'Tennessee';
+}
+State = 'TX' | `Tex\.?` | 'Texas'
+{
+spoken = 'Texas';
+}
+State = 'VI' | 'Virgin Islands'
+{
+spoken = 'Virgin Islands';
+}
+State = 'UT' | 'Utah'
+{
+spoken = 'Utah';
+}
+State = 'VT' | `Vt\.?` | 'Vermont'
+{
+spoken = 'Vermont';
+}
+State = 'VA' | `Va\.?` | 'Virginia'
+{
+spoken = 'Virginia';
+}
+State = 'WA' | `Wa\.?` | `Wash\.?` | 'Washington'
+{
+spoken = 'Washington';
+}
+State = 'WI' | `Wis\.?` | `Wisc\.?` | 'Wisconsin'
+{
+spoken = 'Wisconsin';
+}
+State = 'WV' | `W\.?Va?\.` | 'West Virginia'
+{
+spoken = 'West Virginia';
+}
+State = 'WY' | `Wyo\.?` | 'Wyoming'
+{
+spoken = 'Wyoming';
+}
+/**
+
+DECADES AND CENTURIES
+
+In English, a year can be written as the number sequence it corresponds to or as a two-digit number preceded by a clinging apostrophe ('85, 1998, 2001).  Two-digit years are spoken as cardinal numbers.  Three- and four-digit years are spoken as underspecified counting numbers (form 3).
+A decade is written as a two- or four-digit year divisible by 10 and followed by a clinging ’s or s (1980s, 80’s). The two-digit form may be preceded by another clinging apostrophe ('80s).  A century is written as a three- or four-digit year divisible by 100 and followed by a clinging ’s or s (800s, 1900’s).
+A millennium is written as a four-digit number divisible by 1000 and followed by a clinging ’s or s (1000s, 2000’s).
+Decades and centuries are dictated as underspecified counting numbers whose final component number word is made plural (nineteen eighties, eighties, seventeen hundreds).  Millenniums are dictated as counting numbers whose final component number word is made plural (two thousands).  This is most often used by stock markets (Dow).
+
+The lexicon contains the words tens twenties thirties forties fifties sixties seventies eighties nineties hundreds to allow tokenization of decades and centuries.
+
+================== =======================
+Written form       Tokenization
+================== =======================
+'85                eighty five
+1945               nineteen forty five
+80s                eighties
+80's               eighties
+'80s               eighties
+1930s              nineteen thirties
+1930's             nineteen thirties
+1800s              eighteen hundreds
+1800's             eighteen hundreds
+800s               eight hundreds
+800's              eight hundreds
+2000s              two thousands
+================== =======================
+
+**/
+// Decades, centuries, temperatures, heart bits, etc
+DecadeExt = "'s" | "s" {}
+NumberApoS = `[12]\d[1-9]0|[12]?[1-9]\d0` DecadeExt
+{
+last = $ArrayApoSTens( (RHS.symbol % 100) / 10 );
+spoken = $Seq( $CountingCardinal( RHS.symbol / 100 ), last );
+if( RHS.symbol >= 100 && RHS.symbol < 200 ) spoken = $Alt( spoken, $Seq( 'hundred', last ) );
+}
+NumberApoS = "'"? `[1-9]0` DecadeExt
+{
+spoken = $ArrayApoSTens( RHS[1].symbol / 10 );
+}
+NumberApoS = `\d` DecadeExt
+{
+spoken = $ArrayApoSOnes( RHS.symbol );
+}
+TopSymbol = NumberApoS
+{
+spoken = RHS.spoken;
+}
+// Acronyms with 's
+TopSymbol = `[A-Z]{2,}` "'s"
+{
+if( $Lookup( RHS.symbol ^ "'s" ) ne '' ) fail;
+if( $Lookup( RHS.symbol ^ "s" ) eq '' ) fail;
+spoken = RHS.symbol ^ 's';
+}
+ 

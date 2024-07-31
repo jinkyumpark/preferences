@@ -1,0 +1,14 @@
+{
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.uaf.platform",
+    "autoAssetEntries" : [
+      {
+        "assetSpecifier" : "com.apple.siri.uaf.osupdates"
+      }
+    ]
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "created",
+    "timestamp" : "2024-07-09T14:31:45.457Z"
+  }
+}

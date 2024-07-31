@@ -1,0 +1,31 @@
+{
+    "ClientLagThresholdMsKey" : -10,
+    "ClampedSFLatencyMsForClientLag" : 6000,
+    "UseDefaultServerFeaturesOnClientLag" : true,
+    "version": "4.11",
+    "extra-delay-frequency": 1000,
+    "endpoint-threshold": {
+        "SiriDictation": 0.9963,
+        "Confirmation": 0.95,
+        "accessible-extended": 0.998,
+        "accessible-maximum": 0.9998
+    },
+    "enhanced-endpointer-thresholds": {
+        "SiriDictation": {
+            "default-threshold-partial": 0.9963,
+            "default-threshold-rc": 0.99999
+        },
+        "Confirmation": {
+            "default-threshold-partial": 0.95,
+            "default-threshold-rc": 0.99999
+        },
+        "accessible-extended": {
+            "default-threshold-partial": 0.998,
+            "default-threshold-rc": 0.99999
+        },
+        "accessible-maximum": {
+            "default-threshold-partial": 0.9998,
+            "default-threshold-rc": 0.99999
+        }
+    }
+}

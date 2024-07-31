@@ -1,0 +1,1 @@
+(function(){return["(?:Online(?:\\W)?\\s?)?Check\\W?in","check(?:ing)?(?:&nbsp;|\\s+?|\\W)in(?:&nbsp;|\\s+?)online","Enregistrement en ligne","\uc628\ub77c\uc778 \uccb4\ud06c\uc778","\u5728\u7ebf\u503c\u673a","\u30aa\u30f3\u30e9\u30a4\u30f3\u30c1\u30a7\u30c3\u30af\u30a4\u30f3"]}).call();

@@ -1,0 +1,1 @@
+(function(){return{"aeromexico.co.kr":/[\d\-]/,"airarabia.com":/[d]/,"airbusan.com":/[\d]/,"airindia.in":/[\d\-]/,"ceair.com":/[\d\-]/,"condor.com":/[\d\-]/,"customerservices.tui.co.uk":/[\d]/,"jet2holidays.com":/[\d\/A-Z]/}}).call();

@@ -1,0 +1,8 @@
+{
+    "version": 9,
+    "properties": {
+        "sendTimeSpentMetric": 1,
+        "timeSpentMetricTTL": 21600,
+        "isPersistenceEnabled": 1
+    }
+}

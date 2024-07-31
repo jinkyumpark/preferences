@@ -1,0 +1,39 @@
+{
+  "atomicEntries" : [
+    {
+      "assetID" : "d3c852fd75df560cea211893e44c070aae0b2b5a",
+      "fullAssetSelector" : {
+        "assetSpecifier" : "com.apple.siri.asr.assistant.en_US",
+        "assetVersion" : "3100.3000.160.13.300097,0"
+      },
+      "inhibitedFromEmergencyRemoval" : false,
+      "localContentURL" : "/Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator%20Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/private/var/MobileAsset/AssetsV2/com_apple_MobileAsset_UAF_Siri_Understanding/purpose_auto/d3c852fd75df560cea211893e44c070aae0b2b5a.asset/AssetData"
+    },
+    {
+      "assetID" : "10ff2f490a19eda52d2698480cd6e74607f98998",
+      "fullAssetSelector" : {
+        "assetSpecifier" : "com.apple.siri.understanding.uaf.metadata",
+        "assetVersion" : "1.28.286538610.13.200101,0"
+      },
+      "inhibitedFromEmergencyRemoval" : false,
+      "localContentURL" : "/Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator%20Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/private/var/MobileAsset/AssetsV2/com_apple_MobileAsset_UAF_Siri_Understanding/purpose_auto/10ff2f490a19eda52d2698480cd6e74607f98998.asset/AssetData"
+    },
+    {
+      "assetID" : "316e46054ad44b9fc7641b3a099a741e09b1ff36",
+      "fullAssetSelector" : {
+        "assetSpecifier" : "com.apple.siri.asr.geolm.regionMapping.en_US",
+        "assetVersion" : "3100.3000.16.13.300097,0"
+      },
+      "inhibitedFromEmergencyRemoval" : false,
+      "localContentURL" : "/Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator%20Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/private/var/MobileAsset/AssetsV2/com_apple_MobileAsset_UAF_Siri_Understanding/purpose_auto/316e46054ad44b9fc7641b3a099a741e09b1ff36.asset/AssetData"
+    }
+  ],
+  "atomicInstance" : "82B76077-BE71-48DD-BAEA-56D0113B6459",
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.understanding"
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "locked",
+    "timestamp" : "2024-07-20T15:17:21.292Z"
+  }
+}

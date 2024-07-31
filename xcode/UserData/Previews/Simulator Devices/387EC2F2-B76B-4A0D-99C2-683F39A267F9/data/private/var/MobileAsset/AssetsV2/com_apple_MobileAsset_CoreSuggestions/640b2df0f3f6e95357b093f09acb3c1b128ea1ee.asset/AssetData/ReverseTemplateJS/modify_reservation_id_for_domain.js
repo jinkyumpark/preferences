@@ -1,0 +1,1 @@
+(function(){return function(e,n,r){var c;return"travel.priceline.com"===e.domain&&("Cancelled"!==r||/-/g.test(n)||(c=n.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,"$1-$2-$3-$4"))),c&&n!==c?c:n}}).call();

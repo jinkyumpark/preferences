@@ -1,0 +1,1329 @@
+{
+    "geo-config-version": 4,
+    "region-dependent-variable-list": "\\GeoBizName",
+    "cache-region-id-enabled": true,
+    "regions": {
+        "masterlm": {
+            "bitmap-color": 0,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-888_US-Global.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "USA masterLM back-off model"
+        },
+        "104_NY": {
+            "bitmap-color": 70,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-104_NY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Albany-Schenectady, NY"
+        },
+        "106_NM": {
+            "bitmap-color": 164,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-106_NM.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Albuquerque-Santa Fe-Las Vegas, NM"
+        },
+        "108_TX": {
+            "bitmap-color": 47,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-108_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Amarillo-Borger, TX"
+        },
+        "118_WI": {
+            "bitmap-color": 151,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-118_WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Appleton-Oshkosh-Neenah, WI"
+        },
+        "120_NC": {
+            "bitmap-color": 60,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-120_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Asheville-Brevard, NC"
+        },
+        "122_GA": {
+            "bitmap-color": 50,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-122_GA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Atlanta--Athens-Clarke County--Sandy Springs, GA"
+        },
+        "140_OR": {
+            "bitmap-color": 53,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-140_OR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Bend-Redmond-Prineville, OR"
+        },
+        "142_AL": {
+            "bitmap-color": 167,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-142_AL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Birmingham-Hoover-Talladega, AL"
+        },
+        "144_IN": {
+            "bitmap-color": 152,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-144_IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Bloomington-Bedford, IN"
+        },
+        "145_IL": {
+            "bitmap-color": 57,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-145_IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Bloomington-Pontiac, IL"
+        },
+        "146_PA": {
+            "bitmap-color": 13,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-146_PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Bloomsburg-Berwick-Sunbury, PA"
+        },
+        "147_ID_OR": {
+            "bitmap-color": 137,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-147_ID-OR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Boise City-Mountain Home-Ontario, ID-OR"
+        },
+        "148_MA_RI_NH_CT": {
+            "bitmap-color": 158,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-148_MA-RI-NH-CT.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Boston-Worcester-Providence, MA-RI-NH-CT"
+        },
+        "150_KY": {
+            "bitmap-color": 5,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-150_KY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Bowling Green-Glasgow, KY"
+        },
+        "154_TX": {
+            "bitmap-color": 19,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-154_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Brownsville-Harlingen-Raymondville, TX"
+        },
+        "160_NY": {
+            "bitmap-color": 78,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-160_NY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Buffalo-Cheektowaga, NY"
+        },
+        "162_FL": {
+            "bitmap-color": 39,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-162_FL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Cape Coral-Fort Myers-Naples, FL"
+        },
+        "164_MO_IL": {
+            "bitmap-color": 75,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-164_MO-IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Cape Girardeau-Sikeston, MO-IL"
+        },
+        "168_IA": {
+            "bitmap-color": 88,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-168_IA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Cedar Rapids-Iowa City, IA"
+        },
+        "170_WV_OH_KY": {
+            "bitmap-color": 8,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-170_WV-OH-KY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Charleston-Huntington-Ashland, WV-OH-KY"
+        },
+        "172_NC_SC": {
+            "bitmap-color": 10,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-172_NC-SC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Charlotte-Concord, NC-SC"
+        },
+        "174_TN_GA_AL": {
+            "bitmap-color": 64,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-174_TN-GA-AL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Chattanooga-Cleveland-Dalton, TN-GA-AL"
+        },
+        "176_IL_IN_WI": {
+            "bitmap-color": 4,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-176_IL-IN-WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Chicago-Naperville, IL-IN-WI"
+        },
+        "178_OH_KY_IN": {
+            "bitmap-color": 142,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-178_OH-KY-IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Cincinnati-Wilmington-Maysville, OH-KY-IN"
+        },
+        "184_OH": {
+            "bitmap-color": 122,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-184_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Cleveland-Akron-Canton, OH"
+        },
+        "185_MS": {
+            "bitmap-color": 132,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-185_MS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Cleveland-Indianola, MS"
+        },
+        "188_NM": {
+            "bitmap-color": 90,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-188_NM.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Clovis-Portales, NM"
+        },
+        "190_MO": {
+            "bitmap-color": 73,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-190_MO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Columbia-Moberly-Mexico, MO"
+        },
+        "192_SC": {
+            "bitmap-color": 107,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-192_SC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Columbia-Orangeburg-Newberry, SC"
+        },
+        "194_GA_AL": {
+            "bitmap-color": 163,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-194_GA-AL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Columbus-Auburn-Opelika, GA-AL"
+        },
+        "198_OH": {
+            "bitmap-color": 134,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-198_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Columbus-Marion-Zanesville, OH"
+        },
+        "204_TX": {
+            "bitmap-color": 86,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-204_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Corpus Christi-Kingsville-Alice, TX"
+        },
+        "206_TX_OK": {
+            "bitmap-color": 59,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-206_TX-OK.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Dallas-Fort Worth, TX-OK"
+        },
+        "209_IA_IL": {
+            "bitmap-color": 108,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-209_IA-IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Davenport-Moline, IA-IL"
+        },
+        "212_OH": {
+            "bitmap-color": 87,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-212_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Dayton-Springfield-Sidney, OH"
+        },
+        "216_CO": {
+            "bitmap-color": 28,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-216_CO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Denver-Aurora, CO"
+        },
+        "217_LA": {
+            "bitmap-color": 79,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-217_LA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "DeRidder-Fort Polk South, LA"
+        },
+        "218_IA": {
+            "bitmap-color": 106,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-218_IA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Des Moines-Ames-West Des Moines, IA"
+        },
+        "220_MI": {
+            "bitmap-color": 120,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-220_MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Detroit-Warren-Ann Arbor, MI"
+        },
+        "221_IL": {
+            "bitmap-color": 44,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-221_IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Dixon-Sterling, IL"
+        },
+        "222_AL": {
+            "bitmap-color": 118,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-222_AL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Dothan-Enterprise-Ozark, AL"
+        },
+        "232_WI": {
+            "bitmap-color": 102,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-232_WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Eau Claire-Menomonie, WI"
+        },
+        "233_CO": {
+            "bitmap-color": 42,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-233_CO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Edwards-Glenwood Springs, CO"
+        },
+        "236_NY": {
+            "bitmap-color": 157,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-236_NY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Elmira-Corning, NY"
+        },
+        "238_TX_NM": {
+            "bitmap-color": 145,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-238_TX-NM.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "El Paso-Las Cruces, TX-NM"
+        },
+        "240_PA": {
+            "bitmap-color": 126,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-240_PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Erie-Meadville, PA"
+        },
+        "244_ND_MN": {
+            "bitmap-color": 112,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-244_ND-MN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Fargo-Wahpeton, ND-MN"
+        },
+        "246_NC": {
+            "bitmap-color": 104,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-246_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Fayetteville-Lumberton-Laurinburg, NC"
+        },
+        "248_OH": {
+            "bitmap-color": 168,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-248_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Findlay-Tiffin, OH"
+        },
+        "258_IN": {
+            "bitmap-color": 159,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-258_IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Fort Wayne-Huntington-Auburn, IN"
+        },
+        "260_CA": {
+            "bitmap-color": 140,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-260_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Fresno-Madera, CA"
+        },
+        "264_FL": {
+            "bitmap-color": 138,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-264_FL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Gainesville-Lake City, FL"
+        },
+        "266_MI": {
+            "bitmap-color": 139,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-266_MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Grand Rapids-Wyoming-Muskegon, MI"
+        },
+        "267_WI": {
+            "bitmap-color": 18,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-267_WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Green Bay-Shawano, WI"
+        },
+        "268_NC": {
+            "bitmap-color": 51,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-268_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Greensboro--Winston-Salem--High Point, NC"
+        },
+        "273_SC": {
+            "bitmap-color": 136,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-273_SC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Greenville-Spartanburg-Anderson, SC"
+        },
+        "274_NC": {
+            "bitmap-color": 81,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-274_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Greenville-Washington, NC"
+        },
+        "276_PA": {
+            "bitmap-color": 46,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-276_PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Harrisburg-York-Lebanon, PA"
+        },
+        "277_VA": {
+            "bitmap-color": 127,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-277_VA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Harrisonburg-Staunton-Waynesboro, VA"
+        },
+        "278_CT": {
+            "bitmap-color": 7,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-278_CT.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Hartford-West Hartford, CT"
+        },
+        "280_NC": {
+            "bitmap-color": 24,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-280_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Hickory-Lenoir, NC"
+        },
+        "284_AR": {
+            "bitmap-color": 85,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-284_AR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Hot Springs-Malvern, AR"
+        },
+        "288_TX": {
+            "bitmap-color": 111,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-288_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Houston-The Woodlands, TX"
+        },
+        "290_AL": {
+            "bitmap-color": 116,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-290_AL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Huntsville-Decatur-Albertville, AL"
+        },
+        "292_ID": {
+            "bitmap-color": 147,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-292_ID.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Idaho Falls-Rexburg-Blackfoot, ID"
+        },
+        "294_IN": {
+            "bitmap-color": 109,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-294_IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Indianapolis-Carmel-Muncie, IN"
+        },
+        "296_NY": {
+            "bitmap-color": 95,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-296_NY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Ithaca-Cortland, NY"
+        },
+        "298_MS": {
+            "bitmap-color": 125,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-298_MS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Jackson-Vicksburg-Brookhaven, MS"
+        },
+        "300_FL_GA": {
+            "bitmap-color": 114,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-300_FL-GA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Jacksonville-St. Marys-Palatka, FL-GA"
+        },
+        "304_TN_VA": {
+            "bitmap-color": 76,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-304_TN-VA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Johnson City-Kingsport-Bristol, TN-VA"
+        },
+        "306_PA": {
+            "bitmap-color": 38,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-306_PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Johnstown-Somerset, PA"
+        },
+        "308_AR": {
+            "bitmap-color": 36,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-308_AR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Jonesboro-Paragould, AR"
+        },
+        "309_MO_OK": {
+            "bitmap-color": 82,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-309_MO-OK.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Joplin-Miami, MO-OK"
+        },
+        "310_MI": {
+            "bitmap-color": 12,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-310_MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Kalamazoo-Battle Creek-Portage, MI"
+        },
+        "312_MO_KS": {
+            "bitmap-color": 66,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-312_MO-KS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Kansas City-Overland Park-Kansas City, MO-KS"
+        },
+        "314_TN": {
+            "bitmap-color": 68,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-314_TN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Knoxville-Morristown-Sevierville, TN"
+        },
+        "316_IN": {
+            "bitmap-color": 153,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-316_IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Kokomo-Peru, IN"
+        },
+        "318_LA": {
+            "bitmap-color": 35,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-318_LA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lafayette-Opelousas-Morgan City, LA"
+        },
+        "320_IN": {
+            "bitmap-color": 56,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-320_IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lafayette-West Lafayette-Frankfort, IN"
+        },
+        "330_MI": {
+            "bitmap-color": 113,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-330_MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lansing-East Lansing-Owosso, MI"
+        },
+        "332_NV_AZ": {
+            "bitmap-color": 21,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-332_NV-AZ.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Las Vegas-Henderson, NV-AZ"
+        },
+        "336_KY": {
+            "bitmap-color": 135,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-336_KY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lexington-Fayette--Richmond--Frankfort, KY"
+        },
+        "338_OH": {
+            "bitmap-color": 156,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-338_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lima-Van Wert-Celina, OH"
+        },
+        "339_NE": {
+            "bitmap-color": 155,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-339_NE.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lincoln-Beatrice, NE"
+        },
+        "340_AR": {
+            "bitmap-color": 58,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-340_AR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Little Rock-North Little Rock, AR"
+        },
+        "346_TX": {
+            "bitmap-color": 72,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-346_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Longview-Marshall, TX"
+        },
+        "348_CA": {
+            "bitmap-color": 61,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-348_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Los Angeles-Long Beach, CA"
+        },
+        "350_KY_IN": {
+            "bitmap-color": 144,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-350_KY-IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Louisville-Jefferson County--Elizabethtown--Madison, KY-IN"
+        },
+        "352_TX": {
+            "bitmap-color": 105,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-352_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Lubbock-Levelland, TX"
+        },
+        "356_GA": {
+            "bitmap-color": 94,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-356_GA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Macon-Warner Robins, GA"
+        },
+        "357_WI": {
+            "bitmap-color": 146,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-357_WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Madison-Janesville-Beloit, WI"
+        },
+        "358_KS": {
+            "bitmap-color": 162,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-358_KS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Manhattan-Junction City, KS"
+        },
+        "359_MN": {
+            "bitmap-color": 133,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-359_MN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Mankato-New Ulm-North Mankato, MN"
+        },
+        "360_OH": {
+            "bitmap-color": 115,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-360_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Mansfield-Ashland-Bucyrus, OH"
+        },
+        "362_TN_KY": {
+            "bitmap-color": 91,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-362_TN-KY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Martin-Union City, TN-KY"
+        },
+        "364_PR": {
+            "bitmap-color": 11,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-364_PR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Mayag\u00fcez-San Germ\u00e1n, PR"
+        },
+        "365_TX": {
+            "bitmap-color": 23,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-365_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "McAllen-Edinburg, TX"
+        },
+        "366_OR": {
+            "bitmap-color": 150,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-366_OR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Medford-Grants Pass, OR"
+        },
+        "368_TN_MS_AR": {
+            "bitmap-color": 131,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-368_TN-MS-AR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Memphis-Forrest City, TN-MS-AR"
+        },
+        "370_FL": {
+            "bitmap-color": 26,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-370_FL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Miami-Fort Lauderdale-Port St. Lucie, FL"
+        },
+        "372_TX": {
+            "bitmap-color": 117,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-372_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Midland-Odessa, TX"
+        },
+        "376_WI": {
+            "bitmap-color": 30,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-376_WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Milwaukee-Racine-Waukesha, WI"
+        },
+        "378_MN_WI": {
+            "bitmap-color": 67,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-378_MN-WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Minneapolis-St. Paul, MN-WI"
+        },
+        "380_AL": {
+            "bitmap-color": 93,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-380_AL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Mobile-Daphne-Fairhope, AL"
+        },
+        "382_CA": {
+            "bitmap-color": 41,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-382_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Modesto-Merced, CA"
+        },
+        "384_LA": {
+            "bitmap-color": 3,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-384_LA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Monroe-Ruston-Bastrop, LA"
+        },
+        "390_WV": {
+            "bitmap-color": 34,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-390_WV.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Morgantown-Fairmont, WV"
+        },
+        "393_WA": {
+            "bitmap-color": 45,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-393_WA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Moses Lake-Othello, WA"
+        },
+        "394_MI": {
+            "bitmap-color": 99,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-394_MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Mount Pleasant-Alma, MI"
+        },
+        "396_SC_NC": {
+            "bitmap-color": 62,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-396_SC-NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Myrtle Beach-Conway, SC-NC"
+        },
+        "400_TN": {
+            "bitmap-color": 25,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-400_TN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Nashville-Davidson--Murfreesboro, TN"
+        },
+        "404_NC": {
+            "bitmap-color": 96,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-404_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "New Bern-Morehead City, NC"
+        },
+        "406_LA_MS": {
+            "bitmap-color": 49,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-406_LA-MS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "New Orleans-Metairie-Hammond, LA-MS"
+        },
+        "408_NY_NJ_CT_PA": {
+            "bitmap-color": 55,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-408_NY-NJ-CT-PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "New York-Newark, NY-NJ-CT-PA"
+        },
+        "412_FL": {
+            "bitmap-color": 16,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-412_FL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "North Port-Sarasota, FL"
+        },
+        "416_OK": {
+            "bitmap-color": 6,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-416_OK.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Oklahoma City-Shawnee, OK"
+        },
+        "420_NE_IA": {
+            "bitmap-color": 71,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-420_NE-IA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Omaha-Council Bluffs-Fremont, NE-IA"
+        },
+        "422_FL": {
+            "bitmap-color": 123,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-422_FL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Orlando-Deltona-Daytona Beach, FL"
+        },
+        "424_KY_IL": {
+            "bitmap-color": 98,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-424_KY-IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Paducah-Mayfield, KY-IL"
+        },
+        "425_WV_OH": {
+            "bitmap-color": 89,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-425_WV-OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Parkersburg-Marietta-Vienna, WV-OH"
+        },
+        "426_IL": {
+            "bitmap-color": 92,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-426_IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Peoria-Canton, IL"
+        },
+        "428_PA_NJ_DE_MD": {
+            "bitmap-color": 148,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-428_PA-NJ-DE-MD.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Philadelphia-Reading-Camden, PA-NJ-DE-MD"
+        },
+        "430_PA_OH_WV": {
+            "bitmap-color": 63,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-430_PA-OH-WV.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Pittsburgh-New Castle-Weirton, PA-OH-WV"
+        },
+        "434_PR": {
+            "bitmap-color": 54,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-434_PR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Ponce-Coamo-Santa Isabel, PR"
+        },
+        "438_ME": {
+            "bitmap-color": 161,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-438_ME.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Portland-Lewiston-South Portland, ME"
+        },
+        "440_OR_WA": {
+            "bitmap-color": 9,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-440_OR-WA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Portland-Vancouver-Salem, OR-WA"
+        },
+        "444_CO": {
+            "bitmap-color": 165,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-444_CO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Pueblo-Ca\u00f1on City, CO"
+        },
+        "446_ID": {
+            "bitmap-color": 20,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-446_ID.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Pullman-Moscow, WA-ID"
+        },
+        "448_IL_MO": {
+            "bitmap-color": 97,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-448_IL-MO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Quincy-Hannibal, IL-MO"
+        },
+        "450_NC": {
+            "bitmap-color": 1,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-450_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Raleigh-Durham-Chapel Hill, NC"
+        },
+        "452_SD": {
+            "bitmap-color": 31,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-452_SD.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Rapid City-Spearfish, SD"
+        },
+        "454_CA": {
+            "bitmap-color": 149,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-454_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Redding-Red Bluff, CA"
+        },
+        "456_NV": {
+            "bitmap-color": 17,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-456_NV.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Reno-Carson City-Fernley, NV"
+        },
+        "458_IN": {
+            "bitmap-color": 154,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-458_IN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Richmond-Connersville, IN"
+        },
+        "462_MN": {
+            "bitmap-color": 80,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-462_MN.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Rochester-Austin, MN"
+        },
+        "464_NY": {
+            "bitmap-color": 169,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-464_NY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Rochester-Batavia-Seneca Falls, NY"
+        },
+        "466_IL": {
+            "bitmap-color": 37,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-466_IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Rockford-Freeport-Rochelle, IL"
+        },
+        "468_NC": {
+            "bitmap-color": 43,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-468_NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Rocky Mount-Wilson-Roanoke Rapids, NC"
+        },
+        "470_GA": {
+            "bitmap-color": 160,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-470_GA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Rome-Summerville, GA"
+        },
+        "472_CA": {
+            "bitmap-color": 27,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-472_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Sacramento-Roseville, CA"
+        },
+        "474_MI": {
+            "bitmap-color": 100,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-474_MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Saginaw-Midland-Bay City, MI"
+        },
+        "476_MO_IL": {
+            "bitmap-color": 124,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-476_MO-IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "St. Louis-St. Charles-Farmington, MO-IL"
+        },
+        "482_UT": {
+            "bitmap-color": 33,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-482_UT.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Salt Lake City-Provo-Orem, UT"
+        },
+        "488_CA": {
+            "bitmap-color": 15,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-488_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "San Jose-San Francisco-Oakland, CA"
+        },
+        "490_PR": {
+            "bitmap-color": 141,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-490_PR.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "San Juan-Carolina, PR"
+        },
+        "496_GA": {
+            "bitmap-color": 166,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-496_GA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Savannah-Hinesville-Statesboro, GA"
+        },
+        "500_WA": {
+            "bitmap-color": 103,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-500_WA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Seattle-Tacoma, WA"
+        },
+        "512_IA_SD_NE": {
+            "bitmap-color": 130,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-512_IA-SD-NE.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Sioux City-Vermillion, IA-SD-NE"
+        },
+        "515_IN_MI": {
+            "bitmap-color": 69,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-515_IN-MI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "South Bend-Elkhart-Mishawaka, IN-MI"
+        },
+        "518_WA_ID": {
+            "bitmap-color": 101,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-518_WA-ID.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Spokane-Spokane Valley-Coeur d'Alene, WA-ID"
+        },
+        "520_MO": {
+            "bitmap-color": 14,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-520_MO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Springfield-Branson, MO"
+        },
+        "521_MA": {
+            "bitmap-color": 143,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-521_MA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Springfield-Greenfield Town, MA"
+        },
+        "522_IL": {
+            "bitmap-color": 77,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-522_IL.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Springfield-Jacksonville-Lincoln, IL"
+        },
+        "524_PA": {
+            "bitmap-color": 83,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-524_PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "State College-DuBois, PA"
+        },
+        "525_CO": {
+            "bitmap-color": 128,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-525_CO.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Steamboat Springs-Craig, CO"
+        },
+        "532_NY": {
+            "bitmap-color": 22,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-532_NY.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Syracuse-Auburn, NY"
+        },
+        "533_FL_GA": {
+            "bitmap-color": 52,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-533_FL-GA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Tallahassee-Bainbridge, FL-GA"
+        },
+        "534_OH": {
+            "bitmap-color": 29,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-534_OH.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Toledo-Port Clinton, OH"
+        },
+        "536_AZ": {
+            "bitmap-color": 121,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-536_AZ.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Tucson-Nogales, AZ"
+        },
+        "538_OK": {
+            "bitmap-color": 110,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-538_OK.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Tulsa-Muskogee-Bartlesville, OK"
+        },
+        "540_TX": {
+            "bitmap-color": 40,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-540_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Tyler-Jacksonville, TX"
+        },
+        "544_TX": {
+            "bitmap-color": 2,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-544_TX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Victoria-Port Lavaca, TX"
+        },
+        "545_VA_NC": {
+            "bitmap-color": 48,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-545_VA-NC.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Virginia Beach-Norfolk, VA-NC"
+        },
+        "546_CA": {
+            "bitmap-color": 32,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-546_CA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Visalia-Porterville-Hanford, CA"
+        },
+        "548_DC_MD_VA_WV_PA": {
+            "bitmap-color": 65,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-548_DC-MD-VA-WV-PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA"
+        },
+        "554_WI": {
+            "bitmap-color": 119,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-554_WI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Wausau-Stevens Point-Wisconsin Rapids, WI"
+        },
+        "556_KS": {
+            "bitmap-color": 84,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-556_KS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Wichita-Arkansas City-Winfield, KS"
+        },
+        "558_PA": {
+            "bitmap-color": 129,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-558_PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Williamsport-Lock Haven, PA"
+        },
+        "566_OH_PA": {
+            "bitmap-color": 74,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-566_OH-PA.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Youngstown-Warren, OH-PA"
+        },
+        "GR205_RI": {
+            "bitmap-color": 205,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-GR205_RI.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Richmond, VA"
+        },
+        "GR224_PHX": {
+            "bitmap-color": 224,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-GR224_PHX.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Phoenix, AZ"
+        },
+        "GR227_SAND": {
+            "bitmap-color": 227,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-GR227_SAND.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "San Diego, CA"
+        },
+        "GR243_AUS": {
+            "bitmap-color": 243,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-GR243_AUS.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "Austin, TX"
+        },
+        "GR251_SAT": {
+            "bitmap-color": 251,
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-GR251_SAT.0.7.squeezed_quantized_acceptor.fst"
+            },
+            "long-name": "San Antonio, TX"
+        },
+        "001_TOR": {
+            "lat": 43.6532,
+            "lon": -79.3832,
+            "max-radius-km": 40,
+            "long-name": "Toronto, Ontario",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-001_TOR.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "002_MON": {
+            "lat": 45.508888,
+            "lon": -73.561668,
+            "max-radius-km": 70,
+            "long-name": "Montreal, Quebec",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-002_MON.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "003_CLG": {
+            "lat": 51.04427,
+            "lon": -114.062019,
+            "max-radius-km": 70,
+            "long-name": "Calgary, Alberta",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-003_CLG.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "004_OTW": {
+            "lat": 45.424721,
+            "lon": -75.695,
+            "max-radius-km": 85,
+            "long-name": "Ottawa, Ontario",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-004_OTW.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "005_EDM": {
+            "lat": 53.631611,
+            "lon": -113.323975,
+            "max-radius-km": 100,
+            "long-name": "Edmonton, Alberta",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-005_EDM.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "006_MIS": {
+            "lat": 43.59531,
+            "lon": -79.64058,
+            "max-radius-km": 20,
+            "long-name": "Mississauga, Ontario",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-006_MIS.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "007_WIN": {
+            "lat": 49.895077,
+            "lon": -97.138451,
+            "max-radius-km": 50,
+            "long-name": "Winnipeg, Manitoba",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-007_WIN.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "008_VAN": {
+            "lat": 49.246292,
+            "lon": -123.116226,
+            "max-radius-km": 50,
+            "long-name": "Vancouver, British Columbia",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-008_VAN.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "009_HMT": {
+            "lat": 43.255203,
+            "lon": -79.843826,
+            "max-radius-km": 40,
+            "long-name": "Hamilton, Ontario",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-009_HMT.0.7.squeezed_quantized_acceptor.fst"
+            }
+        },
+        "010_QBC": {
+            "lat": 46.829853,
+            "lon": -71.254028,
+            "max-radius-km": 60,
+            "long-name": "Quebec, Quebec",
+            "model-map": {
+                "\\GeoBizName": "./graph/production/slotLM/CS-GeoBizName-010_QBC.0.7.squeezed_quantized_acceptor.fst"
+            }
+        }
+    },
+    "regions-bitmap": {
+        "bitmap-file": "regions-bitmap.pgm",
+        "lat-bottom": 17.880843,
+        "lat-top": 49.000843,
+        "lon-left": -124.041983,
+        "lon-right": -65.561983
+    }
+}

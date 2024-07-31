@@ -1,0 +1,315 @@
+{
+  "storage" : "wavernn_h256_s0.0_fp32.fused_subscale_sparse.gumbel.16.espresso.weights",
+  "properties" : {
+    "disable_all_tracepoints" : "1"
+  },
+  "format_version" : 200,
+  "layers" : [
+    {
+      "k" : 2,
+      "bottom" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1,
+      "nd_rank" : 3,
+      "constant_blob" : 1,
+      "top" : "O1_bias_s",
+      "w" : 128,
+      "type" : "load_constant",
+      "name" : "load_constant_0"
+    },
+    {
+      "k" : 2,
+      "bottom" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1,
+      "nd_rank" : 3,
+      "constant_blob" : 3,
+      "top" : "O2_bias_s",
+      "w" : 256,
+      "type" : "load_constant",
+      "name" : "load_constant_1"
+    },
+    {
+      "end" : 80,
+      "bottom" : "input",
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "top" : "s8",
+      "type" : "slice",
+      "name" : "slice_0"
+    },
+    {
+      "end" : 0,
+      "bottom" : "input",
+      "start" : 80,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "top" : "s9",
+      "type" : "slice",
+      "name" : "slice_1"
+    },
+    {
+      "nB" : 80,
+      "top" : "preprocessed_frame",
+      "has_biases" : 1,
+      "blob_weights_f16" : 7,
+      "nC" : 768,
+      "weights" : {
+
+      },
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "compute_every" : 60,
+      "bottom" : "s8",
+      "blob_biases" : 5,
+      "has_tanh" : 0,
+      "name" : "inner_product_0",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 4,
+      "top" : "I",
+      "has_biases" : 0,
+      "name" : "inner_product_1",
+      "nC" : 768,
+      "weights" : {
+
+      },
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "s9",
+      "has_tanh" : 0,
+      "blob_weights_f16" : 9,
+      "has_prelu" : 0
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "I,preprocessed_frame",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s12",
+      "type" : "elementwise",
+      "name" : "elementwise_0",
+      "beta" : 0
+    },
+    {
+      "has_prelu" : 0,
+      "top" : "R1",
+      "has_biases" : 1,
+      "blob_weights_f16" : 13,
+      "nC" : 768,
+      "weights" : {
+
+      },
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "attributes" : {
+        "bnns_auto_sparse" : 1
+      },
+      "bottom" : "hidden_state",
+      "blob_biases" : 11,
+      "has_tanh" : 0,
+      "name" : "inner_product_2",
+      "nB" : 256
+    },
+    {
+      "mode" : 15,
+      "weights" : {
+
+      },
+      "top" : "output_new_hidden",
+      "type" : "activation",
+      "name" : "activation_0",
+      "bottom" : "hidden_state,R1,s12"
+    },
+    {
+      "bottom" : "output_new_hidden",
+      "cut" : 0,
+      "weights" : {
+
+      },
+      "n_outputs" : 2,
+      "top" : "s15,s16",
+      "type" : "split",
+      "name" : "split_0"
+    },
+    {
+      "axis" : 2,
+      "weights" : {
+
+      },
+      "top" : "h_t",
+      "type" : "general_concat",
+      "name" : "general_concat_0",
+      "bottom" : "s15,s16"
+    },
+    {
+      "has_prelu" : 0,
+      "top" : "O1",
+      "has_biases" : 0,
+      "blob_weights_f16" : 15,
+      "nC" : 128,
+      "weights" : {
+
+      },
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "attributes" : {
+        "bnns_auto_sparse" : 1
+      },
+      "bottom" : "h_t",
+      "has_tanh" : 0,
+      "name" : "inner_product_3",
+      "nB" : 128
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "O1,O1_bias_s",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 1,
+      "top" : "O1_bias",
+      "type" : "elementwise",
+      "name" : "elementwise_1",
+      "beta" : 0
+    },
+    {
+      "has_prelu" : 0,
+      "top" : "O2",
+      "has_biases" : 0,
+      "blob_weights_f16" : 17,
+      "nC" : 256,
+      "weights" : {
+
+      },
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "attributes" : {
+        "bnns_auto_sparse" : 1
+      },
+      "bottom" : "O1_bias",
+      "has_tanh" : 0,
+      "name" : "inner_product_4",
+      "nB" : 128
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "O2,O2_bias_s",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "O2_bias",
+      "type" : "elementwise",
+      "name" : "elementwise_2",
+      "beta" : 0
+    },
+    {
+      "bottom" : "O2_bias",
+      "weights" : {
+
+      },
+      "eps" : 0.01,
+      "top" : "bit",
+      "type" : "gumbel_max", "bnns_buffer_size" : 4096,
+      "name" : "softmax_0@gumbel_max",
+      "use_bnns" : true
+    },
+    {
+      "alpha" : 0.0078431377187371254,
+      "bottom" : "bit",
+      "operation" : 3,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s24",
+      "type" : "elementwise",
+      "name" : "elementwise_3",
+      "beta" : 0
+    },
+    {
+      "alpha" : -1,
+      "bottom" : "s24",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "bit_scaled",
+      "type" : "elementwise",
+      "name" : "elementwise_4",
+      "beta" : 0
+    },
+    {
+      "end" : 1,
+      "bottom" : "bit",
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "top" : "o1_bit",
+      "type" : "slice",
+      "name" : "slice_2"
+    },
+    {
+      "end" : 2,
+      "bottom" : "bit",
+      "start" : 1,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "top" : "o2_bit",
+      "type" : "slice",
+      "name" : "slice_3"
+    },
+    {
+      "end" : 1,
+      "bottom" : "bit_scaled",
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "top" : "o1_bit_scaled",
+      "type" : "slice",
+      "name" : "slice_4"
+    },
+    {
+      "end" : 2,
+      "bottom" : "bit_scaled",
+      "start" : 1,
+      "weights" : {
+
+      },
+      "axis" : 2,
+      "top" : "o2_bit_scaled",
+      "type" : "slice",
+      "name" : "slice_5"
+    }
+  ]
+}

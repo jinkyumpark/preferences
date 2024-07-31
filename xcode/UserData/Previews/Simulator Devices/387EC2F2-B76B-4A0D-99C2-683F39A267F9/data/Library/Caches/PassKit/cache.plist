@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CanSendPeerPayments</key>
+	<false/>
+	<key>ContactlessPassesAvailable</key>
+	<false/>
+	<key>ContactlessPaymentPassesAvailable</key>
+	<false/>
+	<key>IgnoringUbiquity</key>
+	<true/>
+	<key>PDDiscoveryRulesNeedLocationCacheKey</key>
+	<true/>
+	<key>PDDiscoveryRulesNeedPlacemarkCacheKey</key>
+	<true/>
+	<key>PeerPaymentHasCashFamily</key>
+	<false/>
+	<key>PeerPaymentIsSetup</key>
+	<false/>
+	<key>PeerPaymentMessagesExtensionVisible</key>
+	<true/>
+	<key>PeerPaymentSupportsManatee</key>
+	<false/>
+	<key>RegisteredForPeerPayments</key>
+	<false/>
+	<key>_PDUserNotificationIconStoreVersionKey</key>
+	<integer>1</integer>
+</dict>
+</plist>

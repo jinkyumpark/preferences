@@ -1,0 +1,21 @@
+{
+  "atomicEntries" : [
+    {
+      "assetID" : "9e777e77da255fa8203c90e0c55ca0a147f1b0a3",
+      "fullAssetSelector" : {
+        "assetSpecifier" : "com.apple.siri.asr.hammer.en_US",
+        "assetVersion" : "3100.2001.208.100.88,0"
+      },
+      "inhibitedFromEmergencyRemoval" : false,
+      "localContentURL" : "/Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator%20Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/private/var/MobileAsset/AssetsV2/com_apple_MobileAsset_UAF_Siri_UnderstandingASRHammer/purpose_auto/9e777e77da255fa8203c90e0c55ca0a147f1b0a3.asset/AssetData"
+    }
+  ],
+  "atomicInstance" : "96D8EE54-BB13-4DC7-B55F-261DAB04EB19",
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.asr.hammer"
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "locked",
+    "timestamp" : "2024-07-19T04:12:42.828Z"
+  }
+}

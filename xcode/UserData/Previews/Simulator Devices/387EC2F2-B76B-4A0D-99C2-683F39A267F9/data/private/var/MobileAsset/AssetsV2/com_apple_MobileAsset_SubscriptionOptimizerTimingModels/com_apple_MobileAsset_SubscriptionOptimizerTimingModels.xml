@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AssetType</key>
+	<string>com.apple.MobileAsset.SubscriptionOptimizerTimingModels</string>
+	<key>Assets</key>
+	<array>
+		<dict>
+			<key>AssetType</key>
+			<string>com.apple.MobileAsset.SubscriptionOptimizerTimingModels</string>
+			<key>Build</key>
+			<string>10M5359</string>
+			<key>Ramp</key>
+			<false/>
+			<key>_CompatibilityVersion</key>
+			<string>1.2.0</string>
+			<key>_CompressionAlgorithm</key>
+			<string>zip</string>
+			<key>_DownloadSize</key>
+			<integer>70328</integer>
+			<key>_IsZipStreamable</key>
+			<true/>
+			<key>_MasteredVersion</key>
+			<string>5359</string>
+			<key>_Measurement</key>
+			<data>
+			5o1iQ2kHIaOnjQtgZfMtCZ+MNZo=
+			</data>
+			<key>_MeasurementAlgorithm</key>
+			<string>SHA-1</string>
+			<key>_UnarchivedSize</key>
+			<integer>556032</integer>
+			<key>__BaseURL</key>
+			<string>https://updates.cdn-apple.com/2023/patches/052-12800/F2633EC6-38BD-4FF0-9BF5-DD3D4F33DDCB/</string>
+			<key>__CanUseLocalCacheServer</key>
+			<true/>
+			<key>__RelativePath</key>
+			<string>com_apple_MobileAsset_SubscriptionOptimizerTimingModels/70ab42af34815bbe5eacd0f756349a99b4bde492.zip</string>
+			<key>__override_dupe__</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CachedAssetSetId</key>
+	<string>e0c5fd30-da0f-4a1d-a623-853c0bdc19c9</string>
+	<key>DownloadedFromLive</key>
+	<string>https://gdmf.apple.com/v2/assets</string>
+	<key>catalogInfo</key>
+	<dict>
+		<key>isLiveServer</key>
+		<true/>
+	</dict>
+	<key>lastTimeChecked</key>
+	<date>2024-07-19T08:10:29Z</date>
+	<key>postedDate</key>
+	<date>2023-12-05T00:00:00Z</date>
+</dict>
+</plist>

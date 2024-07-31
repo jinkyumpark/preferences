@@ -1,0 +1,536 @@
+HEADER_BEGIN
+VERSION 1
+FILE_TYPE TknPattern
+
+FILE_VERSION 3
+
+
+
+CODEPAGE UTF-8
+HEADER_END
+
+
+Digit =
+{
+Name = "Default"
+0 = "zero"
+0 = "oh"
+1 = "one\\number"
+2 = "two"
+3 = "three"
+4 = "four"
+5 = "five"
+6 = "six"
+7 = "seven"
+8 = "eight"
+9 = "nine"
+}
+Array =
+{
+Name = "Chunk"
+0 = "zero"
+1 = "one\\number"
+2 = "two"
+3 = "three"
+4 = "four"
+5 = "five"
+6 = "six"
+7 = "seven"
+8 = "eight"
+9 = "nine"
+10 = "ten"
+11 = "eleven"
+12 = "twelve"
+13 = "thirteen"
+14 = "fourteen"
+15 = "fifteen"
+16 = "sixteen"
+17 = "seventeen"
+18 = "eighteen"
+19 = "nineteen"
+20 = "twenty"
+21 = {"twenty" "one\\number"}
+22 = {"twenty" "two"}
+23 = {"twenty" "three"}
+24 = {"twenty" "four"}
+25 = {"twenty" "five"}
+26 = {"twenty" "six"}
+27 = {"twenty" "seven"}
+28 = {"twenty" "eight"}
+29 = {"twenty" "nine"}
+30 = "thirty"
+31 = {"thirty" "one\\number"}
+32 = {"thirty" "two"}
+33 = {"thirty" "three"}
+34 = {"thirty" "four"}
+35 = {"thirty" "five"}
+36 = {"thirty" "six"}
+37 = {"thirty" "seven"}
+38 = {"thirty" "eight"}
+39 = {"thirty" "nine"}
+40 = "forty"
+41 = {"forty" "one\\number"}
+42 = {"forty" "two"}
+43 = {"forty" "three"}
+44 = {"forty" "four"}
+45 = {"forty" "five"}
+46 = {"forty" "six"}
+47 = {"forty" "seven"}
+48 = {"forty" "eight"}
+49 = {"forty" "nine"}
+50 = "fifty"
+51 = {"fifty" "one\\number"}
+52 = {"fifty" "two"}
+53 = {"fifty" "three"}
+54 = {"fifty" "four"}
+55 = {"fifty" "five"}
+56 = {"fifty" "six"}
+57 = {"fifty" "seven"}
+58 = {"fifty" "eight"}
+59 = {"fifty" "nine"}
+60 = "sixty"
+61 = {"sixty" "one\\number"}
+62 = {"sixty" "two"}
+63 = {"sixty" "three"}
+64 = {"sixty" "four"}
+65 = {"sixty" "five"}
+66 = {"sixty" "six"}
+67 = {"sixty" "seven"}
+68 = {"sixty" "eight"}
+69 = {"sixty" "nine"}
+70 = "seventy"
+71 = {"seventy" "one\\number"}
+72 = {"seventy" "two"}
+73 = {"seventy" "three"}
+74 = {"seventy" "four"}
+75 = {"seventy" "five"}
+76 = {"seventy" "six"}
+77 = {"seventy" "seven"}
+78 = {"seventy" "eight"}
+79 = {"seventy" "nine"}
+80 = "eighty"
+81 = {"eighty" "one\\number"}
+82 = {"eighty" "two"}
+83 = {"eighty" "three"}
+84 = {"eighty" "four"}
+85 = {"eighty" "five"}
+86 = {"eighty" "six"}
+87 = {"eighty" "seven"}
+88 = {"eighty" "eight"}
+89 = {"eighty" "nine"}
+90 = "ninety"
+91 = {"ninety" "one\\number"}
+92 = {"ninety" "two"}
+93 = {"ninety" "three"}
+94 = {"ninety" "four"}
+95 = {"ninety" "five"}
+96 = {"ninety" "six"}
+97 = {"ninety" "seven"}
+98 = {"ninety" "eight"}
+99 = {"ninety" "nine"}
+}
+Array =
+{
+Name = "ChunkMagnitude"
+20 = "hundred"
+30 = "thousand"
+60 = "million"
+90 = "billion"
+120 = "trillion"
+150 = "quadrillion"
+180 = "quintillion"
+}
+Array =
+{
+Name = "AltChunkMagnitude"
+20 = "hundred"
+}
+Counting =
+{
+Name = "Cardinal"
+EnxAnd = "and"
+DigitGrouping = "3"
+Chunk = "Chunk"
+ChunkMagnitude = "ChunkMagnitude"
+Ending = "Chunk"
+EndingMagnitude = "ChunkMagnitude"
+}
+Counting =
+{
+Name = "AltCardinal"
+EnxAnd = "and"
+DigitGrouping = "2"
+Chunk = "Chunk"
+ChunkMagnitude = "AltChunkMagnitude"
+Ending = "Chunk"
+EndingMagnitude = "AltChunkMagnitude"
+}
+Array =
+{
+Name = "OrdinalEnding"
+0 = "zeroth"
+1 = "first"
+2 = "second"
+3 = "third"
+4 = "fourth"
+5 = "fifth"
+6 = "sixth"
+7 = "seventh"
+8 = "eighth"
+9 = "ninth"
+10 = "tenth"
+11 = "eleventh"
+12 = "twelfth"
+13 = "thirteenth"
+14 = "fourteenth"
+15 = "fifteenth"
+16 = "sixteenth"
+17 = "seventeenth"
+18 = "eighteenth"
+19 = "nineteenth"
+20 = "twentieth"
+21 = {"twenty" "first"}
+22 = {"twenty" "second"}
+23 = {"twenty" "third"}
+24 = {"twenty" "fourth"}
+25 = {"twenty" "fifth"}
+26 = {"twenty" "sixth"}
+27 = {"twenty" "seventh"}
+28 = {"twenty" "eighth"}
+29 = {"twenty" "ninth"}
+30 = "thirtieth"
+31 = {"thirty" "first"}
+32 = {"thirty" "second"}
+33 = {"thirty" "third"}
+34 = {"thirty" "fourth"}
+35 = {"thirty" "fifth"}
+36 = {"thirty" "sixth"}
+37 = {"thirty" "seventh"}
+38 = {"thirty" "eighth"}
+39 = {"thirty" "ninth"}
+40 = "fortieth"
+41 = {"forty" "first"}
+42 = {"forty" "second"}
+43 = {"forty" "third"}
+44 = {"forty" "fourth"}
+45 = {"forty" "fifth"}
+46 = {"forty" "sixth"}
+47 = {"forty" "seventh"}
+48 = {"forty" "eighth"}
+49 = {"forty" "ninth"}
+50 = "fiftieth"
+51 = {"fifty" "first"}
+52 = {"fifty" "second"}
+53 = {"fifty" "third"}
+54 = {"fifty" "fourth"}
+55 = {"fifty" "fifth"}
+56 = {"fifty" "sixth"}
+57 = {"fifty" "seventh"}
+58 = {"fifty" "eighth"}
+59 = {"fifty" "ninth"}
+60 = "sixtieth"
+61 = {"sixty" "first"}
+62 = {"sixty" "second"}
+63 = {"sixty" "third"}
+64 = {"sixty" "fourth"}
+65 = {"sixty" "fifth"}
+66 = {"sixty" "sixth"}
+67 = {"sixty" "seventh"}
+68 = {"sixty" "eighth"}
+69 = {"sixty" "ninth"}
+70 = "seventieth"
+71 = {"seventy" "first"}
+72 = {"seventy" "second"}
+73 = {"seventy" "third"}
+74 = {"seventy" "fourth"}
+75 = {"seventy" "fifth"}
+76 = {"seventy" "sixth"}
+77 = {"seventy" "seventh"}
+78 = {"seventy" "eighth"}
+79 = {"seventy" "ninth"}
+80 = "eightieth"
+81 = {"eighty" "first"}
+82 = {"eighty" "second"}
+83 = {"eighty" "third"}
+84 = {"eighty" "fourth"}
+85 = {"eighty" "fifth"}
+86 = {"eighty" "sixth"}
+87 = {"eighty" "seventh"}
+88 = {"eighty" "eighth"}
+89 = {"eighty" "ninth"}
+90 = "ninetieth"
+91 = {"ninety" "first"}
+92 = {"ninety" "second"}
+93 = {"ninety" "third"}
+94 = {"ninety" "fourth"}
+95 = {"ninety" "fifth"}
+96 = {"ninety" "sixth"}
+97 = {"ninety" "seventh"}
+98 = {"ninety" "eighth"}
+99 = {"ninety" "ninth"}
+}
+Array =
+{
+Name = "OrdinalEndingMagnitude"
+20 = "hundredth"
+30 = "thousandth"
+60 = "millionth"
+90 = "billionth"
+120 = "trillionth"
+150 = "quadrillionth"
+180 = "quintillionth"
+}
+Counting =
+{
+Name = "Ordinal"
+EnxAnd = "and"
+DigitGrouping = "3"
+Chunk = "Chunk"
+ChunkMagnitude = "ChunkMagnitude"
+Ending = "OrdinalEnding"
+EndingMagnitude = "OrdinalEndingMagnitude"
+}
+Array =
+{
+Name = "AltOrdinalEndingMagnitude"
+20 = "hundredth"
+}
+Counting =
+{
+Name = "AltOrdinal"
+EnxAnd = "and"
+DigitGrouping = "2"
+Chunk = "Chunk"
+ChunkMagnitude = "AltChunkMagnitude"
+Ending = "OrdinalEnding"
+EndingMagnitude = "AltOrdinalEndingMagnitude"
+}
+Array =
+{
+Name = "SingularDenominatorWhole"
+1 = "first"
+2 = "half"
+4 = "quarter"
+4 = "fourth"
+100 = "hundredth"
+100 = {"one\\number" "hundredth"}
+}
+Counting =
+{
+Name = "SingularDenominator"
+EnxAnd = "and"
+DigitGrouping = "3"
+Chunk = "Chunk"
+ChunkMagnitude = "ChunkMagnitude"
+Ending = "OrdinalEnding"
+EndingMagnitude = "OrdinalEndingMagnitude"
+Whole = "SingularDenominatorWhole"
+}
+Counting =
+{
+Name = "AltSingularDenominator"
+EnxAnd = "and"
+DigitGrouping = "2"
+Chunk = "Chunk"
+ChunkMagnitude = "AltChunkMagnitude"
+Ending = "OrdinalEnding"
+EndingMagnitude = "AltOrdinalEndingMagnitude"
+Whole = "SingularDenominatorWhole"
+}
+Array =
+{
+Name = "PluralOrdinalEnding"
+0 = "zeroths"
+1 = "firsts"
+2 = "seconds"
+3 = "thirds"
+4 = "fourths"
+5 = "fifths"
+6 = "sixths"
+7 = "sevenths"
+8 = "eighths"
+9 = "ninths"
+10 = "tenths"
+11 = "elevenths"
+12 = "twelfths"
+13 = "thirteenths"
+14 = "fourteenths"
+15 = "fifteenths"
+16 = "sixteenths"
+17 = "seventeenths"
+18 = "eighteenths"
+19 = "nineteenths"
+20 = "twentieths"
+21 = {"twenty" "firsts"}
+22 = {"twenty" "seconds"}
+23 = {"twenty" "thirds"}
+24 = {"twenty" "fourths"}
+25 = {"twenty" "fifths"}
+26 = {"twenty" "sixths"}
+27 = {"twenty" "sevenths"}
+28 = {"twenty" "eighths"}
+29 = {"twenty" "ninths"}
+30 = "thirtieths"
+31 = {"thirty" "firsts"}
+32 = {"thirty" "seconds"}
+33 = {"thirty" "thirds"}
+34 = {"thirty" "fourths"}
+35 = {"thirty" "fifths"}
+36 = {"thirty" "sixths"}
+37 = {"thirty" "sevenths"}
+38 = {"thirty" "eighths"}
+39 = {"thirty" "ninths"}
+40 = "fortieths"
+41 = {"forty" "firsts"}
+42 = {"forty" "seconds"}
+43 = {"forty" "thirds"}
+44 = {"forty" "fourths"}
+45 = {"forty" "fifths"}
+46 = {"forty" "sixths"}
+47 = {"forty" "sevenths"}
+48 = {"forty" "eighths"}
+49 = {"forty" "ninths"}
+50 = "fiftieths"
+51 = {"fifty" "firsts"}
+52 = {"fifty" "seconds"}
+53 = {"fifty" "thirds"}
+54 = {"fifty" "fourths"}
+55 = {"fifty" "fifths"}
+56 = {"fifty" "sixths"}
+57 = {"fifty" "sevenths"}
+58 = {"fifty" "eighths"}
+59 = {"fifty" "ninths"}
+60 = "sixtieths"
+61 = {"sixty" "firsts"}
+62 = {"sixty" "seconds"}
+63 = {"sixty" "thirds"}
+64 = {"sixty" "fourths"}
+65 = {"sixty" "fifths"}
+66 = {"sixty" "sixths"}
+67 = {"sixty" "sevenths"}
+68 = {"sixty" "eighths"}
+69 = {"sixty" "ninths"}
+70 = "seventieths"
+71 = {"seventy" "firsts"}
+72 = {"seventy" "seconds"}
+73 = {"seventy" "thirds"}
+74 = {"seventy" "fourths"}
+75 = {"seventy" "fifths"}
+76 = {"seventy" "sixths"}
+77 = {"seventy" "sevenths"}
+78 = {"seventy" "eighths"}
+79 = {"seventy" "ninths"}
+80 = "eightieths"
+81 = {"eighty" "firsts"}
+82 = {"eighty" "seconds"}
+83 = {"eighty" "thirds"}
+84 = {"eighty" "fourths"}
+85 = {"eighty" "fifths"}
+86 = {"eighty" "sixths"}
+87 = {"eighty" "sevenths"}
+88 = {"eighty" "eighths"}
+89 = {"eighty" "ninths"}
+90 = "ninetieths"
+91 = {"ninety" "firsts"}
+92 = {"ninety" "seconds"}
+93 = {"ninety" "thirds"}
+94 = {"ninety" "fourths"}
+95 = {"ninety" "fifths"}
+96 = {"ninety" "sixths"}
+97 = {"ninety" "sevenths"}
+98 = {"ninety" "eighths"}
+99 = {"ninety" "ninths"}
+}
+Array =
+{
+Name = "PluralOrdinalEndingMagnitude"
+20 = "hundredths"
+30 = "thousandths"
+60 = "millionths"
+90 = "billionths"
+120 = "trillionths"
+150 = "quadrillionths"
+180 = "quintillionths"
+}
+Array =
+{
+Name = "PluralDenominatorWhole"
+1 = "firsts"
+2 = "halves"
+4 = "quarters"
+4 = "fourths"
+100 = "hundredths"
+100 = {"one\\number" "hundredths"}
+}
+Counting =
+{
+Name = "PluralDenominator"
+EnxAnd = "and"
+DigitGrouping = "3"
+Chunk = "Chunk"
+ChunkMagnitude = "ChunkMagnitude"
+Ending = "PluralOrdinalEnding"
+EndingMagnitude = "PluralOrdinalEndingMagnitude"
+Whole = "PluralDenominatorWhole"
+}
+Array =
+{
+Name = "AltPluralOrdinalEndingMagnitude"
+20 = "hundredths"
+}
+Counting =
+{
+Name = "AltPluralDenominator"
+EnxAnd = "and"
+DigitGrouping = "2"
+Chunk = "Chunk"
+ChunkMagnitude = "AltChunkMagnitude"
+Ending = "PluralOrdinalEnding"
+EndingMagnitude = "AltPluralOrdinalEndingMagnitude"
+Whole = "PluralDenominatorWhole"
+}
+Array =
+{
+Name = "Month"
+1 = "January"
+2 = "February"
+3 = "March"
+4 = "April"
+5 = "May"
+6 = "June"
+7 = "July"
+8 = "August"
+9 = "September"
+10 = "October"
+11 = "November"
+12 = "December"
+}
+Array =
+{
+Name = "ApoSTens"
+0 = "hundreds"
+1 = "tens"
+2 = "twenties"
+3 = "thirties"
+4 = "forties"
+5 = "fifties"
+6 = "sixties"
+7 = "seventies"
+8 = "eighties"
+9 = "nineties"
+}
+Array =
+{
+Name = "ApoSOnes"
+0 = "zeros"
+1 = "ones"
+2 = "twos"
+3 = "threes"
+4 = "fours"
+5 = "fives"
+6 = "sixes"
+7 = "sevens"
+8 = "eights"
+9 = "nines"
+}
+ 

@@ -1,0 +1,1 @@
+(function(){return["virtu.l(?!\\sreality)","online","webinar","stream","web","asynchronous","en l\xednea","en ligne","^Digital Event$"]}).call();

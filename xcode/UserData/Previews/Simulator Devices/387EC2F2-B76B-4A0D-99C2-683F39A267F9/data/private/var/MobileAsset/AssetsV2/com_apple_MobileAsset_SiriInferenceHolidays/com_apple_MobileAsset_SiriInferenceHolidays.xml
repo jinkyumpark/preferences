@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AssetType</key>
+	<string>com.apple.MobileAsset.SiriInferenceHolidays</string>
+	<key>Assets</key>
+	<array>
+		<dict>
+			<key>__Empty</key>
+			<string>Empty</string>
+		</dict>
+	</array>
+	<key>Certificate</key>
+	<data>
+	MIID7TCCAtWgAwIBAgIBLTANBgkqhkiG9w0BAQUFADB5MQswCQYDVQQGEwJVUzETMBEG
+	A1UEChMKQXBwbGUgSW5jLjEmMCQGA1UECxMdQXBwbGUgQ2VydGlmaWNhdGlvbiBBdXRo
+	b3JpdHkxLTArBgNVBAMTJEFwcGxlIGlQaG9uZSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0
+	eTAeFw0xMTA3MTQyMjMyNDhaFw0xODA3MTQyMjMyNDhaMGYxCzAJBgNVBAYTAlVTMRMw
+	EQYDVQQKEwpBcHBsZSBJbmMuMSEwHwYDVQQLExhBcHBsZSBpT1MgQXNzZXQgTWFuaWZl
+	c3QxHzAdBgNVBAMTFkFzc2V0IE1hbmlmZXN0IFNpZ25pbmcwggEiMA0GCSqGSIb3DQEB
+	AQUAA4IBDwAwggEKAoIBAQC1y4D4VYBPHLwnHk1qfi1F49E3Ml675ElYYAFghqpAiKOq
+	eagLVZU8zKuPw650NHACvNJbjKBjMsWdWaFMj/7c2TB5IkJwi61Y6B+uVK78W9u9I/hF
+	AK0pWcM9Y5KbKMvz4wEwt64EXfS8eVBRmqh/29ygxN9NtBbHEiGiGQ8vxIV3U6FomNdm
+	xKPM7VZmsyFIxQ5HsxgHb0skxlDIdePtYsHLmpK9PX43K3sBT3lHN0Uxtit8HTrdwiNq
+	13cI0TINT+lsbXKLp3/gPJVpfxkQ3MTt40KG/DTMsqKOygDombsFSqA+RPSv68YtJ/kA
+	aGaoH6gZfRrwX7GJozzQ8KTZAgMBAAGjgZIwgY8wDgYDVR0PAQH/BAQDAgeAMAkGA1Ud
+	EwQCMAAwHQYDVR0OBBYEFGNQxP6y1Ao4Hrhid6BcMLwcrB3BMDgGA1UdHwQxMC8wLaAr
+	oCmGJ2h0dHA6Ly93d3cuYXBwbGUuY29tL2FwcGxlY2EvaXBob25lLmNybDAZBgNVHSAB
+	Af8EDzANMAsGCSqGSIb3Y2QFCDANBgkqhkiG9w0BAQUFAAOCAQEAn6Cj4XjlScRIh1wP
+	F8BLCz/dl6CskbTsJXz24tCDm3gcvb1Ovc+sBeg1JyvHiy2C4NxEGDYsVYHvUbucXrGd
+	ul6kKauOYcEzpogk56BIRenKHivAqQQtNJpVmqrElgqDntI/az2Gsw32TLWyDXVw8rWi
+	vchZE+VOv1mT4a7LHsdxMWbEOIrkvkZUOoxZlQhjPCc22mp0Yy5rwcf+3/IwJGOhJSXO
+	VrcxuOwmweNrK1Eajn+HS2IlnMBwQDkH/d74KUXGvuNX0LsXv9cCQMB8tcjFlr1u+Szo
+	XCHD1SJkU4ex3auhnukYSoiag78twmDRk726aYmxNIfYYpDs0hS7Mw==
+	</data>
+	<key>DownloadedFrom</key>
+	<string>https://mesu.apple.com/assets/</string>
+	<key>DownloadedFromXml</key>
+	<string>https://mesu.apple.com/assets/com_apple_MobileAsset_SiriInferenceHolidays/com_apple_MobileAsset_SiriInferenceHolidays.xml</string>
+	<key>FormatVersion</key>
+	<integer>1</integer>
+	<key>Signature</key>
+	<data>
+	k2oqGmxYvMb1o9tYRgJc1bnd91bkQ8UBKL5mnsh9A1R14TTAlx28fUkewqTK1kEbI+s4
+	kAGxYKBqsug/qbYYnq1aljCj8Z6d/OyOF/wOFc6HavtyBvOf5UB7wgIqXgkjfk3ii4+c
+	OcMqyYr9QRM7Tw5dnw1Z4lutWlWXNNs6ZxYbPgKtaAgt0csaXEY4E/m/S6uaefzcY3Wo
+	rFXp3V8MitEVpWCPePsK4Xc7hzHmPJ8adGVBvKNs5BucUURO+zMuY5JmtMcC4dCnb7s1
+	YP9zihSJGpjiD5qEyg4cPOavJncDWhw9dwzZiMLWJh3aJYJ3xw1lIRBjFwWSLV5LPLIu
+	Ow==
+	</data>
+	<key>SigningKey</key>
+	<string>AssetManifestSigning</string>
+	<key>catalogInfo</key>
+	<dict>
+		<key>isLiveServer</key>
+		<false/>
+	</dict>
+	<key>lastTimeChecked</key>
+	<date>2024-07-21T03:17:21Z</date>
+	<key>postedDate</key>
+	<date>2021-09-27T17:06:51Z</date>
+</dict>
+</plist>

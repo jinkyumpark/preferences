@@ -1,0 +1,1689 @@
+{
+    "version-major": 273,
+    "version-minor": 0,
+    "model-info": {
+        "version": "eng-USA-ondeviceiOS-10.2.0.0-20240628-ax8p5htsye-full",
+        "language": "en_US",
+        "sampling-rates": [
+            8000,
+            16000
+        ],
+        "tasks": [
+            "SearchOrMessaging",
+            "Dictation",
+            "SiriDictation",
+            "DictationCC",
+            "SpellCC",
+            "VoiceMail",
+            "WebSearch",
+            "Captioning"
+        ],
+        "phoneset-version": "ENU54",
+        "acoustic-profile-version": "qsr-DNN-NOADAPT-1.0",
+        "os-types": [
+            "*"
+        ],
+        "acoustic-model-version": "10.2.0.0"
+    },
+    "recognizers": {
+        "16000 :: SearchOrMessaging :: * :: * :: true": "Conformer-8k :: atypical-conformer :: atypical-siri-conformer",
+        "16000 :: SearchOrMessaging :: * :: * :: *": "Conformer-8k :: conformer :: siri-conformer",
+        "8000 :: SearchOrMessaging :: * :: * :: true": "Conformer-8k :: conformer :: btsiri-conformer",
+        "8000 :: SearchOrMessaging :: * :: * :: *": "Conformer-8k :: conformer :: btsiri-conformer",
+        "8000|16000 :: Dictation :: * :: * :: true": "Conformer-8k :: atypical-conformer-msg :: atypical-msg-conformer",
+        "8000|16000 :: Dictation :: * :: * :: *": "Conformer-8k :: conformer-msg :: msg-conformer",
+        "8000|16000 :: SiriDictation :: * :: * :: true": "Conformer-8k :: conformer-msg :: siri-msg-conformer",
+        "8000|16000 :: SiriDictation :: * :: * :: *": "Conformer-8k :: conformer-msg :: siri-msg-conformer",
+        "8000|16000 :: DictationCC :: * :: * :: *": "Conformer-8k :: conformer-msg :: msg-cc-conformer",
+        "8000|16000 :: SpellCC :: * :: * :: *": "Conformer-8k :: conformer-spell-cc :: spell-cc-conformer",
+        "8000|16000 :: VoiceMail :: * :: * :: *": "Conformer-8k :: conformer-msg :: vm-conformer",
+        "16000 :: WebSearch :: * :: * :: *": "Conformer-8k :: conformer :: siri-conformer",
+        "8000 :: WebSearch :: * :: * :: *": "Conformer-8k :: conformer :: btsiri-conformer",
+        "8000|16000 :: Captioning :: * :: * :: *": "Conformer-8k :: conformer-captioning :: captioning-conformer"
+    },
+    "frontends": {
+        "Conformer-8k": {
+            "fbank-with-audio-analytics": {
+                "dither": 1,
+                "num-mel-bins": 80,
+                "resample-freq": 16000,
+                "resample-cutoff-hz": 3999,
+                "resample-num-zeros": 10,
+                "pitch-viterbi-window": 50,
+                "low-watermark": 1
+            },
+            "cache-input": {
+                "cache-data": 0,
+                "cache-analytics": 1
+            },
+            "am-fusion-encoder": {
+                "model-file": "./AM-Conformer/espresso/encoder/model.mil",
+                "num-silence-padding-frames": 20,
+                "silence-vector-file": "./AM-Conformer/silence-fbank.txt",
+                "fusion-am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "fusion-sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl"
+            },
+            "compute-ahead-input": {}
+        }
+    },
+    "decodables": {
+        "conformer": {
+            "matrix-scaled-mapped": {
+                "am-file": "./AM-Conformer/final.mdl",
+                "am-scale": 1.2,
+                "cost-cutoff": 12
+            }
+        },
+        "conformer-msg": {
+            "matrix-scaled-mapped": {
+                "am-file": "./AM-Conformer/final.mdl",
+                "am-scale": 2.0,
+                "cost-cutoff": 12
+            }
+        },
+        "atypical-conformer": {
+            "matrix-scaled-mapped": {
+                "am-file": "./AM-Conformer/final.mdl",
+                "am-scale": 1.4,
+                "cost-cutoff": 16
+            }
+        },
+        "atypical-conformer-msg": {
+            "matrix-scaled-mapped": {
+                "am-file": "./AM-Conformer/final.mdl",
+                "am-scale": 2.0,
+                "cost-cutoff": 16
+            }
+        },
+        "conformer-spell-cc": {
+            "matrix-scaled-mapped": {
+                "am-file": "./AM-Conformer/final.mdl",
+                "am-scale": 1.2,
+                "cost-cutoff": 12
+            }
+        },
+        "conformer-captioning": {
+            "matrix-scaled-mapped": {
+                "am-file": "./AM-Conformer/final.mdl",
+                "am-scale": 2.0
+            }
+        }
+    },
+    "feature-read": {
+        "batch-size": 1,
+        "num-tries": 5
+    },
+    "voicemail-confidence-parameters": {
+        "segment-confidence-threshold": "0.484000",
+        "confidence-threshold": 0.7,
+        "low-quality-confidence-threshold": 0.8747729588139739
+    },
+    "eager": {
+        "backoff-silence-posterior": 0.7,
+        "backoff-silence-window": 3,
+        "backoff-stable-partials": 1,
+        "early-silence-posterior": 0.7,
+        "early-silence-window": 3,
+        "early-stable-partials": 1,
+        "max-triggers": 5,
+        "require-silence-posterior": true
+    },
+    "g2p": {
+        "model-version": 11,
+        "engine-type": "PDEC",
+        "beam": 4,
+        "max-seq-length": 100,
+        "veto-factor": 0.5,
+        "lm-model-file": "",
+        "lm-weight": 0.01,
+        "model-file": "./G2P/en_US_OfflineIOS.lstm.nnet.bin",
+        "enable-file-memory-lock": true,
+        "num-best": 4
+    },
+    "text-proc": {
+        "itn2": {
+            "default": {
+                "action-fst-directory": "./TP/tantor/hybrid_coreml/action_fsts",
+                "cluster-id-file": "./TP/tantor/hybrid_coreml/feature_ids",
+                "compound-word-file": "./TP/tantor/hybrid_coreml/multi_config.tsv",
+                "label-tsv-file": "./TP/tantor/hybrid_coreml/label_info.tsv",
+                "entity-tsv-file": "./TP/tantor/hybrid_coreml/post_info.tsv",
+                "max-num-feats": 30,
+                "chunk-length": 51,
+                "chunk-overlap": 5,
+                "nnet-file": "./TP/tantor/hybrid_coreml/nnet",
+                "no-title-casing-file": "./TP/tantor/hybrid_coreml/no_title_casing",
+                "source-vocab-file": "./TP/tantor/hybrid_coreml/source.vocab",
+                "vocab-marisa-trie-file": "./TP/tantor/hybrid_coreml/itn.marisa.trie",
+                "marisa-relabel-file": "./TP/tantor/hybrid_coreml/itn.marisa_relabel.vec",
+                "marisa-token-file": "./TP/tantor/hybrid_coreml/itn.marisa_token.txt",
+                "token-boundary-id": 1048583,
+                "word-sense-file": "./TP/tantor/hybrid_coreml/senses",
+                "align-right-preitn-tokens-file": "./TP/tantor/hybrid_coreml/align_right_tokens",
+                "double-regex-feat-file": "./TP/tantor/hybrid_coreml/regex_features.tsv",
+                "supplement-config-file": "./TP/tantor/hybrid_coreml/tantor_config.json",
+                "punctuation": {
+                    "tasks": [
+                        "Dictation",
+                        "SiriDictation",
+                        "Captioning"
+                    ],
+                    "default-fst-do-nothing": true,
+                    "do-not-cap-feature-name": "isDNT",
+                    "special-formal-puncs": [
+                        "."
+                    ],
+                    "end-of-sentence-puncs": [
+                        ".",
+                        "?"
+                    ],
+                    "source-vocab-file": "./TP/tantor/hybrid_coreml/punc/source.vocab",
+                    "vocab-marisa-trie-file": "./TP/tantor/hybrid_coreml/punc/punc.marisa.trie",
+                    "marisa-relabel-file": "./TP/tantor/hybrid_coreml/punc/punc.marisa_relabel.vec",
+                    "marisa-token-file": "./TP/tantor/hybrid_coreml/punc/punc.marisa_token.txt",
+                    "cluster-id-file": "./TP/tantor/hybrid_coreml/punc/feature_ids",
+                    "nnet-file": "./TP/tantor/hybrid_coreml/punc/punc_model.mlmodelc",
+                    "nnet-file-config": "./TP/tantor/hybrid_coreml/punc/punc_model.mlmodelc.config",
+                    "action-fst-directory": "./TP/tantor/hybrid_coreml/punc/action_fsts",
+                    "label-tsv-file": "./TP/tantor/hybrid_coreml/punc/label_info.tsv",
+                    "label-threshold-tsv-file": "./TP/tantor/hybrid_coreml/punc/label_threshold.tsv",
+                    "excluded-postitn-tokens": [
+                        "Emoji",
+                        "emoji",
+                        "Emojis",
+                        "emojis",
+                        "Emoji's",
+                        "emoji's"
+                    ],
+                    "emoji-keyword-remove-fst-1": [
+                        "./TP/emoji/emoji_hammer99.fst"
+                    ]
+                }
+            }
+        },
+        "post-itn-hammer": {
+            "default": {
+                "rule-fst": [
+                    "./TP/postitn_hammer00.fst",
+                    "./TP/postitn_hammer02.fst",
+                    "./TP/postitn_hammer03.fst",
+                    "./TP/postitn_hammer04.fst"
+                ]
+            },
+            "en_CA": {
+                "rule-fst": [
+                    "./TP/postitn_hammer00.fst",
+                    "./TP/postitn_hammer01.fst",
+                    "./TP/postitn_hammer02.fst",
+                    "./TP/postitn_hammer03.fst",
+                    "./TP/postitn_hammer04.fst"
+                ]
+            }
+        },
+        "voice-commands": {
+            "enable": true,
+            "locales": [
+                "en_US"
+            ],
+            "corrective-reranking": {
+                "version": "bw4mbgzb5h",
+                "corrective-reranker": {
+                    "model-file": "./TP/voice-commands/voice-editing/ranker/model.mlmodelc",
+                    "features": [
+                        "wfst_weight",
+                        "asr_confidence",
+                        "is_command",
+                        "has_target",
+                        "has_meta_target",
+                        "target_token_count",
+                        "matched_target_token_count",
+                        "has_payload",
+                        "payload_token_count",
+                        "filler_rate",
+                        "resulting_text_probability_transformer",
+                        "phonetic_target_similarity",
+                        "payload_usage_frequency",
+                        "inter_utterance_pause",
+                        "text_edit_score",
+                        "recognized_by_asr",
+                        "target_preceding_filler_word_count"
+                    ],
+                    "target-candidate-distance-threshold": 1.7,
+                    "num-payload-corrections": 3,
+                    "phonetic-payload-matching-threshold": 1.1,
+                    "apply-capitalization-top-n": 1
+                },
+                "exhaustive-wfst": {
+                    "text-file": "./TP/voice-commands/voice-editing/exhaustive_wfst/text.fst",
+                    "isyms-file": "./TP/voice-commands/voice-editing/exhaustive_wfst/isyms.txt",
+                    "initial-state-is-max-id": true
+                },
+                "featurizer": {
+                    "resulting_text_probability_transformer": {
+                        "transformer-invisible-change-probability": 0.97
+                    }
+                },
+                "fused-intent-classifier": {
+                    "model-file": "./TP/voice-commands/voice-editing/fused_intent_classifier/model.mlmodelc",
+                    "features": [
+                        "inter_utterance_pause",
+                        "number_of_parses",
+                        "edit_parse_exists",
+                        "text_edit_score"
+                    ],
+                    "text-edit-score-threshold": 0.5
+                },
+                "overrides": {
+                    "phrases-file": "./TP/voice-commands/voice-editing/overrides/phrases.json",
+                    "slots-file": "./TP/voice-commands/voice-editing/overrides/slots.json"
+                },
+                "phonetic-matcher": {},
+                "target-index-filter": {
+                    "filter-file": "./TP/voice-commands/voice-editing/target_index_filter/target_index_filter.txt",
+                    "max-max-target-index": 10,
+                    "disambiguation-numerization-threshold": 1.5
+                },
+                "transformer-classifier": {
+                    "model-file": "./TP/voice-commands/voice-editing/electra/VoiceEditingElectra/model.bnns.mil",
+                    "vocab-file": "./TP/voice-commands/voice-editing/electra/vocab.txt"
+                },
+                "wfst": {
+                    "text-file": "./TP/voice-commands/voice-editing/wfst/text.fst",
+                    "isyms-file": "./TP/voice-commands/voice-editing/wfst/isyms.txt",
+                    "initial-state-is-max-id": true
+                }
+            }
+        }
+    },
+    "decoders": {
+        "siri-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "acoustic-ep-avg-window": 3,
+                "final-ep-label": 2,
+                "beam": 13,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/ngasr_enum_1shot-bigG.squeezed_quantized_acceptor.reordered.fst,./graph/production/1shot_datapatch-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": "0.15,0.05",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/1shot_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/1shot_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.8,
+                "cache-size": 1073741824,
+                "classLM-end-name-list": "\\CS-GeoBizName-end",
+                "classLM-start-name-list": "\\CS-GeoBizName-start",
+                "enable-avg-silpost": true,
+                "enable-eager": true,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5.0,
+                "max-active": 1000,
+                "max-total-extra-weight": 0.05,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 60,
+                "lm-beam": 13
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 1.2,
+                "big-g-fst-file-list": "./graph/production/ngasr_enum_1shot-bigG.squeezed_quantized_acceptor.reordered.fst,./graph/production/1shot_datapatch-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/1shot_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/1shot_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-rnn-mitigator:VT": {
+                "backward-model-file": "./lattice_rnn_mitigator_iOS_VT/backward.aligned.nnet",
+                "bag-of-phones-model-file": "./lattice_rnn_mitigator_iOS_VT/autoencoder.aligned.nnet",
+                "calibration-offset": 0.0,
+                "calibration-scale": 1.0,
+                "enable-memory-map": true,
+                "filter-devices": "*",
+                "filter-input-origins": "VoiceTrigger",
+                "forward-model-file": "./lattice_rnn_mitigator_iOS_VT/forward.aligned.nnet",
+                "model-feature-list": "BAG_OF_PHONES,KEYWORD:hey,KEYWORD:Siri,LM_SCORE,AC_SCORE,NUM_FRAMES,LIN_POSTERIOR",
+                "output-model-file": "./lattice_rnn_mitigator_iOS_VT/output.aligned.nnet",
+                "phone-pd2pi-file": "./lattice_rnn_mitigator_iOS_VT/phone-pd2pi.txt",
+                "threshold": 0.262947,
+                "transform-file": "./lattice_rnn_mitigator_iOS_VT/feature_transform.aligned.nnet",
+                "version": "bilrnn-ios-vt-hs-js-eng-USA-server-10.0.0.0-20230424-94d4tirwc4-full",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-rnn-mitigator:MF": {
+                "backward-model-file": "./lattice_rnn_mitigator_iOS_MF/backward.aligned.nnet",
+                "bag-of-phones-model-file": "./lattice_rnn_mitigator_iOS_MF/autoencoder.aligned.nnet",
+                "calibration-offset": 0.0,
+                "calibration-scale": 1.0,
+                "enable-memory-map": true,
+                "filter-devices": "*",
+                "filter-input-origins": "MagusFollowup",
+                "forward-model-file": "./lattice_rnn_mitigator_iOS_MF/forward.aligned.nnet",
+                "model-feature-list": "BAG_OF_PHONES,KEYWORD:hey,KEYWORD:Siri,LM_SCORE,AC_SCORE,NUM_FRAMES,LIN_POSTERIOR",
+                "output-model-file": "./lattice_rnn_mitigator_iOS_MF/output.aligned.nnet",
+                "phone-pd2pi-file": "./lattice_rnn_mitigator_iOS_MF/phone-pd2pi.txt",
+                "threshold": 0.114368,
+                "transform-file": "./lattice_rnn_mitigator_iOS_MF/feature_transform.aligned.nnet",
+                "version": "bilrnn-ios-mf-eng-USA-server-10.0.0.0-20230424-94d4tirwc4-full",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-rnn-mitigator:BP": {
+                "backward-model-file": "./lattice_rnn_mitigator_iOS_BP/backward.aligned.nnet",
+                "bag-of-phones-model-file": "./lattice_rnn_mitigator_iOS_BP/autoencoder.aligned.nnet",
+                "calibration-offset": 0.0,
+                "calibration-scale": 1.0,
+                "enable-memory-map": true,
+                "filter-devices": "*",
+                "filter-input-origins": "HomeButton|AssistantSpeechButton",
+                "forward-model-file": "./lattice_rnn_mitigator_iOS_BP/forward.aligned.nnet",
+                "model-feature-list": "BAG_OF_PHONES,KEYWORD:hey,KEYWORD:Siri,LM_SCORE,AC_SCORE,NUM_FRAMES,LIN_POSTERIOR",
+                "output-model-file": "./lattice_rnn_mitigator_iOS_BP/output.aligned.nnet",
+                "phone-pd2pi-file": "./lattice_rnn_mitigator_iOS_BP/phone-pd2pi.txt",
+                "threshold": 0.004433,
+                "transform-file": "./lattice_rnn_mitigator_iOS_BP/feature_transform.aligned.nnet",
+                "version": "bilrnn-ios-bp-eng-USA-server-10.0.0.0-20230424-94d4tirwc4-full",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "atypical-siri-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "acoustic-ep-avg-window": 3,
+                "final-ep-label": 2,
+                "beam": 13,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/ngasr_enum_1shot-bigG.squeezed_quantized_acceptor.reordered.fst,./graph/production/1shot_datapatch-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": "0.15,0.05",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/1shot_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/1shot_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.8,
+                "cache-size": 1073741824,
+                "classLM-end-name-list": "\\CS-GeoBizName-end",
+                "classLM-start-name-list": "\\CS-GeoBizName-start",
+                "enable-avg-silpost": true,
+                "enable-eager": true,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5.0,
+                "max-active": 1000,
+                "max-total-extra-weight": 0.05,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 60,
+                "lm-beam": 13
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 1.52,
+                "big-g-fst-file-list": "./graph/production/ngasr_enum_1shot-bigG.squeezed_quantized_acceptor.reordered.fst,./graph/production/1shot_datapatch-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/1shot_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/1shot_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-rnn-mitigator:VT": {
+                "backward-model-file": "./lattice_rnn_mitigator_iOS_VT/backward.aligned.nnet",
+                "bag-of-phones-model-file": "./lattice_rnn_mitigator_iOS_VT/autoencoder.aligned.nnet",
+                "calibration-offset": 0.0,
+                "calibration-scale": 1.0,
+                "enable-memory-map": true,
+                "filter-devices": "*",
+                "filter-input-origins": "VoiceTrigger",
+                "forward-model-file": "./lattice_rnn_mitigator_iOS_VT/forward.aligned.nnet",
+                "model-feature-list": "BAG_OF_PHONES,KEYWORD:hey,KEYWORD:Siri,LM_SCORE,AC_SCORE,NUM_FRAMES,LIN_POSTERIOR",
+                "output-model-file": "./lattice_rnn_mitigator_iOS_VT/output.aligned.nnet",
+                "phone-pd2pi-file": "./lattice_rnn_mitigator_iOS_VT/phone-pd2pi.txt",
+                "threshold": 0.272628,
+                "transform-file": "./lattice_rnn_mitigator_iOS_VT/feature_transform.aligned.nnet",
+                "version": "bilrnn-ios-vt-hs-js-eng-USA-server-10.0.0.0-20230424-94d4tirwc4-full",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-rnn-mitigator:MF": {
+                "backward-model-file": "./lattice_rnn_mitigator_iOS_MF/backward.aligned.nnet",
+                "bag-of-phones-model-file": "./lattice_rnn_mitigator_iOS_MF/autoencoder.aligned.nnet",
+                "calibration-offset": 0.0,
+                "calibration-scale": 1.0,
+                "enable-memory-map": true,
+                "filter-devices": "*",
+                "filter-input-origins": "MagusFollowup",
+                "forward-model-file": "./lattice_rnn_mitigator_iOS_MF/forward.aligned.nnet",
+                "model-feature-list": "BAG_OF_PHONES,KEYWORD:hey,KEYWORD:Siri,LM_SCORE,AC_SCORE,NUM_FRAMES,LIN_POSTERIOR",
+                "output-model-file": "./lattice_rnn_mitigator_iOS_MF/output.aligned.nnet",
+                "phone-pd2pi-file": "./lattice_rnn_mitigator_iOS_MF/phone-pd2pi.txt",
+                "threshold": 0.138061,
+                "transform-file": "./lattice_rnn_mitigator_iOS_MF/feature_transform.aligned.nnet",
+                "version": "bilrnn-ios-mf-eng-USA-server-10.0.0.0-20230424-94d4tirwc4-full",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-rnn-mitigator:BP": {
+                "backward-model-file": "./lattice_rnn_mitigator_iOS_BP/backward.aligned.nnet",
+                "bag-of-phones-model-file": "./lattice_rnn_mitigator_iOS_BP/autoencoder.aligned.nnet",
+                "calibration-offset": 0.0,
+                "calibration-scale": 1.0,
+                "enable-memory-map": true,
+                "filter-devices": "*",
+                "filter-input-origins": "HomeButton|AssistantSpeechButton",
+                "forward-model-file": "./lattice_rnn_mitigator_iOS_BP/forward.aligned.nnet",
+                "model-feature-list": "BAG_OF_PHONES,KEYWORD:hey,KEYWORD:Siri,LM_SCORE,AC_SCORE,NUM_FRAMES,LIN_POSTERIOR",
+                "output-model-file": "./lattice_rnn_mitigator_iOS_BP/output.aligned.nnet",
+                "phone-pd2pi-file": "./lattice_rnn_mitigator_iOS_BP/phone-pd2pi.txt",
+                "threshold": 0.004868,
+                "transform-file": "./lattice_rnn_mitigator_iOS_BP/feature_transform.aligned.nnet",
+                "version": "bilrnn-ios-bp-eng-USA-server-10.0.0.0-20230424-94d4tirwc4-full",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "btsiri-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "acoustic-ep-avg-window": 3,
+                "final-ep-label": 2,
+                "beam": 13,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/ngasr_enum_1shot-bigG.squeezed_quantized_acceptor.reordered.fst,./graph/production/1shot_datapatch-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": "0.15,0.05",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/1shot_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/1shot_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.8,
+                "cache-size": 1073741824,
+                "classLM-end-name-list": "\\CS-GeoBizName-end",
+                "classLM-start-name-list": "\\CS-GeoBizName-start",
+                "enable-avg-silpost": true,
+                "enable-eager": true,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5.0,
+                "max-active": 1000,
+                "max-total-extra-weight": 0.05,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 60,
+                "lm-beam": 13
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 1.2,
+                "big-g-fst-file-list": "./graph/production/ngasr_enum_1shot-bigG.squeezed_quantized_acceptor.reordered.fst,./graph/production/1shot_datapatch-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/1shot_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/1shot_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "msg-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": 0.01,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.99,
+                "cache-size": 1073741824,
+                "eager": {
+                    "backoff-silence-posterior": 0,
+                    "backoff-silence-window": 0,
+                    "backoff-stable-partials": 16,
+                    "early-silence-posterior": 0,
+                    "early-silence-window": 0,
+                    "early-stable-partials": 16,
+                    "max-triggers": 12,
+                    "require-silence-posterior": true
+                },
+                "enable-avg-silpost": true,
+                "enable-eager": true,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 1000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 20
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 3.0,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            },
+            "audio-analytics-decoder": {}
+        },
+        "atypical-msg-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": 0.01,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.99,
+                "cache-size": 1073741824,
+                "eager": {
+                    "backoff-silence-posterior": 0,
+                    "backoff-silence-window": 0,
+                    "backoff-stable-partials": 16,
+                    "early-silence-posterior": 0,
+                    "early-silence-window": 0,
+                    "early-stable-partials": 16,
+                    "max-triggers": 12,
+                    "require-silence-posterior": true
+                },
+                "enable-avg-silpost": true,
+                "enable-eager": true,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 1000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 120
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 2.5,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            },
+            "audio-analytics-decoder": {}
+        },
+        "siri-msg-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "acoustic-ep-avg-window": 3,
+                "final-ep-label": 2,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": 0.01,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.99,
+                "cache-size": 1073741824,
+                "enable-avg-silpost": true,
+                "enable-eager": true,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 1000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 20
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 3.0,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "msg-cc-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": 0.6,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 0.4,
+                "cache-size": 1073741824,
+                "enable-avg-silpost": true,
+                "enable-eager": false,
+                "enable-endpointing": false,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 1000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "utt-detect": {
+                    "enable-avg-silpost": true,
+                    "hard-max-utt-length-ms": 30000,
+                    "inter-utt-sil": 8,
+                    "max-utt-length": 250,
+                    "max-utt-sil": 100,
+                    "silence-posterior-threshold": 0.2,
+                    "use-nnet": false
+                },
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 20
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 3.0,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "spell-cc-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-fst-file-list": "./graph/production/vcspell-bigG.squeezed_quantized_acceptor.fst,./graph/production/vcspell-bigG-eos-cost.fst,./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-fst-weight-list": "0.475,0.05,0.475",
+                "cache-size": 1073741824,
+                "classLM-fst-file-list": "./graph/production/slotLM/CS-spell.0.5.squeezed_quantized_acceptor.fst",
+                "classLM-template-list": "\\CS-spell",
+                "enable-avg-silpost": true,
+                "enable-eager": false,
+                "enable-endpointing": false,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 1000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "utt-detect": {
+                    "enable-avg-silpost": true,
+                    "hard-max-utt-length-ms": 30000,
+                    "inter-utt-sil": 25,
+                    "max-utt-length": 250,
+                    "max-utt-sil": 100,
+                    "silence-posterior-threshold": 0.2,
+                    "use-nnet": false
+                },
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 3.3,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 60,
+                "lm-beam": 13,
+                "rnnlm-max-context-size": 3
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 1.2,
+                "big-g-fst-file-list": "./graph/production/vcspell-bigG.squeezed_quantized_acceptor.fst,./graph/production/vcspell-bigG-eos-cost.fst,./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "vm-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 1.0,
+                "cache-size": 1073741824,
+                "enable-avg-silpost": true,
+                "enable-eager": false,
+                "enable-lme": false,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 1000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": true,
+                "min-active-v2": 60,
+                "lm-beam": 13
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 3.0,
+                "big-g-fst-file-list": "./graph/production/vccom-bigG.squeezed_quantized_acceptor.fst",
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        },
+        "captioning-conformer": {
+            "lattice-biglm-lme-faster": {
+                "acoustic-cost-cutoff": 500,
+                "autocomplete-partial-result": true,
+                "beam": 16,
+                "beam-delta": 0.5,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "big-g-nnet-weight-list": 1.0,
+                "cache-size": 1073741824,
+                "enable-avg-silpost": true,
+                "enable-eager": false,
+                "enable-lme": true,
+                "enable-memory-map": true,
+                "fst-file": "./graph/production/TLG.squeezed_quantized_transducer.fst",
+                "inter-utt-sil": 30,
+                "inv-g-fst-file": "./graph/production/Gneg.squeezed_quantized_acceptor.fst",
+                "lattice-beam": 5,
+                "max-active": 7000,
+                "max-total-forward-links": 4194304,
+                "max-total-tokens": 2097152,
+                "max-utt-length": 250,
+                "max-utt-sil": 100,
+                "memoize-emitting-arcs": true,
+                "partial-traceback-with-fast-output": true,
+                "phone-syms-file": "./AM-Conformer/tokens.txt",
+                "prune-interval": 10,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 3,
+                "same-state-transition-probability": 1.0,
+                "sil-phone-csl-file": "./AM-Conformer/silence.csl",
+                "silence-posterior-threshold": 0.2,
+                "small-lm-prune-beam-diff": 5.0,
+                "small-lm-prune-lme": true,
+                "stabilizer-minimum-word-seen-ms": 1,
+                "state-min-arcs-cache": 1024,
+                "support-word-hyp-lattice": false,
+                "supported-lme-template-list": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\CS-GeoBizName,\\CS-spell,\\NT-edit",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/word_boundary.int",
+                "word-ins-penalty": 0,
+                "word-syms-map-file": "./qnnlm/words.symmap",
+                "ptwfo-always-use-best-tok-with-output": false,
+                "min-active": 1,
+                "partial-traceback-frame-interval": 4
+            },
+            "lattice-lm-rescore": {
+                "am-scale": 3.0,
+                "big-g-nnet-file-list": "./qnnlm/unified_fofeClassDependent.espresso/msg_context2penultimate.espresso.net:./qnnlm/unified_fofeClassDependent.espresso/msg_penultimate2unitscore.espresso.net",
+                "enable-memory-map": true,
+                "lattice-beam": 5.0,
+                "max-arcs": 7000,
+                "nbest-size": 5,
+                "rnnlm-empty-hyp-cost": 2.2,
+                "rnnlm-max-context-size": 7
+            },
+            "realign-am-fusion-decoder": {
+                "am-file": "./AM-Conformer/am-fusion/final.mdl",
+                "am-scale": 0.5,
+                "beam": 256,
+                "class-frame-counts-file": "./AM-Conformer/am-fusion/ali_train_pdf.counts",
+                "dict-mapped-file": "./graph/production/lexicon.map",
+                "max-tokens": 543210,
+                "nbest-size": 32,
+                "optional-silence": "sil",
+                "phone-syms-file": "./AM-Conformer/am-fusion/phones.txt",
+                "post-aligned-scale": 0.2,
+                "pre-aligned-scale": 0.8,
+                "self-loop-scale": 0.1,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "silence-prob": 0.5,
+                "transition-scale": 1,
+                "tree-file": "./AM-Conformer/am-fusion/tree",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int",
+                "word-syms-map-file": "./qnnlm/words.symmap"
+            },
+            "lattice-confidence2": {
+                "arc-output-model-file": "./confv2/mixedTasks/arc_output.aligned.nnet",
+                "backward-model-file": "./confv2/mixedTasks/backward.aligned.nnet",
+                "forward-model-file": "./confv2/mixedTasks/forward.aligned.nnet",
+                "model-feature-list": "IS_SIL,IS_LME,NUM_PHONES,GRAPH_COST,AC_COST_UNPUSHED,AC_COST_COLLAPSED_1,AC_COST_UNPUSHED_2,NUM_FRAMES,LOG_POSTERIOR,LOG_AC_POSTERIOR,LOG_POSTERIOR_1,LOG_AC_POSTERIOR_2",
+                "node-merge-tol-ms": 60,
+                "sil-phone-csl-file": "./AM-Conformer/am-fusion/silence.csl",
+                "transform-file": "./confv2/mixedTasks/feature_transform.aligned.nnet",
+                "unpronounced-word-file": "./graph/production/unpronounced-words.txt",
+                "word-boundary-int-file": "./AM-Conformer/am-fusion/word_boundary.int"
+            }
+        }
+    },
+    "g2wp": {
+        "p2wp": {
+            "engine-type": "PNSR",
+            "model-version": 3,
+            "model-file": "./AM-Conformer/p2wp.const.fst",
+            "enable-file-memory-lock": true,
+            "num-best": 4,
+            "max-prons": 4,
+            "beam": 20
+        },
+        "spm": {
+            "e2e-model-unit-file": "./AM-Conformer/units.txt",
+            "bpe-model-file": "./AM-Conformer/bpe.model",
+            "remove-all-tags": false,
+            "split-compound-words": true,
+            "preserve-existing-compounds": true
+        },
+        "max-prons": 50
+    },
+    "g2emb": {
+        "spm": {
+            "e2e-model-unit-file": "./AM-Conformer/units.txt",
+            "bpe-model-file": "./AM-Conformer/bpe.model",
+            "add-bos": true,
+            "add-eos": true,
+            "remove-all-tags": false,
+            "split-compound-words": true,
+            "preserve-existing-compounds": true
+        },
+        "model-file": "./AM-Conformer/espresso/context_encoder/model.bnns.mil",
+        "batch-size": 1,
+        "max-embedding-size": 1000,
+        "ranked-templates": "\\NT-contact,\\NT-appcontact,\\NT-appname,\\NT-playlist,\\NT-artist",
+        "max-prons": 50
+    },
+    "lme-create": {
+        "just-in-time-template-name": "\\NT-inline",
+        "contacts-template-name": "\\NT-contact",
+        "base-dict-mapped-file": "./graph/production/lexicon.map",
+        "word-syms-map-file": "./qnnlm/words.symmap",
+        "g2p-rewrite-file": "./G2P/g2p.blacklist",
+        "lme-average-cost": 0.0,
+        "lme-deviation-cost": 0.2,
+        "name-deviation-cost-map": {
+            "\\NT-contact": 0.25
+        },
+        "min-phones-to-p2wp": 3,
+        "lme-scale": 1.0,
+        "template-map": {
+            "urn:contacts:com.apple.contact.people": "\\NT-contact",
+            "urn:appname:com.apple.siri.applications": "\\NT-appname",
+            "urn:room:com.apple.homekit.name": "\\NT-room",
+            "urn:house:com.apple.homekit.name": "\\NT-house",
+            "urn:zone:com.apple.homekit.name": "\\NT-zone",
+            "urn:group:com.apple.homekit.name": "\\NT-group",
+            "urn:device:com.apple.homekit.name": "\\NT-device",
+            "urn:scene:com.apple.homekit.name": "\\NT-scene",
+            "\\NT-inline": "\\NT-inline",
+            "\\NT-unknown": "\\NT-unknown",
+            "urn:paymentsUserName:com.apple.siri.vocabularyupdates": "\\NT-appcontact",
+            "urn:photoContactName:com.apple.siri.vocabularyupdates": "\\NT-appcontact",
+            "urn:phoneCallContactName:com.apple.siri.vocabularyupdates": "\\NT-appcontact",
+            "urn:personFullName:com.apple.siri.vocabularyupdates": "\\NT-appcontact",
+            "urn:smsGroupName:com.apple.siri.vocabularyupdates": "\\NT-appcontact",
+            "urn:photoAlbumName:com.apple.siri.vocabularyupdates": "\\NT-photoalbum",
+            "urn:photoTags:com.apple.siri.vocabularyupdates": "\\NT-phototag",
+            "urn:rideVehicleType:com.apple.siri.vocabularyupdates": "\\NT-appvocab",
+            "urn:paymentsAccountName:com.apple.siri.vocabularyupdates": "\\NT-payaccount",
+            "urn:paymentsOrganizationName:com.apple.siri.vocabularyupdates": "\\NT-payaccount",
+            "urn:healthActivity:com.apple.siri.vocabularyupdates": "\\NT-savedactivity",
+            "urn:artist:com.apple.media.entities": "\\NT-artist",
+            "urn:custom_words:com.apple.media.entities": "\\NT-playlist",
+            "urn:correction:com.apple.siri.corrections": "\\NT-correction",
+            "\\NT-calevent": "\\NT-calevent",
+            "\\NT-entity": "\\NT-entity",
+            "\\NT-location": "\\NT-location",
+            "\\NT-searchterm": "\\NT-searchterm",
+            "urn:voiceCommandName:com.apple.siri.vocabularyupdates": "\\NT-action",
+            "urn:playlist:com.apple.media.entities": "\\NT-playlist",
+            "urn:deviceNames:com.apple.icloud.fmip": "\\NT-device",
+            "\\NT-widget": "\\NT-widget",
+            "urn:accessory:com.apple.homekit.name": "\\NT-device",
+            "urn:appunknown:com.apple.appunknown": "\\NT-appunknown",
+            "urn:carProfileName:com.apple.siri.vocabularyupdates": "\\NT-appname",
+            "urn:podcastTitle:com.apple.media.podcasts": "\\NT-playlist",
+            "urn:notebookTitle:com.apple.siri.vocabularyupdates": "\\NT-notetitle",
+            "urn:notebookTargetTitle:com.apple.siri.vocabularyupdates": "\\NT-notetitle",
+            "urn:notebookFolderTitle:com.apple.siri.vocabularyupdates": "\\NT-notefolder",
+            "urn:contacts:com.apple.chatkit.groups": "\\NT-contact",
+            "urn:company:com.apple.contact.people": "\\NT-contact",
+            "urn:appMusicArtistName:com.apple.siri.vocabularyupdates": "\\NT-artist",
+            "urn:appPlaylistTitle:com.apple.siri.vocabularyupdates": "\\NT-playlist",
+            "urn:appAudiobookTitle:com.apple.siri.vocabularyupdates": "\\NT-playlist",
+            "urn:appShowTitle:com.apple.siri.vocabularyupdates": "\\NT-playlist",
+            "urn:carName:com.apple.siri.vocabularyupdates": "\\NT-device",
+            "urn:edit:com.apple.siri.vocabularyupdates": "\\NT-edit"
+        },
+        "name-enumerator-map": {
+            "\\NT-contact": {
+                "type": "derived",
+                "params": {
+                    "tag-sequences": {
+                        "\\contact-first": 2,
+                        "\\contact-first:\\contact-middle:\\contact-last": 1,
+                        "\\contact-first:\\contact-last": 1,
+                        "\\contact-last": 1,
+                        "\\contact-nickname": 1,
+                        "\\contact-group": 1,
+                        "\\company-first": 1
+                    }
+                }
+            },
+            "\\NT-appname": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-inline": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 5000
+                }
+            },
+            "\\NT-room": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-house": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-zone": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-group": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-device": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-scene": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 7,
+                    "max-num-enumerations": 50000
+                }
+            },
+            "\\NT-unknown": {
+                "type": "raw-copy"
+            },
+            "\\NT-appcontact": {
+                "type": "raw-copy"
+            },
+            "\\NT-photoalbum": {
+                "type": "raw-copy"
+            },
+            "\\NT-phototag": {
+                "type": "raw-copy"
+            },
+            "\\NT-appvocab": {
+                "type": "raw-copy"
+            },
+            "\\NT-payaccount": {
+                "type": "raw-copy"
+            },
+            "\\NT-savedactivity": {
+                "type": "raw-copy"
+            },
+            "\\NT-playlist": {
+                "type": "raw-copy"
+            },
+            "\\NT-artist": {
+                "type": "raw-copy"
+            },
+            "\\NT-correction": {
+                "type": "raw-copy"
+            },
+            "\\NT-calevent": {
+                "type": "raw-copy"
+            },
+            "\\NT-entity": {
+                "type": "raw-copy"
+            },
+            "\\NT-location": {
+                "type": "raw-copy"
+            },
+            "\\NT-searchterm": {
+                "type": "raw-copy"
+            },
+            "\\NT-action": {
+                "type": "raw-copy"
+            },
+            "\\NT-widget": {
+                "type": "raw-copy"
+            },
+            "\\NT-appunknown": {
+                "type": "raw-copy"
+            },
+            "\\NT-notetitle": {
+                "type": "raw-copy"
+            },
+            "\\NT-notefolder": {
+                "type": "raw-copy"
+            },
+            "\\NT-edit": {
+                "type": "exhaustive",
+                "params": {
+                    "phrase-length-limit": 1,
+                    "max-num-enumerations": 50
+                }
+            }
+        },
+        "supported-lme-template-plist": "\\NT-contact,\\NT-unknown,\\NT-appname,\\NT-inline,\\NT-room,\\NT-house,\\NT-zone,\\NT-group,\\NT-device,\\NT-scene,\\NT-appcontact,\\NT-photoalbum,\\NT-phototag,\\NT-appvocab,\\NT-payaccount,\\NT-savedactivity,\\NT-playlist,\\NT-correction,\\NT-calevent,\\NT-entity,\\NT-location,\\NT-searchterm,\\NT-artist,\\NT-action,\\NT-widget,\\NT-appunknown,\\NT-notetitle,\\NT-notefolder,\\NT-edit",
+        "max-num-enumerated-contacts": 15000,
+        "appcontacts-template-name": "\\NT-appcontact",
+        "max-entity-count-map": {
+            "\\NT-playlist": 3000,
+            "\\NT-artist": 3000
+        },
+        "symbol-format": "BI",
+        "max-prons-compound-word": 50,
+        "name-scale-map": {
+            "\\NT-contact": 0.7,
+            "\\NT-appcontact": 0.7,
+            "\\NT-edit": 0.7
+        },
+        "tropical-weight": true,
+        "name-length-penalty-cutoff-map": {
+            "default": 1,
+            "\\NT-contact": 10
+        },
+        "name-length-penalty-map": {
+            "default": 0.5,
+            "\\NT-contact": 0.1
+        }
+    },
+    "app-lm": {
+        "data": {
+            "train-dev-test-split": "1.0,0.0,0.0",
+            "min-words": "0",
+            "max-words": 200000,
+            "oov-replacement": "\\NT-appvocab",
+            "filter-language": false,
+            "input-type": "ngram-counts",
+            "task-name": "SearchOrMessaging",
+            "decoder-chain-name": "siri-conformer"
+        },
+        "NGRAM": {
+            "type": "ngram",
+            "fst-basename": "bigG",
+            "fst-type": "squeezed_acceptor",
+            "ngram-count-flags": "-order 3 -gt2min 1 -gt3min 1 -wbdiscount 1.0 -closed-form-doug-paul-hack -unk",
+            "weight": 0.05
+        }
+    },
+    "misc-shared": {
+        "voice-trigger-phrases": "hey Siri,Siri",
+        "mil-is-ane-ready-on-low-end-device-v2": true
+    },
+    "continuous-listening": {
+        "delay-finalization-length": 50,
+        "delay-finalization-max-length": 100,
+        "fallback-itn-left-context": [
+            "hey",
+            "Siri"
+        ],
+        "left-context": true
+    },
+    "contextual-data": {
+        "source-map": {
+            "com.apple.MobileSMS": {
+                "com.apple.MobileSMS": {
+                    "max-limit": 10,
+                    "contact-only": true,
+                    "framework": "PeopleSuggester"
+                }
+            }
+        }
+    },
+    "euclid": {
+        "grapheme-encoder": {
+            "version": "1.1.0",
+            "text-encoder": {
+                "model-file": "./euclid/grapheme-encoder/grapheme-postitn.mlmodelc/model.bnns.mil",
+                "model-file-config": "./euclid/grapheme-encoder/grapheme-postitn.mlmodelc/model.bnns.mil.config",
+                "byte-input": true,
+                "max-input-length": 30,
+                "pad-block-size": 5,
+                "pad-id": 0,
+                "blank-string": " ",
+                "accepted-chars-file": "./euclid/grapheme-encoder/accepted_chars.json"
+            },
+            "nearest-neighbor-search": {
+                "quantized-embedding-matrix-file": "./euclid/8bit_embeddings.mat",
+                "embedding-matrix-shape-file": "./euclid/matrix_shape.txt",
+                "vocab-syms-file": "./euclid/vocab.symmap.txt",
+                "unigram-file": "./euclid/unigrams.vec",
+                "unigram-weight": 0.05,
+                "distance-threshold": 1.2
+            }
+        },
+        "phoneme-encoder": {
+            "version": "1.1.0",
+            "text-encoder": {
+                "model-file": "./euclid/phoneme-encoder/phoneme.mlmodelc/model.bnns.mil",
+                "string-id-mapping-file": "./euclid/phoneme-encoder/str2id.json",
+                "model-file-config": "./euclid/phoneme-encoder/phoneme.mlmodelc/model.bnns.mil.config",
+                "max-input-length": 30,
+                "pad-block-size": 5,
+                "pad-id": 0
+            },
+            "nearest-neighbor-search": {
+                "quantized-embedding-matrix-file": "./euclid/8bit_embeddings.mat",
+                "embedding-matrix-shape-file": "./euclid/matrix_shape.txt",
+                "vocab-syms-file": "./euclid/vocab.symmap.txt",
+                "unigram-file": "./euclid/unigrams.vec",
+                "unigram-weight": 0.05,
+                "distance-threshold": 1.2
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "version": 8,
+    "properties": {
+        "expirationOfData": 30,
+        "isEventDatabaseStorageEnabled": 1
+    }
+}

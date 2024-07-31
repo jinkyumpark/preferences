@@ -1,0 +1,1 @@
+(function(){return function(e,n,t){for(var r,a=loadHelper("isValid.js"),i=e.getSpan(),l=0;l<n.streamLink.length&&!r;l++){r=(s=i.innerCapture(n.streamLink[l],1)).exists()&&a("streamLink",n,e.getSpan(),s)?s:null}if(!r)for(l=0;l<n.streamLinkHTML.length&&!r;l++){var s;(s=n.streamLinkHTML[l].exec(t.html))&&2===s.length&&(r=s[1])}return r}}).call();

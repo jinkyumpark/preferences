@@ -1,0 +1,9 @@
+{
+    "version": 8,
+    "properties": {
+        "accumulationTime": 200,
+        "enableBatchAccumulation": 1,
+        "inactivityTime": 100,
+        "itemLimit": 4
+    }
+}

@@ -1,0 +1,1 @@
+new ReverseTemplateList([new ReverseTemplate("venere-cancellation-en",function(e){return/Your booking has been cancelled/.test(e.subject)},function(e){if(/Your booking has been cancelled/.test(e.subject)){var n=loadHelper("venere-schemaorg-parser.js")(e);if(n)return n}},function(){return{}},"SGfd9a0ed5")]);

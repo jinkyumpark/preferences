@@ -1,0 +1,343 @@
+{
+  "storage" : "wavernn_h128_s0.0_fp32.sub2.gumbel.16.espresso.weights",
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "layers" : [
+    {
+      "end" : 80,
+      "bottom" : "input",
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "top" : "s2",
+      "type" : "slice",
+      "name" : "slice_0"
+    },
+    {
+      "end" : 0,
+      "bottom" : "input",
+      "start" : 80,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "top" : "s3",
+      "type" : "slice",
+      "name" : "slice_1"
+    },
+    {
+      "nB" : 80,
+      "top" : "preprocessed_frame",
+      "has_biases" : 1,
+      "weights" : {
+        "w_f16_t" : 3
+      },
+      "nC" : 384,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "compute_every" : 120,
+      "bottom" : "s2",
+      "blob_biases" : 1,
+      "has_tanh" : 0,
+      "name" : "inner_product_0",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 2,
+      "top" : "I",
+      "has_biases" : 0,
+      "name" : "inner_product_1",
+      "nC" : 384,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "s3",
+      "has_tanh" : 0,
+      "weights" : {
+        "w_f16_t" : 5
+      },
+      "has_prelu" : 0
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "I,preprocessed_frame",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s6",
+      "type" : "elementwise",
+      "name" : "elementwise_0",
+      "beta" : 0
+    },
+    {
+      "bottom" : "s6",
+      "cut" : 0,
+      "weights" : {
+
+      },
+      "n_outputs" : 2,
+      "top" : "s7,s8",
+      "type" : "split",
+      "name" : "split_0"
+    },
+    {
+      "nB" : 128,
+      "top" : "R",
+      "has_biases" : 1,
+      "weights" : {
+        "w_f16_t" : 9
+      },
+      "nC" : 384,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "hidden_state",
+      "blob_biases" : 7,
+      "has_tanh" : 0,
+      "name" : "inner_product_2",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "hidden_state",
+      "cut" : 0,
+      "weights" : {
+
+      },
+      "n_outputs" : 2,
+      "top" : "s10,s11",
+      "type" : "split",
+      "name" : "split_1"
+    },
+    {
+      "bottom" : "R",
+      "cut" : 0,
+      "weights" : {
+
+      },
+      "n_outputs" : 2,
+      "top" : "s12,s13",
+      "type" : "split",
+      "name" : "split_2"
+    },
+    {
+      "mode" : 15,
+      "weights" : {
+
+      },
+      "top" : "h_t",
+      "type" : "activation",
+      "name" : "activation_0",
+      "bottom" : "s10,s12,s7"
+    },
+    {
+      "nB" : 64,
+      "top" : "coarse_relu",
+      "has_biases" : 1,
+      "weights" : {
+        "w_f16_t" : 13
+      },
+      "nC" : 64,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "h_t",
+      "blob_biases" : 11,
+      "has_tanh" : 0,
+      "name" : "inner_product_3",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 64,
+      "top" : "O2",
+      "has_biases" : 1,
+      "weights" : {
+        "w_f16_t" : 17
+      },
+      "nC" : 256,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "coarse_relu",
+      "blob_biases" : 15,
+      "has_tanh" : 0,
+      "name" : "inner_product_4",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "O2",
+      "weights" : {
+
+      },
+      "eps" : 0.01,
+      "top" : "coarse_bit",
+      "type" : "gumbel_max",
+      "name" : "softmax_0@gumbel_max",
+      "use_bnns" : true
+    },
+    {
+      "alpha" : 0.0078431377187371254,
+      "bottom" : "coarse_bit",
+      "operation" : 3,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s20",
+      "type" : "elementwise",
+      "name" : "elementwise_1",
+      "beta" : 0
+    },
+    {
+      "alpha" : -1,
+      "bottom" : "s20",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "coarse_bit_scaled",
+      "type" : "elementwise",
+      "name" : "elementwise_2",
+      "beta" : 0
+    },
+    {
+      "k" : 1,
+      "bottom" : "",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "h" : 1,
+      "nd_rank" : 1,
+      "constant_blob" : 19,
+      "top" : "s22",
+      "w" : 192,
+      "type" : "load_constant",
+      "name" : "load_constant_0"
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "coarse_bit_scaled,s22",
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s23",
+      "type" : "elementwise",
+      "name" : "elementwise_3",
+      "beta" : 0
+    },
+    {
+      "alpha" : 1,
+      "bottom" : "s8,s23",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s24",
+      "type" : "elementwise",
+      "name" : "elementwise_4",
+      "beta" : 0
+    },
+    {
+      "mode" : 15,
+      "weights" : {
+
+      },
+      "top" : "h_t_1",
+      "type" : "activation",
+      "name" : "activation_2",
+      "bottom" : "s11,s13,s24"
+    },
+    {
+      "axis" : 0,
+      "weights" : {
+
+      },
+      "top" : "output_new_hidden",
+      "type" : "general_concat",
+      "name" : "general_concat_0",
+      "bottom" : "h_t,h_t_1"
+    },
+    {
+      "nB" : 64,
+      "top" : "fine_relu",
+      "has_biases" : 1,
+      "weights" : {
+        "w_f16_t" : 23
+      },
+      "nC" : 64,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 1,
+      "bottom" : "h_t_1",
+      "blob_biases" : 21,
+      "has_tanh" : 0,
+      "name" : "inner_product_5",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 64,
+      "top" : "O4",
+      "has_biases" : 1,
+      "weights" : {
+        "w_f16_t" : 27
+      },
+      "nC" : 256,
+      "low_precision_accumulation" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "fine_relu",
+      "blob_biases" : 25,
+      "has_tanh" : 0,
+      "name" : "inner_product_6",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "O4",
+      "weights" : {
+
+      },
+      "eps" : 0.01,
+      "top" : "fine_bit",
+      "type" : "gumbel_max",
+      "name" : "softmax_1@gumbel_max",
+      "use_bnns" : true
+    },
+    {
+      "alpha" : 0.0078431377187371254,
+      "bottom" : "fine_bit",
+      "operation" : 3,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "s32",
+      "type" : "elementwise",
+      "name" : "elementwise_5",
+      "beta" : 0
+    },
+    {
+      "alpha" : -1,
+      "bottom" : "s32",
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "top" : "fine_bit_scaled",
+      "type" : "elementwise",
+      "name" : "elementwise_6",
+      "beta" : 0
+    }
+  ]
+}

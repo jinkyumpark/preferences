@@ -1,0 +1,6 @@
+2024-07-09 23:31:13+0900 diagnosticd[9539]: diagnosticd starting
+2024-07-09 23:31:13+0900 diagnosticd[9539]: System mode client started - diagnosticd (9539) - mode: 0x9, filter: "<empty>"
+2024-07-19 12:04:39+0900 diagnosticd[81435]: diagnosticd starting
+2024-07-19 12:04:39+0900 diagnosticd[81435]: System mode client started - diagnosticd (81435) - mode: 0x9, filter: "<empty>"
+2024-07-21 00:17:11+0900 diagnosticd[47711]: diagnosticd starting
+2024-07-21 00:17:11+0900 diagnosticd[47711]: System mode client started - diagnosticd (47711) - mode: 0x9, filter: "<empty>"

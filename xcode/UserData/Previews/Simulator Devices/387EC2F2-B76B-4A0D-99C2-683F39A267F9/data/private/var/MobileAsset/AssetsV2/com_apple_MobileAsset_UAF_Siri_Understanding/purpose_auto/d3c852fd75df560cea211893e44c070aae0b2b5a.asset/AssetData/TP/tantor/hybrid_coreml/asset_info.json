@@ -1,0 +1,9 @@
+{
+    "version": "tantor-1.1.36",
+    "supported_locales": [
+        "eng-CAN",
+        "eng-IDN",
+        "eng-PHL",
+        "eng-USA"
+    ]
+}

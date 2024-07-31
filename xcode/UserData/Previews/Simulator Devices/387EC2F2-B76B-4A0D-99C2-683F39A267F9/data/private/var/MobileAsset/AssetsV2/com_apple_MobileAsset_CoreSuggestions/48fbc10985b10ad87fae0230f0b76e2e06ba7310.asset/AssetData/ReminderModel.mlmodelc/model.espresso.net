@@ -1,0 +1,367 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "layers" : [
+    {
+      "nB" : 46,
+      "top" : "embedding_1_output",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 256,
+      "blob_weights" : 1,
+      "is_lookup" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "I",
+      "debug_info" : "embedding_1",
+      "has_tanh" : 0,
+      "hint_fallback_from_metal" : 1,
+      "name" : "embedding_1",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 618,
+      "top" : "embedding_2_output",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 256,
+      "blob_weights" : 3,
+      "is_lookup" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "L",
+      "debug_info" : "embedding_2",
+      "has_tanh" : 0,
+      "hint_fallback_from_metal" : 1,
+      "name" : "embedding_2",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 2,
+      "top" : "embedding_3_output",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 256,
+      "blob_weights" : 5,
+      "is_lookup" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "R",
+      "debug_info" : "embedding_3",
+      "has_tanh" : 0,
+      "hint_fallback_from_metal" : 1,
+      "name" : "embedding_3",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 3,
+      "top" : "embedding_4_output",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 256,
+      "blob_weights" : 7,
+      "is_lookup" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "A",
+      "debug_info" : "embedding_4",
+      "has_tanh" : 0,
+      "hint_fallback_from_metal" : 1,
+      "name" : "embedding_4",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 5,
+      "top" : "embedding_5_output",
+      "has_biases" : 0,
+      "weights" : {
+
+      },
+      "nC" : 256,
+      "blob_weights" : 9,
+      "is_lookup" : 1,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "D",
+      "debug_info" : "embedding_5",
+      "has_tanh" : 0,
+      "hint_fallback_from_metal" : 1,
+      "name" : "embedding_5",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "embedding_1_output,embedding_2_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_1",
+      "top" : "add_1_output_tmp_1",
+      "type" : "elementwise",
+      "name" : "add_10",
+      "beta" : 0
+    },
+    {
+      "bottom" : "add_1_output_tmp_1,embedding_3_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_1",
+      "top" : "add_1_output_tmp_2",
+      "type" : "elementwise",
+      "name" : "add_11",
+      "beta" : 0
+    },
+    {
+      "bottom" : "add_1_output_tmp_2,embedding_4_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_1",
+      "top" : "add_1_output_tmp_3",
+      "type" : "elementwise",
+      "name" : "add_12",
+      "beta" : 0
+    },
+    {
+      "bottom" : "add_1_output_tmp_3,embedding_5_output",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "add_1",
+      "top" : "add_1_output",
+      "type" : "elementwise",
+      "name" : "add_13",
+      "beta" : 0
+    },
+    {
+      "input_size" : 256,
+      "arch" : 1,
+      "internal_nonlinearity_bidir_beta" : 1,
+      "hidden_size" : 256,
+      "lstm_forget_bias" : 1,
+      "nonlinearity_alpha" : 1,
+      "nonlinearity_bidir_type" : 0,
+      "attributes" : {
+        "is_output" : 1
+      },
+      "coupled_input_forget" : 0,
+      "quantization_simple_mode" : false,
+      "internal_nonlinearity_bidir_alpha" : 1,
+      "mode" : 0,
+      "bias_vector_flag" : 1,
+      "cell_clip_threshold" : 50000,
+      "type" : "rnn_arch",
+      "internal_nonlinearity_second_beta" : 1,
+      "internal_nonlinearity_second_bidir_type" : 0,
+      "internal_nonlinearity_alpha" : 1,
+      "internal_nonlinearity_beta" : 1,
+      "forget_bias" : 0,
+      "weights" : {
+        "W_h" : 11,
+        "b" : 19,
+        "b_reverse" : 21,
+        "W_x_reverse" : 17,
+        "W_x" : 15,
+        "W_h_reverse" : 13
+      },
+      "lstm_has_peepholes" : 0,
+      "beta" : 1,
+      "quantization_mode" : 0,
+      "name" : "bi_lstm_0",
+      "top" : "bi_lstm_0_output,bi_lstm_0_h_out,bi_lstm_0_c_out,bi_lstm_0_h_out_rev,bi_lstm_0_c_out_rev",
+      "alpha" : 1,
+      "internal_nonlinearity_second_bidir_alpha" : 1,
+      "internal_nonlinearity_second_bidir_beta" : 1,
+      "max_batch_size" : 1,
+      "quantization_scale" : 1,
+      "debug_info" : "bi_lstm_0",
+      "nonlinearity_bidir_alpha" : 1,
+      "internal_nonlinearity_bidir_type" : 3,
+      "nonlinearity_beta" : 1,
+      "internal_nonlinearity_second_alpha" : 1,
+      "encoder_bidirectional_mode" : 1,
+      "internal_nonlinearity_type" : 3,
+      "bottom" : "add_1_output,bi_lstm_0_h_in,bi_lstm_0_c_in,bi_lstm_0_h_in_rev,bi_lstm_0_c_in_rev",
+      "nonlinearity_type" : 0,
+      "nonlinearity_bidir_beta" : 1,
+      "encoder_output_sequence" : 1,
+      "internal_nonlinearity_second_type" : 0
+    },
+    {
+      "input_size" : 512,
+      "arch" : 1,
+      "internal_nonlinearity_bidir_beta" : 1,
+      "hidden_size" : 32,
+      "lstm_forget_bias" : 1,
+      "nonlinearity_alpha" : 1,
+      "nonlinearity_bidir_type" : 2,
+      "attributes" : {
+        "is_output" : 1
+      },
+      "coupled_input_forget" : 0,
+      "quantization_simple_mode" : false,
+      "internal_nonlinearity_bidir_alpha" : 1,
+      "mode" : 0,
+      "bias_vector_flag" : 1,
+      "cell_clip_threshold" : 50000,
+      "type" : "rnn_arch",
+      "internal_nonlinearity_second_beta" : 1,
+      "internal_nonlinearity_second_bidir_type" : 2,
+      "internal_nonlinearity_alpha" : 1,
+      "internal_nonlinearity_beta" : 1,
+      "forget_bias" : 0,
+      "weights" : {
+        "W_h" : 23,
+        "b" : 31,
+        "b_reverse" : 33,
+        "W_x_reverse" : 29,
+        "W_x" : 27,
+        "W_h_reverse" : 25
+      },
+      "lstm_has_peepholes" : 0,
+      "beta" : 1,
+      "quantization_mode" : 0,
+      "name" : "pack_polarity",
+      "top" : "pack_polarity_output,pack_polarity_h_out,pack_polarity_c_out,pack_polarity_h_out_rev,pack_polarity_c_out_rev",
+      "alpha" : 1,
+      "internal_nonlinearity_second_bidir_alpha" : 1,
+      "internal_nonlinearity_second_bidir_beta" : 1,
+      "max_batch_size" : 1,
+      "quantization_scale" : 1,
+      "debug_info" : "pack_polarity",
+      "nonlinearity_bidir_alpha" : 1,
+      "internal_nonlinearity_bidir_type" : 3,
+      "nonlinearity_beta" : 1,
+      "internal_nonlinearity_second_alpha" : 1,
+      "encoder_bidirectional_mode" : 1,
+      "internal_nonlinearity_type" : 3,
+      "bottom" : "bi_lstm_0_output,pack_polarity_h_in,pack_polarity_c_in,pack_polarity_h_in_rev,pack_polarity_c_in_rev",
+      "nonlinearity_type" : 2,
+      "nonlinearity_bidir_beta" : 1,
+      "encoder_output_sequence" : 0,
+      "internal_nonlinearity_second_type" : 2
+    },
+    {
+      "nB" : 512,
+      "top" : "trigger_output",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 8,
+      "blob_weights" : 37,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "bi_lstm_0_output",
+      "blob_biases" : 35,
+      "has_tanh" : 0,
+      "debug_info" : "trigger",
+      "name" : "trigger",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "trigger_output",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "weights" : {
+
+      },
+      "debug_info" : "trigger__activation__",
+      "top" : "trigger",
+      "C" : 2,
+      "type" : "softmax",
+      "name" : "trigger__activation__"
+    },
+    {
+      "nB" : 512,
+      "top" : "title_output",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 3,
+      "blob_weights" : 41,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "bi_lstm_0_output",
+      "blob_biases" : 39,
+      "has_tanh" : 0,
+      "debug_info" : "title",
+      "name" : "title",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "title_output",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "weights" : {
+
+      },
+      "debug_info" : "title__activation__",
+      "top" : "title",
+      "C" : 2,
+      "type" : "softmax",
+      "name" : "title__activation__"
+    },
+    {
+      "nB" : 64,
+      "top" : "polarity_output",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 5,
+      "blob_weights" : 45,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "pack_polarity_output",
+      "blob_biases" : 43,
+      "has_tanh" : 0,
+      "debug_info" : "polarity",
+      "name" : "polarity",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "polarity_output",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "weights" : {
+
+      },
+      "debug_info" : "polarity__activation__",
+      "top" : "polarity",
+      "C" : 2,
+      "type" : "softmax",
+      "name" : "polarity__activation__"
+    }
+  ]
+}

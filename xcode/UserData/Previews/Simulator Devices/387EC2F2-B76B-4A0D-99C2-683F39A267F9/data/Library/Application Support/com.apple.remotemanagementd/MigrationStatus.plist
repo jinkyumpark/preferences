@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProcessedActions</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>RMMigrationSystemContainer</string>
+			<key>Timestamp</key>
+			<date>2024-07-09T14:33:15Z</date>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>RMMigrationStatusPath</string>
+			<key>Timestamp</key>
+			<date>2024-07-09T14:33:15Z</date>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>RMMigrationExcludeFromBackup</string>
+			<key>Timestamp</key>
+			<date>2024-07-09T14:33:15Z</date>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>RMMigrationSupervised</string>
+			<key>Timestamp</key>
+			<date>2024-07-09T14:33:15Z</date>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>RMMigrationConfigurationUI</string>
+			<key>Timestamp</key>
+			<date>2024-07-09T14:33:15Z</date>
+		</dict>
+	</array>
+</dict>
+</plist>

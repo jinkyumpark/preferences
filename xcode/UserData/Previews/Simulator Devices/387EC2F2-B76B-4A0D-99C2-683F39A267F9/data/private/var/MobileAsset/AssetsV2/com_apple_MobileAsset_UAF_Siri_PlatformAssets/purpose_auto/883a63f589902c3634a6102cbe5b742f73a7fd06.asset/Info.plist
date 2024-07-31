@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.MobileAsset.UAF.Siri.PlatformAssets</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6</string>
+	<key>CFBundleName</key>
+	<string>com.apple.siri.uaf.osupdates</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.285237800</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.285237800</string>
+	<key>MobileAssetProperties</key>
+	<dict>
+		<key>ArchiveDecryptionKeyFile</key>
+		<string>com.apple.MobileAsset.DecryptionKey.UAFSiriPlatformAssets.bd60467.priv</string>
+		<key>AssetSpecifier</key>
+		<string>com.apple.siri.uaf.osupdates</string>
+		<key>AssetVersion</key>
+		<string>1.0.285237800.12.1022,0</string>
+		<key>AssetVersionInfo</key>
+		<dict>
+			<key>AssetVersionGroup</key>
+			<integer>0</integer>
+			<key>AssetVersionLong</key>
+			<string>1.0.285237800.12.1022,0</string>
+			<key>AssetVersionTuple</key>
+			<string>1.0.285237800.12.1022</string>
+			<key>BuildVersionTuple</key>
+			<string>12.13.1022</string>
+			<key>BundleVersionTuple</key>
+			<string>1.0.285237800</string>
+		</dict>
+		<key>Build</key>
+		<string>12M1022</string>
+		<key>Factor</key>
+		<string>com.apple.siri.uaf.osupdates</string>
+		<key>_IsMAAutoAsset</key>
+		<true/>
+		<key>_PreSoftwareUpdateAssetStaging</key>
+		<true/>
+		<key>version</key>
+		<string>1.0.285237800</string>
+	</dict>
+	<key>_DisableAFSCCompression</key>
+	<true/>
+</dict>
+</plist>

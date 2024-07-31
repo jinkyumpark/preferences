@@ -1,0 +1,1 @@
+{"applinks":{"details":[{"appIDs":["com.apple.AppStore"],"components":[{"?":{"app":"messages"},"exclude":true},{"\/":"\/includes\/cwa\/*","exclude":true},{"\/":"\/$(region)\/vision\/*","exclude":true},{"exclude":true,"\/":"\/vision\/*"},{"\/":"*"}],"alwaysEnabled":true}]}}

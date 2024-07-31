@@ -1,0 +1,26 @@
+{
+  "deleteAll": [
+    "clear all",
+    "clear everything",
+    "siri clear all",
+    "please clear all",
+    "can I start over",
+    "start from scratch",
+    "delete all the words",
+    "delete all the text",
+    "clear all the text"
+  ],
+  "selectAll": [
+    "select all",
+    "please select all",
+    "siri select all",
+    "so select all",
+    "select everything",
+    "select the whole document",
+    "select all the words",
+    "select all the text"
+  ],
+  "deleteTargetless": [
+    "delete"
+  ]
+}

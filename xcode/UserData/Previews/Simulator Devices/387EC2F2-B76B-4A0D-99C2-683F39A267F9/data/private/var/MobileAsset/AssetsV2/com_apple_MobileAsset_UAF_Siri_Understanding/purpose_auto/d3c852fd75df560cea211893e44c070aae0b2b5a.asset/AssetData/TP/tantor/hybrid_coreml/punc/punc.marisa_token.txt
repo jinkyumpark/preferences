@@ -1,0 +1,4 @@
+<UnknownWord>   <unk>
+<BeginOfSentenceWord>   <s>
+<EndOfSentenceWord> </s>
+<PaddingWord> <PAD>

@@ -1,0 +1,1297 @@
+{
+  "layers": [
+    {
+      "nB": 100003,
+      "top": "LanguageModel/class_0/embedding_lookup_1/Identity:0",
+      "has_biases": 1,
+      "blob_biases": 97,
+      "nC": 1,
+      "weights": {
+        "Q": 99,
+        "W_int8": 101
+      },
+      "is_lookup": 1,
+      "quantization_mode": 2,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "LanguageModel/__QNNI__requested_output:0",
+      "debug_info": "",
+      "has_tanh": 0,
+      "hint_fallback_from_metal": 1,
+      "name": "inner_product_9",
+      "has_prelu": 0
+    },
+    {
+      "nB": 100003,
+      "top": "LanguageModel/class_1/embedding_lookup_1/Identity:0",
+      "has_biases": 1,
+      "blob_biases": 107,
+      "nC": 1,
+      "weights": {
+        "Q": 109,
+        "W_int8": 111
+      },
+      "is_lookup": 1,
+      "quantization_mode": 2,
+      "type": "inner_product",
+      "has_relu": 0,
+      "bottom": "LanguageModel/__QNNI__requested_output:0",
+      "debug_info": "",
+      "has_tanh": 0,
+      "hint_fallback_from_metal": 1,
+      "name": "inner_product_11",
+      "has_prelu": 0
+    },
+    {
+      "size_of_axes": 0,
+      "bottom": "LanguageModel/__QNNI__requested_output:0",
+      "weights": {},
+      "nd_axis": 1,
+      "debug_info": "",
+      "top": "LanguageModel/__QNNI__requested_output:0_expanded",
+      "type": "expand_dims",
+      "name": "LanguageModel/class_0/embedding_lookup_0"
+    },
+    {
+      "size_of_axes": 0,
+      "bottom": "LanguageModel/__QNNI__requested_output:0_expanded",
+      "weights": {},
+      "nd_axis": -1,
+      "debug_info": "",
+      "version": 2,
+      "top": "LanguageModel/__QNNI__requested_output:0_expanded_squeeze",
+      "type": "squeeze",
+      "name": "LanguageModel/class_0/embedding_lookup_2_0"
+    },
+    {
+      "bottom": "LanguageModel/__QNNI__requested_output:0_expanded_squeeze",
+      "nRow": 100003,
+      "nCol": 256,
+      "n_bits": 8,
+      "share_weights_from_layer_named": "LanguageModel/input/embedding_lookup_1",
+      "kernel_type": 0,
+      "weights": {
+        "Q_meta": 1,
+        "weights_u8": 3
+      },
+      "debug_info": "",
+      "top": "LanguageModel/class_0/embedding_lookup/Identity:0",
+      "type": "quantized_gather",
+      "name": "LanguageModel/class_0/embedding_lookup_2"
+    },
+    {
+      "bottom": "LanguageModel/__QNNI__penultimate_value:0,LanguageModel/class_0/embedding_lookup/Identity:0",
+      "alpha": 1,
+      "operation": 1,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "nd_mode": true,
+      "top": "LanguageModel/class_0/mul:0",
+      "type": "elementwise",
+      "name": "LanguageModel/class_0/mul",
+      "beta": 0
+    },
+    {
+      "axis_mode": 1,
+      "bottom": "LanguageModel/class_0/mul:0",
+      "weights": {},
+      "mode": 0,
+      "nd_axis": 1,
+      "nd_mode": true,
+      "debug_info": "",
+      "use_version": 1,
+      "top": "LanguageModel/class_0/Sum:0___r_1",
+      "type": "reduce",
+      "name": "LanguageModel/class_0/Sum___r_1"
+    },
+    {
+      "size_of_axes": 0,
+      "bottom": "LanguageModel/class_0/Sum:0___r_1",
+      "weights": {},
+      "nd_axis": 1,
+      "debug_info": "",
+      "version": 2,
+      "top": "LanguageModel/class_0/Sum:0___squeeze_1",
+      "type": "squeeze",
+      "name": "LanguageModel/class_0/Sum___squeeze_1"
+    },
+    {
+      "axis_mode": 1,
+      "bottom": "LanguageModel/class_0/Sum:0___squeeze_1",
+      "weights": {},
+      "mode": 0,
+      "nd_axis": 0,
+      "nd_mode": true,
+      "debug_info": "",
+      "use_version": 1,
+      "top": "LanguageModel/class_0/Sum:0___r_0",
+      "type": "reduce",
+      "name": "LanguageModel/class_0/Sum___r_0"
+    },
+    {
+      "size_of_axes": 0,
+      "bottom": "LanguageModel/class_0/Sum:0___r_0",
+      "weights": {},
+      "nd_axis": 0,
+      "debug_info": "",
+      "version": 2,
+      "top": "LanguageModel/class_0/Sum:0",
+      "type": "squeeze",
+      "name": "LanguageModel/class_0/Sum___squeeze_0"
+    },
+    {
+      "bottom": "LanguageModel/class_0/Sum:0,LanguageModel/class_0/embedding_lookup_1/Identity:0",
+      "alpha": 1,
+      "operation": 0,
+      "weights": {},
+      "fused_relu": 0,
+      "debug_info": "",
+      "nd_mode": true,
+      "top": "LanguageModel/__QNNO__requested_score_class_0:0",
+      "type": "elementwise",
+      "name": "LanguageModel/class_0/Add",
+      "beta": 0
+    }
+  ],
+  "storage": "fofe.espresso.weights",
+  "metadata_in_weights": [],
+  "analyses": {},
+  "properties": {
+    "fast_reshape": "1"
+  },
+  "format_version": 300,
+  "shape": {
+    "layer_shapes": {
+      "LanguageModel/hidden/add_3:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/class_0/embedding_lookup/Identity:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/Neg:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_2/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/Relu_2:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/Reshape:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/add_2:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_1/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_3/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_2/MatMul___e1_66_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/class_1/Sum:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_1/stack:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/add_1:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_0/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_0/MatMul___ps_54": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/output/class_1/projection/MatMul___e1_107_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_1/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/output/class_1/Reshape:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/output/class_1/projection/MatMul___ps_107": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/Relu_1:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_3/MatMul___ps_96": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/Const_1:0": {
+        "k": 1,
+        "w": 42,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/__QNNI__penultimate_value:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_5/stack_1:0": {
+        "k": 1,
+        "w": 2,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_3/MatMul___e1_72_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_1/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_3/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_5/stack:0": {
+        "k": 1,
+        "w": 2,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_2/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_2/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_1/MatMul___ps_60": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_0/MatMul___e1_54_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/Relu:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_5/stack_2:0": {
+        "k": 1,
+        "w": 2,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_3/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/concat:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 13
+      },
+      "LanguageModel/hidden/class_1/affine_0/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_1/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_0/MatMul___e1_54": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_3:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/hidden/class_1/affine_3/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_2/MatMul___ps_90": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/concat_1:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/class_0/mul:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_1/MatMul___e1_60_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_1/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_0/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_1/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/Shape:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_3/MatMul___e1_96": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_2/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_3/MatMul___e1_96_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_3/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_2/stack:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_2/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_3/stack_1/2:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/class_0/Sum:0___r_0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/class_0/Sum:0___r_1": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/Relu:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_3/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_1/MatMul___e1_60": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_0/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/Reshape:0_expanded": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/hidden/Shape:0___0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/__QNNO__penultimate_value_class_0:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/__QNNO__requested_score_class_1:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_0/MatMul___ps_78": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_3/MatMul___ps_72": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/__QNNI__requested_output:0_expanded_0_squeeze": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_2/stack_1:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/output/class_1/projection/MatMul___e1_107": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/Reshape:0": {
+        "k": 1,
+        "w": 10,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_1/stack_1:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_1/stack_1/2:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/output/class_1/projection/MatMul___ps": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_2/MatMul___e1_90": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "quant_LanguageModel/output/class_0/projection/MatMul___ps_102": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/__QNNI__requested_output:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_5/stack/0:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/class_1/embedding_lookup_1/Identity:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_2/MatMul___ps": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/output/class_1/projection/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_2/stack_2:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_0/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/class_1/Sum:0___squeeze_1": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_1/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_1/stack_2:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_2/Add:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/input/embedding_lookup/Identity:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "quant_LanguageModel/hidden/class_1/affine_1/MatMul___ps_84": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/output/class_0/projection/MatMul___ps": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_3/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/Cast:0": {
+        "k": 1,
+        "w": 10,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/__QNNI__requested_output:0_expanded_0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_1:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/hidden/class_0/affine_0/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/output/class_0/projection/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/add:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_0/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_3/stack_1/0:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_4/stack_1/2:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_0/MatMul___e1_78": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/class_0/embedding_lookup_1/Identity:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_3/stack:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_3/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/class_1/mul:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_4:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/Reshape:0_expanded_squeeze": {
+        "k": 1,
+        "w": 10,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_2/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/__QNNI__requested_output:0_expanded_squeeze": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_2/MatMul___ps_66": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/Relu_3:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/__QNNO__penultimate_value_class_1:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_1/stack_1/0:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_2/stack_1/2:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/class_0/Sum:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_1/MatMul___e1_84": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/class_0/Sum:0___squeeze_1": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/output/class_0/projection/MatMul___e1_102_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/__QNNO__requested_score_class_0:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_1/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_1/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_0/MatMul___e1_78_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/Slice:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/__QNNI__requested_output:0_expanded": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/Relu_2:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_4/stack_1:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_1/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_3/stack_1:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/Squeeze:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 10
+      },
+      "LanguageModel/class_1/Sum:0___r_0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/class_1/Sum:0___r_1": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/output/class_0/projection/MatMul___e1_102": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_2/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_4/stack_2:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_4/stack_1/0:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_1/MatMul___e1_84_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_3/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/Relu_1:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_3/stack_2:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_2/MatMul___e1_66": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_0/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_3/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_4/stack:0": {
+        "k": 1,
+        "w": 3,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/output/class_0/Reshape:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_0/MatMul___e1": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_2:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/class_1/embedding_lookup/Identity:0": {
+        "k": 1,
+        "w": 256,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/Relu_3:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_0/affine_0/MatMul:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_1/affine_2/MatMul___e1_90_Qscale": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/MatMul___e1": {
+        "k": 1,
+        "w": 10,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_2/stack_1/0:0": {
+        "k": 1,
+        "w": 1,
+        "n": 1,
+        "_rank": 0,
+        "h": 1
+      },
+      "LanguageModel/hidden/MatMul___e2": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 10
+      },
+      "LanguageModel/__QNNI__source_input:0": {
+        "k": 1,
+        "w": 10,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "quant_LanguageModel/hidden/class_0/affine_3/MatMul___e1_72": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 3,
+        "h": 1
+      },
+      "LanguageModel/hidden/class_1/affine_2/bias/read:0": {
+        "k": 1,
+        "w": 1024,
+        "n": 1,
+        "_rank": 1,
+        "h": 1
+      },
+      "LanguageModel/hidden/strided_slice_5:0": {
+        "k": 1,
+        "w": 10,
+        "n": 1,
+        "_rank": 2,
+        "h": 1
+      }
+    },
+    "global_shapes": {}
+  },
+  "subnetworks": {}
+}

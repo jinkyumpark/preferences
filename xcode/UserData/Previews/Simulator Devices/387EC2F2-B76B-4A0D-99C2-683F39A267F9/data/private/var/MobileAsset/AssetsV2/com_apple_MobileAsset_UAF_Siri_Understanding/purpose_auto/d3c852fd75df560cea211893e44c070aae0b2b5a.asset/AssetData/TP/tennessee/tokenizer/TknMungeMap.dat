@@ -1,0 +1,873 @@
+HEADER_BEGIN
+VERSION 1
+FILE_TYPE TknMunge
+FILE_VERSION 1
+CODEPAGE UTF-8
+HEADER_END
+
+
+
+Munge =
+{
+Instantiate = { abbr = 'CT' state = 'Connecticut' }
+Instantiate = { abbr = 'ID' state = 'Idaho' }
+Instantiate = { abbr = 'CA' state = 'California' }
+Instantiate = { abbr = 'AL' state = 'Alabama' }
+Instantiate = { abbr = 'AK' state = 'Alaska' }
+Instantiate = { abbr = 'AZ' state = 'Arizona' }
+Instantiate = { abbr = 'AR' state = 'Arkansas' }
+Instantiate = { abbr = 'CO' state = 'Colorado' }
+Instantiate = { abbr = 'DE' state = 'Delaware' }
+Instantiate = { abbr = 'FL' state = 'Florida' }
+Instantiate = { abbr = 'GA' state = 'Georgia' }
+Instantiate = { abbr = 'IL' state = 'Illinois' }
+Instantiate = { abbr = 'IA' state = 'Iowa' }
+Instantiate = { abbr = 'KS' state = 'Kansas' }
+Instantiate = { abbr = 'KY' state = 'Kentucky' }
+Instantiate = { abbr = 'LA' state = 'Louisiana' }
+Instantiate = { abbr = 'MD' state = 'Maryland' }
+Instantiate = { abbr = 'MA' state = 'Massachusetts' }
+Instantiate = { abbr = 'MI' state = 'Michigan' }
+Instantiate = { abbr = 'MN' state = 'Minnesota' }
+Instantiate = { abbr = 'MS' state = 'Mississippi' }
+Instantiate = { abbr = 'MO' state = 'Missouri' }
+Instantiate = { abbr = 'MT' state = 'Montana' }
+Instantiate = { abbr = 'NE' state = 'Nebraska' }
+Instantiate = { abbr = 'NV' state = 'Nevada' }
+Instantiate = { abbr = 'NH' state = 'New Hampshire'}
+Instantiate = { abbr = 'NJ' state = 'New Jersey' }
+Instantiate = { abbr = 'NM' state = 'New Mexico' }
+Instantiate = { abbr = 'NY' state = 'New York' }
+Instantiate = { abbr = 'NC' state = 'North Carolina' }
+Instantiate = { abbr = 'ND' state = 'North Dakota' }
+Instantiate = { abbr = 'OH' state = 'Ohio' }
+Instantiate = { abbr = 'OK' state = 'Oklahoma' }
+Instantiate = { abbr = 'PA' state = 'Pennsylvania' }
+Instantiate = { abbr = 'RI' state = 'Rhode Island' }
+Instantiate = { abbr = 'SC' state = 'South Carolina' }
+Instantiate = { abbr = 'SD' state = 'South Dakota' }
+Instantiate = { abbr = 'TN' state = 'Tennessee' }
+Instantiate = { abbr = 'TX' state = 'Texas' }
+Instantiate = { abbr = 'UT' state = 'Utah' }
+Instantiate = { abbr = 'VT' state = 'Vermont' }
+Instantiate = { abbr = 'VA' state = 'Virginia' }
+Instantiate = { abbr = 'WA' state = 'Washington' }
+Instantiate = { abbr = 'WV' state = 'West Virginia' }
+Instantiate = { abbr = 'WI' state = 'Wisconsin' }
+Instantiate = { abbr = 'WY' state = 'Wyoming' }
+
+Tokens = { "$(abbr)" }
+
+Rule =
+{
+TagOfTwoBeforeIs = {'CN__C__________'}
+SpellingOfOneBeforeIs = {',\comma'}
+Replace = { "$(state)" }
+}
+
+Rule =
+{
+TagOfOneBeforeIs = {'CN__C__________'}
+Replace = { "$(state)" }
+}
+}
+
+Munge =
+{
+Instantiate = { abbr = 'or' state = 'Oregon' }
+Instantiate = { abbr = 'me' state = 'Maine' }
+Instantiate = { abbr = 'in' state = 'Indiana' }
+Instantiate = { abbr = 'hi' state = 'Hawaii' }
+
+Tokens = {"$(abbr)"}
+Rule =
+{
+TextIs = {'Or' 'OR' 'Me' 'ME' 'In' 'IN' 'Hi' 'HI'}
+TagOfTwoBeforeIs = {'CN__C__________'}
+SpellingOfOneBeforeIs = {',\comma'}
+Replace = {"$(state)"}
+}
+
+}
+
+Munge =
+{
+// Using a regexp to avoid a warning from the tokenizer complaining
+// about token inexistence. OOVs may be munged too.
+Tokens = {`^MD$`}
+Rule =
+{
+TagOfTwoBeforeIs = {'CN__C__________'}
+SpellingOfOneBeforeIs = {',\comma'}
+Replace = {'Maryland'}
+}
+
+
+
+
+
+}
+
+Munge =
+{
+Tokens = {'OK'}
+Rule =
+{
+TextIs = {'Ok' 'OK'}
+TagOfTwoBeforeIs = {'CN__C__________'}
+SpellingOfOneBeforeIs = {',\comma'}
+Replace = {'Oklahoma'}
+}
+
+Replace = {'OK' 'okay'}
+}
+
+
+
+Munge =
+{
+Tokens = {'am' 'AM'}
+Rule =
+{
+TextOfOneBeforeIs = {'I'}
+Replace = {'am'}
+}
+
+Rule =
+{
+TextOfOneAfterIs = {'I'}
+Replace = {'am'}
+}
+
+Rule =
+{
+SpellingOfOneBeforeIs = { "o'clock" 'one\number' 'two' 'three' 'four' 'five' 'six'
+'seven' 'eight' 'nine' 'ten' 'eleven' 'twelve' 'thirteen'
+'fourteen' 'fifteen' 'sixteen' 'seventeen' 'eighteen' 'nineteen'
+'twenty' 'thirty' 'forty' 'fifty' }
+Replace = {'a.m.'}
+}
+
+Rule =
+{
+PatternOfOneBeforeIs = {'Cardinal'}
+Replace = {'AM'}
+}
+}
+
+
+Munge =
+{
+Tokens = {'PM'}
+Rule =
+{
+SpellingOfOneBeforeIs = { "o'clock" 'one\number' 'two' 'three' 'four' 'five' 'six'
+'seven' 'eight' 'nine' 'ten' 'eleven' 'twelve' 'thirteen'
+'fourteen' 'fifteen' 'sixteen' 'seventeen' 'eighteen' 'nineteen'
+'twenty' 'thirty' 'forty' 'fifty' }
+Replace = {'p.m.'}
+}
+}
+
+// change 'doctors' to 'Doctors' prior to first or last names
+// note the corresponding rule in UK is for 'Drs' (no period)
+// jpl 1/25/06
+// amended jpl 3/27/08 the token is now just 'Doctors' (ITN will convert
+//  to 'Drs.')
+Munge =
+{
+Tokens = {'doctors'}
+Rule =
+{
+TagOfOneAfterIs = {`CN[FL]_{12}`}
+Replace = {'Doctors'}
+}
+}
+
+// change 'doctor' to 'Doctor' prior to first or last names
+// jpl 1/20/06
+// note that the output of this munge rule will NOT feed into the
+//  Doctor\Drive rule below!!  This is good, because we don't ever
+//  want to accidentally change "doctor" into "Drive"
+// amended jpl 3/27/08:  the token is now just 'Doctor' (ITN will convert
+//  to 'Dr.')
+Munge =
+{
+Tokens = {'doctor'}
+Rule =
+{
+TagOfOneAfterIs = {`CN[FL]_{12}`}
+Replace = {'Doctor'}
+}
+}
+
+//a rule to change titles to caps prior to names
+
+Munge =
+{
+
+Instantiate = { cn = 'admiral' title = 'Admiral' }
+Instantiate = { cn = 'alderman' title = 'Alderman' }
+Instantiate = { cn = 'ambassador' title = 'Ambassador' }
+Instantiate = { cn = 'amir' title = 'Amir' }
+Instantiate = { cn = 'archbishop' title = 'Archbishop' }
+Instantiate = { cn = 'archduke' title = 'Archduke' }
+
+Instantiate = { cn = 'attorney' title = 'Attorney' }
+
+Instantiate = { cn = 'bailor' title = 'Bailor' }
+Instantiate = { cn = 'baron' title = 'Baron' }
+Instantiate = { cn = 'baroness' title = 'Baroness' }
+Instantiate = { cn = 'beadle' title = 'Beadle' }
+Instantiate = { cn = 'bishop' title = 'Bishop' }
+Instantiate = { cn = 'brigadier' title = 'Brigadier' }
+Instantiate = { cn = 'cadet' title = 'Cadet' }
+Instantiate = { cn = 'caliph' title = 'Caliph' }
+Instantiate = { cn = 'captain' title = 'Captain' }
+Instantiate = { cn = 'cardinal' title = 'Cardinal' }
+Instantiate = { cn = 'chairman' title = 'Chairman' }
+Instantiate = { cn = 'champion' title = 'Champion' }
+Instantiate = { cn = 'chancellor' title = 'Chancellor' }
+Instantiate = { cn = 'coach' title = 'Coach' }
+Instantiate = { cn = 'colonel' title = 'Colonel' }
+Instantiate = { cn = 'commandant' title = 'Commandant' }
+Instantiate = { cn = 'commander' title = 'Commander' }
+Instantiate = { cn = 'commander-in-chief' title = 'Commander-in-Chief' }
+Instantiate = { cn = 'commissioner' title = 'Commissioner' }
+Instantiate = { cn = 'comrade' title = 'Comrade' }
+Instantiate = { cn = 'comtesse' title = 'Comtesse' }
+Instantiate = { cn = 'congressman' title = 'Congressman' }
+Instantiate = { cn = 'congresswoman' title = 'Congresswoman' }
+Instantiate = { cn = 'constable' title = 'Constable' }
+Instantiate = { cn = 'consulate' title = 'Consulate' }
+Instantiate = { cn = 'corporal' title = 'Corporal' }
+Instantiate = { cn = 'councilman' title = 'Councilman' }
+
+
+Instantiate = { cn = 'count' title = 'Count' }
+
+
+Instantiate = { cn = 'countess' title = 'Countess' }
+Instantiate = { cn = 'czar' title = 'Czar' }
+Instantiate = { cn = 'dame' title = 'Dame' }
+Instantiate = { cn = 'deputy' title = 'Deputy' }
+Instantiate = { cn = 'detective' title = 'Detective' }
+Instantiate = { cn = 'director' title = 'Director' }
+
+Instantiate = { cn = 'district attorney' title = 'District Attorney' }
+
+Instantiate = { cn = 'duchess' title = 'Duchess' }
+Instantiate = { cn = 'duke' title = 'Duke' }
+Instantiate = { cn = 'emperor' title = 'Emperor' }
+Instantiate = { cn = 'empress' title = 'Empress' }
+Instantiate = { cn = 'ensign' title = 'Ensign' }
+
+Instantiate = { cn = 'fräulein' title = 'Fräulein' }
+
+Instantiate = { cn = 'general' title = 'General' }
+Instantiate = { cn = 'generalissimo' title = 'Generalissimo' }
+Instantiate = { cn = 'governor' title = 'Governor' }
+
+Instantiate = { cn = 'honorable' title = 'Honorable' }
+
+
+
+Instantiate = { cn = 'inspector' title = 'Inspector' }
+Instantiate = { cn = 'judge' title = 'Judge' }
+Instantiate = { cn = 'justice' title = 'Justice' }
+Instantiate = { cn = 'kaiser' title = 'Kaiser' }
+Instantiate = { cn = 'lady' title = 'Lady' }
+Instantiate = { cn = 'lieutenant' title = 'Lieutenant' }
+Instantiate = { cn = 'lord' title = 'Lord' }
+Instantiate = { cn = 'madam' title = 'Madam' }
+Instantiate = { cn = 'madame' title = 'Madame' }
+Instantiate = { cn = 'maestro' title = 'Maestro' }
+Instantiate = { cn = 'major' title = 'Major' }
+Instantiate = { cn = 'marchioness' title = 'Marchioness' }
+Instantiate = { cn = 'marquise' title = 'Marquise' }
+Instantiate = { cn = 'master' title = 'Master' }
+Instantiate = { cn = 'mayor' title = 'Mayor' }
+
+Instantiate = { cn = 'midshipman' title = 'Midshipman' }
+
+Instantiate = { cn = 'minister' title = 'Minister' }
+Instantiate = { cn = 'missus' title = 'Missus' }
+Instantiate = { cn = 'mister' title = 'Mister' }
+Instantiate = { cn = 'mistress' title = 'Mistress' }
+Instantiate = { cn = 'monsieur' title = 'Monsieur' }
+Instantiate = { cn = 'monsignor' title = 'Monsignor' }
+Instantiate = { cn = 'officer' title = 'Officer' }
+Instantiate = { cn = 'padre' title = 'Padre' }
+Instantiate = { cn = 'pastor' title = 'Pastor' }
+Instantiate = { cn = 'pharaoh' title = 'Pharaoh' }
+Instantiate = { cn = 'pontiff' title = 'Pontiff' }
+Instantiate = { cn = 'pope' title = 'Pope' }
+Instantiate = { cn = 'postmaster' title = 'Postmaster' }
+Instantiate = { cn = 'premier' title = 'Premier' }
+Instantiate = { cn = 'president' title = 'President' }
+Instantiate = { cn = 'prime minister' title = 'Prime Minister' }
+Instantiate = { cn = 'prince' title = 'Prince' }
+Instantiate = { cn = 'princess' title = 'Princess' }
+Instantiate = { cn = 'private' title = 'Private' }
+Instantiate = { cn = 'professor' title = 'Professor' }
+Instantiate = { cn = 'queen' title = 'Queen' }
+Instantiate = { cn = 'rabbi' title = 'Rabbi' }
+Instantiate = { cn = 'representative' title = 'Representative' }
+Instantiate = { cn = 'reverend' title = 'Reverend' }
+Instantiate = { cn = 'saint' title = 'Saint' }
+Instantiate = { cn = 'secretary' title = 'Secretary' }
+Instantiate = { cn = 'secretary-general' title = 'Secretary-General' }
+Instantiate = { cn = 'senator' title = 'Senator' }
+Instantiate = { cn = 'sergeant' title = 'Sergeant' }
+
+Instantiate = { cn = 'señor' title = 'Señor' }
+Instantiate = { cn = 'señora' title = 'Señora' }
+Instantiate = { cn = 'señorita' title = 'Señorita' }
+
+Instantiate = { cn = 'sheriff' title = 'Sheriff' }
+Instantiate = { cn = 'signor' title = 'Signor' }
+Instantiate = { cn = 'sir' title = 'Sir' }
+Instantiate = { cn = 'sister' title = 'Sister' }
+Instantiate = { cn = 'speaker' title = 'Speaker' }
+Instantiate = { cn = 'steward' title = 'Steward' }
+Instantiate = { cn = 'sultan' title = 'Sultan' }
+Instantiate = { cn = 'treasurer' title = 'Treasurer' }
+Instantiate = { cn = 'undersecretary' title = 'Undersecretary' }
+Instantiate = { cn = 'venerable' title = 'Venerable' }
+Instantiate = { cn = 'vice president' title = 'Vice President' }
+Instantiate = { cn = 'viscount' title = 'Viscount' }
+Instantiate = { cn = 'viscountess' title = 'Viscountess' }
+
+Tokens = { "$(cn)" "$(title)" }
+Rule =
+{
+TextOfOneBeforeIs = { `\p` }
+TagOfOneAfterIs = {`CN[FL]_{12}`}
+Replace = {"$(title)"}
+}
+Rule =
+{
+TextOfOneBeforeIs = { `\n` }
+TagOfOneAfterIs = {`CN[FL]_{12}`}
+Replace = {"$(title)"}
+}
+}
+Munge =
+{
+Tokens = { 'VP' }
+Rule =
+{
+TagOfOneAfterIs = {`CN[FL]_{12}`}
+Replace = { 'VP' 'Vice President' }
+}
+}
+Munge =
+{
+Tokens = { 'sec.' }
+Rule =
+{
+TagOfOneAfterIs = {`CN[FL]_{12}`}
+Replace = { 'Secretary' }
+}
+}
+Munge =
+{
+Instantiate = { title = 'Doctor' other = 'Drive' }
+Instantiate = { title = 'Saint' other = 'Street' }
+Tokens = { "$(title)" "$(other)" }
+Rule =
+{
+TextIs = {"$(title)"}
+// Do nothing if token matches the text exactly
+}
+Rule =
+{
+TextIs = {"$(other)"}
+// Do nothing if token matches the text exactly
+}
+Rule =
+{
+PatternOfOneBeforeIs = {'Ordinal'}
+Replace = {"$(other)"}
+}
+Rule =
+{
+TextOfOneBeforeIs = { `^\U` }
+Replace = {"$(title)"}
+}
+Rule =
+{
+WrittenOfOneBeforeIs = { 'by' 'to' }
+Replace = {"$(title)"}
+}
+Rule =
+{
+// (Text | T.) Dr. (text | 123 | , )
+WrittenOfOneBeforeIs = { `^\u\l` `^\u\.?$` }
+TextOfOneAfterIs = { `^\U` }
+Replace = {"$(other)"}
+}
+Rule =
+{
+// 100 S. Lexington St. (same | Next) sentence
+TextOfOneBeforeIs = { `^\u\l` `^\u\.?$` }
+WrittenOfTwoBeforeIs = { 'South' 'North' 'East' 'West' }
+Replace = {"$(other)"}
+}
+Rule =
+{
+// 100 Lexington St. (same | Next) sentence
+TextOfOneBeforeIs = { `^\u\l` `^\u\.?$` }
+PatternOfTwoBefore = { 'Cardinal' }
+Replace = {"$(other)"}
+}
+Rule =
+{
+// This rule necessary at beginning of document
+// IsBeginningOfDocument?
+TextOfOneAfterIs = { `^\u\l` `^\u\.?$` }
+Replace = {"$(title)"}
+}
+Rule =
+{
+// This rule necessary at end of document
+// IsEndOfDocument?
+TextOfOneBeforeIs = { `^\u\l` `^\u\.?$` }
+Replace = {"$(other)"}
+}
+}
+Munge =
+{
+Tokens = { 'W\letter' 'W\uppercase-letter' }
+Rule =
+{
+PatternOfOneBeforeIs = {'Cardinal'}
+Replace = { 'West' }
+}
+}
+Munge =
+{
+Tokens = { 'E\letter' 'E\uppercase-letter' }
+Rule =
+{
+PatternOfOneBeforeIs = {'Cardinal'}
+Replace = { 'East' }
+}
+}
+Munge =
+{
+Tokens = { 'N\letter' 'N\uppercase-letter' }
+Rule =
+{
+PatternOfOneBeforeIs = {'Cardinal'}
+Replace = { 'North' }
+}
+}
+Munge =
+{
+Tokens = { 'S\letter' 'S\uppercase-letter' }
+Rule =
+{
+PatternOfOneBeforeIs = {'Cardinal'}
+Replace = { 'South' }
+}
+}
+Munge =
+{
+Tokens = { 'a\determiner' 'I\pronoun' }
+// The word 'a' must be delimited by whitespace except if it follows
+// a grouping symbol, dash, or quote mark.  This invalidates bigrams
+// like "a .\period" as well as disambiguates single letters from
+// the word 'a'. "" and '' to get past gcc -E
+// Same thing for I vs i\india.
+Rule =
+{
+TextAfterIs = { `^\S` }
+Replace = {}
+}
+Rule =
+{
+TextBeforeIsNot = { `[""''\`(\\[\s]$` `--$` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = { 'a\lowercase-letter' 'A\letter' 'A\uppercase-letter' }
+// Prefer 'a\determiner' over 'a\letter'
+Rule =
+{
+TextIs = { `a` `A` }
+TextBeforeIs = { `[""''\`(\\[\s]$` `--$` }
+TextAfterIs = { `^\s` }
+Replace = { 'a\determiner' }
+}
+}
+Munge =
+{
+Tokens = { 'i\lowercase-letter' 'I\letter' 'I\uppercase-letter' }
+// Replace letters by I\pronoun when appropriate
+Rule =
+{
+TextBeforeIs = { `[""''\`(\\[\s]$` `--$` }
+TextAfterIs = { `^\s` }
+Replace = { 'I\pronoun' }
+}
+}
+// one\pronoun vs one\number
+Munge =
+{
+Tokens = {'one\pronoun' 'one\number'}
+Rule =
+{
+TextIs = {`i:^one$`}
+// Use category tag to capture any cardinal word, a.m./p.m. like
+// words, unit of measures.
+TagOfOneAfterIs = { `____N_______0[4567]_` 'C___________05_' '____N____FOUR_G' '____N____TWO__G' '____N_______20_' }
+Replace = {'one\number'}
+}
+Rule =
+{
+TextIs = {`i:^one$`}
+// Use category tag to capture any cardinal word, references, word 'number'
+TagOfOneBeforeIs = { `____N_______0[4567]_` '____N____FOUR_G' '____N____TWO__G' '___N______23___' '__VN_____NUMBRG' }
+Replace = {'one\number'}
+}
+Rule =
+{
+TextIs = {`i:^one$`}
+// Use category tag to capture any cardinal word
+SpellingOfOneBeforeIs = { 'and' }
+SpellingOfTwoBeforeIs = { 'hundred' 'thousand' `[bm]illion` }
+Replace = {'one\number'}
+}
+Rule =
+{
+TextIs = {`i:^one$`}
+Replace = {'one\pronoun'}
+}
+}
+Munge =
+{
+Tokens = { '\'\left-single-quote' '"\left-double-quote' }
+Rule =
+{
+TextBeforeIs = { `\S$` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = { '\'\apostrophe'}
+Rule =
+{
+TextBeforeIs = { `\A$` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = { '\'\right-single-quote' '"\right-double-quote' }
+Rule =
+{
+TextBeforeIs = { `\s$` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = {'.\period-paragraph'}
+Replace = {}
+}
+Munge =
+{
+Tokens = {'.\point'}
+Rule =
+{
+TextAfterIs = { `^\D` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = {'.\dot'}
+Rule =
+{
+TextAfterIs = { `^\A` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = {'.\period'}
+Rule =
+{
+TextAfterIs = { `^\w` }
+Replace = {}
+}
+}
+//Munge away greater-than and less-than signs before non-numbers. Need an additional rule which keeps it from being munged away in front of other numerical patterns
+Munge =
+{
+Tokens = { '<\less-than-sign' }
+Rule =
+{
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' 'Measure' 'Price' }
+}
+Rule =
+{
+TextAfterIs = { `^\D` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = { '>\greater-than-sign' }
+Rule =
+{
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' 'Measure' 'Price' }
+}
+Rule =
+{
+TextAfterIs = { `^\D` }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = {'-\minus-sign' '-\hyphen' '–\dash' '—\em-dash' }
+Rule =
+{
+// 5% - 10%
+// 5-10% handled in grammar
+PatternOfOneBeforeIs = { 'Measure' }
+PatternOfOneAfterIs = { 'Measure' }
+Replace = {'to'}
+}
+Rule =
+{
+// p. 2-5,
+PatternOfOneBeforeIs = { 'Reference' }
+PatternOfOneAfterIs = { 'Cardinal' }
+Replace = {'through' 'to'}
+}
+Rule =
+{
+// June 2007-August 2007
+PatternOfOneBeforeIs = { 'Date' }
+PatternOfOneAfterIs = { 'Date' }
+Replace = {'through' 'to'}
+}
+Rule =
+{
+PatternOfOneBeforeIs = { 'Time' }
+PatternOfOneAfterIs = { 'Time' }
+Replace = {'through' 'to'}
+}
+Rule =
+{
+// -5, -$5, -5°, -.5
+// (-5), "-$5", :-5°, [-.5]
+TextAfterIs = { `^\S` }
+TextBeforeIs = { `[\p\s]$` }
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' 'Measure' 'Price' }
+Replace = {'negative' 'minus' '-\minus-sign'}
+}
+Rule =
+{
+// Some number ranges are handled in the grammar too!
+// 5 - 5, 5-5
+PatternOfOneBeforeIs = { 'Cardinal' 'Decimal' 'Fraction' }
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' }
+Replace = {'minus' '-\minus-sign' '–\dash' }
+}
+Rule =
+{
+TextIs = { '--' '–' }
+Replace = { '–\dash' }
+}
+Rule =
+{
+TextIs = { '---' '—' }
+Replace = { '—\em-dash' }
+}
+Rule =
+{
+TextBeforeIs = { ' ' }
+TextAfterIs = { ' ' }
+Replace = { '–\dash' }
+}
+Replace = {'-\hyphen' }
+}
+Munge =
+{
+Tokens = {'+\plus-sign'}
+Rule =
+{
+// 5 + 5, 5+5
+PatternOfOneBeforeIs = { 'Cardinal' 'Decimal' 'Fraction' }
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' }
+PatternOfOneBeforeIs = { 'Cardinal' 'Decimal' 'Fraction' 'FractionPlus' }
+Replace = {'plus' '+\plus-sign'}
+}
+Rule =
+{
+// +5, +$5, +5°, +.5
+TextBeforeIs = { `\s$` }
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Measure' 'Price' 'Fraction' }
+Replace = {'plus' '+\plus-sign'}
+}
+Rule =
+{
+// 5+, 1.5+
+TextAfterIs = { `^\s` }
+PatternOfOneBeforeIs = { 'Cardinal' 'Decimal' }
+Replace = {'plus' '+\plus-sign'}
+}
+}
+Munge =
+{
+Tokens = { `^[xX]\\` }
+Rule =
+{
+PatternOfOneBeforeIs = { 'Phone' }
+PatternOfOneAfterIs = { 'Cardinal' }
+Replace = { 'extension' }
+}
+// 5 x 5 in. --> five by five inches
+Rule =
+{
+PatternOfOneBeforeIs = { 'Cardinal' 'Measure' 'Decimal' 'Fraction' }
+PatternOfOneAfterIs = { 'Measure' }
+Replace = { 'by' }
+}
+// 5 x 5 --> five (by | times) five
+Rule =
+{
+PatternOfOneBeforeIs = { 'Cardinal' 'Decimal' 'Fraction' }
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' }
+Replace = { 'times' 'by' }
+}
+}
+Munge =
+{
+Tokens = { '#\number-sign' }
+Rule =
+{
+// suspect #1 --> suspect (number | #\number-sign) one
+TextBeforeIs = { `\s$` }
+PatternOfOneAfterIs = { 'Cardinal' 'Decimal' 'Fraction' }
+Replace = { '#\number-sign' 'number' }
+}
+}
+Munge =
+{
+Tokens = { `^º\\` }
+Rule =
+{
+TextIsNot = { '^º$' }
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = { 'ADD' }
+Rule =
+{
+SpellingOfOneBeforeIs = { 'has to' 'to' 'please' }
+Replace = { 'add' }
+}
+Rule =
+{
+SpellingOfOneAfterIs = { 'this' 'to' }
+Replace = { 'add' }
+}
+}
+Munge =
+{
+Tokens = { 'AMT' }
+Rule =
+{
+TextOfOneBeforeIs = { 'add' 'ADD' }
+Replace = { 'amount' }
+}
+Rule =
+{
+SpellingOfOneAfterIs = { 'to' }
+Replace = { 'amount' }
+}
+}
+Munge =
+{
+Tokens = { 'Major' 'major' }
+Rule =
+{
+TextOfOneAfterIs = { `^\l` }
+Replace = { 'major' }
+}
+}
+Munge =
+{
+Tokens = { 'Private' 'private' }
+Rule =
+{
+TextOfOneAfterIs = { `^\l` }
+Replace = { 'private' }
+}
+}
+Munge =
+{
+Tokens = { 'Representative' 'representative' }
+Rule =
+{
+TextOfOneAfterIs = { `^\l` }
+Replace = { 'representative' }
+}
+}
+Munge =
+{
+Tokens = { '3-D' 'third' }
+Rule =
+{
+// Before 'ed.' (edition), it's going to be the ordinal
+TextOfOneAfterIs = { `i:ed\.?` `i:editions?` }
+Replace = { 'third' }
+}
+}
+Munge =
+{
+Tokens = { '2-D' 'second' }
+Rule =
+{
+// Before 'ed.' (edition), it's going to be the ordinal
+TextOfOneAfterIs = { `i:ed\.?` `i:editions?` }
+Replace = { 'second' }
+}
+}
+Munge =
+{
+Tokens = { 'at' }
+Rule =
+{
+TextIs = { '@' }
+TextOfOneBeforeIsNot = { `\s$` }
+TextOfOneAfterIsNot = { `$\s` }
+Replace = {}
+}
+Rule =
+{
+TextIs = { '@' }
+TagOfTwoAfterIs = { `54.$` } //for web & email extensions
+Replace = {}
+}
+}
+Munge =
+{
+Tokens = { 'Ive' }
+Rule =
+{
+TagOfOneBeforeIsNot = { `^CNF` }
+Replace = { 'I\'ve' }
+}
+}
+ 

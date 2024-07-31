@@ -1,0 +1,85 @@
+{
+    "version-major": 69,
+    "version-minor": 0,
+    "model-info": {
+        "version": "AM-5.0.0.0-20161007",
+        "language": "*",
+        "sampling-rates": [
+            8000,
+            16000
+        ],
+        "tasks": [
+            "*"
+        ],
+        "phoneset-version": "n/a",
+        "acoustic-profile-version": "n/a",
+        "hybrid-endpointer-version": 3
+    },
+    "sample-frequency": 16000,
+    "spg": {
+        "frontend": {
+            "fbank": {
+                "sample-frequency": 16000,
+                "use-energy": false,
+                "num-mel-bins": 40,
+                "high-freq": 8000,
+                "low-freq": 64,
+                "htk-compat": true,
+                "window-type": "hamming",
+                "frame-length": 25.0,
+                "frame-shift": 10.0
+            },
+            "splice": {
+                "left-context": 30,
+                "right-context": 0
+            },
+            "nnet-forward": {
+                "enable-memory-map": true,
+                "model-file": "SPG.nnet",
+                "transform-file": "SPG.feature_transform"
+            }
+        },
+        "nfhat": {
+            "same-state-transition-probability": 0.99,
+            "acoustic-evidence-deweighting-power": 0.5
+        }
+    },
+    "hybrid-endpoint": {
+        "16000": {
+            "model-file": "endpoint_v3_4.nnet",
+            "model-feature-list": "num-trailing-sil,client-silence-frames-count-ms,end-of-sentence,num-of-words,server-features-latency,client-silence-probability",
+            "endpoint-threshold": 0.965,
+            "extra-delay-ms": 1250,
+            "enable-memory-map": true,
+            "trailing-silence-limit": 5000,
+            "silence-posterior-nfhat-limit": 5000,
+            "server-features-latency-clamp-begin": 6000,
+            "server-features-latency-clamp-end": 60000
+        }
+    },
+    "eager-result-acceptance": {
+        "model-file": "RCAccept.nnet",
+        "model-feature-list": "num-trailing-sil,silence-posterior-nf,end-of-sentence,num-of-words,server-features-latency,eager-result-end-time",
+        "enable-memory-map": false
+    },
+    "default-server-ep-features": {
+        "num-of-words": 0,
+        "num-trailing-sil": 0,
+        "end-of-sentence": 8.99,
+        "silence-posterior": 0.997685
+    },
+    "enhanced-endpointer": {
+        "model-files": {
+            "SearchOrMessaging": "EEPmodel_v13_1.mlmodelc",
+            "SiriDictation": "EEPmodel_Dictation_v1_hallucination_1.mlmodelc"
+        },
+        "is-enhanced-endpointer-enabled": 1,
+        "default-threshold-partial": 0.96,
+        "default-threshold-rc": 0.999,
+        "relaxed-threshold-partial": 0.992,
+        "relaxed-threshold-rc": 0.9999,
+        "extra-delay-ms": 1250,
+        "continuity-window-duration": 300,
+        "speech-detected-threshold": 0.80
+    }
+}

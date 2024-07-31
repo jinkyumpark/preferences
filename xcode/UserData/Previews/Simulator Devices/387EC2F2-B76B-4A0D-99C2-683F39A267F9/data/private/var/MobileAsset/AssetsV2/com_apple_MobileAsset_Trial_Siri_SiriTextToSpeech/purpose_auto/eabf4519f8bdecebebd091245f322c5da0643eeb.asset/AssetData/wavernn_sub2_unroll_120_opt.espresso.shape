@@ -1,0 +1,67 @@
+{
+  "layer_shapes" : {
+    "fine_bit_scaled" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "in_coarse_bit_scaled" : {
+      "k" : 1,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "hidden_state" : {
+      "k" : 1,
+      "w" : 448,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "O4__rand_v" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 120
+    },
+    "mel" : {
+      "k" : 1,
+      "w" : 80,
+      "n" : 1,
+      "_rank" : 1,
+      "h" : 1
+    },
+    "O2__rand_v" : {
+      "k" : 1,
+      "w" : 256,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 120
+    },
+    "out_fine_bit_scaled" : {
+      "k" : 120,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "out_coarse_bit_scaled" : {
+      "k" : 120,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "out_hidden_state" : {
+      "k" : 1,
+      "w" : 448,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    }
+  }
+}

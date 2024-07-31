@@ -1,0 +1,65 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "propensity",
+        "shortDescription" : ""
+      }
+    ],
+    "modelParameters" : [
+
+    ],
+    "author" : "Antoine Klopocki",
+    "specificationVersion" : 1,
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.13",
+      "tvOS" : "11.0",
+      "watchOS" : "4.0",
+      "iOS" : "11.0",
+      "macCatalyst" : "11.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_pipelineRegressor",
+      "structure" : [
+        {
+          "name" : "MLModelType_featureVectorizer"
+        },
+        {
+          "name" : "MLModelType_treeEnsembleRegressor"
+        }
+      ]
+    },
+    "userDefinedMetadata" : {
+      "com.apple.coreml.model.preview.type" : "tabularRegressor",
+      "com.apple.createml.version" : "12.0.1",
+      "overwriteDelaySecs" : "120",
+      "com.apple.createml.app.tag" : "84.0.0.1",
+      "percentileToChooseOffset" : "90",
+      "com.apple.createml.app.version" : "3.0",
+      "numOffsets" : "1"
+    },
+    "inputSchema" : [
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "secondsSincePush",
+        "shortDescription" : ""
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "offsetMins",
+        "shortDescription" : ""
+      }
+    ],
+    "generatedClassName" : "_101_1_120",
+    "method" : "predict"
+  }
+]

@@ -1,0 +1,8 @@
+Triple	applyPostNoTagTriple.fst
+CurrencyRange	applyPostNoTagCurrencyRange.fst
+Time	applyPostNoTagTime.fst
+ArabicToRoman	applyPostNoTagArabicToRoman.fst
+TripleL	applyPostNoTagTripleL.fst
+MajorCurrency	applyPostNoTagMajorCurrency.fst
+Double	applyPostNoTagDouble.fst
+DoubleL	applyPostNoTagDoubleL.fst

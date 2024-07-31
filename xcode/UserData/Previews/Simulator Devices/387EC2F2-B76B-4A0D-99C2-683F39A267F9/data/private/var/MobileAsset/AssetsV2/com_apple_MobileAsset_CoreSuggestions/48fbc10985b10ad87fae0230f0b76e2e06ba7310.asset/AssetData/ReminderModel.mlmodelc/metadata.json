@@ -1,0 +1,275 @@
+[
+  {
+    "author": "Copyright Apple",
+    "availability": {
+      "iOS": "11.0",
+      "macOS": "10.13",
+      "tvOS": "11.0",
+      "watchOS": "4.0"
+    },
+    "generatedClassName": "en_TC603_model_at_epoch_005_with_val_loss_at_1_93e_01_with_avg_F1_0_931",
+    "inputSchema": [
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 1)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "I",
+        "shape": "[1]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 1)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "L",
+        "shape": "[1]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 1)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "R",
+        "shape": "[1]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 1)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "A",
+        "shape": "[1]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 1)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "D",
+        "shape": "[1]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "bi_lstm_0_h_in",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "bi_lstm_0_c_in",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "bi_lstm_0_h_in_rev",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "bi_lstm_0_c_in_rev",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "pack_polarity_h_in",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "pack_polarity_c_in",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "pack_polarity_h_in_rev",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)?",
+        "hasShapeFlexibility": "0",
+        "isOptional": "1",
+        "name": "pack_polarity_c_in_rev",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      }
+    ],
+    "isUpdatable": "0",
+    "license": "Proprietary and confidential",
+    "metadataOutputVersion": "3.0",
+    "method": "predict",
+    "modelParameters": [],
+    "modelType": {
+      "name": "MLModelType_neuralNetwork"
+    },
+    "neuralNetworkLayerTypeHistogram": {
+      "Add": 1,
+      "BiDirectionalLSTM": 2,
+      "Embedding": 5,
+      "InnerProduct": 3,
+      "Softmax": 3
+    },
+    "outputSchema": [
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 8)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "trigger",
+        "shape": "[8]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 3)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "title",
+        "shape": "[3]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 5)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "polarity",
+        "shape": "[5]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "bi_lstm_0_h_out",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "bi_lstm_0_c_out",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "bi_lstm_0_h_out_rev",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 256)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "bi_lstm_0_c_out_rev",
+        "shape": "[256]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "pack_polarity_h_out",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "pack_polarity_c_out",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "pack_polarity_h_out_rev",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      },
+      {
+        "dataType": "Double",
+        "formattedType": "MultiArray (Double 32)",
+        "hasShapeFlexibility": "0",
+        "isOptional": "0",
+        "name": "pack_polarity_c_out_rev",
+        "shape": "[32]",
+        "shortDescription": "",
+        "type": "MultiArray"
+      }
+    ],
+    "shortDescription": "            Locale: en_US\n            Bolt_id: 729vw3mw5m\n            Teamcity_id: 603\n            Epoch: 5",
+    "specificationVersion": 1,
+    "userDefinedMetadata": {},
+    "version": ""
+  }
+]

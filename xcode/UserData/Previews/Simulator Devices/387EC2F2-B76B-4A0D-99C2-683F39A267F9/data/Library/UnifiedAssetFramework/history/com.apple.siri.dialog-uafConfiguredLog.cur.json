@@ -1,0 +1,212 @@
+{
+  "autoAssetSet" : {
+    "assetSetIdentifier" : "com.apple.siri.dialog",
+    "autoAssetEntries" : [
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.findmy.sirifindmy"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.homecommunicationflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.geoflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siricontactsintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.nb"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siriidentityinternal"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.zh"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.audio.audioflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.it"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siricalendarintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.ko"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.yue"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirivideointents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.dialogengine"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siripaymentsintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirikitflow"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.safetysessionflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.nl"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.audiosuggestionsplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.camrootflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirisystemcommands"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siriplaybackcontrolintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.da"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siriinferenceflow"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.clockflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.ms"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siriapplaunchintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirireader"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.de"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.dailybriefingflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.homeautomationinternal"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.ar"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.notebookflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.siritranslationintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirilinkflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.th"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.pt"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.requestdispatcherbridges"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.notebook.sirinotebook"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.messages.sirimessagesflow"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.workoutannouncements"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.fi"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirikitruntime"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirinaturallanguagegeneration"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.en"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.he"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.informationflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirinotificationsintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.healthflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.ja"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.ru"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.hi"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.emergencyflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.es"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirisettingsintents"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.assistantservices"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.timerflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.alarmflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.tr"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.fr"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirisuggestionsflowplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.socialconversationflowdelegateplugin.sv"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirimailinternal"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.phonecallflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.sirikit.messagesflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.carcommandsflowdelegateplugin"
+      },
+      {
+        "assetSpecifier" : "com.apple.siri.dialog.wellnessflowplugin"
+      }
+    ]
+  },
+  "UAFHistoryMetadata" : {
+    "reason" : "created",
+    "timestamp" : "2024-07-09T14:31:34.377Z"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "version": 0,
+    "properties": {
+        "reportingFrequency": 1901,
+        "reportingPurposes": [100],
+        "deliveryLeeway" : 10800
+    }
+}

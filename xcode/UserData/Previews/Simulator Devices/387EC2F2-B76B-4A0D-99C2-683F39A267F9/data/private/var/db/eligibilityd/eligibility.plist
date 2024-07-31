@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OS_ELIGIBILITY_DOMAIN_CALCIUM</key>
+	<dict>
+		<key>context</key>
+		<dict>
+			<key>OS_ELIGIBILITY_CONTEXT_FORCE_REASON</key>
+			<string>Simulator</string>
+		</dict>
+		<key>os_eligibility_answer_source_t</key>
+		<integer>2</integer>
+		<key>os_eligibility_answer_t</key>
+		<integer>4</integer>
+	</dict>
+	<key>OS_ELIGIBILITY_DOMAIN_GREYMATTER</key>
+	<dict>
+		<key>context</key>
+		<dict>
+			<key>OS_ELIGIBILITY_CONTEXT_FORCE_REASON</key>
+			<string>Simulator</string>
+		</dict>
+		<key>os_eligibility_answer_source_t</key>
+		<integer>2</integer>
+		<key>os_eligibility_answer_t</key>
+		<integer>4</integer>
+	</dict>
+</dict>
+</plist>

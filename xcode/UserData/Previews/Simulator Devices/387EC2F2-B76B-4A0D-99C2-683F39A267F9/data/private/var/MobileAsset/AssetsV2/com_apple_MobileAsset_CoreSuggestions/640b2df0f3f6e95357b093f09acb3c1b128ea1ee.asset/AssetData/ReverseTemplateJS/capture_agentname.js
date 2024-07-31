@@ -1,0 +1,1 @@
+(function(){return function(e,n){var t;if(e.agentName)for(var a=0;a<e.agentName.length&&(!t||!t.exists());a++)(t=n.getSpan().innerCapture(e.agentName[a],1))&&t.exists();return t}}).call();

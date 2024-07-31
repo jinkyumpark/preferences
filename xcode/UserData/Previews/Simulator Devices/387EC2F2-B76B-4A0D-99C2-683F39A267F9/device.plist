@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UDID</key>
+	<string>387EC2F2-B76B-4A0D-99C2-683F39A267F9</string>
+	<key>deviceType</key>
+	<string>com.apple.CoreSimulator.SimDeviceType.iPhone-15-Pro</string>
+	<key>isDeleted</key>
+	<false/>
+	<key>isEphemeral</key>
+	<false/>
+	<key>lastBootedAt</key>
+	<date>2024-07-20T15:17:09Z</date>
+	<key>name</key>
+	<string>iPhone 15 Pro</string>
+	<key>runtime</key>
+	<string>com.apple.CoreSimulator.SimRuntime.iOS-18-0</string>
+	<key>runtimePolicy</key>
+	<string>System</string>
+	<key>state</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CloudKit Container Id</key>
+	<integer>1</integer>
+	<key>Factor Path</key>
+	<string>file:///Users/jinkyumpark/Library/Developer/Xcode/UserData/Previews/Simulator%20Devices/387EC2F2-B76B-4A0D-99C2-683F39A267F9/data/Library/Trial/Treatments/1721/1b188dba-70f9-4c66-99f8-1e48ec267289/treatment.pb</string>
+	<key>Namespace Compatibility Version</key>
+	<integer>1</integer>
+	<key>Namespace Name</key>
+	<string>SIRI_CARPLAY_JARVIS</string>
+	<key>Purgeability Level</key>
+	<integer>3</integer>
+</dict>
+</plist>

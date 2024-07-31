@@ -1,0 +1,29 @@
+{
+  "ANE_COMPILER" : {
+    "kernel_validation_status" : {
+      "visit_order" : [
+
+      ],
+      "to_fallback" : [
+        {
+          "" : 1
+        },
+        {
+          "" : 1
+        },
+        {
+          "" : 0
+        }
+      ],
+      "any_fallback" : 1,
+      "unsupported" : [
+        {
+          "" : 0
+        },
+        {
+          "" : 1
+        }
+      ]
+    }
+  }
+}

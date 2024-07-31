@@ -1,0 +1,42 @@
+{
+  "enums" : {
+    "com.apple.searchFeedback.Context.enum_country_code" : {
+
+    },
+    "com.apple.searchFeedback.Context.enum_locale" : {
+
+    },
+    "com.apple.searchFeedback.Context.enum_system_build" : {
+
+    }
+  },
+  "schemas" : {
+    "com.apple.searchFeedback.Context" : {
+      "properties" : {
+        "country_code" : {
+          "tag" : 1,
+          "type" : "enum",
+          "typeName" : "com.apple.searchFeedback.Context.enum_country_code"
+        },
+        "du_enabled" : {
+          "tag" : 3,
+          "type" : "bool"
+        },
+        "is_locked_screen" : {
+          "tag" : 2,
+          "type" : "bool"
+        },
+        "locale" : {
+          "tag" : 4,
+          "type" : "enum",
+          "typeName" : "com.apple.searchFeedback.Context.enum_locale"
+        },
+        "system_build" : {
+          "tag" : 5,
+          "type" : "enum",
+          "typeName" : "com.apple.searchFeedback.Context.enum_system_build"
+        }
+      }
+    }
+  }
+}
