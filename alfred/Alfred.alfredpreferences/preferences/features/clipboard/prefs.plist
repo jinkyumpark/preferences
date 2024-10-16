@@ -6,6 +6,8 @@
 	<array/>
 	<key>clearKeywordEnabled</key>
 	<false/>
+	<key>fastAppend</key>
+	<true/>
 	<key>hotkey</key>
 	<dict>
 		<key>key</key>
@@ -18,6 +20,8 @@
 	<key>limit</key>
 	<integer>2</integer>
 	<key>persistFor</key>
+	<integer>3</integer>
+	<key>persistForFiles</key>
 	<integer>3</integer>
 	<key>persistForImages</key>
 	<integer>3</integer>
