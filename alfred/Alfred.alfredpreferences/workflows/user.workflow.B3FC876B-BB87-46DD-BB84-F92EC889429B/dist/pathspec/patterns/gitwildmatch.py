@@ -1,4 +1,3 @@
-
 """
 This module implements Git's wildmatch pattern matching which itself is
 derived from Rsync's wildmatch. Git uses wildmatch for its ".gitignore"

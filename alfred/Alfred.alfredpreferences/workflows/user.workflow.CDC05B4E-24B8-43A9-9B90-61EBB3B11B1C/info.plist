@@ -260,7 +260,7 @@
 				<key>outputmode</key>
 				<integer>0</integer>
 				<key>shortcut</key>
-				<string>HOME : 2</string>
+				<string>Home : 2</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.automation.runshortcut</string>

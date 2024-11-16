@@ -156,17 +156,6 @@
 			<key>url</key>
 			<string>https://stackoverflow.com/search?q={query}</string>
 		</dict>
-		<key>C7F710B5-B6FB-4A57-8714-BD960EEFC52E</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>a</string>
-			<key>text</key>
-			<string>Aladin</string>
-			<key>url</key>
-			<string>https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=All&amp;SearchWord={query}</string>
-		</dict>
 		<key>CD7D10F4-D063-4F0C-857B-C60EA47D2C9E</key>
 		<dict>
 			<key>enabled</key>

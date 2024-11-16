@@ -60,6 +60,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BA37ECD6-6598-4E6D-AD0D-DE68FE986F0E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3280D47E-CBAB-441B-924F-B8314939027A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Jinkyum Park</string>
@@ -71,6 +84,52 @@
 	<string>Control System</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>6</integer>
+				<key>confirm</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.systemcommand</string>
+			<key>uid</key>
+			<string>3280D47E-CBAB-441B-924F-B8314939027A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>37</integer>
+				<key>hotmod</key>
+				<integer>655360</integer>
+				<key>hotstring</key>
+				<string>L</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BA37ECD6-6598-4E6D-AD0D-DE68FE986F0E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -175,11 +234,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>655360</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>S</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -212,23 +271,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputmode</key>
-				<integer>-1</integer>
-				<key>outputmode</key>
-				<integer>0</integer>
-				<key>shortcut</key>
-				<string>Toggle Do not Disturb Mode</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.runshortcut</string>
-			<key>uid</key>
-			<string>B8441CE5-0BEC-4DFB-905B-02CBD81F9E6F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -257,6 +299,23 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputmode</key>
+				<integer>-1</integer>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>shortcut</key>
+				<string>Toggle Do not Disturb Mode</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.runshortcut</string>
+			<key>uid</key>
+			<string>B8441CE5-0BEC-4DFB-905B-02CBD81F9E6F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -282,6 +341,13 @@
 			<real>30</real>
 			<key>ypos</key>
 			<real>225</real>
+		</dict>
+		<key>3280D47E-CBAB-441B-924F-B8314939027A</key>
+		<dict>
+			<key>xpos</key>
+			<real>165</real>
+			<key>ypos</key>
+			<real>15</real>
 		</dict>
 		<key>39A64EB2-CF24-4B38-85ED-EFAA3C12A586</key>
 		<dict>
@@ -310,6 +376,13 @@
 			<real>165</real>
 			<key>ypos</key>
 			<real>440</real>
+		</dict>
+		<key>BA37ECD6-6598-4E6D-AD0D-DE68FE986F0E</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>15</real>
 		</dict>
 		<key>F73C8EC1-452E-4942-92FC-B2D172573F33</key>
 		<dict>

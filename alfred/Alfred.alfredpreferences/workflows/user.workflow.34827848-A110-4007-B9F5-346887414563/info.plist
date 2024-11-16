@@ -411,7 +411,7 @@
 	<key>description</key>
 	<string>Calculate Anything</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Calculate Anything</string>
 	<key>objects</key>
@@ -1082,8 +1082,6 @@ include_once "./process.php";</string>
 				</array>
 				<key>elselabel</key>
 				<string>Update</string>
-				<key>hideelse</key>
-				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1196,8 +1194,6 @@ include_once "./process.php";</string>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
-				<key>hideelse</key>
-				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1260,8 +1256,6 @@ require_once './workflow/lib/config/configuration.php';</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
 				<key>triggerid</key>
 				<string>menu</string>
 			</dict>
@@ -1298,8 +1292,6 @@ require_once './workflow/lib/config/configuration.php';</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
 				<key>triggerid</key>
 				<string>notifier</string>
 			</dict>
@@ -1336,10 +1328,6 @@ require_once './workflow/lib/config/configuration.php';</string>
 			<dict>
 				<key>delimiter</key>
 				<string>|</string>
-				<key>discardemptyarguments</key>
-				<false/>
-				<key>outputas</key>
-				<integer>0</integer>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -1430,8 +1418,6 @@ require_once './workflow/lib/config/process-input.php';</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
 				<key>triggerid</key>
 				<string>preferences</string>
 			</dict>
@@ -1506,10 +1492,6 @@ function run(argv) {
 			<dict>
 				<key>delimiter</key>
 				<string>|</string>
-				<key>discardemptyarguments</key>
-				<false/>
-				<key>outputas</key>
-				<integer>0</integer>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -1559,235 +1541,233 @@ Made with love by https://www.biati.digital</string>
 		<key>02CB4726-DF90-475A-835E-0038EE019394</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>35</real>
+			<integer>35</integer>
 		</dict>
 		<key>03AE9542-EE54-423A-86E0-9B669EDE5A98</key>
 		<dict>
 			<key>xpos</key>
-			<real>290</real>
+			<integer>290</integer>
 			<key>ypos</key>
-			<real>1770</real>
+			<integer>1770</integer>
 		</dict>
 		<key>03F82D1C-9ACF-4789-91FD-9CCF291DEFFE</key>
 		<dict>
 			<key>xpos</key>
-			<real>410</real>
+			<integer>410</integer>
 			<key>ypos</key>
-			<real>1360</real>
+			<integer>1360</integer>
 		</dict>
 		<key>0A003B52-98B8-4E6C-927C-1A463F47C612</key>
 		<dict>
 			<key>xpos</key>
-			<real>290</real>
+			<integer>290</integer>
 			<key>ypos</key>
-			<real>1890</real>
+			<integer>1890</integer>
 		</dict>
 		<key>0AE30FF8-13F7-4710-AFC3-157281E66B88</key>
 		<dict>
 			<key>note</key>
 			<string>Configuration</string>
 			<key>xpos</key>
-			<real>240</real>
+			<integer>240</integer>
 			<key>ypos</key>
-			<real>1535</real>
+			<integer>1535</integer>
 		</dict>
 		<key>211A2F0B-BCFD-4FBD-B058-548162E358B4</key>
 		<dict>
 			<key>xpos</key>
-			<real>365</real>
+			<integer>365</integer>
 			<key>ypos</key>
-			<real>1860</real>
+			<integer>1860</integer>
 		</dict>
 		<key>2679D5D4-9D36-4AD4-A1EE-59EACA36C6E9</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>160</real>
+			<integer>160</integer>
 		</dict>
 		<key>2CC668AD-747C-458A-B587-773D841610C7</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>1535</real>
+			<integer>1535</integer>
 		</dict>
 		<key>35605323-7862-4781-94FE-ED0261247FB2</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>1095</real>
+			<integer>1095</integer>
 		</dict>
 		<key>3D4DB816-B39C-482D-80EA-3F64F3DF1644</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>1860</real>
+			<integer>1860</integer>
 		</dict>
 		<key>65F736EC-3B8C-4B6D-BE2C-837A63AC34A3</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>1225</real>
+			<integer>1225</integer>
 		</dict>
 		<key>6B5446AC-124D-4626-92C3-D0CA1D94D27F</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>510</real>
+			<integer>510</integer>
 		</dict>
 		<key>6B6A13A8-C671-4033-A793-EE772BA1FB48</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>740</real>
+			<integer>740</integer>
 		</dict>
 		<key>810259C6-0B1F-4440-99F4-7821B5226D70</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>975</real>
+			<integer>975</integer>
 		</dict>
 		<key>886C10B6-25CA-49B0-96F9-014B795AB902</key>
 		<dict>
 			<key>note</key>
 			<string>Update</string>
 			<key>xpos</key>
-			<real>570</real>
+			<integer>570</integer>
 			<key>ypos</key>
-			<real>1350</real>
+			<integer>1350</integer>
 		</dict>
 		<key>92A43CD2-2690-4939-8B4C-7ACD21A03287</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>860</real>
+			<integer>860</integer>
 		</dict>
 		<key>9B97B9DE-FB12-4F5A-AAF8-4608DF0C7B14</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>395</real>
+			<integer>395</integer>
 		</dict>
 		<key>A0989369-5B29-47E2-9CBC-8E61EEBB04C7</key>
 		<dict>
 			<key>note</key>
 			<string>Save Alfred variable</string>
 			<key>xpos</key>
-			<real>750</real>
+			<integer>750</integer>
 			<key>ypos</key>
-			<real>1775</real>
+			<integer>1775</integer>
 		</dict>
 		<key>ABA18E77-71E3-494A-8735-A60799F419B9</key>
 		<dict>
 			<key>xpos</key>
-			<real>570</real>
+			<integer>570</integer>
 			<key>ypos</key>
-			<real>1225</real>
+			<integer>1225</integer>
 		</dict>
 		<key>B4152C5E-D88F-4318-908F-77079A6EB867</key>
 		<dict>
 			<key>note</key>
 			<string>Return to Menu</string>
 			<key>xpos</key>
-			<real>565</real>
+			<integer>565</integer>
 			<key>ypos</key>
-			<real>1500</real>
+			<integer>1500</integer>
 		</dict>
 		<key>B65669C2-6057-4003-B79B-2AEFB92E07CE</key>
 		<dict>
 			<key>xpos</key>
-			<real>230</real>
+			<integer>230</integer>
 			<key>ypos</key>
-			<real>1770</real>
+			<integer>1770</integer>
 		</dict>
 		<key>BB2A4C00-3D9B-43BD-957F-AFF92B5A1DCB</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>625</real>
+			<integer>625</integer>
 		</dict>
 		<key>BEA1F80D-6781-4CB6-AA39-92C8A5D8BD82</key>
 		<dict>
 			<key>xpos</key>
-			<real>750</real>
+			<integer>750</integer>
 			<key>ypos</key>
-			<real>1495</real>
+			<integer>1495</integer>
 		</dict>
 		<key>D037BED7-D145-4DEB-8419-84840F408A48</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>280</real>
+			<integer>280</integer>
 		</dict>
 		<key>D0EBB9BB-23B4-4BF8-9776-01D12130DC2A</key>
 		<dict>
 			<key>note</key>
 			<string>Clear Cache</string>
 			<key>xpos</key>
-			<real>565</real>
+			<integer>565</integer>
 			<key>ypos</key>
-			<real>1635</real>
+			<integer>1635</integer>
 		</dict>
 		<key>D29D156D-3EB3-4E6A-97D4-DE50834BBDAD</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>1740</real>
+			<integer>1740</integer>
 		</dict>
 		<key>DAE2385A-3F7A-4CAE-8A23-EA406D2F5E6A</key>
 		<dict>
 			<key>xpos</key>
-			<real>365</real>
+			<integer>365</integer>
 			<key>ypos</key>
-			<real>1740</real>
+			<integer>1740</integer>
 		</dict>
 		<key>DEA519D6-6B0A-4B4A-9B56-917B28B78090</key>
 		<dict>
 			<key>xpos</key>
-			<real>230</real>
+			<integer>230</integer>
 			<key>ypos</key>
-			<real>1890</real>
+			<integer>1890</integer>
 		</dict>
 		<key>DEEA362A-4FDA-454E-9BC6-57B0F3C9FC10</key>
 		<dict>
 			<key>xpos</key>
-			<real>80</real>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>1340</real>
+			<integer>1340</integer>
 		</dict>
 		<key>E3AAE2B3-FF23-4D07-86EE-A0CC4CD28B8C</key>
 		<dict>
 			<key>note</key>
 			<string>Process variable</string>
 			<key>xpos</key>
-			<real>565</real>
+			<integer>565</integer>
 			<key>ypos</key>
-			<real>1775</real>
+			<integer>1775</integer>
 		</dict>
 		<key>F3219AA0-A1F6-4A6B-92EE-70A840B69D23</key>
 		<dict>
 			<key>xpos</key>
-			<real>410</real>
+			<integer>410</integer>
 			<key>ypos</key>
-			<real>1530</real>
+			<integer>1530</integer>
 		</dict>
 	</dict>
-	<key>userconfigurationconfig</key>
-	<array/>
 	<key>variables</key>
 	<dict>
 		<key>base_currency</key>
